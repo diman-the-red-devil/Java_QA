@@ -1,8 +1,1 @@
-# Java_QA
-
-### Level 0. Zero - Подготовка
-
-#### 0.2. Java
-
-##### Урок 14. Класс Object
-
+# Java_QA / Level 0. Zero - Подготовка / 0.2. Java / Урок 14. Класс Object

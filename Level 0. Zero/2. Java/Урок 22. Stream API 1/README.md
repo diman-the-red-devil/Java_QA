@@ -1,8 +1,1 @@
-# Java_QA
-
-### Level 0. Zero - Подготовка
-
-#### 0.2. Java
-
-##### Урок 22. Stream API 1
-
+# Java_QA / Level 0. Zero - Подготовка / 0.2. Java / Урок 22. Stream API 1
