@@ -478,6 +478,6 @@ public void givenInt__whenChangedToString__thenCorrect() {
 }
 ```
 
-Методы assert*
+Методы assert* в JUnit и TestNG
 
-![Странице регистрации сайта GitHub](./_Files/17.jpg "Странице регистрации сайта GitHub")
+![Сравнение assert методов JUnit и TestNG](./_Files/18.jpg "Сравнение assert методов JUnit и TestNG")
