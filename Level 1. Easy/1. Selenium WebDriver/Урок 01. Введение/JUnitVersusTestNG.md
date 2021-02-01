@@ -480,4 +480,4 @@ public void givenInt__whenChangedToString__thenCorrect() {
 
 Методы assert* в JUnit и TestNG
 
-![Сравнение assert методов JUnit и TestNG](./_Files/18.jpg "Сравнение assert методов JUnit и TestNG")
+![Сравнение assert методов JUnit и TestNG](./_Files/6.%20JUnit5/_18.jpg "Сравнение assert методов JUnit и TestNG")

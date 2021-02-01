@@ -1,42 +1,25 @@
-# Java_QA
+# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 01. Введение
 
-## Level 0. Zero - Подготовка
+## Цель
 
-#### 0.1. Git
 
-##### Урок 01. Введение
 
-### Usage
+***
 
-The following code demonstrates basic usage of EF Core. For a full tutorial configuring the `DbContext`, defining the model, and creating the database, see [getting started](https://docs.microsoft.com/ef/core/get-started/) in the docs.
+## Результаты 
 
-```cs
-using (var db = new BloggingContext())
-{
-    // Inserting data into the database
-    db.Add(new Blog { Url = "http://blogs.msdn.com/adonet" });
-    db.SaveChanges();
+***
 
-    // Querying
-    var blog = db.Blogs
-        .OrderBy(b => b.BlogId)
-        .First();
+## Содержание
 
-    // Updating
-    blog.Url = "https://devblogs.microsoft.com/dotnet";
-    blog.Posts.Add(
-        new Post
-        {
-            Title = "Hello World",
-            Content = "I wrote an app using EF Core!"
-        });
-    db.SaveChanges();
+### Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
+           
 
-    // Deleting
-    db.Remove(blog);
-    db.SaveChanges();
-}
-```
 
-Microsoft.Data.Sqlite
---------------------
+### Практика [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Практика.md)
+
+
+
+### Задание [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](3.%20Задание.md)
+
+### Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](4.%20Ссылки.md)
