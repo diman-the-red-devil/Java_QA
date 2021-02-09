@@ -1,0 +1,1 @@
+# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 08. Веб элементы 1. Свойства элементов

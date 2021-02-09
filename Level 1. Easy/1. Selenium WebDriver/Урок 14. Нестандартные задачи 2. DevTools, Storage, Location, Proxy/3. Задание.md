@@ -1,0 +1,1 @@
+# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 14. Нестандартные задачи 2. DevTools, Storage, Location, Proxy
