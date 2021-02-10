@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java_QA.iml" filepath="$PROJECT_DIR$/.idea/Java_QA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Level 1. Easy/1. Selenium WebDriver/Урок 01. Введение/_Sample/Sample.iml" filepath="$PROJECT_DIR$/Level 1. Easy/1. Selenium WebDriver/Урок 01. Введение/_Sample/Sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/Level 1. Easy/1. Selenium WebDriver/Урок 04. Веб драйвер 1. Основы/_Sample/Sample (1).iml" filepath="$PROJECT_DIR$/Level 1. Easy/1. Selenium WebDriver/Урок 04. Веб драйвер 1. Основы/_Sample/Sample (1).iml" />
     </modules>
   </component>
