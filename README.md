@@ -1,14 +1,14 @@
 # Java_QA
 
-## _Start
+## _Start [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](_Start/README.md)
 
-Урок 00. Автоматизация тестирования
+[Урок 00. Автоматизация тестирования](_Start/README.md)
 
-## Level 0. Zero - Подготовка
+## Level 0. Zero - Подготовка [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/README.md) 
 
-### 0.1. Git
+### 0.1. Git [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/1.%20Git/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%200.%20Zero/1.%20Git/Урок%2001.%20Введение/README.md)
 
 Урок 02. Конфигурация
 
@@ -22,7 +22,7 @@
 
 Урок 07. GitFlow
 
-### 0.2. Java
+### 0.2. Java [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](_Start/README.md)
 
 Урок 01. Введение
 
@@ -86,35 +86,35 @@
 
 ## Level 1. Easy - Основы
 
-### 1.1. Selenium WebDriver
+### 1.1. Selenium WebDriver [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%201.%20Easy/1.%20Selenium%20WebDriver/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2001.%20Введение/README.md)
 
-Урок 02. Подготовка 1. Настройка окружения
+[Урок 02. Подготовка 1. Настройка окружения](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2002.%20Подготовка%201.%20Настройка%20окружения/README.md)
 
-Урок 03. Подготовка 2. Создание проекта
+[Урок 03. Подготовка 2. Создание проекта](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2003.%20Подготовка%202.%20Создание%20проекта/README.md)
 
-Урок 04. Веб драйвер 1. Основы
+[Урок 04. Веб драйвер 1. Основы](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2004.%20Веб%20драйвер%201.%20Основы/README.md)
 
-Урок 05. Веб драйвер 2. Конфигурация
+[Урок 05. Веб драйвер 2. Конфигурация](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2005.%20Веб%20драйвер%202.%20Конфигурация/README.md)
 
-Урок 06. Локаторы 1. CSS
+[Урок 06. Локаторы 1. CSS](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2006.%20Локаторы%201.%20CSS/README.md)
 
-Урок 07. Локаторы 2. XPATH
+[Урок 07. Локаторы 2. XPATH](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2007.%20Локаторы%202.%20XPATH/README.md)
 
-Урок 08. Веб элементы 1. Свойства элементов
+[Урок 08. Веб элементы 1. Свойства элементов](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2008.%20Веб%20элементы%201.%20Свойства%20элементов/README.md)
 
-Урок 09. Веб элементы 2. Действия с элементами
+[Урок 09. Веб элементы 2. Действия с элементами](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2009.%20Веб%20элементы%202.%20Действия%20с%20элементами/README.md)
 
-Урок 10. Ожидания
+[Урок 10. Ожидания](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2010.%20Ожидания/README.md)
 
-Урок 11. Окна
+[Урок 11. Окна](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2011.%20Окна/README.md)
 
-Урок 12. Протоколирование. Логи, скриншоты
+[Урок 12. Протоколирование. Логи, скриншоты](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2012.%20Протоколирование.%20Логи,%20скриншоты/README.md)
 
-Урок 13. Нестандартные задачи 1. Actions, JS
+[Урок 13. Нестандартные задачи 1. Actions, JS](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2013.%20Нестандартные%20задачи%201.%20Actions,%20JS/README.md)
 
-Урок 14. Нестандартные задачи 2. DevTools, Storage, Location, Proxy
+[Урок 14. Нестандартные задачи 2. DevTools, Storage, Location, Proxy](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2014.%20Нестандартные%20задачи%202.%20DevTools,%20Storage,%20Location,%20Proxy/README.md)
 
 ### 1.2. Selenide
 
