@@ -22,9 +22,9 @@
 
 Урок 07. GitFlow
 
-### 0.2. Java [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](_Start/README.md)
+### 0.2. Java [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/2.%20Java/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%200.%20Zero/2.%20Java/Урок%2001.%20Введение/README.md)
 
 Урок 02. Структура программы, переменные, константы 
 
@@ -72,9 +72,9 @@
 
 Урок 24. Строки, даты, математика
 
-### 0.3. Maven
+### 0.3. Maven [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/3.%20Maven/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%200.%20Zero/3.%20Maven/Урок%2001.%20Введение/README.md)
 
 Урок 02. Объектная модель описания проекта
 
@@ -84,7 +84,7 @@
 
 Урок 05. Конфигурация
 
-## Level 1. Easy - Основы
+## Level 1. Easy - Основы [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%201.%20Easy/README.md) 
 
 ### 1.1. Selenium WebDriver [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%201.%20Easy/1.%20Selenium%20WebDriver/README.md)
 
@@ -116,9 +116,9 @@
 
 [Урок 14. Нестандартные задачи 2. DevTools, Storage, Location, Proxy](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2014.%20Нестандартные%20задачи%202.%20DevTools,%20Storage,%20Location,%20Proxy/README.md)
 
-### 1.2. Selenide
+### 1.2. Selenide [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%201.%20Easy/2.%20Selenide/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%201.%20Easy/2.%20Selenide/Урок%2001.%20Введение/README.md)
 
 Урок 02. Веб драйвер
 
@@ -134,53 +134,53 @@
 
 Урок 08. Нестандартные задачи
 
-## Level 2. Medium - Продвинутые темы
+## Level 2. Medium - Продвинутые темы [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/README.md)
 
-### 2.1. Паттерны
+### 2.1. Паттерны [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/1.%20Паттерны/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%202.%20Medium/1.%20Паттерны/Урок%2001.%20Введение/README.md)
 
 Урок 02. PageObject
 
 Урок 03. PageFactory
 
-### 2.2. BDD тесты
+### 2.2. BDD тесты [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/2.%20BDD%20тесты/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%202.%20Medium/2.%20BDD%20тесты/Урок%2001.%20Введение/README.md)
 
 Урок 02. Архитектура BDD
 
 Урок 03. Cucumber + POM
 
-### 2.3. API тесты
+### 2.3. API тесты [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/3.%20API%20тесты/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%202.%20Medium/3.%20API%20тесты/Урок%2001.%20Введение/README.md)
 
 Урок 02. REST Assured
 
 Урок 03. API хелперы в UI тестах
 
-## Level 3. Hard - Высший пилотаж
+## Level 3. Hard - Высший пилотаж [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/README.md)
 
-### 3.1. Запуск
+### 3.1. Запуск [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/1.%20Запуск/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%203.%20Hard/1.%20Запуск/Урок%2001.%20Введение/README.md)
 
 Урок 02. Selenium Grid
 
 Урок 03. Selenoid
 
-### 3.2. Отчеты
+### 3.2. Отчеты [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/2.%20Отчеты/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%203.%20Hard/2.%20Отчеты/Урок%2001.%20Введение/README.md)
 
 Урок 02. Allure
 
 Урок 03. Report Portal
 
-### 3.3. CI/CD
+### 3.3. CI/CD [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/3.%20CI%20CD/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%203.%20Hard/3.%20CI%20CD/Урок%2001.%20Введение/README.md)
 
 Урок 02. Docker
 
@@ -188,9 +188,9 @@
 
 Урок 04. Собираем все вместе
 
-### 3.4. Заглушки
+### 3.4. Заглушки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/4.%20Заглушки/README.md)
 
-Урок 01. Введение
+[Урок 01. Введение](Level%203.%20Hard/4.%20Заглушки/Урок%2001.%20Введение/README.md)
 
 Урок 02. Postman
 
