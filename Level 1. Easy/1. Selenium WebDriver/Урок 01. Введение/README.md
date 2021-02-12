@@ -2,9 +2,14 @@
 
 ## Цель
 
+1. Узнать что из себя представляет Selenium WebDriver
+2. Понять принцип работы Selenium WebDriver
+
 ***
 
 ## Результаты 
+
+1. Первое знакомство с Selenium WebDriver
 
 ***
 
