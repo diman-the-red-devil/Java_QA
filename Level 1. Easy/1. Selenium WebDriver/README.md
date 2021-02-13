@@ -1,4 +1,4 @@
-# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](README.md)
+# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver 
 
 [Урок 01. Введение](Урок%2001.%20Введение/README.md)
 

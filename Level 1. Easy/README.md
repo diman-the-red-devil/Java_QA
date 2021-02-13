@@ -30,9 +30,9 @@
 
 [Урок 14. Нестандартные задачи 2. DevTools, Storage, Location, Proxy](1.%20Selenium%20WebDriver/Урок%2014.%20Нестандартные%20задачи%202.%20DevTools,%20Storage,%20Location,%20Proxy/README.md)
 
-## 1.2. Selenide
-
-Урок 01. Введение
+## 1.2. Selenide [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Selenide/README.md)
+                
+[Урок 01. Введение](2.%20Selenide/Урок%2001.%20Введение/README.md)
 
 Урок 02. Веб драйвер
 
