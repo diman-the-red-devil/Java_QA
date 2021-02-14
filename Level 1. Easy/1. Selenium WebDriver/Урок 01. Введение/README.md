@@ -21,6 +21,10 @@
            
 [2. История развития](./1.%20Лекция.md#2.-История-развития)
 
-[3. Принцип работы Selenium WebDriver](./1.%20Лекция.md#3.-Принцип-работы-Selenium-WebDriver)
+[3. Selenium 4.0](./1.%20Лекция.md#3.-Selenium-4.0)
+
+[4. Стандарт W3C WebDriver](./1.%20Лекция.md#4.-Стандарт-W3C-WebDriver)
+
+[5. Принцип работы Selenium WebDriver](./1.%20Лекция.md#5.-Принцип-работы-Selenium-WebDriver)
            
 ### Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Ссылки.md)

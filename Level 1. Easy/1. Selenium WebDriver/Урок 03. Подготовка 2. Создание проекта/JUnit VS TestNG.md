@@ -8,9 +8,12 @@
 
 ### 1. Настройка тестов
 
-**JUnit 5**
+**JUnit 5** предлагает инициализацию и очистку на двух уровнях:
 
-JUnit предлагает инициализацию и очистку на двух уровнях, до и после каждого метода и класса
+* до каждого метода *@BeforeEach*
+* после каждого метода  *@AfterEach*
+* до каждого класса *@BeforeAll*
+* после каждого класса  *@AfterAll*
 
 ```java
 public class Test {
@@ -47,9 +50,12 @@ public class Test {
 }
 ```
 
-**TestNG**
-
-TestNG также обеспечивает инициализацию и очистку на уровне метода и класса
+**TestNG** предлагает инициализацию и очистку на двух уровнях:
+                           
+* до каждого метода *@BeforeMethod*
+* после каждого метода  *@AfterMethod*
+* до каждого класса *@BeforeClass*
+* после каждого класса  *@AfterClass*
 
 ```java
 public class Test {
@@ -86,7 +92,12 @@ public class Test {
 }
 ```
 
-TestNG также предлагает аннотации @BeforeSuite, @AfterSuite, @BeforeGroup и @AfterGroup для конфигураций на уровне комплектов и групп: 
+**TestNG** дополнительно предлагает аннотации для конфигураций на уровне комплектов и групп:
+
+* до каждого комплекта *@BeforeSuite*
+* после каждого комплекта *@AfterSuite*
+* до каждой группы *@BeforeGroup*
+* после каждой группы *@AfterGroup*
 
 ```java
 public class Test {
@@ -104,11 +115,11 @@ public class Test {
 }
 ```
 
-2. Игнорирование тестов
+***
 
-**JUnit 5**
+### 2. Игнорирование тестов
 
-JUnit 5 использует @Disabled
+**JUnit 5** использует для игнорирования тестов *@Disabled("message")* 
 
 ```java
 public class Test {
@@ -121,13 +132,11 @@ public class Test {
 }
 ```
 
-**TestNG**
-
-TestNG использует @Test с параметром «enabled» с логическим значением true или false
+**TestNG** использует для игнорирования тестов *@Test(enabled = value)*
 
 ```java
 public class Test {
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void givenNumbers__sumEquals__thenCorrect() {
         int sum = numbers.stream.reduce(0, Integer::sum);
         Assert.assertEquals(6, sum);
@@ -135,14 +144,13 @@ public class Test {
 }
 ```
 
-3. Группировка тестов
+***
 
-**JUnit 5**
+### 3. Группировка тестов
 
-JUnit 5 использует @RunWith, @SelectPackages и @SelectClasses для группировки тестов и запуска их как набор.
-Набор представляет собой набор тестов, которые можно сгруппировать и запустить как одиночный тест.
+**JUnit 5** использует для группировки тестов *@RunWith* вместе *@SelectPackages* и *@SelectClasses*.
 
-Если нужно сгруппировать тесты разных пакетов для совместной работы - @SelectPackages
+Если нужно сгруппировать тесты разных пакетов совместно *@SelectPackages({packageName1, packageName2, ...})*
 
 ```java
 @RunWith(JUnitPlatform.class)
@@ -152,7 +160,7 @@ public class SelectPackagesSuiteUnitTest {
 }
 ```
 
-Если нужно сгруппировать определенные классы - @SelectClasses
+Если нужно сгруппировать определенные классы *@SelectClasses({Class1.class, Class2.class, ...})*
 
 ```java
 @RunWith(JUnitPlatform.class)
@@ -162,11 +170,7 @@ public class SelectClassesSuiteUnitTest {
 }
 ```
 
-**TestNG**
-
-TestNG использует файл XML, чтобы группировать тесты
-
-XML для выполнения группы определенных классов
+**TestNG** использует для группировки тестов файл XML
 
 ```xml
 <suite name="suite">
@@ -179,7 +183,7 @@ XML для выполнения группы определенных класс
 </suite>
 ```
 
-TestNG также может группировать методы, используя аннотацию @Test(groups = ”groupName”)
+**TestNG** использует для группировки методов *@Test(groups = ”groupName”)*
 
 ```java
 public class Test {
@@ -191,8 +195,6 @@ public class Test {
 }
 ```
     
-XML для выполнения групп методов
-
 ```xml
 <test name="test groups">
     <groups>
@@ -201,17 +203,16 @@ XML для выполнения групп методов
         </run>
     </groups>
     <classes>
-        <class
-          name="com.baeldung.SummationServiceTest"/>
+        <class name="com.baeldung.SummationServiceTest"/>
     </classes>
 </test>
 ```
 
-4. Обработка исключения в тестах
+***
 
-**JUnit 5**
+### 4. Исключения в тестах
 
-JUnit 5 использует __assertThrows__API для проверки исключений
+**JUnit 5** использует для проверки исключений *assertThrows*
 
 ```java
 public class Test {
@@ -223,9 +224,7 @@ public class Test {
 }
 ```
 
-**TestNG**
-
-TestNG использует @Test(expectName = ExceptionName.class) для проверки исключений
+**TestNG** использует для проверки исключений *@Test(expectedExceptions = ExceptionName.class)* 
 
 ```java
 public class Test {
@@ -236,11 +235,11 @@ public class Test {
 }
 ```
 
-5. Тесты по тайм ауту
+***
 
-**JUnit 5**
+### 5. Тайм ауты в тестах
 
-JUnit 5 используется метод assertTimeout
+**JUnit 5** использует для проверки с таймаутами *assertTimeout*
 
 ```java
 public class Test {
@@ -251,9 +250,7 @@ public class Test {
 }
 ```
 
-**TestNG**
-
-TestNG используется @Test(timeout = 1000)
+**TestNG** использует для проверки с таймаутами *@Test(timeout = value)*
 
 ```java
 public class Test {
@@ -264,13 +261,13 @@ public class Test {
 }
 ```
 
-6. Параметризованные тесты
+***
 
-**JUnit 5**
+### 6. Параметры в тестах
 
-JUnit 5 использует @ParameterizedTest и аргументы данных непосредственно из сконфигурированного источника
+**JUnit 5** использует для параметризации тестов *@ParameterizedTest* и аргументы данных непосредственно из сконфигурированного источника
 
-@ValueSource - массив значений типов Short, Byte, Int, Long, Float, Double, Char, и String в качестве источника для параметров
+*@ValueSource(type = {value1, value2, ...})* - массив значений типов Short, Byte, Int, Long, Float, Double, Char, и String в качестве источника для параметров
 
 ```java
 public class Test {
@@ -282,7 +279,7 @@ public class Test {
 }
 ```
 
-@EnumSource - константы из enum как параметры теста в качестве источника для параметров
+*@EnumSource(value = Enum.class, names = {"const1", "const2", ...})* - константы из enum как параметры теста в качестве источника для параметров
 
 ```java
 public class Test {
@@ -294,7 +291,7 @@ public class Test {
 }
 ```
 
-@MethodSource - внешние методы, генерирующие потоки в качестве источника для параметров
+*@MethodSource("methodName")* - внешние методы, генерирующие потоки в качестве источника для параметров
 
 ```java
 public class Provider {
@@ -312,7 +309,7 @@ public class Test {
 }
 ```
 
-@CsvSource – значения CSV в качестве источника для параметров
+*@CsvSource({"values1", "values2", ...})* – значения CSV в качестве источника для параметров
 
 ```java
 public class Test {
@@ -327,12 +324,10 @@ public class Test {
 
 Также есть другие источники, такие как  
 
-* @CsvFileSource - CSV-файл из classpath 
-* @ArgumentSource - пользовательский, многократно используемый ArgumentsProvider
+* *@CsvFileSource* - CSV-файл из classpath 
+* *@ArgumentSource* - пользовательский, многократно используемый ArgumentsProvider
 
-**TestNG**
-
-TestNG можно параметризовать тесты, используя @Parameter или @DataProvider. 
+**TestNG** для параметризации тестов использует *@Parameters({"paramName1", "paramName2", ...})* и данные из файла XML 
 
 ```java
 public class Test {
@@ -344,7 +339,6 @@ public class Test {
     }
 }
 ```
-При использовании файла XML аннотируйте метод теста с помощью @Parameter
 
 ```xml
 <suite name="My test suite">
@@ -358,15 +352,19 @@ public class Test {
 </suite>
 ```
 
-можем использовать аннотацию @DataProvider, которая позволяет нам отображать сложные типы параметров для методов тестирования.
+**TestNG** для отображения сложных типов параметров использует *@DataProvider(name = "dataProviderName")*.
 
-@DataProvider для примитивных типов данных
+*@DataProvider(name = "dataProviderName")* для примитивных типов данных
 
 ```java
 public class Provider {
     @DataProvider(name = "numbers")
     public static Object[][]evenNumbers() {
-        return new Object[][]{{1, false}, {2, true}, {4, true}};
+        return new Object[][]{
+            {1, false}, 
+            {2, true}, 
+            {4, true}
+        };
     }
 
     @Test(dataProvider = "numbers")
@@ -377,14 +375,17 @@ public class Provider {
 }
 ```
 
-@DataProvider для объектов
+*@DataProvider(name = "dataProviderName")* для объектов
 
 ```java
 public class Test {
     @DataProvider(name = "numbersObject")
-    public Object[][]parameterProvider() {
-        return new Object[][]{{new EvenNumber(1, false)},
-          {new EvenNumber(2, true)}, {new EvenNumber(4, true)}};
+    public Object[][] parameterProvider() {
+        return new Object[][]{
+            {new EvenNumber(1, false)},
+            {new EvenNumber(2, true)}, 
+            {new EvenNumber(4, true)}
+        };
     }
 
     @Test(dataProvider = "numbersObject")
@@ -397,19 +398,19 @@ public class Test {
 
 Таким же образом любые конкретные объекты, которые должны быть проверены, могут быть созданы и возвращены с использованием поставщика данных. 
 
-7. Порядок выполнения тестов
+***
 
-**JUnit 5**
+### 7. Порядок выполнения тестов
 
-JUnit 5 @TestMethodOrder и передать тип метода orderer в качестве аргумента. 
-Начиная с JUnit 5.4 есть три встроенных метода заказа: OrderAnnotation, Alphanumeric и Random
+**JUnit 5** для установки порядка выполнения тестов использует *@TestMethodOrder(MethodOrderer."Orderer.class")*. 
 
-MethodOrderer.OrderAnnotation.class использует порядок по тегу @Order 
+Начиная с JUnit 5.4 есть три встроенных класса *MethodOrderer*: *OrderAnnotation.class*, *Alphanumeric.class* и *Random.class*.
+
+*MethodOrderer.OrderAnnotation.class* использует порядок по тегу *@Order*
 
 ```java
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class TestExecutionOrderWithOrderAnnotation {
- 
     @Order(1)
     @Test
     void aTest() {}
@@ -421,16 +422,14 @@ class TestExecutionOrderWithOrderAnnotation {
     @Order(3)
     @Test
     void cTest() {}
- 
 }
 ```
 
-MethodOrderer.Alphanumeric.class использует буквенно-цифровой порядок
+*MethodOrderer.Alphanumeric.class* использует буквенно-цифровой порядок
 
 ```java
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 class AlphanumericTestExecutionOrder {
- 
     @Test
     void aTest() {}
  
@@ -439,16 +438,14 @@ class AlphanumericTestExecutionOrder {
  
     @Test
     void cTest() {}
- 
 }
 ```
 
-MethodOrderer.Random.class - случайный порядок
+*MethodOrderer.Random.class* использует случайный порядок
 
 ```java
 @TestMethodOrder(MethodOrderer.Random.class)
 class AlphanumericTestExecutionOrder {
- 
     @Test
     void aTest() {}
  
@@ -457,13 +454,10 @@ class AlphanumericTestExecutionOrder {
  
     @Test
     void cTest() {}
- 
 }
 ```
 
-**TestNG**
-
-TestNG использует параметр priority в @Test
+**TestNG** для установки порядка выполнения тестов использует параметр  *@Test(priority = value)*
 
 ```java
 @Test(priority = 1)
@@ -479,6 +473,8 @@ public void givenInt__whenChangedToString__thenCorrect() {
 }
 ```
 
+***
+
 Методы assert* в JUnit и TestNG
 
-![Сравнение assert методов JUnit и TestNG](./_Files/6.%20JUnit5/_18.jpg "Сравнение assert методов JUnit и TestNG")
+![Сравнение assert методов JUnit и TestNG](./_Files/1.%20JUnit5/_18.jpg "Сравнение assert методов JUnit и TestNG")
