@@ -19,7 +19,11 @@
 
 ### Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
            
+[1. Драйвер браузера](1.%20Лекция.md#1.-Драйвер-браузера)
 
+[2. Интерфейс WebDriver](1.%20Лекция.md#2.-Интерфейс-WebDriver)
+
+[3. WebDriverFactory](1.%20Лекция.md#3.-WebDriverFactory)
 
 ### Практика [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Практика.md)
 

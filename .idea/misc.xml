@@ -7,10 +7,12 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Level 1. Easy/1. Selenium WebDriver/Урок 02. Веб драйвер/_Sample/pom.xml" />
+        <option value="$PROJECT_DIR$/Level 1. Easy/1. Selenium WebDriver/Урок 04. Веб драйвер 1. Основы/_Sample/pom.xml" />
+        <option value="$PROJECT_DIR$/Level 1. Easy/1. Selenium WebDriver/Урок 03. Подготовка 2. Создание проекта/_Sample/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="15" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="15" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
