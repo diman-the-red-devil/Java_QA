@@ -19,8 +19,11 @@
 ### Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
            
 [1. Зачем нужно конфигурировать браузер при старте?](1.%20Лекция.md#1.-Зачем-нужно-конфигурировать-браузер-при-старте?)
+
 [2. Интерфейс WebDriver.Options](1.%20Лекция.md#2.-Интерфейс-WebDriver.Options)
+
 [3. Интерфейс Capabilities](1.%20Лекция.md#3.-Интерфейс-Capabilities)
+
 [4. Browser Options](1.%20Лекция.md#3.-4.-Browser-Options)
 
 ### Практика [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Практика.md)
