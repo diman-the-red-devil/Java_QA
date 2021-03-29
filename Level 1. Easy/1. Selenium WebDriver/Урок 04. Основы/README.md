@@ -1,4 +1,4 @@
-# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 04. Веб драйвер 1. Основы
+# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 04. Основы
 
 ## Цель
 

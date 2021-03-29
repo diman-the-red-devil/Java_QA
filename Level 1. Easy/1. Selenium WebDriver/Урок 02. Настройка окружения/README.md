@@ -1,4 +1,4 @@
-# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 02. Подготовка 1. Настройка окружения
+# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 02. Настройка окружения
 
 ## Цель
 

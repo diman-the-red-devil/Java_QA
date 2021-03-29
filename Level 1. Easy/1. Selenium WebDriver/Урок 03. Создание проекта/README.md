@@ -1,4 +1,4 @@
-# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 03. Подготовка 2. Создание проекта
+# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 03. Создание проекта
 
 ## Цель
 

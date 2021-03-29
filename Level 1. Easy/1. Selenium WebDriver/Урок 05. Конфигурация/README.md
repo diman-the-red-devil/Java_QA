@@ -1,4 +1,4 @@
-# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 05. Веб драйвер 2. Конфигурация
+# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 05. Конфигурация
 
 ## Цель
 
