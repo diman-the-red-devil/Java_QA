@@ -1,4 +1,4 @@
-# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 06. Локаторы 1. CSS
+# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 06. Локаторы
 
 ## Цель
 
@@ -14,7 +14,9 @@
 
 ## Содержание
 
-[1. Document Object Model (DOM)](1.%20Лекция.md#1.-Document-Object-Model-(DOM))
+### Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
+
+[1. Document Object Model (DOM)](1.%20Лекция.md#1.-XML,-HTML,-DOM)
 
 [2. Команды поиска веб элементов](1.%20Лекция.md#2.-Команды-поиска-веб-элементов)
 
@@ -23,10 +25,6 @@
 [4. Исключения](1.%20Лекция.md#4.-Исключения)
 
 [5. Правила](1.%20Лекция.md#5.-Правила)
-
-### Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
-
-[](1.%20Лекция.md#)
 
 ### Практика [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Практика.md)
 
