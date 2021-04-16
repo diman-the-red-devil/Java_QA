@@ -2,8 +2,13 @@
 
 ## Цель
 
-
-
+Actions
+JS
+Select org.openqa.selenium.support.ui
+WebDriverListener org.openqa.selenium.support.events
+Color org.openqa.selenium.support
+org.openqa.selenium.print
+org.openqa.selenium.events
 ***
 
 ## Результаты

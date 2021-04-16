@@ -2,6 +2,10 @@
 
 ## Цель
 
+DevTools
+Storage
+Location 
+Proxy
 
 
 ***
