@@ -2,15 +2,19 @@
 
 ## Цель
 
-Implicit Waits Explicit Waits
+Implicit Waits 
+Explicit Waits
+Fluet Waits
 Expected Conditions
 PageLoadStrategy
+Thread.sleep
 применять явные и неявные ожидания для повышения стабильности тестов и осуществления сложных проверок.
 ***
 
 ## Результаты
 
-Умение работать с ожиданиями
+Умение различать явные и неявные ожидания
+Умение работать Expected Conditions
 
 ***
 
