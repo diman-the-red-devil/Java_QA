@@ -1,21 +1,21 @@
-# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 01. Введение
+Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 01. Введение
 
-## Цель
+# Цель
 
 1. Узнать что из себя представляет Selenium WebDriver
 2. Понять принцип работы Selenium WebDriver
 
 ***
 
-## Результаты 
+# Результаты 
 
 1. Первое знакомство с Selenium WebDriver
 
 ***
 
-## Содержание
+# Содержание
 
-### Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
+## Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
 
 [1. Что такое Selenium?](./1.%20Лекция.md#1.-Что-такое-Selenium?)   
            
@@ -29,4 +29,4 @@
 
 [6. Команды Selenium WebDriver](./1.%20Лекция.md#6.-Команды-Selenium-WebDriver)
            
-### Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Ссылки.md)
+## Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Ссылки.md)
