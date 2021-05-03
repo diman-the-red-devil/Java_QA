@@ -1,4 +1,4 @@
-# Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver 
+Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver 
 
 [Урок 01. Введение](Урок%2001.%20Введение/README.md)
 
