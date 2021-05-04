@@ -1,12 +1,12 @@
-# Java_QA
+Java_QA
 
-## _Start [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](_Start/README.md)
+# _Start [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](_Start/README.md)
 
 [Урок 00. Автоматизация тестирования](_Start/README.md)
 
-## Level 0. Zero - Подготовка [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/README.md) 
+# Level 0. Zero - Подготовка [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/README.md)
 
-### 0.1. Git [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/1.%20Git/README.md)
+## 0.1. Git [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/1.%20Git/README.md)
 
 [Урок 01. Введение](Level%200.%20Zero/1.%20Git/Урок%2001.%20Введение/README.md)
 
@@ -22,11 +22,11 @@
 
 Урок 07. GitFlow
 
-### 0.2. Java [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/2.%20Java/README.md)
+## 0.2. Java [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/2.%20Java/README.md)
 
 [Урок 01. Введение](Level%200.%20Zero/2.%20Java/Урок%2001.%20Введение/README.md)
 
-Урок 02. Структура программы, переменные, константы 
+Урок 02. Структура программы, переменные, константы
 
 Урок 03. Типы данных, преобразования базовых типов данных
 
@@ -36,7 +36,7 @@
 
 Урок 06. Классы, объекты
 
-Урок 07. Методы, параметры методов, перегрузка методов 
+Урок 07. Методы, параметры методов, перегрузка методов
 
 Урок 08. Пакеты, модификаторы доступа
 
@@ -72,7 +72,7 @@
 
 Урок 24. Строки, даты, математика
 
-### 0.3. Maven [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/3.%20Maven/README.md)
+## 0.3. Maven [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%200.%20Zero/3.%20Maven/README.md)
 
 [Урок 01. Введение](Level%200.%20Zero/3.%20Maven/Урок%2001.%20Введение/README.md)
 
@@ -84,15 +84,15 @@
 
 Урок 05. Конфигурация
 
-## Level 1. Easy - Основы [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%201.%20Easy/README.md) 
+# Level 1. Easy - Основы [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%201.%20Easy/README.md)
 
-### 1.1. Selenium WebDriver [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%201.%20Easy/1.%20Selenium%20WebDriver/README.md)
+## 1.1. Selenium WebDriver [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%201.%20Easy/1.%20Selenium%20WebDriver/README.md)
 
 [Урок 01. Введение](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2001.%20Введение/README.md)
 
-[Урок 02. Настройка окружения](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2002.%20Настройка%20окружения/README.md)
+[Урок 02. Окружение](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2002.%20Окружение/README.md)
 
-[Урок 03. Создание проекта](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2003.%20Создание%20проекта/README.md)
+[Урок 03. Проект](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2003.%20Проект/README.md)
 
 [Урок 04. Основы](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2004.%20Основы/README.md)
 
@@ -108,39 +108,51 @@
 
 [Урок 10. Протоколирование](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2010.%20Протоколирование/README.md)
 
-[Урок 13. Нестандартные задачи 1. Actions, JS](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2013.%20Нестандартные%20задачи%201.%20Actions,%20JS/README.md)
+[Урок 11. Запуск](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2011.%20Запуск/README.md)
 
-[Урок 14. Нестандартные задачи 2. DevTools, Storage, Location, Proxy](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2014.%20Нестандартные%20задачи%202.%20DevTools,%20Storage,%20Location,%20Proxy/README.md)
+[Урок 12. Нестандартные задачи](Level%201.%20Easy/1.%20Selenium%20WebDriver/Урок%2012.%20Нестандартные%20задачи/README.md)
 
-### 1.2. Selenide [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%201.%20Easy/2.%20Selenide/README.md)
+## 1.2. Selenide [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%201.%20Easy/2.%20Selenide/README.md)
 
 [Урок 01. Введение](Level%201.%20Easy/2.%20Selenide/Урок%2001.%20Введение/README.md)
 
-Урок 02. Веб драйвер
+[Урок 02. Окружение](Level%201.%20Easy/2.%20Selenide/Урок%2002.%20Окружение/README.md)
 
-Урок 03. Локаторы
+[Урок 03. Проект](Level%201.%20Easy/2.%20Selenide/Урок%2003.%20Проект/README.md)
 
-Урок 04. Веб элементы
+[Урок 04. Основы](Level%201.%20Easy/2.%20Selenide/Урок%2004.%20Основы/README.md)
 
-Урок 05. Ожидания
+[Урок 05. Конфигурация](Level%201.%20Easy/2.%20Selenide/Урок%2005.%20Конфигурация/README.md)
 
-Урок 06. Окна
+[Урок 06. Локаторы](Level%201.%20Easy/2.%20Selenide/Урок%2006.%20Локаторы/README.md)
 
-Урок 07. Куки, логи, скриншоты
+[Урок 07. Веб элементы](Level%201.%20Easy/2.%20Selenide/Урок%2007.%20Веб%20элементы/README.md)
 
-Урок 08. Нестандартные задачи
+[Урок 08. Ожидания](Level%201.%20Easy/2.%20Selenide/Урок%2008.%20Ожидания/README.md)
 
-## Level 2. Medium - Продвинутые темы [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/README.md)
+[Урок 09. Окна](Level%201.%20Easy/2.%20Selenide/Урок%2009.%20Окна/README.md)
 
-### 2.1. Паттерны [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/1.%20Паттерны/README.md)
+[Урок 10. Протоколирование](Level%201.%20Easy/2.%20Selenide/Урок%2010.%20Протоколирование/README.md)
+
+[Урок 11. Запуск](Level%201.%20Easy/2.%20Selenide/Урок%2011.%20Запуск/README.md)
+
+[Урок 12. Нестандартные задачи](Level%201.%20Easy/2.%20Selenide/Урок%2012.%20Нестандартные%20задачи/README.md)
+
+# Level 2. Medium - Продвинутые темы [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/README.md)
+
+## 2.1. Паттерны [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/1.%20Паттерны/README.md)
 
 [Урок 01. Введение](Level%202.%20Medium/1.%20Паттерны/Урок%2001.%20Введение/README.md)
 
-Урок 02. PageObject
+[Урок 02. Структурные паттерны](Level%202.%20Medium/1.%20Паттерны/Урок%2002.%20Структурные%20паттерны/README.md)
 
-Урок 03. PageFactory
+[Урок 03. Паттерны данных](Level%202.%20Medium/1.%20Паттерны/Урок%2003.%20Паттерны%20данных/README.md)
 
-### 2.2. BDD тесты [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/2.%20BDD%20тесты/README.md)
+[Урок 04. Технические паттерны](Level%202.%20Medium/1.%20Паттерны/Урок%2004.%20Технические%20паттерны/README.md)
+
+[Урок 05. Бизнес паттерны](Level%202.%20Medium/1.%20Паттерны/Урок%2005.%20Бизнес%20паттерны/README.md)
+
+## 2.2. BDD тесты [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/2.%20BDD%20тесты/README.md)
 
 [Урок 01. Введение](Level%202.%20Medium/2.%20BDD%20тесты/Урок%2001.%20Введение/README.md)
 
@@ -148,7 +160,7 @@
 
 Урок 03. Cucumber + POM
 
-### 2.3. API тесты [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/3.%20API%20тесты/README.md)
+## 2.3. API тесты [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%202.%20Medium/3.%20API%20тесты/README.md)
 
 [Урок 01. Введение](Level%202.%20Medium/3.%20API%20тесты/Урок%2001.%20Введение/README.md)
 
@@ -156,9 +168,9 @@
 
 Урок 03. API хелперы в UI тестах
 
-## Level 3. Hard - Высший пилотаж [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/README.md)
+# Level 3. Hard - Высший пилотаж [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/README.md)
 
-### 3.1. Запуск [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/1.%20Запуск/README.md)
+## 3.1. Запуск [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/1.%20Запуск/README.md)
 
 [Урок 01. Введение](Level%203.%20Hard/1.%20Запуск/Урок%2001.%20Введение/README.md)
 
@@ -166,7 +178,7 @@
 
 Урок 03. Selenoid
 
-### 3.2. Отчеты [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/2.%20Отчеты/README.md)
+## 3.2. Отчеты [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/2.%20Отчеты/README.md)
 
 [Урок 01. Введение](Level%203.%20Hard/2.%20Отчеты/Урок%2001.%20Введение/README.md)
 
@@ -174,7 +186,7 @@
 
 Урок 03. Report Portal
 
-### 3.3. CI/CD [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/3.%20CI%20CD/README.md)
+## 3.3. CI/CD [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/3.%20CI%20CD/README.md)
 
 [Урок 01. Введение](Level%203.%20Hard/3.%20CI%20CD/Урок%2001.%20Введение/README.md)
 
@@ -184,7 +196,7 @@
 
 Урок 04. Собираем все вместе
 
-### 3.4. Заглушки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/4.%20Заглушки/README.md)
+## 3.4. Заглушки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](Level%203.%20Hard/4.%20Заглушки/README.md)
 
 [Урок 01. Введение](Level%203.%20Hard/4.%20Заглушки/Урок%2001.%20Введение/README.md)
 
