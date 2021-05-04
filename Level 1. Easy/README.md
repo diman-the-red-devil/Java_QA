@@ -4,9 +4,9 @@
 
 [Урок 01. Введение](1.%20Selenium%20WebDriver/Урок%2001.%20Введение/README.md)
 
-[Урок 02. Настройка окружения](1.%20Selenium%20WebDriver/Урок%2002.%20Настройка%20окружения/README.md)
+[Урок 02. Окружение](1.%20Selenium%20WebDriver/Урок%2002.%20Окружение/README.md)
 
-[Урок 03. Создание проекта](1.%20Selenium%20WebDriver/Урок%2003.%20Создание%20проекта/README.md)
+[Урок 03. Проект](1.%20Selenium%20WebDriver/Урок%2003.%20Проект/README.md)
 
 [Урок 04. Основы](1.%20Selenium%20WebDriver/Урок%2004.%20Основы/README.md)
 
@@ -22,12 +22,12 @@
 
 [Урок 10. Протоколирование](1.%20Selenium%20WebDriver/Урок%2010.%20Протоколирование/README.md)
 
-[Урок 13. Нестандартные задачи 1. Actions, JS](1.%20Selenium%20WebDriver/Урок%2013.%20Нестандартные%20задачи%201.%20Actions,%20JS/README.md)
+[Урок 11. Запуск](1.%20Selenium%20WebDriver/Урок%2011.%20Запуск/README.md)
 
-[Урок 14. Нестандартные задачи 2. DevTools, Storage, Location, Proxy](1.%20Selenium%20WebDriver/Урок%2014.%20Нестандартные%20задачи%202.%20DevTools,%20Storage,%20Location,%20Proxy/README.md)
+[Урок 12. Нестандартные задачи](1.%20Selenium%20WebDriver/Урок%2012.%20Нестандартные%20задачи/README.md)
 
 ## 1.2. Selenide [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Selenide/README.md)
-                
+
 [Урок 01. Введение](2.%20Selenide/Урок%2001.%20Введение/README.md)
 
 Урок 02. Веб драйвер
