@@ -1,47 +1,0 @@
-
-;
-java:S5786e"Remove this 'public' modifier.(ŸÚïÂ8èÁğ‹‰/
-J
-java:S2699"-Add at least one assertion to this test case.(¬Øã½8Êô•âˆ/
-J
-java:S2699e"-Add at least one assertion to this test case.(ŸÚïÂ8èÁğ‹‰/
-J
-java:S2699&"-Add at least one assertion to this test case.(Îƒ®Ì8âè¥êˆ/
-A
-java:S2925v"$Remove this use of "Thread.sleep()".(ø¸¼8÷øï‹‰/
-;
-java:S5786G"Remove this 'public' modifier.(±Ÿ Ò8´ŒŠìˆ/
-A
-java:S2925^"$Remove this use of "Thread.sleep()".(ø¸¼8şÁº‹‰/
-B
-java:S2925"$Remove this use of "Thread.sleep()".(ø¸¼8‚¸€‰/
-@
-java:S5786"Remove this 'public' modifier.(õã¼Ÿıÿÿÿÿ8Êô•âˆ/
-:
-java:S5786>"Remove this 'public' modifier.(ÉœÛ8¬°‡ìˆ/
-A
-java:S2925."$Remove this use of "Thread.sleep()".(ø¸¼8ÆËçêˆ/
-;
-java:S5786"Remove this 'public' modifier.(¬Øã½8Êô•âˆ/
-I
-java:S2699>"-Add at least one assertion to this test case.(ÉœÛ8°³Öëˆ/
-A
-java:S2925O"$Remove this use of "Thread.sleep()".(ø¸¼8ÁµëŠ‰/
-@
-java:S57865"Remove this 'public' modifier.(¢–×ÿÿÿÿÿ8´¢–ëˆ/
-;
-java:S5786V"Remove this 'public' modifier.(¢û£Ü8ªìº‹‰/
-J
-java:S2699G"-Add at least one assertion to this test case.(±Ÿ Ò8´ŒŠìˆ/
-;
-java:S5786}"Remove this 'public' modifier.( Ô²8Ê°‰/
-A
-java:S2925"$Remove this use of "Thread.sleep()".(ø¸¼8Áçêˆ/
-;
-java:S5786&"Remove this 'public' modifier.(Îƒ®Ì8âè¥êˆ/
-J
-java:S2699V"-Add at least one assertion to this test case.(¢û£Ü8ªìº‹‰/
-J
-java:S2699}"-Add at least one assertion to this test case.( Ô²8Ê°‰/
-O
-java:S26995"-Add at least one assertion to this test case.(¢–×ÿÿÿÿÿ8´¢–ëˆ/
