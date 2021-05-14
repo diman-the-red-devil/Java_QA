@@ -1,0 +1,19 @@
+
+:
+java:S2925$"$Remove this use of "Thread.sleep()".(öÍËè
+:
+java:S2925C"$Remove this use of "Thread.sleep()".(öÍËè
+C
+java:S26990"-Add at least one assertion to this test case.(¯Æ´×
+4
+java:S5786O"Remove this 'public' modifier.(‹Èö†
+4
+java:S5786"Remove this 'public' modifier.(†ÚëÜ
+4
+java:S57860"Remove this 'public' modifier.(¯Æ´×
+C
+java:S2699O"-Add at least one assertion to this test case.(‹Èö†
+H
+java:S2699"-Add at least one assertion to this test case.(”‡ìüÿÿÿÿ
+9
+java:S5786"Remove this 'public' modifier.(”‡ìüÿÿÿÿ
