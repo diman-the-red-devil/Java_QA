@@ -1,6 +1,5 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.checkerframework.checker.nullness.qual.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -54,7 +53,9 @@ public class CustomExpectedConditionTest {
         logger.info("Нажата кнопка [CLICK ME!] в блоке [JavaScript Alert]");
         // Подождать пока появится алерт
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
-        wait.until(new ExpectedCondition<Alert>() {
+        wait.until(
+            // Анонимный класс new ExpectedCondition<Alert>()
+            new ExpectedCondition<Alert>() {
             @Override
             public Alert apply(WebDriver input) {
                 try {

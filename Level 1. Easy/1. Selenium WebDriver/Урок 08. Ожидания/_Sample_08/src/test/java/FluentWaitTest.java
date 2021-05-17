@@ -40,7 +40,6 @@ public class FluentWaitTest {
         wait.until(ExpectedConditions.alertIsPresent());
         logger.info("Алерт отобразился!");
 
-
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {

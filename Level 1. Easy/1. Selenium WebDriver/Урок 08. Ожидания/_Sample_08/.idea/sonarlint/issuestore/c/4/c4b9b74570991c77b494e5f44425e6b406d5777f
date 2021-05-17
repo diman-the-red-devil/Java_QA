@@ -1,15 +1,15 @@
 
-:
-java:S2925'"$Remove this use of "Thread.sleep()".(öÍËè
 A
-java:S2925F"$Remove this use of "Thread.sleep()".(öÍËè8µ¡öÌ–/
-;
-java:S5786."Remove this 'public' modifier.(òğõ×8µÉöÌ–/
+java:S2925G"$Remove this use of "Thread.sleep()".(öÍËè8µ¡öÌ–/
 9
-java:S5786"Remove this 'public' modifier.(Äšº€şÿÿÿÿ
-H
-java:S2699"-Add at least one assertion to this test case.(¤¨Ïµÿÿÿÿÿ
+java:S5786"Remove this 'public' modifier.(¤¨Ïµÿÿÿÿÿ
+9
+java:S5786"Remove this 'public' modifier.(Äšº€şÿÿÿÿ
+:
+java:S2925&"$Remove this use of "Thread.sleep()".(öÍËè
 J
-java:S2699."-Add at least one assertion to this test case.(òğõ×8µÉöÌ–/
-9
-java:S5786"Remove this 'public' modifier.(¤¨Ïµÿÿÿÿÿ
+java:S2699-"-Add at least one assertion to this test case.(òğõ×8µÉöÌ–/
+;
+java:S5786-"Remove this 'public' modifier.(òğõ×8µÉöÌ–/
+H
+java:S2699"-Add at least one assertion to this test case.(¤¨Ïµÿÿÿÿÿ

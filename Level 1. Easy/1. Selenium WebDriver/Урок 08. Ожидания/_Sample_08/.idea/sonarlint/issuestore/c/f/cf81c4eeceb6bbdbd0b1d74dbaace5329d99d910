@@ -1,9 +1,9 @@
 
-@
-java:S5786"Remove this 'public' modifier.(Ãƒƒïøÿÿÿÿ8çÁÌÕ–/
 O
 java:S2699"-Add at least one assertion to this test case.(Ãƒƒïøÿÿÿÿ8çÁÌÕ–/
 @
 java:S5786"Remove this 'public' modifier.(âíé·şÿÿÿÿ8çÁÌÕ–/
+@
+java:S5786"Remove this 'public' modifier.(Ãƒƒïøÿÿÿÿ8çÁÌÕ–/
 A
-java:S2925-"$Remove this use of "Thread.sleep()".(öÍËè8çÁÌÕ–/
+java:S2925,"$Remove this use of "Thread.sleep()".(öÍËè8çÁÌÕ–/
