@@ -51,6 +51,9 @@ public class BrowserOptionsTest {
     }
 
     public WebDriver getDriver() {
+        // Добавление свойств браузера Google Chrome (настройки сессии)
+
+        // а) с помощью класса DesiredCapabilities (устаревший способ) и строковых параметров
         /*
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platform", "windows");
@@ -61,6 +64,7 @@ public class BrowserOptionsTest {
         return new ChromeDriver(capabilities);
         */
 
+        // б) с помощью класса DesiredCapabilities (устаревший способ) и констант перечисления CapabilityType
         /*
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);
@@ -71,6 +75,7 @@ public class BrowserOptionsTest {
         return new ChromeDriver(capabilities);
         */
 
+        // в) с помощью класса **ChromeOptions** (правильный способ) и констант перечисления CapabilityType
         ChromeOptions options = new ChromeOptions();
         options.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);
         options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.DISMISS);
@@ -78,6 +83,7 @@ public class BrowserOptionsTest {
         options.setAcceptInsecureCerts(false);
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
+        // Добавление аргументов запуска Google Chrome
         options.addArguments("--start-maximized");
         options.addArguments("--incognito");
 

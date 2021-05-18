@@ -28,6 +28,7 @@ public class LogsTest {
         driver.get("https://yandex.ru/");
         logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
 
+        // Вывод логов браузера
         logger.info("Логи браузера");
         Logs logs = driver.manage().logs();
         LogEntries logEntries = logs.get(LogType.BROWSER);

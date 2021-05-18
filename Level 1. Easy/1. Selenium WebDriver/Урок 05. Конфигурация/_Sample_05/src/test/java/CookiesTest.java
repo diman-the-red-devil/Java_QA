@@ -8,9 +8,9 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.Set;
 
-public class CookieTest {
+public class CookiesTest {
     protected static WebDriver driver;
-    private Logger logger = LogManager.getLogger(CookieTest.class);
+    private Logger logger = LogManager.getLogger(CookiesTest.class);
 
     // Читаем передаваемый параметр browser (-Dbrowser)
     String env = System.getProperty("browser", "chrome");
@@ -27,6 +27,7 @@ public class CookieTest {
         driver.get("https://yandex.ru/");
         logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
 
+        // Создание куки Cookie 1 и вывод информации по нему
         logger.info("Куки, которое добавили мы");
         driver.manage().addCookie(new Cookie("Cookie 1", "This Is Cookie 1"));
         Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
@@ -37,6 +38,7 @@ public class CookieTest {
         logger.info(String.format("Value: %s",cookie1.getValue()));
         logger.info("--------------------------------------");
 
+        // Вывод информации по кукам yandex.ru
         logger.info("Куки, которое добавил Yandex");
         Set<Cookie> cookies = driver.manage().getCookies();
         for(Cookie cookie : cookies) {
