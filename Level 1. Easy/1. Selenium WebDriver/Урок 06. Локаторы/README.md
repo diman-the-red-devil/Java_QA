@@ -53,7 +53,7 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 06. 
 
 [9. Поиск элемента с помощью XPATH запроса](2.%20Практика.md#9.-Поиск-элемента-с-помощью-XPATH-запроса)
 
-[10. Итоговый код класса SearchTest.java](2.%20Практика.md#10.-Итоговый-код-класса-SearchTest.java)
+[10. Полный код SearchTest.java](2.%20Практика.md#10.-Полный-код-SearchTest.java)
 
 ## Задание [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](3.%20Задание.md)
 
