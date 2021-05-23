@@ -1,3 +1,4 @@
-SearchTest.class
 WebDriverFactory.class
-SearchElementsTest.class
+RelativeLocatorsTypesTest.class
+FindElementsTest.class
+SimpleLocatorsTypesTest.class
