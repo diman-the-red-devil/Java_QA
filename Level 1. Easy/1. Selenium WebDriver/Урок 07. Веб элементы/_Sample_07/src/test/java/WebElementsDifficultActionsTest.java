@@ -26,6 +26,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.id("click-box"));
+        // Левый клик мышью в текущей позиции
         Actions actions = new Actions(driver);
         actions
                 .moveToElement(element)
@@ -48,6 +49,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.id("click-box"));
+        // Левый клик мышью в центре элемента
         Actions actions = new Actions(driver);
         actions
                 .click(element)
@@ -69,6 +71,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.id("click-box"));
+        // Левый клик мышью c удержанием в текущей позиции
         Actions actions = new Actions(driver);
         actions
                 .moveToElement(element)
@@ -91,6 +94,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.id("click-box"));
+        // Левый клик мышью c удержанием в центре элемент
         Actions actions = new Actions(driver);
         actions
                 .clickAndHold(element)
@@ -112,6 +116,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.id("click-box"));
+        // Правый клик мышью в текущей позиции
         Actions actions = new Actions(driver);
         actions
                 .moveToElement(element)
@@ -131,6 +136,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.id("click-box"));
+        // Правый клик мышью в центре элемента
         Actions actions = new Actions(driver);
         actions
                 .contextClick(element)
@@ -149,6 +155,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.id("double-click"));
+        // Двойной клик мышью в текущей позиции
         Actions actions = new Actions(driver);
         actions
                 .moveToElement(element)
@@ -168,6 +175,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.id("double-click"));
+        // Двойной клик мышью в центре элемента
         Actions actions = new Actions(driver);
         actions
                 .doubleClick(element)
@@ -190,6 +198,7 @@ public class WebElementsDifficultActionsTest {
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement source = driver.findElement(By.id("draggable"));
         WebElement target = driver.findElement(By.id("droppable"));
+        // Перетаскивание объекта
         Actions actions = new Actions(driver);
         actions
                 .dragAndDrop(source, target)
@@ -212,6 +221,7 @@ public class WebElementsDifficultActionsTest {
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement source = driver.findElement(By.id("draggable"));
         WebElement target = driver.findElement(By.id("droppable"));
+        // Перетаскивание объекта со смещением
         Actions actions = new Actions(driver);
         actions
                 .dragAndDropBy(source, 80, 80)
@@ -233,6 +243,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Autocomplete-TextField/autocomplete-textfield.html");
         WebElement element = driver.findElement(By.id("myInput"));
+        // Нажатие и отпускание клавиши клавиатуры
         Actions actions = new Actions(driver);
         actions
                 .moveToElement(element)
@@ -254,6 +265,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Autocomplete-TextField/autocomplete-textfield.html");
         WebElement element = driver.findElement(By.id("myInput"));
+        // Нажатие и отпускание клавиши клавиатуры в элементе
         Actions actions = new Actions(driver);
         actions
                 .keyDown(element, Keys.SHIFT)
@@ -273,6 +285,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.xpath("//button[text()='Hover Over Me First!']"));
+        // Смещение мыши
         Actions actions = new Actions(driver);
         actions
                 .moveToElement(element)
@@ -293,6 +306,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.xpath("//button[text()='Hover Over Me Second!']"));
+        // Перемещение мыши в центр элемента
         Actions actions = new Actions(driver);
         actions
                 .moveToElement(element)
@@ -311,6 +325,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.xpath("//button[text()='Hover Over Me Second!']"));
+        // Перемещение мыши в центр элемента со смещением
         Actions actions = new Actions(driver);
         actions
                 .moveToElement(element, 0, 10)
@@ -329,6 +344,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.id("click-box"));
+        // Отпускание левой кнопки мыши
         Actions actions = new Actions(driver);
         actions
                 .clickAndHold(element)
@@ -349,6 +365,7 @@ public class WebElementsDifficultActionsTest {
         logger.info("Открыта страница webdriveruniversity.com - " +
                 "https://webdriveruniversity.com/Actions/index.html#");
         WebElement element = driver.findElement(By.id("click-box"));
+        // Отпускание левой кнопки мыши в центре элемента
         Actions actions = new Actions(driver);
         actions
                 .moveToElement(element)

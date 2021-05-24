@@ -22,6 +22,7 @@ public class WebElementPropertiesTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.id("FirstName"));
+        // Получение имени тега элемента
         String tagName = element.getTagName();
         logger.info("Tag Name: <" + tagName + ">");
         Assertions.assertTrue(tagName.equals("input"), "Значение tagName != input!");
@@ -33,6 +34,7 @@ public class WebElementPropertiesTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.id("FirstName"));
+        // Получение значения атрибута элемента
         String attributeValue = element.getAttribute("name");
         logger.info("Attribute Value: name = " + attributeValue);
         Assertions.assertTrue(attributeValue.equals("FirstName"), "Значение attributeValue != FirstName!");
@@ -44,6 +46,7 @@ public class WebElementPropertiesTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.id("FirstName"));
+        // Получение размеров (значения ширины и высоты) элемента
         Dimension size = element.getSize();
         int height = size.getHeight();
         int width = size.getWidth();
@@ -58,6 +61,7 @@ public class WebElementPropertiesTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.id("FirstName"));
+        // Получение положения верхнего левого угла (значения координат x, y) элемента
         Point location = element.getLocation();
         int x = location.getX();
         int y = location.getY();
@@ -72,6 +76,7 @@ public class WebElementPropertiesTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.id("FirstName"));
+        // Получение размеров и положения верхнего левого угла элемента
         Rectangle rect = element.getRect();
 
         Dimension size = rect.getDimension();
@@ -95,6 +100,7 @@ public class WebElementPropertiesTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.id("FirstName"));
+        // Проверка видимости элемента
         boolean isDisplayed = element.isDisplayed();
         logger.info("Is Displayed: " + isDisplayed);
         Assertions.assertTrue(isDisplayed, "Не отображается!");
@@ -106,6 +112,7 @@ public class WebElementPropertiesTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.id("FirstName"));
+        // Проверка доступности элемента
         boolean isEnabled = element.isEnabled();
         logger.info("Is Enabled: " + isEnabled);
         Assertions.assertTrue(isEnabled, "Не доступна!");
@@ -117,6 +124,7 @@ public class WebElementPropertiesTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.id("FirstName"));
+        // Проверка выбора элемента
         boolean isSelected = element.isSelected();
         logger.info("Is Selected: " + isSelected);
         Assertions.assertFalse(isSelected, "Выбрана!");
@@ -128,6 +136,7 @@ public class WebElementPropertiesTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.tagName("h1"));
+        // Получение текстового содержимого элемента
         String text = element.getText();
         logger.info("Text: " + text);
         Assertions.assertTrue(text.contains("Selenium"), "Значение text не содержит Selenium!");
@@ -139,6 +148,7 @@ public class WebElementPropertiesTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.id("FirstName"));
+        // Получение значения CSS элемента
         String cssValue = element.getCssValue("width");
         logger.info("Css Value: width = " + cssValue);
         Assertions.assertTrue(cssValue.equals("120px"), "Значение cssValue != 120px!");

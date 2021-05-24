@@ -23,6 +23,7 @@ public class WebElementSimpleActionsTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.name("Save"));
+        // Нажатие на элемент
         element.click();
 
         try {
@@ -38,6 +39,7 @@ public class WebElementSimpleActionsTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.name("Initial"));
+        // Ввод текста
         element.sendKeys("Initial");
 
         try {
@@ -54,6 +56,7 @@ public class WebElementSimpleActionsTest {
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.name("Initial"));
         element.sendKeys("Initial");
+        // Удаление текста
         element.clear();
 
         try {
@@ -69,6 +72,7 @@ public class WebElementSimpleActionsTest {
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://demosite.executeautomation.com/index.html?UserName=&Password=&Login=Login");
         WebElement element = driver.findElement(By.name("Initial"));
+        // Отправка данных формы
         element.submit();
 
         try {
