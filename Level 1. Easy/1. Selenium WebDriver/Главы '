@@ -83,31 +83,34 @@
 ### 1.1.1. Куда положить исполняемый файл?
 ### 1.1.2. Как прописать путь до файла?
 ## 1.2. Класс DriverService и DriverService.Builder
-## 1.3. WebDriverManager
+## 1.3. Библиотека WebDriverManager
 ## 1.4. Совместимость драйверов и браузеров
-# 1. Навигация
-## 1.1. Интерфейс WebDriver
-## 1.2. Интерфейс WebDriver.Navigation
-# 2. Интерфейс WebDriver
-## 2.1. Команды веб драйвера
-## 2.2. Инициализация WebDriver
-# 3. WebDriverFactory
+# 2. Основные команды веб драйвера
+## 2. Интерфейс WebDriver
+# 3. Навигация
+## 3.1. Интерфейс WebDriver
+## 3.2. Интерфейс WebDriver.Navigation
+# 4. Инициализация WebDriver
+# 5. Паттерн WebDriverFactory
 
 Урок 05. Конфигурация
 # 1. Зачем нужно конфигурировать браузер при старте?
-# 2. Интерфейс WebDriver.Options
-## 2.1. Куки
-### 2.1.1. Класс Cookie
-## 2.2. Логи
-## 2.3. Ожидания
-## 2.4. Окна браузера
-# 3. Интерфейс Capabilities
-## 3.1. Класс MutableCapabilities
+# 2. Конфигурация браузера
+## 2.1 Интерфейс WebDriver.Options
+### 2.1.1. Куки
+### 2.1.1.1. Класс Cookie
+### 2.1.2. Логи
+### 2.1.3. Ожидания
+### 2.1.4. Окна браузера
+# 3. Возможности
+## 3.1. Интерфейс Capabilities
+## 3.2. Класс MutableCapabilities
 ## 3.2. Класс ImmutableCapabilities
 ## 3.3. Класс DesiredCapabilities
 ## 3.4. Класс AbstractDriverOptions<DO extends AbstractDriverOptions>
 ## 3.5. Интерфейс CapabilityType
-# 4. Browser Options
+# 4. Опции
+## 4.1. Browser Options
 ## 4.1. Класс ChromiumOptions<T extends ChromiumOptions>
 ## 4.2. Класс ChromeOptions
 ## 4.3. Класс EdgeOptions
@@ -120,35 +123,36 @@
 ## 1.2. Что такое HTML?
 ## 1.3. Что такое DOM?
 ## 1.4. Что такое веб элементы?
-# 2. Команды поиска веб элементов
-## 2.1. Поиск одного веб элемента - findElement
-## 2.2. Поиск набора веб элементов - findElements
-## 2.3. Поиск веб элемента в веб элементе
+# 2. Поиск веб элементов
+## 2.1. Поиск одного веб элемента
+## 2.2. Поиск набора веб элементов
+## 2.3. Поиск одного веб элемента в веб элементе
 ## 2.4. Поиск набора веб элементов в веб элементе
 ## 2.5. Цепочка из findElement
-# 3. Простые локаторы
-## 3.1. Класс By
-## 3.2. Поиск элемента по атрибуту id (By.id)
-## 3.3. Поиск элемента по атрибуту name (By.name)
-## 3.4. Поиск элемента по атрибуту class (By.className)
-## 3.5. Поиск элемента по имени тега (By.tagName)
-## 3.6. Поиск элемента по тексту ссылки (By.linkText)
-## 3.7. Поиск элемента по частичному тексту ссылки (By.partialLinkText)
-## 3.8. Поиск элемента с помощью CSS селектора (By.cssSelector)
-## 3.9. Поиск элемента с помощью XPATH запроса (By.xPath)
-# 4. Относительные локаторы
-## 4.1. Класс RelativeLocator
-## 4.2. Класс RelativeLocator.RelativeBy
-# 5. Исключения
-## 5.1. NoSuchElementException
-## 5.2. StaleElementReferenceException
-## 5.3. InvalidSelectorException
-## 5.4. IllegalLocatorException
-# 6. Правила написания локаторов
-## 6.1. Как писать хорошие локаторы?
-## 6.2. Что делать, если тесты нестабильны?
-### 6.2.1. Ожидание существования элемента перед взаимодействием с ним
-### 6.2.2. Получение свежих элементов
+# 3. Что такое локаторы?
+# 4. Простые локаторы
+## 4.1. Класс By
+### 4.1.2. Поиск элемента по атрибуту id (By.id)
+### 4.1.3. Поиск элемента по атрибуту name (By.name)
+### 4.1.4. Поиск элемента по атрибуту class (By.className)
+### 4.1.5. Поиск элемента по имени тега (By.tagName)
+### 4.1.6. Поиск элемента по тексту ссылки (By.linkText)
+### 4.1.7. Поиск элемента по частичному тексту ссылки (By.partialLinkText)
+### 4.1.8. Поиск элемента с помощью CSS селектора (By.cssSelector)
+### 4.1.9. Поиск элемента с помощью XPATH запроса (By.xPath)
+# 5. Относительные локаторы
+## 5.1. Класс RelativeLocator
+## 5.2. Класс RelativeLocator.RelativeBy
+# 6. Исключения
+## 6.1. NoSuchElementException
+## 6.2. StaleElementReferenceException
+## 6.3. InvalidSelectorException
+## 6.4. IllegalLocatorException
+# 7. Правила написания локаторов
+## 7.1. Как писать хорошие локаторы?
+## 7.2. Что делать, если тесты нестабильны?
+### 7.2.1. Ожидание существования элемента перед взаимодействием с ним
+### 7.2.2. Получение свежих элементов
 
 Урок 07. Веб элементы
 # 1. Что такое веб элементы?
@@ -182,16 +186,16 @@
 ### 4.2.7. Смещение мыши
 ### 4.2.8. Перемещение мыши на элемент
 ### 4.2.9. Отпускание левой кнопки мыши
-# 6. Исключения
-## 6.1. StaleElementReferenceException
-## 6.2. ElementClickInterceptedException
-## 6.3. ElementNotInteractableException
-## 6.4. ElementNotVisibleException
-## 6.5. ElementNotSelectableException
-## 6.6. InvalidElementStateException
-## 6.7. InvalidCoordinatesException
-## 6.8. MoveTargetOutOfBoundsException
-## 6.9. TimeoutException
+# 5. Исключения
+## 5.1. StaleElementReferenceException
+## 5.2. ElementClickInterceptedException
+## 5.3. ElementNotInteractableException
+## 5.4. ElementNotVisibleException
+## 5.5. ElementNotSelectableException
+## 5.6. InvalidElementStateException
+## 5.7. InvalidCoordinatesException
+## 5.8. MoveTargetOutOfBoundsException
+## 5.9. TimeoutException
 
 Урок 08. Ожидания
 # 1. Как происходит загрузка страницы?
@@ -207,19 +211,19 @@
 ### 2.1.2. EAGER
 ### 2.1.3. NONE
 # 3. Что такое ожидание?
-# 4. Неявные ожидания (Implicit Waits)
+# 4. Неявные ожидания
 ## 4.1. Интерфейс WebDriver.Options
 ## 4.2. Интерфейс WebDriver.Timeouts
 ### 4.2.1. implicitlyWait(Duration duration)
 ### 4.2.2. pageLoadTimeout(Duration duration)
 ### 4.2.3. setScriptTimeout(Duration duration)
-# 5. Явные ожидания (Explicit Waits)
+# 5. Явные ожидания
 ## 5.1. Интерфейс Wait<F>
 ## 5.2. Класс FluentWait
 ## 5.3. Класс WebDriverWait
 ## 5.4. Игнорирование определенных событий
 ## 5.5. Задержка Thread.sleep
-# 6. Ожидаемые условия (ExpectedConditions)
+# 6. Ожидаемые условия
 ## 6.1. Интерфейс ExpectedCondition<T>
 ## 6.2. Класс ExpectedConditions
 ## 6.3. Кастомные условия ожидания
@@ -230,16 +234,15 @@
 
 Урок 09. Окна
 # 1. Какие бывают окна браузера?
-## 1.1. Основное окно браузера
+## 1.1. Окна и вкладки
 ### 1.1.1. Дескрипторы
-## 1.2. Модальное окно
-### 1.2.1. Виды
-#### 1.2.1.1. Alert
-#### 1.2.1.2. Prompt
-#### 1.2.1.3. Confirm
+## 1.2. Модальные окна
+### 1.2.1. Alert
+### 1.2.2. Prompt
+### 1.2.3. Confirm
 ## 1.3. Кастомные попапы
 ## 1.4. Фреймы
-# 2. Работа с основным окном браузера (Window)
+# 2. Окна и вкладки
 ## 2.1. Интерфейс WebDriver
 ## 2.2. Интерфейс WebDriver.Options
 ## 2.3. Интерфейс WebDriver.Window
@@ -247,18 +250,18 @@
 ### 2.3.2. Свойства
 #### 2.3.2.1. Класс Point
 #### 2.3.2.2. Класс Dimension
-# 3. Работа с модальными окнами (Alert)
+# 3. Модальные окна
 ## 3.1. Интерфейс Alert
 ## 3.2. Перечисление UnexpectedAlertBehaviour
-# 4. Работа с кастомными попапами
-# 5. Работа с фреймами
-# 6. Переключение (Switch)
+# 4. Кастомные попапы
+# 5. Фреймы
+# 6. Переключения
 ## 6.1. Интерфейс WebDriver
 ## 6.2. Интерфейс WebDriver.TargetLocator
 ### 6.2.1. Переключение на окна
 #### 6.2.1.1. Перечисление WindowType
 ### 6.2.2. Переключение на модальное окно
-### 6.2.3. Переключение на фреймы
+### 6.2.3. Переключение на фрейм
 ### 6.2.4. Переключение на активный элемент
 # 7. Исключения
 
