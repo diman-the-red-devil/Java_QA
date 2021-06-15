@@ -35,3 +35,9 @@
 Урок 03. Soap UI
 
 Урок 04. WireMock
+
+
+[](https://tproger.ru/translations/test-automation-strategy-for-agile-projects/)
+[](https://otus.ru/nest/post/1083/)
+[](http://www.protesting.ru/automation/practice/automation_from_scratch.html#55)
+[](https://qaat.ru/sovety-po-avtomatizirovannomu-testirovaniyu/)
