@@ -88,31 +88,6 @@ public class LogsTest {
         }
     }
 
-    @Test
-    public void logsConfigurationTest() {
-        // Открыть страницу https://www.dns-shop.ru/
-        driver.get("https://www.dns-shop.ru/");
-        logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
-        // Нажать на ссылку "Бытовая техника"
-        By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
-        WebElement linkBT = driver.findElement(linkBTXPath);
-        linkBT.click();
-        logger.info("Нажата ссылка \"Бытовая техника\"");
-        // Получить логи
-        Logs logs = driver.manage().logs();
-        LogEntries logsEntries = logs.get(LogType.BROWSER);
-        List<LogEntry> logsEntriesList = logsEntries.getAll();
-        for (LogEntry logsEntry : logsEntriesList) {
-            logger.info(Date.from(Instant.ofEpochMilli(logsEntry.getTimestamp())) + " " +
-                    logsEntry.getLevel() + " " + logsEntry.getMessage());
-        }
-    }
-
     @AfterEach
     public void setDown() {
         if(driver != null) {

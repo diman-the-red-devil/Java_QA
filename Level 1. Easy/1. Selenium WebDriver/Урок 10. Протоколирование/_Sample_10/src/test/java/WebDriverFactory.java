@@ -25,19 +25,8 @@ public class WebDriverFactory {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 logger.info("Драйвер для браузера Google Chrome");
-                /*
-                LoggingPreferences chromeLogPrefs = new LoggingPreferences();
-                chromeLogPrefs.enable(LogType.BROWSER, Level.ALL);
-                chromeLogPrefs.enable(LogType.CLIENT, Level.ALL);
-                chromeLogPrefs.enable(LogType.DRIVER, Level.ALL);
-                chromeLogPrefs.enable(LogType.PERFORMANCE, Level.ALL);
-                chromeLogPrefs.enable(LogType.SERVER, Level.ALL);
-                DesiredCapabilities chromeCaps = new DesiredCapabilities();
-                chromeCaps.setCapability(CapabilityType.LOGGING_PREFS, chromeLogPrefs);
-                */
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--start-maximized");
-                // chromeOptions.merge(chromeCaps);
                 return new ChromeDriver(chromeOptions);
             case "firefox" :
                 WebDriverManager.firefoxdriver().setup();
@@ -46,14 +35,8 @@ public class WebDriverFactory {
             case "edge" :
                 WebDriverManager.edgedriver().setup();
                 logger.info("Драйвер для браузера Microsoft Edge");
-                LoggingPreferences edgeLogPrefs = new LoggingPreferences();
-                edgeLogPrefs.enable(LogType.BROWSER, Level.SEVERE);
-                DesiredCapabilities edgeCaps = new DesiredCapabilities();
-                edgeCaps.setCapability(CapabilityType.LOGGING_PREFS, edgeLogPrefs);
-
                 EdgeOptions edgeOptions = new EdgeOptions();
                 edgeOptions.addArguments("--start-maximized");
-                edgeOptions.merge(edgeCaps);
                 return new EdgeDriver(edgeOptions);
             case "explorer" :
                 WebDriverManager.iedriver().setup();
