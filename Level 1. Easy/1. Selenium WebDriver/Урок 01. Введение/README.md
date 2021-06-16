@@ -10,6 +10,7 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 01. 
 # Результаты 
 
 1. Первое знакомство с Selenium WebDriver
+2. Принцип работы Selenium WebDriver
 
 ***
 
@@ -25,7 +26,7 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 01. 
 
 [4. Стандарт W3C WebDriver](./1.%20Лекция.md#4.-Стандарт-W3C-WebDriver)
 
-[5. Принцип работы Selenium WebDriver](./1.%20Лекция.md#5.-Принцип-работы-Selenium-WebDriver)
+[5. Архитектура Selenium WebDriver](./1.%20Лекция.md#5.-Архитектура-Selenium-WebDriver)
 
 [6. Команды Selenium WebDriver](./1.%20Лекция.md#6.-Команды-Selenium-WebDriver)
            
