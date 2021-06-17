@@ -30,4 +30,4 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 01. 
 
 [6. Команды Selenium WebDriver](./1.%20Лекция.md#6.-Команды-Selenium-WebDriver)
            
-## Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Ссылки.md)
+## Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](3.%20Ссылки.md)

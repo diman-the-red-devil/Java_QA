@@ -18,7 +18,11 @@
 ### 3.2.1. Основные изменения в Selenium 4
 ### 3.2.2. Новые возможности в Selenium 4
 # 4. Стандарт W3C WebDriver
-# 5. Принцип работы Selenium WebDriver
+# 5. Архитектура Selenium WebDriver
+## 5.1. Компоненты Selenium WebDriver
+## 5.2. Принцип работы Selenium WebDriver
+### 5.2.1. В Selenium < 4 версии
+### 5.2.2. В Selenium 4 версии
 # 6. Команды Selenium WebDriver
 ## 6.1. Классификация команд
 ## 6.2. Однородность команд
