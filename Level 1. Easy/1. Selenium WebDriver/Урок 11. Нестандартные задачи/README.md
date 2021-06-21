@@ -3,7 +3,7 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 12. 
 # Цель
 
 объяснить, как решать нестандартные задачи.
-Actions
+
 JS
 Select org.openqa.selenium.support.ui
 WebDriverListener org.openqa.selenium.support.events
