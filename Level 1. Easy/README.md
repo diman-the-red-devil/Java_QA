@@ -22,9 +22,7 @@ Java_QA / Level 1. Easy - Основы
 
 [Урок 10. Протоколирование](1.%20Selenium%20WebDriver/Урок%2010.%20Протоколирование/README.md)
 
-[Урок 11. Запуск](1.%20Selenium%20WebDriver/Урок%2011.%20Запуск/README.md)
-
-[Урок 12. Нестандартные задачи](1.%20Selenium%20WebDriver/Урок%2012.%20Нестандартные%20задачи/README.md)
+[Урок 11. Нестандартные задачи](1.%20Selenium%20WebDriver/Урок%2011.%20Нестандартные%20задачи/README.md)
 
 # 1.2. Selenide [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Selenide/README.md)
 

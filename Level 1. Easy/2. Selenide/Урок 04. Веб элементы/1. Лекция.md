@@ -1,1 +1,0 @@
-# Java_QA / Level 1. Easy - Основы / 1.2. Selenide / Урок 04. Веб элементы

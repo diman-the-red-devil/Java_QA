@@ -1,41 +1,12 @@
-# Java_QA / Level 3. Hard - Высший пилотаж
+Java_QA / Level 3. Hard - Высший пилотаж
 
-## 3.1. Запуск
+[Урок 01. CI CD](Урок%2001.%20CI%20CD)
 
-Урок 01. Введение
+[Урок 02. Запуск](Урок%2002.%20Запуск)
 
-Урок 02. Selenium Grid
+[Урок 03. Отчеты](Урок%2003.%20Отчеты)
 
-Урок 03. Selenoid
-
-## 3.2. Отчеты
-
-Урок 01. Введение
-
-Урок 02. Allure
-
-Урок 03. Report Portal
-
-## 3.3. CI/CD
-
-Урок 01. Введение
-
-Урок 02. Docker
-
-Урок 03. Jenkins
-
-Урок 04. Собираем все вместе
-
-## 3.4. Заглушки
-
-Урок 01. Введение
-
-Урок 02. Postman
-
-Урок 03. Soap UI
-
-Урок 04. WireMock
-
+[Урок 04. Заглушки](Урок%2004.%20Заглушки)
 
 [](https://tproger.ru/translations/test-automation-strategy-for-agile-projects/)
 [](https://otus.ru/nest/post/1083/)
