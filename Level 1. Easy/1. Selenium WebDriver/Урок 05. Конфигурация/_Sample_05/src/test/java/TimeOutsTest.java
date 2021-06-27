@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TimeOutsTest {
     protected static WebDriver driver;
-    private Logger logger = LogManager.getLogger(LogsTest.class);
+    private Logger logger = LogManager.getLogger(TimeOutsTest.class);
 
     // Читаем передаваемый параметр browser (-Dbrowser)
     String env = System.getProperty("browser", "chrome");

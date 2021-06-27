@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BrowserWindowsTest {
     protected static WebDriver driver;
-    private Logger logger = LogManager.getLogger(CookieTest.class);
+    private Logger logger = LogManager.getLogger(BrowserWindowsTest.class);
 
     // Читаем передаваемый параметр browser (-Dbrowser)
     String env = System.getProperty("browser", "chrome");
