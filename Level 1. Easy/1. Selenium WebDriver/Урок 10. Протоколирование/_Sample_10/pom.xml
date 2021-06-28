@@ -48,11 +48,24 @@
             <groupId>ru.yandex.qatools.ashot</groupId>
             <artifactId>ashot</artifactId>
             <version>1.5.4</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.github.stephenc.monte</groupId>
             <artifactId>monte-screen-recorder</artifactId>
             <version>0.7.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.lightbody.bmp</groupId>
+            <artifactId>browsermob-core</artifactId>
+            <version>2.1.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
         </dependency>
     </dependencies>
 

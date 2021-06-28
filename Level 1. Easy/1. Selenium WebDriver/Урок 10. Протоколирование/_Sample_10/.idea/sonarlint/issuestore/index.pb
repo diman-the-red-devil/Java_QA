@@ -11,3 +11,9 @@ T
 $src/test/java/Selenium3Listener.java,d\6\d6b0f9c5893a9348325ed7ba0f0726435a73d419
 T
 $src/test/java/Selenium4Listener.java,7\e\7e9ab18eaa66a1788289354200bb6b7e36907406
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+R
+"src/test/java/HttpCaptureTest.java,6\f\6f5efbed813864fc23cb2bff3cab57d3760f12d2
+<
+dns-shop.har,a\8\a8d34cac29c666d01cad2044bbd36471ffcaa88b
