@@ -34,17 +34,16 @@ public class HttpCaptureTest {
     @BeforeEach
     public void setUp() {
         proxy = new BrowserMobProxyServer();
-        //proxy.setTrustAllServers(true);
-        proxy.start(8080);
+        proxy.setTrustAllServers(true);
+        proxy.setHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
+        proxy.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
+        proxy.start(0);
 
         seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
         try {
             String hostIp = Inet4Address.getLocalHost().getHostAddress();
             seleniumProxy.setHttpProxy(hostIp + ":" + proxy.getPort());
             seleniumProxy.setSslProxy(hostIp + ":" + proxy.getPort());
-
-            proxy.setHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
-            proxy.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
@@ -53,19 +52,21 @@ public class HttpCaptureTest {
         logger.info("Драйвер для браузера Google Chrome");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);
-        //capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.merge(capabilities);
         chromeOptions.addArguments("--start-maximized");
-        //chromeOptions.addArguments("--disable-web-security");
-        //chromeOptions.addArguments("--allow-insecure-localhost");
-        //chromeOptions.addArguments("--ignore-urlfetcher-cert-requests");
+        chromeOptions.addArguments("--disable-web-security");
+        chromeOptions.addArguments("--allow-insecure-localhost");
+        chromeOptions.addArguments("--ignore-urlfetcher-cert-requests");
+        chromeOptions.addArguments("--ignore-certificate-errors");
         driver = new ChromeDriver(chromeOptions);
         logger.info("Драйвер стартовал!");
     }
 
     @Test
     public void httpCaptureTest() {
+
         proxy.newHar("dns-shop.ru");
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
@@ -83,13 +84,11 @@ public class HttpCaptureTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        /*
         List<HarEntry> entries = proxy.getHar().getLog().getEntries();
         for (HarEntry entry : entries) {
             logger.info("URL " + entry.getRequest().getUrl());
             logger.info("Response Code " + entry.getResponse().getStatus());
         }
-        */
     }
 
     @AfterEach
