@@ -15,5 +15,7 @@ $src/test/java/Selenium4Listener.java,7\e\7e9ab18eaa66a1788289354200bb6b7e36907
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 R
 "src/test/java/HttpCaptureTest.java,6\f\6f5efbed813864fc23cb2bff3cab57d3760f12d2
+8
+logs.log,d\c\dcf01c08e582a104621f24fcb2d2871db4f4e983
 <
 dns-shop.har,a\8\a8d34cac29c666d01cad2044bbd36471ffcaa88b

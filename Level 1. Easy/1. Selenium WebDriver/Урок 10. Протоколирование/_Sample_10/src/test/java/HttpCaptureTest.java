@@ -37,7 +37,7 @@ public class HttpCaptureTest {
         proxy.setTrustAllServers(true);
         proxy.setHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
         proxy.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
-        proxy.start(0);
+        proxy.start(8080);
 
         seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
         try {
@@ -66,7 +66,6 @@ public class HttpCaptureTest {
 
     @Test
     public void httpCaptureTest() {
-
         proxy.newHar("dns-shop.ru");
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
