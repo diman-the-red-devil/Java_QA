@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: HttpCaptureTest
+Test set: ScreenShotsTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.786 s - in HttpCaptureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.061 s - in ScreenShotsTest
