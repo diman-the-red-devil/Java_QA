@@ -21,7 +21,6 @@ public class WebDriverFactory {
                 WebDriverManager.firefoxdriver().setup();
                 logger.info("Драйвер для браузера Mozilla Firefox");
                 return new FirefoxDriver();
-            /*
             case "edge" :
                 WebDriverManager.edgedriver().setup();
                 logger.info("Драйвер для браузера Microsoft Edge");
@@ -34,7 +33,7 @@ public class WebDriverFactory {
                 WebDriverManager.operadriver().setup();
                 logger.info("Драйвер для браузера Opera");
                 return new OperaDriver();
-             */
+
             default:
                 throw new RuntimeException("Incorrect browser name");
         }

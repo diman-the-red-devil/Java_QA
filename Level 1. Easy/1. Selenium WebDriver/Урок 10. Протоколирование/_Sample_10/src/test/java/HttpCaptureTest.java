@@ -33,12 +33,14 @@ public class HttpCaptureTest {
 
     @BeforeEach
     public void setUp() {
+        // Запуск прокси BrowserMob Proxy
         proxy = new BrowserMobProxyServer();
         proxy.setTrustAllServers(true);
         proxy.setHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
         proxy.enableHarCaptureTypes(CaptureType.REQUEST_CONTENT, CaptureType.RESPONSE_CONTENT);
         proxy.start(8080);
 
+        // Настройка прокси Selenium
         seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
         try {
             String hostIp = Inet4Address.getLocalHost().getHostAddress();
@@ -48,6 +50,7 @@ public class HttpCaptureTest {
             e.printStackTrace();
         }
 
+        // Конфигурирование драйвера Selenium WebDriver для прокси
         WebDriverManager.chromedriver().setup();
         logger.info("Драйвер для браузера Google Chrome");
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -76,17 +79,13 @@ public class HttpCaptureTest {
         linkYes.click();
         logger.info("Нажата ссылка \"Да\"");
 
+        // Чтение данных прокси
         Har har = proxy.getHar();
         File harFile = new File("dns-shop.har");
         try {
             har.writeTo(harFile);
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        List<HarEntry> entries = proxy.getHar().getLog().getEntries();
-        for (HarEntry entry : entries) {
-            logger.info("URL " + entry.getRequest().getUrl());
-            logger.info("Response Code " + entry.getResponse().getStatus());
         }
     }
 
