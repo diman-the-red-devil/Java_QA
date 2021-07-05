@@ -55,7 +55,7 @@ public class SampleTest {
         searchInput.sendKeys(searchText);
 
         // Нажатие кнопка "Найти"
-        String searchButtonXpath = ".//button[@class='button mini-suggest__button button_theme_websearch button_size_ws-head i-bem button_js_inited']";
+        String searchButtonXpath = ".//button[@class='button mini-suggest__button button_theme_search button_size_search i-bem button_js_inited']";
         WebElement searchButton = driver.findElement(By.xpath(searchButtonXpath));
         searchButton.click();
 
