@@ -22,8 +22,8 @@ public class BrowserWindowsTest {
     @Test
     public void browserWindowsTest() {
         // Отображение окна браузера в полноэкранном режиме
-        driver.manage().window().fullscreen();
         driver.get("https://yandex.ru/");
+        driver.manage().window().fullscreen();
         logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
 
         // Отображение размеров окна браузера
