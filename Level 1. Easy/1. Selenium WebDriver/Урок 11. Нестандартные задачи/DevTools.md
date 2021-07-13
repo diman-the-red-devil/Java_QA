@@ -516,3 +516,140 @@ https://medium.com/@ohanaadi/chrome-devtools-and-selenium-4-eadab5d755b7
 https://dou.ua/forums/topic/33094/
 https://chromedevtools.github.io/devtools-protocol/
 https://itnext.io/devtools-protocol-in-selenium-4-6acf89ecb84d
+
+
+# 6.
+
+## 5.1. Интерфейс Rotatable
+
+***Rotatable*** - интерфейс
+
+Represents rotation of the browser view for orientation-sensitive devices.
+When using this with a real device, the device should not be moved so that the built-in sensors do not interfere.
+
+Методы интерфейса **Rotatable**:
+
+| Тип               | Метод        | Описание                      | 
+|-------------------|--------------|-------------------------------|
+| ScreenOrientation	| getOrientation() | | 
+| void	            | rotate(DeviceRotation rotation) | Changes the rotation of the browser window.| 
+| void	            | rotate(ScreenOrientation orientation) | Changes the orientation of the browser window.| 
+| DeviceRotation    | rotation() | | 
+
+[selenium/docs/api : Pdf](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/Rotatable.html)
+
+*Пример*
+
+```java
+
+```
+
+## 5.2. Перечисление ScreenOrientation
+
+***ScreenOrientation*** - перечисление
+
+Константы перечисления *ScreenOrientation*
+
+| Тип           | Описание         | 
+|---------------|------------------|
+| LANDSCAPE     |               |
+| PORTRAIT      |               |
+
+Методы перечисления *PrintOptions.Orientation*:
+
+| Тип                        | Метод                | Описание                      | 
+|----------------------------|----------------------|-------------------------------|
+| String                     | value()              | | 
+| static ScreenOrientation	 | valueOf(String name) | Returns the enum constant of this type with the specified name.  | 
+| static ScreenOrientation[] | values()             | Returns an array containing the constants of this enum type, in the order they are declared. | 
+
+[selenium/docs/api : ScreenOrientation](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/DeviceRotation.html)
+
+## 5.3. Класс DeviceRotation
+
+***DeviceRotation*** - класс
+
+Методы класса *DeviceRotation*:
+
+| Тип                  | Метод            | Описание                      | 
+|----------------------|------------------|-------------------------------|
+| boolean              | equals(Object o) | | 
+| int                  | getX()	          | | 
+| int                  | getY()	          | | 
+| int                  | getZ()	          | | 
+| int                  | hashCode()	      | | 
+| Map<String, Integer> | parameters()     | | 
+
+[selenium/docs/api : DeviceRotation](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/DeviceRotation.html)
+
+***
+
+# 6. Хранилище
+
+## LocalStorage
+
+LocalStorage - интерфейс
+
+| Тип         | Метод                             | Описание                      | 
+|-------------|-----------------------------------|-------------------------------|
+| void        | clear()                           |  |
+| String      | getItem(String key)               |  |
+| Set<String> | keySet()                          |  |
+| String      | removeItem(String key)            |  |
+| void        | setItem(String key, String value) |  |
+| int         | size()                            |  |
+
+[selenium/docs/api : LocalStorage](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/html5/LocalStorage.html)
+
+https://chercher.tech/java/browser-webstorage-selenium
+https://medium.com/@jonashavers/accessing-sessionstorage-and-localstorage-with-selenium-remotewebdriver-f3935d8d7d9b
+
+## SessionStorage
+
+SessionStorage - интерфейс
+
+| Тип         | Метод                             | Описание                      | 
+|-------------|-----------------------------------|-------------------------------|
+| void        | clear()                           |  |
+| String      | getItem(String key)               |  |
+| Set<String> | keySet()                          |  |
+| String      | removeItem(String key)            |  |
+| void        | setItem(String key, String value) |  |
+| int         | size()                            |  |
+
+[selenium/docs/api : SessionStorage](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/html5/SessionStorage.html)
+
+https://medium.com/@jonashavers/accessing-sessionstorage-and-localstorage-with-selenium-remotewebdriver-f3935d8d7d9b
+
+# 
+
+## Location
+
+Location
+
+| Тип    | Метод          | Описание                      | 
+|--------|----------------|-------------------------------|
+| double | getAltitude()  | |
+| double | getLatitude()  | |
+| double | getLongitude() | |
+| String | toString()     | |
+
+[selenium/docs/api : Location](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/html5/Location.html)
+
+***
+
+Select select = new Select(<WebElement object>);
+selectByVisibleText()
+selectByIndex()
+selectByValue()
+
+deselectByVisibleText()
+deselectByIndex()
+deselectByValue()
+deselectAll()
+
+getOptions()
+getAllSelectedOptions()
+getFirstSelectedOption()
+
+***

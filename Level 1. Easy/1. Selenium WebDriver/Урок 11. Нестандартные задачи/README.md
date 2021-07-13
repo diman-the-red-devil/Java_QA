@@ -5,17 +5,18 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 12. 
 объяснить, как решать нестандартные задачи.
 
 JS
+
 Select org.openqa.selenium.support.ui
+
 WebDriverListener org.openqa.selenium.support.events
+
 Color org.openqa.selenium.support
+
 org.openqa.selenium.print
-org.openqa.selenium.events
 
-DevTools
 Storage
-Location 
-Proxy
 
+Location
 
 ***
 
