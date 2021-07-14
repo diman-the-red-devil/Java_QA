@@ -584,58 +584,6 @@ When using this with a real device, the device should not be moved so that the b
 
 ***
 
-# 6. Хранилище
-
-## LocalStorage
-
-LocalStorage - интерфейс
-
-| Тип         | Метод                             | Описание                      | 
-|-------------|-----------------------------------|-------------------------------|
-| void        | clear()                           |  |
-| String      | getItem(String key)               |  |
-| Set<String> | keySet()                          |  |
-| String      | removeItem(String key)            |  |
-| void        | setItem(String key, String value) |  |
-| int         | size()                            |  |
-
-[selenium/docs/api : LocalStorage](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/html5/LocalStorage.html)
-
-https://chercher.tech/java/browser-webstorage-selenium
-https://medium.com/@jonashavers/accessing-sessionstorage-and-localstorage-with-selenium-remotewebdriver-f3935d8d7d9b
-
-## SessionStorage
-
-SessionStorage - интерфейс
-
-| Тип         | Метод                             | Описание                      | 
-|-------------|-----------------------------------|-------------------------------|
-| void        | clear()                           |  |
-| String      | getItem(String key)               |  |
-| Set<String> | keySet()                          |  |
-| String      | removeItem(String key)            |  |
-| void        | setItem(String key, String value) |  |
-| int         | size()                            |  |
-
-[selenium/docs/api : SessionStorage](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/html5/SessionStorage.html)
-
-https://medium.com/@jonashavers/accessing-sessionstorage-and-localstorage-with-selenium-remotewebdriver-f3935d8d7d9b
-
-# 
-
-## Location
-
-Location
-
-| Тип    | Метод          | Описание                      | 
-|--------|----------------|-------------------------------|
-| double | getAltitude()  | |
-| double | getLatitude()  | |
-| double | getLongitude() | |
-| String | toString()     | |
-
-[selenium/docs/api : Location](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/html5/Location.html)
-
 ***
 
 Select select = new Select(<WebElement object>);

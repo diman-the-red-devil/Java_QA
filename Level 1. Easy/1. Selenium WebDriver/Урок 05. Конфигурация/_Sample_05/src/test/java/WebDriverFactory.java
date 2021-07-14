@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -22,7 +24,6 @@ public class WebDriverFactory {
                 return new ChromeDriver();
             case "firefox" :
                 WebDriverManager.firefoxdriver().setup();
-                logger.info("Драйвер для браузера Mozilla Firefox");
                 return new FirefoxDriver();
             /*
             case "edge" :
