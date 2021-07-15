@@ -32,8 +32,8 @@ public class LocationTest {
         logger.info("Latitude: " + location.getLatitude());
         logger.info("Longitude: " + location.getLongitude());
         // Открыть страницу dns-shop.ru
-        d.get("https://www.dns-shop.ru");
-        logger.info("Открыта страница dns-shop.ru - " + "https://www.dns-shop.ru");
+        d.get("https://yandex.ru/maps");
+        logger.info("Открыта страница dns-shop.ru - " + "https://yandex.ru/maps");
     }
 
     @AfterEach

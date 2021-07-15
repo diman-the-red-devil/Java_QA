@@ -1,40 +1,6 @@
 # DevTools
 
-## Класс DevTools
 
-***DevTools*** -
-
-Методы класса *DevTools*:
-
-| Тип         | Метод                                            | Описание                      | 
-|-------------|--------------------------------------------------|-------------------------------|
-| <X> void    | addListener(Event<X> event, Consumer<X> handler) |       |
-| void        | clearListeners()                                 |       |
-| void        | close()                                          |       |
-| void        | createSession()                                  |       |
-| void        |	createSessionIfThereIsNotOne()                   |       |
-| SessionID   | getCdpSession()                                  | получение геолокации |
-| Domains     | getDomains()                                     | установка геолокации |
-| <X> X       | send(Command<X> command)                         | установка геолокации |
-
-[selenium/docs/api : DevTools](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/devtools/DevTools.html)
-
-*Пример*
-
-```java
-ChromeDriver driver = new ChromeDriver();
-DevTools devTools = driver.getDevTools();
-devTools.createSession();
-devTools.send(Performance.enable(Optional.empty()));
-List<Metric> metricList = devTools.send(Performance.getMetrics());
-
-driver.get("https://google.com");
-driver.quit();
-
-for(Metric m : metricList) {
-    System.out.println(m.getName() + " = " + m.getValue());
-}
-```
 
 ### Simulating Device Mode
 
