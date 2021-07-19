@@ -1,10 +1,54 @@
-
 ### Command
 
 *Пример*
 
 ```java
 chromeDevTools.send(new Command<>("Browser.crash", ImmutableMap.of()));
+```
+
+## Network
+
+### Эмуляция интернет соединения
+
+Network.emulateNetworkConditions позволяет задавать параметры соединения, например для тестирования поведения при слабом 3G или отсутствии сети.
+
+*Пример*
+
+```java
+devTools.send(Network.enable(empty(), empty(), empty()));
+devTools.send(Network.emulateNetworkConditions(false, 100, 1000, 1000, of(ConnectionType.CELLULAR3G)));
+```
+
+### Simulate Network Speed
+
+Many users access web applications via handheld devices which are connected to wifi or cellular networks.
+It’s not uncommon to reach a weak network signal, and therefore a slower internet connection.
+
+It may be important to test how your application behaves under such conditions
+where the internet connection is slow (2G) or goes offline intermittently.
+
+The CDP command to fake a network connection is Network.emulateNetworkConditions.
+Information on the required and optional parameters for this command can be found in the documentation.
+
+With access to Chrome DevTools, it becomes possible to simulate these scenarios. Lets see how.
+
+*Пример*
+
+```java
+ChromeDriver driver;
+driver = new ChromeDriver();
+
+DevTools devTools = driver.getDevTools();
+devTools.createSession();
+devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+devTools.send(Network.emulateNetworkConditions(
+    false,
+    20,
+    20,
+    50,
+    Optional.of(ConnectionType.CELLULAR2G)
+));
+driver.get("https://www.google.com");
 ```
 
 ### Переопределение UserAgent
@@ -18,18 +62,6 @@ Network.setUserAgentOverride задает новое значение UserAgent 
 devTools.send(Network.setUserAgentOverride("aqa-agent", Optional.empty(), Optional.empty(), Optional.empty()));
 ```
 
-### Предоставление прав
-
-Для некоторых операций, браузер запрашивает разрешение пользователя, например, для доступа к буферу обмена или микрофону. Предоставить права можно при помощи Browser.grantPermissions передавая перечень необходимых PermissionType.
-
-Для примера разрешим браузеру захват звука.
-
-*Пример*
-
-```java
-driver.executeCdpCommand("Browser.grantPermissions", Map.of("permissions", asList("audioCapture")));
-```
-
 ### Добавление заголовков в запросы
 
 Network.setExtraHTTPHeaders позволяет добавить кастомные заголовки к запросам.
@@ -41,51 +73,65 @@ devTools.send(Network.enable(empty(),empty(),empty()));
 devTools.send(Network.setExtraHTTPHeaders(new Headers(Map.of("aqa-header", "John Wick"))));
 ```
 
-### Перехват и модификация запросов
-
-Fetch.enable включает перехват, каждый запрос будет остановлен пока клиент не вызовет failRequest, fulfillRequest или continueRequest.
-Перехватывать можно все запросы и модифицировать по условию, либо работать только с целевыми, указав для этого RequestPattern, ниже приведены оба варианта.
-
-Модифицируем URL, например перенаправим запросы /v1/users на новую версию бэкенда /v2/users.
+### Adding Custom Headers
 
 *Пример*
 
 ```java
-devTools.send(Fetch.enable(empty(), empty()));
-devTools.addListener(Fetch.requestPaused(), request -> {
+//enable Network
+chromeDevTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
 
-String url = request.getRequest().getUrl().contains("/v1/users")
-? request.getRequest().getUrl().replace("/v1/users", "/v2/users")
-: request.getRequest().getUrl();
+//set custom header
+chromeDevTools.send(Network.setExtraHTTPHeaders(ImmutableMap.of("customHeaderName", "customHeaderValue")));
 
-devTools.send(Fetch.continueRequest(
-request.getRequestId(),
-Optional.of(url),
-Optional.of(request.getRequest().getMethod()),
-request.getRequest().getPostData(),
-request.getResponseHeaders()));
-});
+//add event listener to verify that requests are sending with the custom header
+chromeDevTools.addListener(Network.requestWillBeSent(), requestWillBeSent -> Assert
+.assertEquals(requestWillBeSent.getRequest().getHeaders().get("customHeaderName"),
+"customHeaderValue"));
+
+chromeDriver.get("https://apache.org");
 ```
 
-Аналогичным способом эмулируется неудачный запрос. Например для тестирования работы приложения с отвалившейся интеграцией.
+### Basic Authentication
+
+Interacting with browser popups is not supported in Selenium, as it is only able to engage with DOM elements.
+This poses a challenge for pop-ups such as authentication dialogs.
+
+We can bypass this by using the CDP APIs to handle the authentication directly with DevTools.
+The CDP command to set additional headers for the requests is Network.setExtraHTTPHeaders.
+
+Here’s how to invoke this command in Selenium 4.
 
 *Пример*
 
 ```java
-Optional<List<RequestPattern>> patterns = Optional.of(asList(new RequestPattern(of("*.dropbox.*"), empty(), empty())));
-devTools.send(Fetch.enable(patterns, empty()));
-devTools.addListener(Fetch.requestPaused(), r -> devTools.send(Fetch.failRequest(r.getRequestId(), FAILED)));
-```
+ChromeDriver driver = new ChromeDriver();
 
-### Эмуляция интернет соединения
+//Create DevTools session and enable Network
+DevTools chromeDevTools = driver.getDevTools();
+chromeDevTools.createSession();
+chromeDevTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
 
-Network.emulateNetworkConditions позволяет задавать параметры соединения, например для тестирования поведения при слабом 3G или отсутствии сети.
+//Open website
+driver.get("https://jigsaw.w3.org/HTTP/");
 
-*Пример*
+//Send authorization header
+Map<String, Object> headers = new HashMap<>();
+String basicAuth ="Basic " + new String(new Base64().encode(String.format("%s:%s", USERNAME, PASSWORD).getBytes()));
+headers.put("Authorization", basicAuth);
+chromeDevTools.send(Network.setExtraHTTPHeaders(new Headers(headers)));
 
-```java
-devTools.send(Network.enable(empty(), empty(), empty()));
-devTools.send(Network.emulateNetworkConditions(false, 100, 1000, 1000, of(ConnectionType.CELLULAR3G)));
+//Click authentication test - this normally invokes a browser popup if unauthenticated
+driver.findElement(By.linkText("Basic Authentication test")).click();
+
+String loginSuccessMsg = driver.findElement(By.tagName("html")).getText();
+if(loginSuccessMsg.contains("Your browser made it!")){
+System.out.println("Login successful");
+}else{
+System.out.println("Login failed");
+}
+
+driver.quit();
 ```
 
 ### Очистка кэша
@@ -109,15 +155,87 @@ devTools.send(Network.enable(empty(), empty(), empty()));
 devTools.send(Network.setBlockedURLs(List.of("*.svg")));
 ```
 
+### URL Filtering
 
-### Установка TimeZone и Geolocation Position
-
-Emulation.setTimezoneOverride переопределяет TimeZone браузера, а Emulation.setGeolocationOverride геопозицию.
+*Пример*
 
 ```java
-devTools.send(Emulation.setTimezoneOverride("America/New_York"));
-devTools.send(Emulation.setGeolocationOverride(Optional.of(40.730610), Optional.of(-73.935242), Optional.of(1)));
+//enable Network
+chromeDevTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+
+//set blocked URL patterns
+chromeDevTools.send(Network.setBlockedURLs(ImmutableList.of("*.css", "*.png")));
+
+//add event listener to verify that css and png are blocked
+chromeDevTools.addListener(Network.loadingFailed(), loadingFailed -> {
+
+    if (loadingFailed.getResourceType().equals(ResourceType.Stylesheet)) {
+        Assert.assertEquals(loadingFailed.getBlockedReason(), BlockedReason.inspector);
+    }
+
+    else if (loadingFailed.getResourceType().equals(ResourceType.Image)) {
+        Assert.assertEquals(loadingFailed.getBlockedReason(), BlockedReason.inspector);
+    }
+
+});
+
+chromeDriver.get("https://apache.org");
 ```
+
+### Intercepting requests
+
+*Пример*
+
+```java
+//enable Network
+chromeDevTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+
+//add listener to intercept request and continue
+chromeDevTools.addListener(Network.requestIntercepted(),
+requestIntercepted -> chromeDevTools.send(
+Network.continueInterceptedRequest(requestIntercepted.getInterceptionId(),
+Optional.empty(),
+Optional.empty(),
+Optional.empty(), Optional.empty(),
+Optional.empty(),
+Optional.empty(), Optional.empty())));
+
+//set request interception only for css requests
+RequestPattern requestPattern = new RequestPattern("*.css", ResourceType.Stylesheet, InterceptionStage.HeadersReceived);
+chromeDevTools.send(Network.setRequestInterception(ImmutableList.of(requestPattern)));
+
+chromeDriver.get("https://apache.org");
+```
+
+### Capture HTTP Requests
+
+With DevTools we can capture the HTTP requests the application is invoking and access the method, data, headers and lot more.
+
+Lets see how to capture the HTTP requests, the URI and the request method with the sample code.
+
+*Пример*
+
+```java
+driver = new ChromeDriver();
+chromeDevTools = driver.getDevTools();
+chromeDevTools.createSession();
+
+chromeDevTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+chromeDevTools.addListener(Network.requestWillBeSent(),
+entry -> {
+System.out.println("Request URI : " + entry.getRequest().getUrl()+"\n"
++ " With method : "+entry.getRequest().getMethod() + "\n");
+entry.getRequest().getMethod();
+});
+driver.get("https://www.google.com");
+chromeDevTools.send(Network.disable());
+```
+
+
+
+
+
+## Security
 
 ### Обход ограничений безопасности
 
@@ -130,12 +248,22 @@ devTools.send(Security.enable());
 devTools.send(Security.setIgnoreCertificateErrors(true));
 ```
 
-###  Метрики
-
-Performance.enable включает сбор метрик (Resources, Documents, JSHeapUsedSize etc.), а Performance.getMetrics возвращает текущие значения.
+### IgnoreCertificateErrors
 
 *Пример*
 
 ```java
-devTools.send(Performance.enable(empty()));
-        List<Metric> send = devTools.send(Performance.getMetrics());
+//enable Security
+chromeDevTools.send(Security.enable());
+
+//set ignore certificate errors
+chromeDevTools.send(Security.setIgnoreCertificateErrors(true));
+
+//load insecure website
+chromeDriver.get("https://expired.badssl.com/");
+
+//verify that the page was loaded
+Assert.assertEquals(true, chromeDriver.getPageSource().contains("expired"));
+```
+
+
