@@ -31,29 +31,6 @@ public class PdfTest {
     }
 
     @Test
-    public void savePageToPdfTest() {
-        // Открыть страницу webdriveruniversity.com
-        driver.get("https://webdriveruniversity.com/Click-Buttons/index.html");
-        logger.info("Открыта страница webdriveruniversity.com - " + "https://webdriveruniversity.com/Click-Buttons/index.html");
-        // Сохранение страницы в PDF
-        PrintsPage printer = (PrintsPage) driver;
-        PrintOptions printOptions = new PrintOptions();
-        printOptions.setPageRanges("1-2");
-        Pdf pdf = printer.print(printOptions);
-        String content = pdf.getContent();
-        byte[] decoded = java.util.Base64.getDecoder().decode(content);
-        try {
-            FileOutputStream fos = new FileOutputStream("pdf.pdf");
-            fos.write(decoded);
-            fos.flush();
-            fos.close();
-            logger.info("Страница сохранена в файл pdf.pdf");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
     public void pdfTextPdfBoxTest() {
         // Открыть страницу с PDF
         String pdfURL = "http://www.pdf995.com/samples/pdf.pdf";

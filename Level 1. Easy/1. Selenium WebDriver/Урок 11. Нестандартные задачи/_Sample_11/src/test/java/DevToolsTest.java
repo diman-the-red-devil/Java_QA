@@ -17,8 +17,10 @@ import org.openqa.selenium.devtools.v91.fetch.model.HeaderEntry;
 import org.openqa.selenium.devtools.v91.fetch.model.RequestId;
 import org.openqa.selenium.devtools.v91.log.Log;
 import org.openqa.selenium.devtools.v91.network.Network;
+import org.openqa.selenium.devtools.v91.network.model.BlockedReason;
 import org.openqa.selenium.devtools.v91.network.model.ConnectionType;
 import org.openqa.selenium.devtools.v91.network.model.Headers;
+import org.openqa.selenium.devtools.v91.network.model.ResourceType;
 import org.openqa.selenium.devtools.v91.performance.Performance;
 import org.openqa.selenium.devtools.v91.performance.model.Metric;
 import org.apache.commons.codec.binary.Base64;
@@ -347,7 +349,7 @@ public class DevToolsTest {
     }
 
     @Test
-    public void networkHeadersAddTest() {
+    public void networkAddHeadersTest() {
         // Доступ к DevTools
         ChromeDriver chrome = (ChromeDriver) driver;
         DevTools devTools = chrome.getDevTools();
@@ -359,20 +361,21 @@ public class DevToolsTest {
         // Network.setExtraHTTPHeaders - отправка заголовков запроса
         // Заголовки
         Map<String, Object> headers = new HashMap<>();
-        headers.put("headerName1", "headerValue1");
-        headers.put("headerName2", "headerValue2");
-        headers.put("headerName3", "headerValue3");
+        headers.put("headername1", "headervalue1");
         devTools.send(Network.setExtraHTTPHeaders(new Headers(headers)));
-        devTools.addListener(Network.requestWillBeSent(),
-            requestWillBeSent -> {
-                Assertions.assertEquals("headerValue1", requestWillBeSent.getRequest().getHeaders().get("headerName1"));
-                Assertions.assertEquals("headerValue2", requestWillBeSent.getRequest().getHeaders().get("headerName2"));
-                Assertions.assertEquals("headerValue3", requestWillBeSent.getRequest().getHeaders().get("headerName3"));
+        // Слушатель
+        devTools.addListener(
+            // Network.requestWillBeSent - перехват запроса
+            Network.requestWillBeSent(),
+            // Обработка запроса
+            request -> {
+                logger.info(request.getRequest().getHeaders().get("headername1"));
             }
         );
 
-        // Открыть страницу apache.org"
-        chrome.get("https://apache.org");
+        // Открыть страницу yandex.ru
+        chrome.get("https://yandex.ru");
+        logger.info("Открыта страница yandex.ru - " + "https://yandex.ru");
 
         try {
             Thread.sleep(10000);
@@ -384,6 +387,39 @@ public class DevToolsTest {
         devTools.close();
     }
 
+    @Test
+    public void networkCaptureHttpRequestTest() {
+        // Доступ к DevTools
+        ChromeDriver chrome = (ChromeDriver) driver;
+        DevTools devTools = chrome.getDevTools();
+        // Открытие сессии DevTools
+        devTools.createSession();
+        // Перехват HTTP запроса
+        // Network.enable - включение сетевых возможностей
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        // Слушатель
+        devTools.addListener(
+            // Network.requestWillBeSent - перехват запроса
+            Network.requestWillBeSent(),
+            // Обработка запроса
+            request -> {
+                logger.info(request.getRequest().getMethod() + " " + request.getRequest().getUrl());
+            }
+        );
+
+        // Открыть страницу yandex.ru
+        chrome.get("https://yandex.ru");
+        logger.info("Открыта страница yandex.ru - " + "https://yandex.ru");
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Закрытие сессии DevTools
+        devTools.close();
+    }
 
     @Test
     public void networkBasicAuthTest() {
