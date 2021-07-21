@@ -1,10 +1,11 @@
+import org.apache.commons.codec.binary.Base64;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,13 +18,10 @@ import org.openqa.selenium.devtools.v91.fetch.model.HeaderEntry;
 import org.openqa.selenium.devtools.v91.fetch.model.RequestId;
 import org.openqa.selenium.devtools.v91.log.Log;
 import org.openqa.selenium.devtools.v91.network.Network;
-import org.openqa.selenium.devtools.v91.network.model.BlockedReason;
 import org.openqa.selenium.devtools.v91.network.model.ConnectionType;
 import org.openqa.selenium.devtools.v91.network.model.Headers;
-import org.openqa.selenium.devtools.v91.network.model.ResourceType;
 import org.openqa.selenium.devtools.v91.performance.Performance;
 import org.openqa.selenium.devtools.v91.performance.model.Metric;
-import org.apache.commons.codec.binary.Base64;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -111,7 +109,7 @@ public class DevToolsTest {
         int width = 600;            // Ширина
         int height = 1000;          // Высота
         int deviceScaleFactor = 50; //
-        boolean mobile = true;      // Мобильное устройства
+        boolean mobile = false;     // Мобильное устройство
         devTools.send(Emulation.setDeviceMetricsOverride(
                 width, height, deviceScaleFactor, mobile,
                 Optional.empty(), Optional.empty(), Optional.empty(),
@@ -122,6 +120,10 @@ public class DevToolsTest {
         // Открыть страницу yandex.ru
         chrome.get("https://yandex.ru");
         logger.info("Открыта страница yandex.ru - " + "https://yandex.ru");
+
+        logger.info("Параметры экрана");
+        logger.info("Ширина: " + chrome.executeScript("return document.documentElement.clientWidth"));
+        logger.info("Высота: " + chrome.executeScript("return document.documentElement.clientHeight"));
 
         try {
             Thread.sleep(10000);
@@ -202,7 +204,7 @@ public class DevToolsTest {
     }
 
     @Test
-    public void performanceTest() {
+    public void performanceMetricsTest() {
         // Доступ к DevTools
         ChromeDriver chrome =  (ChromeDriver) driver;
         DevTools devTools = chrome.getDevTools();
@@ -232,8 +234,7 @@ public class DevToolsTest {
         List<Metric> metrics = devTools.send(Performance.getMetrics());
         List<String> metricNames = metrics.stream()
             .map(o -> o.getName())
-            .collect(Collectors.toList()
-         );
+            .collect(Collectors.toList());
         // Performance.disable - выключение сбора метрик
         devTools.send(Performance.disable());
         // Список метрик для проверки
@@ -251,7 +252,7 @@ public class DevToolsTest {
         );
         // Вывод метрик
         metricsToCheck.forEach(metric ->
-                logger.info(metric + " is : " + metrics.get(metricNames.indexOf(metric)).getValue())
+            logger.info(metric + " is : " + metrics.get(metricNames.indexOf(metric)).getValue())
         );
 
         // Закрытие сессии DevTools
@@ -369,7 +370,9 @@ public class DevToolsTest {
             Network.requestWillBeSent(),
             // Обработка запроса
             request -> {
-                logger.info(request.getRequest().getHeaders().get("headername1"));
+                if (request.getRequest().getHeaders().get("headername1").equals("headervalue1"))
+                    logger.info("URL: " + request.getRequest().getUrl() +
+                            "\nHeaders: " + request.getRequest().getHeaders());
             }
         );
 
@@ -403,7 +406,8 @@ public class DevToolsTest {
             Network.requestWillBeSent(),
             // Обработка запроса
             request -> {
-                logger.info(request.getRequest().getMethod() + " " + request.getRequest().getUrl());
+                if (request.getRequest().getUrl().contains("zen.yandex"))
+                    logger.info(request.getRequest().getMethod() + " " + request.getRequest().getUrl());
             }
         );
 
@@ -434,6 +438,7 @@ public class DevToolsTest {
 
         // Открыть страницу jigsaw.w3.org/HTTP/
         driver.get("https://jigsaw.w3.org/HTTP/");
+        logger.info("Открыта страница jigsaw.w3.org/HTTP/ - " + "https://jigsaw.w3.org/HTTP/");
 
         // Отправка заголовков
         // Network.setExtraHTTPHeaders - отправка заголовков запроса
@@ -448,6 +453,14 @@ public class DevToolsTest {
         // Нажать на ссылку "Basic Authentication test"
         WebElement link = driver.findElement(By.linkText("Basic Authentication test"));
         link.click();
+
+        String loginSuccessMsg = driver.findElement(By.tagName("html")).getText();
+        if (loginSuccessMsg.contains("Your browser made it!")) {
+            logger.info("Успех!");
+        }
+        else {
+            logger.info("Неудача!");
+        }
 
         try {
             Thread.sleep(10000);
