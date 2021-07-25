@@ -12,9 +12,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class SeleniumTest {
+public class SingletonTest {
     protected static WebDriver driver;
-    private Logger logger = LogManager.getLogger(SeleniumTest.class);
+    private Logger logger = LogManager.getLogger(SingletonTest.class);
 
     @BeforeEach
     public void setUp() {
@@ -23,11 +23,9 @@ public class SeleniumTest {
     }
 
     @Test
-    public void dtoTest() {
+    public void sigletonTest() {
         driver.get("https://github.com/");
         driver.manage().window().maximize();
-
-        User user = new User("diman_the_red_devil@mail.ru", "JAKARTA12345rex-");
 
         Wait wait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofMillis(100));
 
@@ -39,12 +37,12 @@ public class SeleniumTest {
         By inputEmailXpath = By.xpath("//label[contains(text(), \"Username or email address\")]/following-sibling::input");
         wait.until(ExpectedConditions.elementToBeClickable(inputEmailXpath));
         WebElement inputEmail = driver.findElement(inputEmailXpath);
-        inputEmail.sendKeys(user.getEmail());
+        inputEmail.sendKeys(UserSingleton.getInstance().getEmail());
 
         By inputPasswordXpath = By.xpath("//label[contains(text(), \"Password\")]/following-sibling::input");
         wait.until(ExpectedConditions.elementToBeClickable(inputPasswordXpath));
         WebElement inputPassword = driver.findElement(inputPasswordXpath);
-        inputPassword.sendKeys(user.getPassword());
+        inputPassword.sendKeys(UserSingleton.getInstance().getPassword());
 
         By inputSignInXpath = By.xpath("//input[@value=\"Sign in\"]");
         wait.until(ExpectedConditions.elementToBeClickable(inputSignInXpath));
@@ -60,6 +58,21 @@ public class SeleniumTest {
         wait.until(ExpectedConditions.elementToBeClickable(linkSettingsXpath));
         WebElement linkSettings = driver.findElement(linkSettingsXpath);
         linkSettings.click();
+
+        By textareaBioXpath = By.xpath("//label[contains(text(), \"Bio\")]/parent::dt/following::dd//textarea");
+        wait.until(ExpectedConditions.elementToBeClickable(textareaBioXpath));
+        WebElement textareaBio = driver.findElement(textareaBioXpath);
+        textareaBio.sendKeys(UserSingleton.getInstance().getBio());
+
+        By inputTwitterUsernameXpath = By.xpath("//label[contains(text(), \"Twitter username\")]/parent::dt/following::dd//input");
+        wait.until(ExpectedConditions.elementToBeClickable(inputTwitterUsernameXpath));
+        WebElement inputTwitterUsername = driver.findElement(inputTwitterUsernameXpath);
+        inputTwitterUsername.sendKeys(UserSingleton.getInstance().getTwitterUserName());
+
+        By inputCompanyXpath = By.xpath("//label[contains(text(), \"Company\")]/parent::dt/following::dd//input");
+        wait.until(ExpectedConditions.elementToBeClickable(inputCompanyXpath));
+        WebElement inputCompany = driver.findElement(inputCompanyXpath);
+        inputCompany.sendKeys(UserSingleton.getInstance().getCompany());
 
         try {
             Thread.sleep(10000);
@@ -77,28 +90,47 @@ public class SeleniumTest {
     }
 }
 
-class User {
+class UserSingleton
+{
     private String email;
     private String password;
+    private String bio;
+    private String twitterUserName;
+    private String company;
 
-    public User(String email, String password) {
-        this.email = email;
-        this.password = password;
+    private static UserSingleton instance;
+
+    private UserSingleton() {
+        this.email = "diman_the_red_devil@mail.ru";
+        this.password = "JAKARTA12345rex-";
+        this.bio = "I'm QA from Russia";
+        this.twitterUserName = "Diman The Red Devil";
+        this.company = "QA Company";
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public static UserSingleton getInstance() {
+        if (instance == null)
+            instance = new UserSingleton();
+        return instance;
     }
 
     public String getEmail() {
         return this.email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getPassword() {
         return this.password;
+    }
+
+    public String getBio() {
+        return this.bio;
+    }
+
+    public String getTwitterUserName() {
+        return this.twitterUserName;
+    }
+
+    public String getCompany() {
+        return this.company;
     }
 }

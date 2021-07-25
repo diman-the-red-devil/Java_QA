@@ -33,7 +33,6 @@ public class WebDriverFactory {
                 WebDriverManager.operadriver().setup();
                 logger.info("Драйвер для браузера Opera");
                 return new OperaDriver();
-
             default:
                 throw new RuntimeException("Incorrect browser name");
         }
