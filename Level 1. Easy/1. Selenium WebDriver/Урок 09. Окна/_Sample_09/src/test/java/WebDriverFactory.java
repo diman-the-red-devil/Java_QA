@@ -19,7 +19,7 @@ public class WebDriverFactory {
                 WebDriverManager.chromedriver().setup();
                 logger.info("Драйвер для браузера Google Chrome");
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--start-maximized");
+                //options.addArguments("--start-maximized");
                 return new ChromeDriver(options);
             case "firefox" :
                 WebDriverManager.firefoxdriver().setup();
