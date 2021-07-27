@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class SingletonTest {
+public class SingletonTest {/*
     protected static WebDriver driver;
     private Logger logger = LogManager.getLogger(SingletonTest.class);
 
@@ -132,5 +132,5 @@ class UserSingleton
 
     public String getCompany() {
         return this.company;
-    }
+    }*/
 }

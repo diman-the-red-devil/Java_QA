@@ -1,19 +1,15 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-S
-#src/test/java/WebDriverFactory.java,6\1\61c3223c91d2835506b56389c657d069bd79c933
 Q
 !src/test/java/PageObjectTest.java,a\2\a2fa48136989f416691be1300e9c27fa5f21b045
-W
-'src/test/java/PageObjects/BasePage.java,d\0\d0897a339239e2f5d1d66d2298d850bb06098d92
-X
-(src/test/java/PageObjects/StartPage.java,5\7\57041b5aa44ff3dcb9f11ba7ddedce13a41805fe
 J
 src/test/java/DtoTest.java,c\e\ce4ebab6af1959bc7f1c4909a5a4a79c25b11167
-J
-src/test/java/AAATest.java,1\c\1ca9dcb41ca073a57d7dd3145f915804d9bec468
 d
 4src/test/java/webdriverfactory/WebDriverFactory.java,2\b\2b5547a061385c19394062ffbcc9cf7000167f51
 U
 %src/test/java/aaapattern/AAATest.java,3\d\3d7d5ccff613ecb06d5478e3b4c2ffd9e61668f7
+N
+src/test/java/FactoryTest.java,0\b\0b0ed983ab309ecda3511d69dabc5c2e61597461
+P
+ src/test/java/SingletonTest.java,d\8\d81488031bc6f6f2f62171d1bd838e3995d5bc9f

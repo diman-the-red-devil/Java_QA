@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class DtoTest {
+    /*
     protected static WebDriver driver;
     private Logger logger = LogManager.getLogger(DtoTest.class);
 
@@ -151,5 +152,5 @@ class UserDto {
 
     public String getCompany() {
         return this.company;
-    }
+    }*/
 }

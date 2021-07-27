@@ -30,8 +30,8 @@ public class AAATest {
     @Test
     public void dtoTest() {
         // Arrange
-        driver.get("https://github.com/");
         driver.manage().window().maximize();
+        driver.get("https://github.com/");
 
         String email           = "diman_the_red_devil@mail.ru";
         String password        = "JAKARTA12345rex-";
@@ -87,7 +87,6 @@ public class AAATest {
 
         // Assert
 
-
         try {
             Thread.sleep(10000);
         } catch (Exception e) {
@@ -95,8 +94,8 @@ public class AAATest {
         }
     }
 
-    static void waitToBeClackable(By xpath) {
-        wait.until(ExpectedConditions.elementToBeClickable(xpath));
+    static void waitToBeClackable(By by) {
+        wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
     @AfterEach

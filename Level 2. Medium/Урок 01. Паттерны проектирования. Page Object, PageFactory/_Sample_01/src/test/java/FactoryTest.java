@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class FactoryTest {
+    /*
     protected static WebDriver driver;
     private final Logger logger = LogManager.getLogger(FactoryTest.class);
 
@@ -170,5 +171,5 @@ class UserFactory
             default:
                 throw new RuntimeException("Incorrect user type");
         }
-    }
+    }*/
 }
