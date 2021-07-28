@@ -1,42 +1,31 @@
 package webdriverfactory;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.opera.OperaDriver;
 
+// Фабрика по созданию экземпляров драйвера браузера
 public class WebDriverFactory {
     private static Logger logger = LogManager.getLogger(WebDriverFactory.class);
 
-    public static WebDriver getDriver(String browserName) {
-        switch (browserName) {
-            case "chrome":
-                WebDriverManager.chromedriver().setup();
-                logger.info("Драйвер для браузера Google Chrome");
-                return new ChromeDriver();
-            case "firefox" :
-                WebDriverManager.firefoxdriver().setup();
-                logger.info("Драйвер для браузера Mozilla Firefox");
-                return new FirefoxDriver();
-            case "edge" :
-                WebDriverManager.edgedriver().setup();
-                logger.info("Драйвер для браузера Microsoft Edge");
-                return new EdgeDriver();
-            case "explorer" :
-                WebDriverManager.iedriver().setup();
-                logger.info("Драйвер для браузера Microsoft Internet Explorer");
-                return new InternetExplorerDriver();
-            case "opera" :
-                WebDriverManager.operadriver().setup();
-                logger.info("Драйвер для браузера Opera");
-                return new OperaDriver();
+    // Получение экземпляра драйвера по имени
+    public static WebDriver create(String name) {
+        switch (BrowserName.fromString(name)) {
+            // Драйвер браузера Google Chrome
+            case CHROME:
+                logger.info("Драйвер браузера Google Chrome");
+                ChromeBrowser.getDriver();
+            // Драйвер браузера Mozilla Firefox
+            case FIREFOX:
+                logger.info("Драйвер браузера Mozilla Firefox");
+                FirefoxBrowser.getDriver();
+            // Драйвер браузера Microsoft Edge
+            case EDGE:
+                logger.info("Драйвер браузера Microsoft Edge");
+                EdgeBrowser.getDriver();
+            // По умолчанию
             default:
-                throw new RuntimeException("Incorrect browser name");
+                throw new RuntimeException("Некорректное наименование браузера");
         }
     }
 }
