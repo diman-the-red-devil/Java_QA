@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 // Фабрика по созданию экземпляров драйвера браузера
 public class WebDriverFactory {
+    // Логгер
     private static Logger logger = LogManager.getLogger(WebDriverFactory.class);
 
     // Получение экземпляра драйвера по имени
