@@ -6,7 +6,6 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver
 
 Написание автотестов с использованием всего арсенала **Selenium WebDriver**.
 
-
 ## Шаги
 
 | №   | Описание                                                     | Примечание                                       |
