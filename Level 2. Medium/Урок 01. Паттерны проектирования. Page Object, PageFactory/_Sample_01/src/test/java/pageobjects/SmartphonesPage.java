@@ -1,5 +1,7 @@
 package pageobjects;
 
+import helpers.JSExec;
+import helpers.WaitFor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -36,11 +38,7 @@ public class SmartphonesPage extends BasePage {
 
     // Нажатие на флажок "Samsung"
     public void chbxSamsungClick() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        String script1 = "window.scrollBy(0,300);";
-        js.executeScript(script1);
-        logger.info("Проскроллено вниз");
-
+        JSExec.scrollBy(0, 300);
         WaitFor.visibilityOfElementLocated(chbxSamsungXpath);
         WebElement chbxSamsung = driver.findElement(chbxSamsungXpath);
         WaitFor.elementToBeClickable(chbxSamsung);
@@ -49,11 +47,7 @@ public class SmartphonesPage extends BasePage {
 
     // Нажатие на гармошку "Объем оперативной памяти"
     public void showRAMClick() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        String script1 = "window.scrollBy(0,300);";
-        js.executeScript(script1);
-        logger.info("Проскроллено вниз");
-
+        JSExec.scrollBy(0, 300);
         WaitFor.visibilityOfElementLocated(showRAMXpath);
         WebElement showRAM = driver.findElement(showRAMXpath);
         WaitFor.elementToBeClickable(showRAM);
@@ -62,11 +56,7 @@ public class SmartphonesPage extends BasePage {
 
     // Нажатие на флажок "8 Гб"
     public void chbxRAM8GbClick() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        String script1 = "window.scrollBy(0,300);";
-        js.executeScript(script1);
-        logger.info("Проскроллено вниз");
-
+        JSExec.scrollBy(0, 300);
         WaitFor.visibilityOfElementLocated(chbxRAM8GbXpath);
         WebElement chbxRAM8Gb = driver.findElement(chbxRAM8GbXpath);
         WaitFor.elementToBeClickable(chbxRAM8Gb);
@@ -94,14 +84,8 @@ public class SmartphonesPage extends BasePage {
         // Изменение отображаемости элемента
         String headerXpath = "//header";
         WebElement header = driver.findElement(By.xpath(headerXpath));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        String script = "arguments[0].style.display='none';";
-        js.executeScript(script, header);
-
-        String script1 = "window.scrollBy(0,-400);";
-        js.executeScript(script1);
-        logger.info("Проскроллено вверх");
-
+        JSExec.displayNone(header);
+        JSExec.scrollBy(0, -400);
         WaitFor.visibilityOfElementLocated(linkProductXpath);
         WebElement linkProduct = driver.findElement(linkProductXpath);
         WaitFor.elementToBeClickable(linkProduct);
