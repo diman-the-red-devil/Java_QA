@@ -18,9 +18,11 @@ public class BaseTest {
     @BeforeEach
     public void setUp() {
         // Получаем параметр запуска тестов через Maven -Dbrowser
-        String env = System.getProperty("browser", "chrome");
+        String browser = System
+                .getProperty("browser", "chrome")
+                .toLowerCase();
         // Получаем экземпляр драйвера браузера
-        driver = WebDriverFactory.getDriver(env.toLowerCase());
+        driver = WebDriverFactory.getDriver(browser);
         logger.info("Драйвер стартовал!");
     }
 

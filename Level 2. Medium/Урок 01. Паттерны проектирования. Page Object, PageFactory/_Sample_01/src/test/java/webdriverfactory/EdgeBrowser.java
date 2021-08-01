@@ -14,6 +14,7 @@ public class EdgeBrowser {
     public static WebDriver getDriver() {
         // Настройка файла драйвера
         WebDriverManager.edgedriver().setup();
+
         // Опции драйвера:
         EdgeOptions options = new EdgeOptions();
         // - поведение при появлении алертов "Игнорирование"
@@ -24,6 +25,7 @@ public class EdgeBrowser {
         options.addArguments("--incognito");
         // - режим "Полный экран"
         options.addArguments("--start-fullscreen");
+
         // Новый экземпляр драйвера
         return new EdgeDriver(options);
     }

@@ -17,27 +17,29 @@ public class WaitFor {
     // Ожидание драйвера браузера
     protected static WebDriverWait wait;
 
+    // Инициализация ожидания драйвера браузера
     // Установка таймаута ожидания и интервала опроса
     public static void initWait(WebDriver driver, Duration timeOut, Duration sleep) {
         wait = new WebDriverWait(driver, timeOut, sleep);
     }
 
+    // Ожидание наличия элемента по локатору
     public static void presenceOfElementLocated(By webElement) {
         wait.until(ExpectedConditions.presenceOfElementLocated(webElement));
     }
 
     // Ожидание появления текста в элементе
-    public static void textToBePresentInElement(WebElement webElement, String text) {
+    public static void presenceOfTextInElement(WebElement webElement, String text) {
         wait.until(ExpectedConditions.textToBePresentInElement(webElement, text));
     }
 
     // Ожидание кликабельности элемента
-    public static void elementToBeClickable(WebElement webElement) {
+    public static void clickabilityOfElement(WebElement webElement) {
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
-    // Ожидание кликабельности элемента
-    public static void elementToBeClickable(By webElement) {
+    // Ожидание кликабельности элемента по локатору
+    public static void clickabilityOfElementLocated(By webElement) {
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
@@ -46,7 +48,7 @@ public class WaitFor {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    // Ожидание видимости элемента
+    // Ожидание видимости элемента по локатору
     public static void visibilityOfElementLocated(By webElement) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(webElement));
     }

@@ -14,6 +14,7 @@ public class ChromeBrowser {
     public static WebDriver getDriver() {
         // Настройка файла драйвера
         WebDriverManager.chromedriver().setup();
+
         // Опции драйвера:
         ChromeOptions options = new ChromeOptions();
         // - поведение при появлении алертов "Игнорирование"
@@ -24,6 +25,7 @@ public class ChromeBrowser {
         options.addArguments("--incognito");
         // - режим "Полный экран"
         options.addArguments("--start-fullscreen");
+
         // Новый экземпляр драйвера
         return new ChromeDriver(options);
     }

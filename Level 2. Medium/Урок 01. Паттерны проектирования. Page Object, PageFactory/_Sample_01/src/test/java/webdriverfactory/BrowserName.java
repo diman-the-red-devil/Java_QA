@@ -13,7 +13,7 @@ public enum BrowserName {
         this.browserName = browserName;
     }
 
-    // Переопределенный метод
+    // Переопределенный метод toString()
     @Override
     public String toString() {
         return String.valueOf(this.browserName);
@@ -31,6 +31,7 @@ public enum BrowserName {
         return null;
     }
 
+    // Получение имени браузера
     public String getBrowserName() {
         return this.browserName;
     }

@@ -14,6 +14,7 @@ public class FirefoxBrowser {
     public static WebDriver getDriver() {
         // Настройка файла драйвера
         WebDriverManager.firefoxdriver().setup();
+
         // Опции драйвера:
         FirefoxOptions options = new FirefoxOptions();
         // - поведение при появлении алертов "Игнорирование"
@@ -24,6 +25,7 @@ public class FirefoxBrowser {
         options.addArguments("-private");
         // - режим "Полный экран"
         options.addArguments("-kiosk");
+
         // Новый экземпляр драйвера
         return new FirefoxDriver(options);
     }
