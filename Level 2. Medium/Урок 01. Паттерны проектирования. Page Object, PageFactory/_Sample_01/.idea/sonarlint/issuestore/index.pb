@@ -1,12 +1,6 @@
 
-X
-(src/test/java/pageobjects/StartPage.java,e\a\ea86ef4c4673c45fc72f8bf2f6ce2e7a100f1189
-W
-'src/test/java/pageobjects/BasePage.java,5\5\55aefca04ab54c529c17c2c42186900673188dc1
 d
 4src/test/java/webdriverfactory/WebDriverFactory.java,2\b\2b5547a061385c19394062ffbcc9cf7000167f51
-V
-&src/test/java/pageobjects/WaitFor.java,a\7\a798abd155c4d338ea29e8ead1ef470774573f74
 b
 2src/test/java/webdriverfactory/FirefoxBrowser.java,5\3\53e120e12eacaa1d7700c37803644341f3ee4cde
 _
@@ -17,7 +11,17 @@ _
 /src/test/java/webdriverfactory/BrowserName.java,6\9\690f5d0d96bc7049e3a3876e9c67bdd3c71b5ee1
 Q
 !src/test/java/tests/BaseTest.java,f\7\f76255b3e7b0a3a09fc110123ff89e0e8e0bb5c4
-X
-(src/test/java/tests/SmartphonesTest.java,3\7\37890de7593d23fed649394b286ccc52099642e3
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+R
+"src/test/java/helpers/WaitFor.java,c\c\cc2d8b3f8f35e4f8a2acf15f2359ad5244cf1ddc
+Q
+!src/test/java/helpers/JSExec.java,a\4\a4083ea2763b954b4a06dbd4dc6b1ba6290343fb
 ^
-.src/test/java/pageobjects/SmartphonesPage.java,f\6\f6c208bd879103aa21bf31163b0c97b7202fd70f
+.src/test/java/pages/SmartphoneProductPage.java,4\2\42b829e9878e3fe3a14238675ca04cdd9778339c
+X
+(src/test/java/pages/SmartphonesPage.java,f\0\f01b935b0d64e7b0480541fba2ee62755b52b8bd
+R
+"src/test/java/pages/StartPage.java,1\1\1100057c1adfc4160674f9faa46d9ac2f2080837
+Q
+!src/test/java/pages/BasePage.java,b\a\bad33c200b069c9a74de9dfe76f946ebd1f102bf

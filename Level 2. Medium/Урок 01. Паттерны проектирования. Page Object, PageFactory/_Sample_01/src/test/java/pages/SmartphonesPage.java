@@ -48,6 +48,7 @@ public class SmartphonesPage extends BasePage {
         WebElement showSort = driver.findElement(By.xpath(showSortXpath));
         WaitFor.clickabilityOfElement(showSort);
         showSort.click();
+        logger.info("Нажата выпадашка \"Сортировка\"");
     }
 
     // Установка сортировки "Сначала дорогие"
@@ -56,6 +57,7 @@ public class SmartphonesPage extends BasePage {
         WebElement rbtnExpensive = driver.findElement(By.xpath(rbtnExpensiveXpath));
         WaitFor.clickabilityOfElement(rbtnExpensive);
         rbtnExpensive.click();
+        logger.info("Установлена сортировка - \"Сначала дорогие\"");
     }
 
     // Установка фильтра "Производитель"
@@ -66,6 +68,7 @@ public class SmartphonesPage extends BasePage {
         WebElement chbxCompany = driver.findElement(By.xpath(chbxCompanyXpath));
         WaitFor.clickabilityOfElement(chbxCompany);
         chbxCompany.click();
+        logger.info("Установлен фильтр \"Производитель\" - " + company);
     }
 
     // Нажатие на гармошку "Объем оперативной памяти"
@@ -75,6 +78,7 @@ public class SmartphonesPage extends BasePage {
         WebElement showRAM = driver.findElement(By.xpath(showRAMXpath));
         WaitFor.clickabilityOfElement(showRAM);
         showRAM.click();
+        logger.info("Отображены значения фильтра \"Объем оперативной памяти\"");
     }
 
     // Установка фильтра "Объем оперативной памяти"
@@ -85,6 +89,7 @@ public class SmartphonesPage extends BasePage {
         WebElement chbxRAM = driver.findElement(By.xpath(chbxRAMXpath));
         WaitFor.clickabilityOfElement(chbxRAM);
         chbxRAM.click();
+        logger.info("Установлен фильтр \"Объем оперативной памяти\" - " + ram);
     }
 
     // Нажатие на кнопку "Применить"
@@ -94,6 +99,7 @@ public class SmartphonesPage extends BasePage {
         WebElement btnApply = driver.findElement(By.xpath(btnApplyXpath));
         WaitFor.clickabilityOfElement(btnApply);
         btnApply.click();
+        logger.info("Нажата кнопка \"Применить\"");
     }
 
     // Нажатие на ссылку первого продукта в списке
@@ -106,5 +112,6 @@ public class SmartphonesPage extends BasePage {
         driver.switchTo().newWindow(WindowType.WINDOW);
         driver.manage().window().maximize();
         driver.navigate().to(URL);
+        logger.info("Нажата кнопка первого продукта в списке");
     }
 }

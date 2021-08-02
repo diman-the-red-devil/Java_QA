@@ -37,6 +37,7 @@ public class StartPage extends BasePage {
     // Открытие страницы в браузере
     public void openPage() {
         driver.get(this.URL);
+        logger.info("Открыта страница https://www.dns-shop.ru/");
     }
 
     // Нажатие на кнопку "Да"
@@ -45,6 +46,7 @@ public class StartPage extends BasePage {
         WebElement linkYes = driver.findElement(By.xpath(linkYesXpath));
         WaitFor.clickabilityOfElement(linkYes);
         linkYes.click();
+        logger.info("Нажата кнопка \"Да\"");
     }
 
     // Наведение курсора мыши на ссылку "Смартфоны и гаджеты"
@@ -61,5 +63,6 @@ public class StartPage extends BasePage {
         WebElement linkSmarts = driver.findElement(By.xpath(linkSmartsXpath));
         WaitFor.clickabilityOfElement(linkSmarts);
         linkSmarts.click();
+        logger.info("Нажата ссылка \"Смартфоны\"");
     }
 }
