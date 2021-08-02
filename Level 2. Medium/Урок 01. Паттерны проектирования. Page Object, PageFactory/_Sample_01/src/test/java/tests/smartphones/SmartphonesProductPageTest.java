@@ -8,7 +8,7 @@ import pages.StartPage;
 import tests.BaseTest;
 
 // Тест
-public class SmartphonesTest extends BaseTest {
+public class SmartphonesProductPageTest extends BaseTest {
 
     @Test
     // Проверка

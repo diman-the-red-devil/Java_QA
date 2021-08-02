@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.CapabilityType;
 public class ChromeBrowser {
     // Получение экземпляра драйвера браузера "Google Chrome"
     public static WebDriver getDriver() {
-        // Настройка файла драйвера
+        // Настройка исполняемого файла драйвера
         WebDriverManager.chromedriver().setup();
 
         // Опции драйвера:

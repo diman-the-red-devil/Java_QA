@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.CapabilityType;
 public class FirefoxBrowser {
     // Получение экземпляра драйвера браузера "Mozilla Firefox"
     public static WebDriver getDriver() {
-        // Настройка файла драйвера
+        // Настройка исполняемого файла драйвера
         WebDriverManager.firefoxdriver().setup();
 
         // Опции драйвера:

@@ -2,6 +2,7 @@ package webdriverfactory;
 
 // Имена браузеров
 public enum BrowserName {
+    // Имена браузеров
     CHROME("chrome"),   // Google Chrome
     FIREFOX("firefox"), // Mozilla Firefox
     EDGE("edge");       // Microsoft Edge

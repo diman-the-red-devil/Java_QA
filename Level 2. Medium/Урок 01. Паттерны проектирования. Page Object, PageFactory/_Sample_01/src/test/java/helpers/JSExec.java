@@ -17,7 +17,7 @@ public class JSExec {
         js = (JavascriptExecutor) driver;
     }
 
-    // Скролл страницы на заданный интервал в пикселях по X и по Y
+    // Скролл страницы заданное расстояние в пикселях по X и по Y
     public static void scrollBy(int x, int y) {
         String script = "window.scrollBy(" + x + "," + y + ");";
         js.executeScript(script);

@@ -13,7 +13,7 @@ public class BasePage {
 
     // Конструктор базового класса
     public BasePage(WebDriver driver) {
-        this.driver = driver;
+        BasePage.driver = driver;
         // Инициализация ожидания - 10 секунд
         WaitFor.initWait(driver, Duration.ofSeconds(10), Duration.ofMillis(100));
         // Инициализация исполнителя JS скриптов

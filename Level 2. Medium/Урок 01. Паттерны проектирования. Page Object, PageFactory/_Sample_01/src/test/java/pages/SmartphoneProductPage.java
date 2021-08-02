@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 // Страница "Продукт. Смартфон"
 public class SmartphoneProductPage extends BasePage {
     // Логгер
-    private Logger logger = LogManager.getLogger(SmartphonesPage.class);
+    private Logger logger = LogManager.getLogger(SmartphoneProductPage.class);
 
     // Конструктор класса
     public SmartphoneProductPage(WebDriver driver) {
@@ -17,6 +17,8 @@ public class SmartphoneProductPage extends BasePage {
 
     // Получение заголовка текущей страницы
     public String getPageTitle() {
-        return driver.getTitle();
+        String title = driver.getTitle();
+        logger.info("Заголовок страницы: " + title);
+        return title;
     }
 }

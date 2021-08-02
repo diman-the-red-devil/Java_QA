@@ -34,7 +34,7 @@ public class StartPage extends BasePage {
         return this.URL;
     }
 
-    // Открытие страницы в браузере
+    // Открытие страницы
     public void openPage() {
         driver.get(this.URL);
         logger.info("Открыта страница https://www.dns-shop.ru/");

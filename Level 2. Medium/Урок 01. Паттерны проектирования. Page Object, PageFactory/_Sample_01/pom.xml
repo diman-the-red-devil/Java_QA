@@ -16,15 +16,22 @@
         <!-- Версия Java - 15 -->
         <source>15</source>
         <target>15</target>
-        <!-- Версии зависимостей -->
+        <!-- Версии зависимостей: -->
+        <!-- JUnit -->
         <junit-jupiter-engine>5.1.0</junit-jupiter-engine>
+        <!-- Selenium WebDriver -->
         <selenium-java>4.0.0-beta-4</selenium-java>
+        <!-- WebDriver Manager -->
         <webdrivermanager>4.2.2</webdrivermanager>
+        <!-- Log4J -->
         <log4j-api>2.14.0</log4j-api>
         <log4j-core>2.14.0</log4j-core>
+        <!-- aShot -->
         <ashot>1.5.4</ashot>
-        <!-- Версии плагинов -->
+        <!-- Версии плагинов: -->
+        <!-- maven-surefire-plugin -->
         <maven-surefire-plugin>2.22.2</maven-surefire-plugin>
+        <!-- maven-compiler-plugin -->
         <maven-compiler-plugin>3.8.1</maven-compiler-plugin>
     </properties>
 

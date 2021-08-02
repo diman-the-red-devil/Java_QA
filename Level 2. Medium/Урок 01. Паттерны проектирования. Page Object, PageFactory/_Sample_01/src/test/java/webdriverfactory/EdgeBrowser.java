@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.CapabilityType;
 public class EdgeBrowser {
     // Получение экземпляра драйвера браузера "Microsoft Edge"
     public static WebDriver getDriver() {
-        // Настройка файла драйвера
+        // Настройка исполняемого файла драйвера
         WebDriverManager.edgedriver().setup();
 
         // Опции драйвера:
