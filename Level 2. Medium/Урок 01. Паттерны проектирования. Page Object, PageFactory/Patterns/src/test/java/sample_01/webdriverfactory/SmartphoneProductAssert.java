@@ -1,7 +1,7 @@
-package tests.smartphones;
+package sample_01.webdriverfactory;
 
 import org.junit.jupiter.api.Assertions;
-import pages.SmartphoneProductPage;
+import sample_01.pages.SmartphoneProductPage;
 
 public class SmartphoneProductAssert {
     SmartphoneProductPage page;

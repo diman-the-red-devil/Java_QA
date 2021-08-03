@@ -8,7 +8,7 @@ import pages.StartPage;
 import tests.BaseTest;
 
 // Тест
-public class SmartphonesProductPageTest extends BaseTest {
+public class SmartphonesProductPage2_Test extends BaseTest {
 
     @Test
     // Проверка
@@ -19,11 +19,11 @@ public class SmartphonesProductPageTest extends BaseTest {
 
         // 2. Act
         SmartphoneProductPage smartphoneProductPage = getProductPage(product, ram);
+        String actual = smartphoneProductPage.getPageTitle();
 
         // 3. Assert
         String expected = "Купить 6.9\" Смартфон Samsung Galaxy Note 20 Ultra 256 ГБ белый в интернет магазине DNS. Характеристики, цена Samsung Galaxy Note 20 Ultra | 1685908";
-        SmartphoneProductAssert smartphoneProductAssert = new SmartphoneProductAssert(smartphoneProductPage);
-        smartphoneProductAssert.pageTitleEquals(expected);
+        Assertions.assertEquals(expected, actual);
     }
 
     // Получение заголовка страницы с продуктом
@@ -48,7 +48,6 @@ public class SmartphonesProductPageTest extends BaseTest {
         smartphonesPage.btnApplyClick();
         // Открытие страницы с продуктом
         smartphonesPage.linkProductClick("Смартфон Samsung Galaxy Note 20 Ultra 256 ГБ белый");
-        SmartphoneProductPage smartphoneProductPage = new SmartphoneProductPage(driver);
-        return smartphoneProductPage;
+        return new SmartphoneProductPage(driver);
     }
 }

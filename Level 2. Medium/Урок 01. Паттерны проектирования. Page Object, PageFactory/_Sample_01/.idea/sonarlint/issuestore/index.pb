@@ -25,3 +25,11 @@ R
 "src/test/java/pages/StartPage.java,1\1\1100057c1adfc4160674f9faa46d9ac2f2080837
 Q
 !src/test/java/pages/BasePage.java,b\a\bad33c200b069c9a74de9dfe76f946ebd1f102bf
+p
+@src/test/java/tests/smartphones/SmartphoneProductPageAssert.java,0\3\0372b1c2128dd605b29e5ea127dfd570c8e9af33
+q
+Asrc/test/java/tests/smartphones/SmartphonesProductPage3_Test.java,b\0\b0ba8ddace3d01504aeb6409b5597103b35ef1af
+q
+Asrc/test/java/tests/smartphones/SmartphonesProductPage2_Test.java,3\c\3ccacdb65409ab7361a55ef511f685b086e8fd03
+q
+Asrc/test/java/tests/smartphones/SmartphonesProductPage1_Test.java,7\6\765cc83110eaeaaf3ac7140358ebc0362b590948
