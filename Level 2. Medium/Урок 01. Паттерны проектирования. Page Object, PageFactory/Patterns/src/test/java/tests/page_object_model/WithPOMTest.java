@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import pom.HomePage;
-import pom.SignInPage;
+import pages.HomePage;
+import pages.SignInPage;
 import webdriverfactory.WebDriverFactory;
 
 // Тест
