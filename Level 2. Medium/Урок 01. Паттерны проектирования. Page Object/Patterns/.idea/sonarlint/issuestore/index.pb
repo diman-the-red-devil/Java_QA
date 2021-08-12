@@ -11,10 +11,6 @@ d
 4src/test/java/webdriverfactory/WebDriverFactory.java,2\b\2b5547a061385c19394062ffbcc9cf7000167f51
 a
 1src/test/java/webdriverfactory/ChromeBrowser.java,7\a\7aba29eab3eb2d2b4d07f6e0d65aca130ee2bd73
-Q
-!src/test/java/pom/SignInPage.java,c\b\cb1b0d2e688630eabeb11d6fcaa997e7133a102d
-O
-src/test/java/pom/HomePage.java,6\9\69e6564d8ce12d1f998db31fba87f29271a42ac6
 i
 9src/test/java/tests/page_object_model/WithoutPOMTest.java,0\2\02a36c1194008e6b035875df1a6a883c3832b495
 f
@@ -53,3 +49,15 @@ z
 Jsrc/test/java/sample_01/tests/smartphones/SmartphonesProductPageTest1.java,b\c\bc71ce23a475f2879d374065c2b33225d93bf26a
 z
 Jsrc/test/java/sample_01/tests/smartphones/SmartphonesProductPageTest2.java,e\f\ef3beb5b5ef101a731b5b39d55913170eb8a0801
+V
+&src/test/java/exps/pages/HomePage.java,3\6\369e0bf772eaa633744a5bd967c6000ed1513b9a
+X
+(src/test/java/exps/elements/TextBox.java,e\8\e8da563e3238121c1a7f89aa89adf3621b407ebc
+X
+(src/test/java/exps/pages/SignInPage.java,4\5\455ad953b4549eecb439d23c94dca13cfb4406fd
+W
+'src/test/java/exps/elements/Button.java,3\a\3a6dcd3d7b698e37d05e1d3ca7d129b164d52c8d
+Y
+)src/test/java/exps/elements/CheckBox.java,6\9\6986eb0bb5167eb11a70861c5fd652f2bb15b04f
+X
+(src/test/java/exps/elements/Element.java,a\3\a33d45cb2a9ce087f137ed452355f849b9735460

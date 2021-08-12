@@ -1,19 +1,15 @@
-package sample_01.webdriverfactory;
+package exps.webdriverfactory;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import exps.webdriverfactory.BrowserName;
-import exps.webdriverfactory.ChromeBrowser;
-import exps.webdriverfactory.EdgeBrowser;
-import exps.webdriverfactory.FirefoxBrowser;
 
 import static exps.webdriverfactory.BrowserName.CHROME;
 
 // Фабрика по созданию экземпляров драйвера браузера
 public class WebDriverFactory {
     // Логгер
-    private static Logger logger = LogManager.getLogger(exps.webdriverfactory.WebDriverFactory.class);
+    private static Logger logger = LogManager.getLogger(WebDriverFactory.class);
 
     // Получение экземпляра драйвера по имени
     public static WebDriver getDriver(String name) {
