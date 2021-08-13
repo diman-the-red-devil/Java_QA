@@ -23,11 +23,11 @@ public class SignInPage {
 
     // Вход с логином и паролем
     public HomePage loginValidUser(String login, String password) {
-        TextBox tbxLogin = new TextBox(driver.findElement(loginBy));
+        TextBox tbxLogin = new TextBox(driver, loginBy);
         tbxLogin.setText(login);
-        TextBox tbxPassword = new TextBox(driver.findElement(passwordBy));
+        TextBox tbxPassword = new TextBox(driver, passwordBy);
         tbxPassword.setText(password);
-        Button btnSignIn = new Button(driver.findElement(signInBy));
+        Button btnSignIn = new Button(driver, signInBy);
         btnSignIn.click();
         return new HomePage(driver);
     }

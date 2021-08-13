@@ -1,10 +1,12 @@
 package exps.elements;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class CheckBox extends Element{
-    public CheckBox(WebElement webElement) {
-        super(webElement);
+    public CheckBox(WebDriver driver, By by) {
+        super(driver, by);
     }
 
     public void setChecked(boolean value) {

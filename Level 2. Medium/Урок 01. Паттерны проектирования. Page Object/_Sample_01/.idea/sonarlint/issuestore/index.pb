@@ -33,11 +33,5 @@ q
 Asrc/test/java/tests/smartphones/SmartphonesProductPage2_Test.java,3\c\3ccacdb65409ab7361a55ef511f685b086e8fd03
 q
 Asrc/test/java/tests/smartphones/SmartphonesProductPage1_Test.java,7\6\765cc83110eaeaaf3ac7140358ebc0362b590948
-S
-#src/test/java/elements/Element.java,e\c\ece45db0616a5cdf72f9ae0a41f0f27eceb44b93
-T
-$src/test/java/elements/CheckBox.java,8\c\8cfae28f89ee871c0ff9b21c07f2f40ecbe31be0
-R
-"src/test/java/elements/Button.java,e\4\e4ae09650e4362f505daef726984a282a5f32b7f
-S
-#src/test/java/elements/TextBox.java,e\2\e20a29e63ba24d8329665d8839af1608b08ff71e
+Y
+)src/test/java/pages/SmartphonesPage2.java,f\0\f058f7d0d108295555bf9e06efd9415eb018aee2
