@@ -4,10 +4,14 @@ import helpers.JSExec;
 import helpers.WaitFor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
+import org.checkerframework.checker.nullness.qual.Nullable;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Sleeper;
+import org.openqa.selenium.support.ui.Wait;
+
+import java.time.Duration;
 
 // Страница "Смартфоны"
 public class SmartphonesPage extends BasePage {
@@ -37,13 +41,17 @@ public class SmartphonesPage extends BasePage {
     // - Переключатель "Сначала дорогие"
     String rbtnExpensiveXpath = "//span[contains(text(), \"Сначала дорогие\")]";
     // Смартфоны
-    // - Ссылка на продукт
-    String linkProductXpath = "//span[contains(text(),\"product\")]/parent::a";
+    // - Ссылка на первый продукт в списке
+    String linkFirstProductXpath = "(//a[contains(@class, \"catalog-product__name\")])[1]";
+
+    // Скрытие шапки
+    public void hideHeader() {
+        WebElement header = driver.findElement(By.xpath(headerXpath));
+        JSExec.displayNone(header);
+    }
 
     // Нажатие на выпадашку "Сортировка"
     public void showSortClick() {
-        WebElement header = driver.findElement(By.xpath(headerXpath));
-        JSExec.displayNone(header);
         WaitFor.visibilityOfElementLocated(By.xpath(showSortXpath));
         WebElement showSort = driver.findElement(By.xpath(showSortXpath));
         WaitFor.clickabilityOfElement(showSort);
@@ -62,7 +70,6 @@ public class SmartphonesPage extends BasePage {
 
     // Установка фильтра "Производитель"
     public void chbxProductClick(String company) {
-        JSExec.scrollBy(0, 300);
         chbxCompanyXpath = chbxCompanyXpath.replace("company", company);
         WaitFor.visibilityOfElementLocated(By.xpath(chbxCompanyXpath));
         WebElement chbxCompany = driver.findElement(By.xpath(chbxCompanyXpath));
@@ -73,7 +80,6 @@ public class SmartphonesPage extends BasePage {
 
     // Нажатие на гармошку "Объем оперативной памяти"
     public void showRAMClick() {
-        JSExec.scrollBy(0, 300);
         WaitFor.visibilityOfElementLocated(By.xpath(showRAMXpath));
         WebElement showRAM = driver.findElement(By.xpath(showRAMXpath));
         WaitFor.clickabilityOfElement(showRAM);
@@ -83,7 +89,6 @@ public class SmartphonesPage extends BasePage {
 
     // Установка фильтра "Объем оперативной памяти"
     public void chbxRAMClick(String ram) {
-        JSExec.scrollBy(0, 300);
         chbxRAMXpath = chbxRAMXpath.replace("ram", ram);
         WaitFor.visibilityOfElementLocated(By.xpath(chbxRAMXpath));
         WebElement chbxRAM = driver.findElement(By.xpath(chbxRAMXpath));
@@ -94,7 +99,6 @@ public class SmartphonesPage extends BasePage {
 
     // Нажатие на кнопку "Применить"
     public void btnApplyClick() {
-        JSExec.scrollBy(0, 300);
         WaitFor.visibilityOfElementLocated(By.xpath(btnApplyXpath));
         WebElement btnApply = driver.findElement(By.xpath(btnApplyXpath));
         WaitFor.clickabilityOfElement(btnApply);
@@ -103,15 +107,13 @@ public class SmartphonesPage extends BasePage {
     }
 
     // Нажатие на ссылку первого продукта в списке
-    public void linkProductClick(String product) {
-        JSExec.scrollBy(0, -500);
-        linkProductXpath = linkProductXpath.replace("product", product);
-        WaitFor.visibilityOfElementLocated(By.xpath(linkProductXpath));
-        WebElement linkProduct = driver.findElement(By.xpath(linkProductXpath));
+    public void linkFirstProductClick(String product) {
+        WaitFor.firstProductMustBe(By.xpath(linkFirstProductXpath), product);
+        WebElement linkProduct = driver.findElement(By.xpath(linkFirstProductXpath));
         String URL = linkProduct.getAttribute("href");
         driver.switchTo().newWindow(WindowType.WINDOW);
         driver.manage().window().maximize();
         driver.navigate().to(URL);
-        logger.info("Нажата кнопка первого продукта в списке");
+        logger.info("Нажата ссылка первого продукта в списке");
     }
 }

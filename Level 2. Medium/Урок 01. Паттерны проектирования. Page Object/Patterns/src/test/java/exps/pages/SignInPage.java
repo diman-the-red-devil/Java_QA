@@ -24,9 +24,9 @@ public class SignInPage {
     // Вход с логином и паролем
     public HomePage loginValidUser(String login, String password) {
         TextBox tbxLogin = new TextBox(driver, loginBy);
-        tbxLogin.setText(login);
+        tbxLogin.setValue(login);
         TextBox tbxPassword = new TextBox(driver, passwordBy);
-        tbxPassword.setText(password);
+        tbxPassword.setValue(password);
         Button btnSignIn = new Button(driver, signInBy);
         btnSignIn.click();
         return new HomePage(driver);

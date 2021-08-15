@@ -1,7 +1,7 @@
-package exps.tests.decorators;
+package exps.tests.page_elements;
 
-import exps.pages.HomePageWithDecorators;
-import exps.pages.SignInPageWithDecorators;
+import exps.pages.HomePage;
+import exps.pages.SignInPage;
 import exps.webdriverfactory.WebDriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,11 +12,11 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
 // Тест
-public class WithDecoratorsTest {
+public class WithoutDecoratorsTest {
     // Драйвер браузера
     protected static WebDriver driver;
     // Логгер
-    private Logger logger = LogManager.getLogger(WithDecoratorsTest.class);
+    private Logger logger = LogManager.getLogger(WithoutDecoratorsTest.class);
 
     // Перед каждым тестом
     @BeforeEach
@@ -39,21 +39,21 @@ public class WithDecoratorsTest {
         String expected = "Dashboard";
 
         // Act
-        HomePageWithDecorators homePage = getPageAfterLogin(login, password);
+        HomePage homePage = getPageAfterLogin(login, password);
 
         // Assert
         // Проверить что отображается текст "Стартовая страница"
-        HomePageWithDecoratorsAssert homePageWithDecoratorsAssertAssert = new HomePageWithDecoratorsAssert(homePage);
-        homePageWithDecoratorsAssertAssert.displayedTextAfterLogin();
-        homePageWithDecoratorsAssertAssert.textAfterLoginIs(expected);
+        HomePageAssert homePageAssert = new HomePageAssert(homePage);
+        homePageAssert.displayedTextAfterLogin();
+        homePageAssert.textAfterLoginIs(expected);
     }
 
-    public HomePageWithDecorators getPageAfterLogin(String login, String password) {
+    public HomePage getPageAfterLogin(String login, String password) {
         // Страница "Sign In"
-        SignInPageWithDecorators signInPageWithDecorators = new SignInPageWithDecorators(driver);
+        SignInPage signInPage = new SignInPage(driver);
         // Вход с логином и паролем
         // Страница "Home"
-        return signInPageWithDecorators.loginValidUser(login, password);
+        return signInPage.loginValidUser(login, password);
     }
 
     // После каждого теста
@@ -68,21 +68,21 @@ public class WithDecoratorsTest {
     }
 }
 
-class HomePageWithDecoratorsAssert {
-    private HomePageWithDecorators homePageWithDecorators;
+class HomePageAssert {
+    private HomePage homePage;
 
-    public HomePageWithDecoratorsAssert(HomePageWithDecorators homePageWithDecorators) {
-        this.homePageWithDecorators = homePageWithDecorators;
+    public HomePageAssert(HomePage homePage) {
+        this.homePage = homePage;
     }
 
     // Проверка отображения текста после входа с логином и паролем
     public void displayedTextAfterLogin() {
-        Assertions.assertTrue(homePageWithDecorators.isTextDisplyed());
+        Assertions.assertTrue(homePage.isTextDisplyed());
     }
 
     // Проверка текста после входа с логином и паролем
     public void textAfterLoginIs(String expected) {
-        Assertions.assertEquals(expected, homePageWithDecorators.getText(),
+        Assertions.assertEquals(expected, homePage.getText(), 
                 "Ошибка! Текст на странице не соответствует ожидаемому");
     }
 }

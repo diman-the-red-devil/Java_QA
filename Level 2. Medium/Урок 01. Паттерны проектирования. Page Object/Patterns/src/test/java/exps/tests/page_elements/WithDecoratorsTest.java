@@ -1,4 +1,4 @@
-package exps.tests.decorators;
+package exps.tests.page_elements;
 
 import exps.pages.HomePage;
 import exps.pages.SignInPage;
@@ -12,11 +12,11 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
 // Тест
-public class WithoutDecoratorsTest {
+public class WithDecoratorsTest {
     // Драйвер браузера
     protected static WebDriver driver;
     // Логгер
-    private Logger logger = LogManager.getLogger(WithoutDecoratorsTest.class);
+    private Logger logger = LogManager.getLogger(WithDecoratorsTest.class);
 
     // Перед каждым тестом
     @BeforeEach
@@ -68,10 +68,10 @@ public class WithoutDecoratorsTest {
     }
 }
 
-class HomePageAssert {
+class HomePageAssert1 {
     private HomePage homePage;
 
-    public HomePageAssert(HomePage homePage) {
+    public HomePageAssert1(HomePage homePage) {
         this.homePage = homePage;
     }
 
@@ -82,7 +82,7 @@ class HomePageAssert {
 
     // Проверка текста после входа с логином и паролем
     public void textAfterLoginIs(String expected) {
-        Assertions.assertEquals(expected, homePage.getText(), 
+        Assertions.assertEquals(expected, homePage.getText(),
                 "Ошибка! Текст на странице не соответствует ожидаемому");
     }
 }

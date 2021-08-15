@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -51,5 +52,11 @@ public class WaitFor {
     // Ожидание видимости элемента по локатору
     public static void visibilityOfElementLocated(By webElement) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(webElement));
+    }
+
+    // Ожидание появления в списке продуктов в первой позиции заданного продукта
+    public static void firstProductMustBe(By webElement, String product) {
+        wait.until((ExpectedCondition<Boolean>) webDriver ->
+                webDriver.findElement(webElement).getText().contains(product));
     }
 }

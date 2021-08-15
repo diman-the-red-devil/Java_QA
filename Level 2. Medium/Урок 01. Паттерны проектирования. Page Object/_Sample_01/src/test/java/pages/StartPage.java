@@ -55,6 +55,7 @@ public class StartPage extends BasePage {
         WebElement linkSmartsAndGadgets = driver.findElement(By.xpath(linkSmartsAndGadgetsXpath));
         Actions actions = new Actions(driver);
         actions.moveToElement(linkSmartsAndGadgets).perform();
+        logger.info("Курсор мыши наведен на ссылку \"Смартфоны\"");
     }
 
     // Нажатие на ссылку "Смартфоны"
