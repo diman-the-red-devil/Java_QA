@@ -1,40 +1,43 @@
 package models;
 
+import models.valueobjects.Company;
+import models.valueobjects.Ram;
+
 import java.io.Serializable;
 
 // Класс "Смартфон"
-public class SmartphoneJB implements Serializable {
+public class SmartphoneVO implements Serializable {
     // Оперативная память
-    private int ram;
+    private Ram ram;
     // Компания
-    private String company;
+    private Company company;
 
     // Конструктор по умолчанию
-    public SmartphoneJB() {
+    public SmartphoneVO() {
 
     }
 
     // Конструктор
-    public SmartphoneJB(int ram, String company) {
+    public SmartphoneVO(Ram ram, Company company) {
         this.ram = ram;
         this.company = company;
     }
 
     // Сеттеры и геттеры
     // Оперативная память
-    public void setRam(int ram) {
+    public void setRam(Ram ram) {
         this.ram = ram;
     }
 
-    public int getRam() {
+    public Ram getRam() {
         return this.ram;
     }
     // Компания
-    public void setCompany(String company) {
+    public void setCompany(Company company) {
         this.company = company;
     }
 
-    public String getCompany() {
+    public Company getCompany() {
         return this.company;
     }
 }

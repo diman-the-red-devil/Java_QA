@@ -1,23 +1,28 @@
 package tests.smartphones;
 
 import helpers.JSExec;
-import models.SmartphoneJB;
+import models.SmartphoneVO;
+import models.valueobjects.Company;
+import models.valueobjects.Ram;
 import org.junit.jupiter.api.Test;
 import pages.*;
 import tests.BaseTest;
 
 // Тест
-public class SmartphonesProductPage6_Test extends BaseTest {
+public class SmartphonesProductPage7_Test extends BaseTest {
     @Test
     // Проверка
     public void selectedProduct_Is_SamsungGalaxyNote20Ultra256GBWhite() {
         // 1. Arrange
-        SmartphoneJB smartphoneJB = new SmartphoneJB( 8, "Samsung");
-        // String product = "Samsung"; // производитель
-        // String ram = "8 Гб"; // объем ОП
+        String product = "Samsung"; // производитель
+        int ram = 8; // объем ОП
+        SmartphoneVO smartphoneVO = new SmartphoneVO(
+                new Ram(ram),
+                new Company(product)
+        );
 
         // 2. Act
-        SmartphoneProductPage smartphoneProductPage = getProductPage(smartphoneJB);
+        SmartphoneProductPage smartphoneProductPage = getProductPage(smartphoneVO);
 
         // 3. Assert
         String expected = "Купить 6.7\" Смартфон Samsung Galaxy Z Flip3 256 ГБ бежевый в интернет магазине DNS. Характеристики, цена Samsung Galaxy Z Flip3 | 4845670";
@@ -26,7 +31,7 @@ public class SmartphonesProductPage6_Test extends BaseTest {
     }
 
     // Получение заголовка страницы с продуктом
-    public SmartphoneProductPage getProductPage(SmartphoneJB smartphoneJB) {
+    public SmartphoneProductPage getProductPage(SmartphoneVO smartphoneVO) {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         // ***** Стартовая страница сайта DNS *****
@@ -45,7 +50,7 @@ public class SmartphonesProductPage6_Test extends BaseTest {
         // Прокрутка страницы вниз
         JSExec.scrollBy(0, 300);
         // Установка фильтра "Производитель"
-        smartphonesPage.chbxCompanyClick(smartphoneJB.getCompany());
+        smartphonesPage.chbxCompanyClick(smartphoneVO.getCompany().getCompany());
         // Прокрутка страницы вниз
         JSExec.scrollBy(0, 300);
         // Нажатие на гармошку "Объем оперативной памяти"
@@ -53,7 +58,7 @@ public class SmartphonesProductPage6_Test extends BaseTest {
         // Прокрутка страницы вниз
         JSExec.scrollBy(0, 300);
         // Установка фильтра "Объем оперативной памяти"
-        smartphonesPage.chbxRAMClick(smartphoneJB.getRam() + " Гб");
+        smartphonesPage.chbxRAMClick(smartphoneVO.getRam().getRam() + " Гб");
         // Прокрутка страницы вниз
         JSExec.scrollBy(0, 300);
         // Нажатие на кнопку "Применить"
