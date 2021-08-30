@@ -1,10 +1,10 @@
-package elements.webdriverfactory;
+package webdriverfactory;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
-import static elements.webdriverfactory.BrowserName.CHROME;
+import static webdriverfactory.BrowserName.CHROME;
 
 // Фабрика по созданию экземпляров драйвера браузера
 public class WebDriverFactory {
@@ -12,11 +12,11 @@ public class WebDriverFactory {
     private static Logger logger = LogManager.getLogger(WebDriverFactory.class);
 
     // Получение экземпляра драйвера по имени
-    public static WebDriver getDriver(String name) {
-        switch (BrowserName.fromString(name)) {
+    public static WebDriver getDriver(BrowserName name) {
+        switch (name) {
             // Драйвер браузера Google Chrome
             case CHROME:
-                logger.info("Драйвер браузера Google Chrome " + BrowserName.fromString(name) + CHROME);
+                logger.info("Драйвер браузера Google Chrome");
                 return ChromeBrowser.getDriver();
             // Драйвер браузера Mozilla Firefox
             case FIREFOX:

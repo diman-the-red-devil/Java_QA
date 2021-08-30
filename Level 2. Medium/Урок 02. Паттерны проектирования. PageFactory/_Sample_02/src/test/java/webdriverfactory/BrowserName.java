@@ -1,4 +1,4 @@
-package elements.webdriverfactory;
+package webdriverfactory;
 
 // Имена браузеров
 public enum BrowserName {

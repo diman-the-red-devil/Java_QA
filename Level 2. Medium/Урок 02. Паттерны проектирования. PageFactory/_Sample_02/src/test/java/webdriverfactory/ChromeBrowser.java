@@ -1,32 +1,32 @@
-package elements.webdriverfactory;
+package webdriverfactory;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
-// Драйвера браузера "Mozilla Firefox"
-public class FirefoxBrowser {
-    // Получение экземпляра драйвера браузера "Mozilla Firefox"
+// Драйвера браузера "Google Chrome"
+public class ChromeBrowser {
+    // Получение экземпляра драйвера браузера "Google Chrome"
     public static WebDriver getDriver() {
         // Настройка исполняемого файла драйвера
-        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.chromedriver().setup();
 
         // Опции драйвера:
-        FirefoxOptions options = new FirefoxOptions();
+        ChromeOptions options = new ChromeOptions();
         // - поведение при появлении алертов "Игнорирование"
         options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
         // - стратегия загрузки страницы "NORMAL"
         options.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, PageLoadStrategy.NORMAL);
         // - режим "Инкогнито"
-        options.addArguments("-private");
+        options.addArguments("--incognito");
         // - режим "Полный экран"
-        options.addArguments("-kiosk");
+        options.addArguments("--start-fullscreen");
 
         // Новый экземпляр драйвера
-        return new FirefoxDriver(options);
+        return new ChromeDriver(options);
     }
 }
