@@ -23,7 +23,7 @@ public class SmartphonesProductPage4_Test extends BaseTest {
         smartphoneProductAssert.pageTitleEquals(expected);
     }
 
-    // Получение заголовка страницы с продуктом
+    // Получение страницы с продуктом
     public SmartphoneProductPage getProductPage(String product, String ram) {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");

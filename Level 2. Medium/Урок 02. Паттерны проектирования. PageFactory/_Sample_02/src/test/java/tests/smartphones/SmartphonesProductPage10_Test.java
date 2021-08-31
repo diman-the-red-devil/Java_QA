@@ -9,10 +9,14 @@ import org.junit.jupiter.api.Test;
 import pages.SmartphoneProductPage;
 import pages.SmartphonesPageWithElements;
 import pages.StartPageWithElements;
+import steps.SmartphoneProductPageSteps;
+import steps.SmartphonesPageSteps;
+import steps.StartPageSteps;
 import tests.BaseTest2;
+import tests.smartphones.SmartphoneProductPageAssert2;
 
 // Тест
-public class SmartphonesProductPage9_Test extends BaseTest2 {
+public class SmartphonesProductPage10_Test extends BaseTest2 {
     @Test
     // Проверка
     public void selectedProduct_Is_SamsungGalaxyNote20Ultra256GBWhite() {
@@ -25,52 +29,36 @@ public class SmartphonesProductPage9_Test extends BaseTest2 {
         Smartphone smartphone = builder.build(); // Создание объекта
 
         // 2. Act
-        SmartphoneProductPage smartphoneProductPage = getProductPage(smartphone);
+        SmartphoneProductPageSteps smartphoneProductPageSteps = getProductPage(smartphone);
 
         // 3. Assert
         String expected = "Купить 6.7\" Смартфон Samsung Galaxy Z Flip3 256 ГБ бежевый в интернет магазине DNS. Характеристики, цена Samsung Galaxy Z Flip3 | 4845670";
-        SmartphoneProductPageAssert smartphoneProductAssert = new SmartphoneProductPageAssert(smartphoneProductPage);
+        SmartphoneProductPageAssert2 smartphoneProductAssert = new SmartphoneProductPageAssert2(smartphoneProductPageSteps);
         smartphoneProductAssert.pageTitleEquals(expected);
     }
 
     // Получение страницы с продуктом
-    public SmartphoneProductPage getProductPage(Smartphone smartphone) {
+    public SmartphoneProductPageSteps getProductPage(Smartphone smartphone) {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         // ***** Стартовая страница сайта DNS *****
-        StartPageWithElements startPage = new StartPageWithElements(driver);
-        // Наведение курсора мыши на ссылку "Смартфоны и гаджеты"
-        startPage.linkSmartsAndGadgetsMove();
+        StartPageSteps startPageSteps = new StartPageSteps(new StartPageWithElements(driver));
         // Нажатие на ссылку "Смартфоны"
-        startPage.linkSmartsClick();
-
+        startPageSteps.clickLinkSmarts();
         // ***** Страница "Смартфоны" *****
-        SmartphonesPageWithElements smartphonesPage = new SmartphonesPageWithElements(driver);
-        // Нажатие на выпадашку "Сортировка"
-        smartphonesPage.accordeonSortClick();
+        SmartphonesPageSteps smartphonesPageSteps = new SmartphonesPageSteps(new SmartphonesPageWithElements(driver));
         // Установка сортировки "Сначала дорогие"
-        smartphonesPage.rbtnExpensiveClick();
-        // Прокрутка страницы вниз
-        JSExec.scrollBy(0, 300);
+        smartphonesPageSteps.orderByExpensiveFirst();
         // Установка фильтра "Производитель"
-        smartphonesPage.chbxCompanyClick(smartphone.getCompany().getCompany());
-        // Прокрутка страницы вниз
-        JSExec.scrollBy(0, 300);
-        // Нажатие на гармошку "Объем оперативной памяти"
-        smartphonesPage.accordeonRAMClick();
-        // Прокрутка страницы вниз
-        JSExec.scrollBy(0, 300);
+        smartphonesPageSteps.filterByCompany(smartphone.getCompany());
         // Установка фильтра "Объем оперативной памяти"
-        smartphonesPage.chbxRAMClick(smartphone.getRam().getRam() + " Гб");
-        // Прокрутка страницы вниз
-        JSExec.scrollBy(0, 300);
+        smartphonesPageSteps.filterByRAM(smartphone.getRam());
         // Нажатие на кнопку "Применить"
-        smartphonesPage.btnApplyClick();
-        // Прокрутка страницы вверх
-        JSExec.scrollBy(0, -500);
+        smartphonesPageSteps.clickButtonApply() ;
         // Нажатие на ссылку первого продукта в списке
-        smartphonesPage.linkFirstProductClick("Смартфон Samsung Galaxy Z Flip3 256 ГБ бежевый");
-        //smartphonesPage.linkFirstProductClick("Смартфон Samsung Galaxy S20 FE 128 ГБ белый");
-        return new SmartphoneProductPage(driver);
+        smartphonesPageSteps.clickLinkFirstProduct("Смартфон Samsung Galaxy Z Flip3 256 ГБ бежевый");
+        //smartphonesPageSteps.clickLinkFirstProduct("Смартфон Samsung Galaxy S20 FE 128 ГБ белый");
+        // ***** Страница "Продукт. Смартфон" *****
+        return new SmartphoneProductPageSteps(new SmartphoneProductPage(driver));
     }
 }

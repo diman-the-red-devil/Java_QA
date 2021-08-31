@@ -25,7 +25,7 @@ public class SmartphonesProductPage5_Test extends BaseTest {
         smartphoneProductAssert.pageTitleEquals(expected);
     }
 
-    // Получение заголовка страницы с продуктом
+    // Получение страницы с продуктом
     public SmartphoneProductPage getProductPage(SmartphonePOJO smartphonePOJO) {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");

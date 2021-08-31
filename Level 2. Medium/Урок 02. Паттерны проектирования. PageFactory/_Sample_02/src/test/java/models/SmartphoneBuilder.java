@@ -5,37 +5,40 @@ import models.valueobjects.Ram;
 
 // Класс строитель объекта "Смартфон"
 public class SmartphoneBuilder {
-    // Экземпляр класса "Смартфон"
-    private Smartphone smartphone = new Smartphone();
+    // Оперативная память
+    private Ram ram;
+    // Внутренняя память
+    private int rom = 256; // значение заданное по умолчанию - 256
+    // Производитель
+    private Company company;
+    // Модель
+    private String model = "Galaxy S20"; // значение заданное по умолчанию - Galaxy S20
 
-    // Установка значения поля "Оперативная память"
-    public SmartphoneBuilder setRam(int value) {
-        Ram ram = new Ram(value);
-        smartphone.setRam(ram);
-        return this;
+    // Конструктор
+    public SmartphoneBuilder(Ram ram, Company company) {
+        this.ram = ram;
+        this.company = company;
     }
 
     // Установка значения поля "Внутренняя память"
-    public SmartphoneBuilder setRom(int value) {
-        smartphone.setRom(value);
-        return this;
-    }
-
-    // Установка значения поля "Компания"
-    public SmartphoneBuilder setCompany(String value) {
-        Company company = new Company(value);
-        smartphone.setCompany(company);
+    public SmartphoneBuilder setRom(int rom) {
+        this.rom = rom;
         return this;
     }
 
     // Установка значения поля "Модель"
-    public SmartphoneBuilder setModel(String value) {
-        smartphone.setModel(value);
+    public SmartphoneBuilder setModel(String model) {
+        this.model = model;
         return this;
     }
 
     // Создание объекта "Смартфон"
     public Smartphone build() {
+        Smartphone smartphone = new Smartphone();
+        smartphone.setRam(this.ram);
+        smartphone.setRom(this.rom);
+        smartphone.setCompany(this.company);
+        smartphone.setModel(this.model);
         return smartphone;
     }
 }

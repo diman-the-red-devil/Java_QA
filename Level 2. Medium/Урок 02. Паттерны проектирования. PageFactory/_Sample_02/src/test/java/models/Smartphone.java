@@ -11,7 +11,7 @@ public class Smartphone implements Serializable {
     private Ram ram;
     // Внутренняя память
     private int rom;
-    // Компания
+    // Производитель
     private Company company;
     // Модель
     private String model;
@@ -44,7 +44,7 @@ public class Smartphone implements Serializable {
     public int getRom() {
         return rom;
     }
-    // Компания
+    // Производитель
     public void setCompany(Company company) {
         this.company = company;
     }
