@@ -1,6 +1,6 @@
 package sample.elements;
 
-import sample.helpers.WaitFor;
+import helpers.WaitFor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

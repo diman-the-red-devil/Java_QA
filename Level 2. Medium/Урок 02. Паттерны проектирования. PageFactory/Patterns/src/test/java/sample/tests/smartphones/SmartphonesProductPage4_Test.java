@@ -1,9 +1,9 @@
 package sample.tests.smartphones;
 
-import sample.helpers.JSExec;
+import helpers.JSExec;
 import org.junit.jupiter.api.Test;
-import sample.pages.*;
-import sample.tests.BaseTest;
+import pages.*;
+import tests.BaseTest;
 
 // Тест
 public class SmartphonesProductPage4_Test extends BaseTest {
@@ -23,7 +23,7 @@ public class SmartphonesProductPage4_Test extends BaseTest {
         smartphoneProductAssert.pageTitleEquals(expected);
     }
 
-    // Получение заголовка страницы с продуктом
+    // Получение страницы с продуктом
     public SmartphoneProductPage getProductPage(String product, String ram) {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");

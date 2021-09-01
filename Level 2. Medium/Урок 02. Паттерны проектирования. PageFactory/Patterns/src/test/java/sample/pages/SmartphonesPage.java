@@ -1,13 +1,17 @@
 package sample.pages;
 
-import sample.helpers.JSExec;
-import sample.helpers.WaitFor;
+import helpers.JSExec;
+import helpers.WaitFor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
+import org.checkerframework.checker.nullness.qual.Nullable;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Sleeper;
+import org.openqa.selenium.support.ui.Wait;
+
+import java.time.Duration;
 
 // Страница "Смартфоны"
 public class SmartphonesPage extends BasePage {

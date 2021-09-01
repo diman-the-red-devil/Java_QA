@@ -1,7 +1,7 @@
 package sample.pages;
 
-import sample.elements.*;
-import sample.helpers.WaitFor;
+import elements.*;
+import helpers.WaitFor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;

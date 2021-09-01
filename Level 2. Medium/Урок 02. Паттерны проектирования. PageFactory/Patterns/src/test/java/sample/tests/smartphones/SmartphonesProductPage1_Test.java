@@ -1,12 +1,12 @@
 package sample.tests.smartphones;
 
-import sample.helpers.JSExec;
+import helpers.JSExec;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import sample.pages.SmartphoneProductPage;
-import sample.pages.SmartphonesPage;
-import sample.pages.StartPage;
-import sample.tests.BaseTest;
+import pages.SmartphoneProductPage;
+import pages.SmartphonesPage;
+import pages.StartPage;
+import tests.BaseTest;
 
 // Тест с POM
 public class SmartphonesProductPage1_Test extends BaseTest {

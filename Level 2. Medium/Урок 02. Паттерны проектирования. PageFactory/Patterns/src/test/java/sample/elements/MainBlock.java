@@ -1,7 +1,7 @@
 package sample.elements;
 
-import sample.helpers.JSExec;
-import sample.helpers.WaitFor;
+import helpers.JSExec;
+import helpers.WaitFor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

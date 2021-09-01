@@ -1,11 +1,11 @@
 package sample.tests.smartphones;
 
-import sample.helpers.JSExec;
+import helpers.JSExec;
 import org.junit.jupiter.api.Test;
-import sample.pages.SmartphoneProductPage;
-import sample.pages.SmartphonesPage;
-import sample.pages.StartPage;
-import sample.tests.BaseTest;
+import pages.SmartphoneProductPage;
+import pages.SmartphonesPage;
+import pages.StartPage;
+import tests.BaseTest;
 
 // Тест
 public class SmartphonesProductPage3_Test extends BaseTest {
@@ -26,7 +26,7 @@ public class SmartphonesProductPage3_Test extends BaseTest {
         smartphoneProductAssert.pageTitleEquals(expected);
     }
 
-    // Получение заголовка страницы с продуктом
+    // Получение страницы с продуктом
     public SmartphoneProductPage getProductPage(String product, String ram) {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");

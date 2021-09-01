@@ -1,61 +1,59 @@
 package sample.tests.smartphones;
 
 import helpers.JSExec;
-import org.junit.jupiter.api.Assertions;
+import models.SmartphonePOJO;
 import org.junit.jupiter.api.Test;
-import pages.SmartphoneProductPage;
-import pages.SmartphonesPage;
-import pages.StartPage;
+import pages.*;
 import tests.BaseTest;
 
-// Тест с POM и AAA
-public class SmartphonesProductPage2_Test extends BaseTest {
-
+// Тест
+public class SmartphonesProductPage5_Test extends BaseTest {
     @Test
     // Проверка
     public void selectedProduct_Is_SamsungGalaxyNote20Ultra256GBWhite() {
         // 1. Arrange
-        String product = "Samsung"; // производитель
-        String ram = "8 Гб"; // объем ОП
+        SmartphonePOJO smartphonePOJO = new SmartphonePOJO( 8, "Samsung");
+        // String product = "Samsung"; // производитель
+        // String ram = "8 Гб"; // объем ОП
 
         // 2. Act
-        SmartphoneProductPage smartphoneProductPage = getProductPage(product, ram);
-        String actual = smartphoneProductPage.getPageTitle();
+        SmartphoneProductPage smartphoneProductPage = getProductPage(smartphonePOJO);
 
         // 3. Assert
         String expected = "Купить 6.7\" Смартфон Samsung Galaxy Z Flip3 256 ГБ бежевый в интернет магазине DNS. Характеристики, цена Samsung Galaxy Z Flip3 | 4845670";
-        Assertions.assertEquals(expected, actual);
+        SmartphoneProductPageAssert smartphoneProductAssert = new SmartphoneProductPageAssert(smartphoneProductPage);
+        smartphoneProductAssert.pageTitleEquals(expected);
     }
 
     // Получение страницы с продуктом
-    public SmartphoneProductPage getProductPage(String product, String ram) {
+    public SmartphoneProductPage getProductPage(SmartphonePOJO smartphonePOJO) {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         // ***** Стартовая страница сайта DNS *****
-        StartPage startPage = new StartPage(driver);
+        StartPageWithElements startPage = new StartPageWithElements(driver);
         // Наведение курсора мыши на ссылку "Смартфоны и гаджеты"
         startPage.linkSmartsAndGadgetsMove();
         // Нажатие на ссылку "Смартфоны"
         startPage.linkSmartsClick();
 
         // ***** Страница "Смартфоны" *****
-        SmartphonesPage smartphonesPage = new SmartphonesPage(driver);
+        SmartphonesPageWithElements smartphonesPage = new SmartphonesPageWithElements(driver);
         // Нажатие на выпадашку "Сортировка"
-        smartphonesPage.showSortClick();
+        smartphonesPage.accordeonSortClick();
         // Установка сортировки "Сначала дорогие"
         smartphonesPage.rbtnExpensiveClick();
         // Прокрутка страницы вниз
         JSExec.scrollBy(0, 300);
         // Установка фильтра "Производитель"
-        smartphonesPage.chbxProductClick(product);
+        smartphonesPage.chbxCompanyClick(smartphonePOJO.company);
         // Прокрутка страницы вниз
         JSExec.scrollBy(0, 300);
         // Нажатие на гармошку "Объем оперативной памяти"
-        smartphonesPage.showRAMClick();
+        smartphonesPage.accordeonRAMClick();
         // Прокрутка страницы вниз
         JSExec.scrollBy(0, 300);
         // Установка фильтра "Объем оперативной памяти"
-        smartphonesPage.chbxRAMClick(ram);
+        smartphonesPage.chbxRAMClick(smartphonePOJO.ram + " Гб");
         // Прокрутка страницы вниз
         JSExec.scrollBy(0, 300);
         // Нажатие на кнопку "Применить"
@@ -64,6 +62,7 @@ public class SmartphonesProductPage2_Test extends BaseTest {
         JSExec.scrollBy(0, -500);
         // Нажатие на ссылку первого продукта в списке
         smartphonesPage.linkFirstProductClick("Смартфон Samsung Galaxy Z Flip3 256 ГБ бежевый");
+        //smartphonesPage.linkFirstProductClick("Смартфон Samsung Galaxy S20 FE 128 ГБ белый");
         return new SmartphoneProductPage(driver);
     }
 }
