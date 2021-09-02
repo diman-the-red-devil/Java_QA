@@ -1,5 +1,7 @@
 package exps.tests;
 
+import exps.models.AccountJB;
+import exps.models.AccountPOJO;
 import exps.pages.HomePage;
 import exps.pages.SignInPage;
 import exps.webdriverfactory.WebDriverFactory;
@@ -11,11 +13,11 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
 // Тест
-public class LoginTest {
+public class LoginTest3 {
     // Драйвер браузера
     protected static WebDriver driver;
     // Логгер
-    private Logger logger = LogManager.getLogger(LoginTest.class);
+    private Logger logger = LogManager.getLogger(LoginTest3.class);
 
     // Перед каждым тестом
     @BeforeEach
@@ -35,10 +37,11 @@ public class LoginTest {
         // Arrange
         String login = "diman_the_red_devil@mail.ru";
         String password = "JAKARTA12345rex-";
+        AccountJB accountJB = new AccountJB(login, password);
         String expected = "Dashboard";
 
         // Act
-        HomePage homePage = getPageAfterLogin(login, password);
+        HomePage homePage = getPageAfterLogin(accountJB);
 
         // Assert
         // Проверить что отображается текст "Стартовая страница"
@@ -47,12 +50,12 @@ public class LoginTest {
         homePageAssert.textAfterLoginIs(expected);
     }
 
-    public HomePage getPageAfterLogin(String login, String password) {
+    public HomePage getPageAfterLogin(AccountJB accountJB) {
         // Страница "Sign In"
         SignInPage signInPage = new SignInPage(driver);
         // Вход с логином и паролем
         // Страница "Home"
-        return signInPage.loginValidUser(login, password);
+        return signInPage.loginValidUser(accountJB);
     }
 
     // После каждого теста

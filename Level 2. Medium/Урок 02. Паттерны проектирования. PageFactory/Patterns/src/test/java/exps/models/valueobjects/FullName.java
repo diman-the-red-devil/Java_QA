@@ -1,11 +1,16 @@
 package exps.models.valueobjects;
 
-public class FullName {
+import java.io.Serializable;
+
+// ФИО
+public class FullName implements Serializable {
+    // Поля
     private String fullName;
     private String firstName;
     private String secondName;
     private String lastName;
 
+    // Конструктор
     public FullName(String fullName) {
         if (!fullName.isBlank() && !fullName.isEmpty()) {
             this.fullName = fullName;
@@ -21,6 +26,7 @@ public class FullName {
             throw new IllegalArgumentException("ФИО не можеь быть пустым!");
     }
 
+    // Геттеры
     public String getFullName() {
         return this.fullName;
     }

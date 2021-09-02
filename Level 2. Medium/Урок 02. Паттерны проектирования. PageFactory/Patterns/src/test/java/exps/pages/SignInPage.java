@@ -3,6 +3,8 @@ package exps.pages;
 import exps.elements.Button;
 import exps.elements.TextBox;
 import exps.models.Account;
+import exps.models.AccountJB;
+import exps.models.AccountPOJO;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -22,6 +24,36 @@ public class SignInPage {
         this.driver = driver;
     }
 
+    public HomePage loginValidUser(String login, String password) {
+        TextBox tbxLogin = new TextBox(driver, loginBy);
+        tbxLogin.setValue(login);
+        TextBox tbxPassword = new TextBox(driver, passwordBy);
+        tbxPassword.setValue(password);
+        Button btnSignIn = new Button(driver, signInBy);
+        btnSignIn.click();
+        return new HomePage(driver);
+    }
+
+    public HomePage loginValidUser(AccountPOJO accountPOJO) {
+        TextBox tbxLogin = new TextBox(driver, loginBy);
+        tbxLogin.setValue(accountPOJO.login());
+        TextBox tbxPassword = new TextBox(driver, passwordBy);
+        tbxPassword.setValue(accountPOJO.password());
+        Button btnSignIn = new Button(driver, signInBy);
+        btnSignIn.click();
+        return new HomePage(driver);
+    }
+
+    public HomePage loginValidUser(AccountJB accountJB) {
+        TextBox tbxLogin = new TextBox(driver, loginBy);
+        tbxLogin.setValue(accountJB.getLogin());
+        TextBox tbxPassword = new TextBox(driver, passwordBy);
+        tbxPassword.setValue(accountJB.getPassword());
+        Button btnSignIn = new Button(driver, signInBy);
+        btnSignIn.click();
+        return new HomePage(driver);
+    }
+
     public HomePage loginValidUser(Account account) {
         TextBox tbxLogin = new TextBox(driver, loginBy);
         tbxLogin.setValue(account.getLogin().getLogin());
@@ -32,13 +64,5 @@ public class SignInPage {
         return new HomePage(driver);
     }
 
-    public HomePage loginValidUser(String login, String password) {
-        TextBox tbxLogin = new TextBox(driver, loginBy);
-        tbxLogin.setValue(login);
-        TextBox tbxPassword = new TextBox(driver, passwordBy);
-        tbxPassword.setValue(password);
-        Button btnSignIn = new Button(driver, signInBy);
-        btnSignIn.click();
-        return new HomePage(driver);
-    }
+
 }

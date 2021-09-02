@@ -1,8 +1,13 @@
 package exps.models.valueobjects;
 
-public class MobilePhone {
+import java.io.Serializable;
+
+// Номер мобильного телефона
+public class MobilePhone implements Serializable {
+    // Поле
     private String mobilePhone;
 
+    // Конструктор
     public MobilePhone(String mobilePhone) {
         if (!mobilePhone.isBlank() && !mobilePhone.isEmpty())
             this.mobilePhone = mobilePhone;
@@ -10,6 +15,7 @@ public class MobilePhone {
             throw new IllegalArgumentException("Номер мобильного не можеь быть пустым");
     }
 
+    // Геттер
     public String getMobilePhone() {
         return this.mobilePhone;
     }

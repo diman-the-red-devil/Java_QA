@@ -5,9 +5,11 @@ import exps.models.valueobjects.Login;
 import exps.models.valueobjects.MobilePhone;
 import exps.models.valueobjects.Password;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Account {
+// Учетные данные
+public class Account implements Serializable {
     // Поля
     private Login login;
     private Password password;
@@ -15,15 +17,18 @@ public class Account {
     private FullName fullName;
     private Date dateOfBirth;
 
+    // Конструктор без параметров
     public Account() {
 
     }
 
+    // Конструктор
     public Account(Login login, Password password) {
         this.login = login;
         this.password = password;
     }
 
+    // Геттеры и сеттеры
     public void setLogin(Login login) {
         this.login = login;
     }
