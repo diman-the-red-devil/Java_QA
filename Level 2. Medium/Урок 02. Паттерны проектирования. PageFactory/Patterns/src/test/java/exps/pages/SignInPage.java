@@ -2,7 +2,7 @@ package exps.pages;
 
 import exps.elements.Button;
 import exps.elements.TextBox;
-import exps.tests.pojo.LoginPOJO;
+import exps.models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -22,12 +22,21 @@ public class SignInPage {
         this.driver = driver;
     }
 
-    // Вход с логином и паролем
-    public HomePage loginValidUser(LoginPOJO loginPOJO) {
+    public HomePage loginValidUser(Account account) {
         TextBox tbxLogin = new TextBox(driver, loginBy);
-        tbxLogin.setValue(loginPOJO.login);
+        tbxLogin.setValue(account.getLogin().getLogin());
         TextBox tbxPassword = new TextBox(driver, passwordBy);
-        tbxPassword.setValue(loginPOJO.password);
+        tbxPassword.setValue(account.getPassword().getPassword());
+        Button btnSignIn = new Button(driver, signInBy);
+        btnSignIn.click();
+        return new HomePage(driver);
+    }
+
+    public HomePage loginValidUser(String login, String password) {
+        TextBox tbxLogin = new TextBox(driver, loginBy);
+        tbxLogin.setValue(login);
+        TextBox tbxPassword = new TextBox(driver, passwordBy);
+        tbxPassword.setValue(password);
         Button btnSignIn = new Button(driver, signInBy);
         btnSignIn.click();
         return new HomePage(driver);
