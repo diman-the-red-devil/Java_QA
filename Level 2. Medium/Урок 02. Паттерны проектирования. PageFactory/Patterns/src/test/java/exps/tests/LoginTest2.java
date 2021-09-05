@@ -1,9 +1,9 @@
 package exps.tests;
 
 import exps.models.AccountPOJO;
-import exps.pages.HomePage;
-import exps.pages.SignInPage;
-import exps.webdriverfactory.WebDriverFactory;
+import exps.web.pages.HomePage;
+import exps.web.pages.SignInPage;
+import exps.web.drivers.factory.WebDriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;

@@ -1,10 +1,13 @@
-package exps.webdriverfactory;
+package exps.web.drivers.factory;
 
+import exps.web.drivers.ChromeBrowser;
+import exps.web.drivers.EdgeBrowser;
+import exps.web.drivers.FirefoxBrowser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
-import static exps.webdriverfactory.BrowserName.CHROME;
+import static exps.web.drivers.factory.BrowserName.CHROME;
 
 // Фабрика по созданию экземпляров драйвера браузера
 public class WebDriverFactory {

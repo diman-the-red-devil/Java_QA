@@ -1,22 +1,22 @@
-package exps.webdriverfactory;
+package exps.web.drivers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
-// Драйвера браузера "Microsoft Edge"
-public class EdgeBrowser {
-    // Получение экземпляра драйвера браузера "Microsoft Edge"
+// Драйвера браузера "Google Chrome"
+public class ChromeBrowser {
+    // Получение экземпляра драйвера браузера "Google Chrome"
     public static WebDriver getDriver() {
         // Настройка файла драйвера
-        WebDriverManager.edgedriver().setup();
+        WebDriverManager.chromedriver().setup();
 
         // Опции драйвера:
-        EdgeOptions options = new EdgeOptions();
+        ChromeOptions options = new ChromeOptions();
         // - поведение при появлении алертов "Игнорирование"
         options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
         // - стратегия загрузки страницы "NORMAL"
@@ -27,6 +27,6 @@ public class EdgeBrowser {
         options.addArguments("--start-fullscreen");
 
         // Новый экземпляр драйвера
-        return new EdgeDriver(options);
+        return new ChromeDriver(options);
     }
 }

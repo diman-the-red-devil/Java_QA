@@ -1,8 +1,7 @@
-package exps.elements;
+package exps.web.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 // Флажок
 public class CheckBox extends Element{

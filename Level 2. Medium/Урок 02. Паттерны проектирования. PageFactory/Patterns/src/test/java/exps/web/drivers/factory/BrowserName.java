@@ -1,4 +1,4 @@
-package exps.webdriverfactory;
+package exps.web.drivers.factory;
 
 // Имена браузеров
 public enum BrowserName {

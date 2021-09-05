@@ -1,16 +1,24 @@
 package exps.tests;
 
 import exps.models.Account;
-import exps.models.AccountJB;
-import exps.pages.HomePage;
-import exps.pages.SignInPage;
-import exps.webdriverfactory.WebDriverFactory;
+import exps.models.valueobjects.FullName;
+import exps.models.valueobjects.Login;
+import exps.models.valueobjects.MobilePhone;
+import exps.models.valueobjects.Password;
+import exps.web.pages.HomePage;
+import exps.web.pages.SignInPage;
+import exps.web.drivers.factory.WebDriverFactory;
+import exps.web.pages.factory.PageFactory;
+import exps.web.pages.factory.PageName;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
+
+import java.text.DateFormat;
+import java.util.Date;
 
 // Тест
 public class LoginTest4 {
@@ -37,7 +45,13 @@ public class LoginTest4 {
         // Arrange
         String login = "diman_the_red_devil@mail.ru";
         String password = "JAKARTA12345rex-";
-        Account account = new AccountJB(login, password);
+        Account account = new Account(
+                new Login(login),
+                new Password(password)
+        );
+        account.setMobilePhone(new MobilePhone("89064067898"));
+        account.setFullName(new FullName("Тестов Тест Тестович"));
+        account.setDateOfBirth(new Date("01-01-2000"));
         String expected = "Dashboard";
 
         // Act
@@ -50,12 +64,12 @@ public class LoginTest4 {
         homePageAssert.textAfterLoginIs(expected);
     }
 
-    public HomePage getPageAfterLogin(AccountJB accountJB) {
+    public HomePage getPageAfterLogin(Account account) {
         // Страница "Sign In"
-        SignInPage signInPage = new SignInPage(driver);
+        SignInPage signInPage = (SignInPage) PageFactory.getPage(driver, PageName.SIGN_IN_PAGE);
         // Вход с логином и паролем
         // Страница "Home"
-        return signInPage.loginValidUser(accountJB);
+        return signInPage.loginValidUser(account);
     }
 
     // После каждого теста

@@ -1,4 +1,4 @@
-package exps.webdriverfactory;
+package exps.web.drivers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.PageLoadStrategy;

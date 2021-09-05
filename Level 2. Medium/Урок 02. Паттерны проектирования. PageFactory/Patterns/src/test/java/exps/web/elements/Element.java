@@ -1,9 +1,9 @@
-package exps.elements;
+package exps.web.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import exps.helpers.WaitFor;
+import exps.web.helpers.WaitFor;
 
 import java.time.Duration;
 
@@ -26,5 +26,9 @@ public class Element {
     // Например, getText()
     public WebElement getWebElement() {
         return webElement;
+    }
+
+    public boolean isDisplayed() {
+        return webElement.isDisplayed();
     }
 }
