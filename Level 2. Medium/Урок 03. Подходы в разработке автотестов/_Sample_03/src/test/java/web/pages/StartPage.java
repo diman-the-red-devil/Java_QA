@@ -1,10 +1,14 @@
 package web.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import web.elements.Link;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import web.elements.Linkk;
 
 // Стартовая страница сайта DNS
 public class StartPage extends BasePage {
@@ -13,18 +17,23 @@ public class StartPage extends BasePage {
     // URL страницы
     private final String URL = "https://www.dns-shop.ru/";
 
-    // ***** Локаторы *****
+    // ***** Веб элементы *****
     // Кнопка "Да" на всплывашке
-    String linkYesXpath = "//a[contains(text(),\"Да\")]";
+    @FindBy(xpath = "//a[contains(text(),\"Да\")]")
+    private WebElement linkYes;
     // Ссылка "Смартфоны и гаджеты"
-    String linkSmartsAndGadgetsXpath = "(//a[contains(text(), \"Смартфоны и гаджеты\")])[1]";
+    @FindBy(xpath = "(//a[contains(text(), \"Смартфоны и гаджеты\")])[1]")
+    private WebElement linkSmartsAndGadgets;
     // Ссылка "Смартфоны"
-    String linkSmartsXpath = "(//a[contains(text(), \"Смартфоны и гаджеты\")])[2]/following::div/a";
+    @FindBy(xpath = "//a[text()=\"Смартфоны\"]")
+    private WebElement linkSmarts;
 
     // Конструктор класса
     public StartPage(WebDriver driver) {
         // Вызов родительского конструктора
         super(driver);
+        // Инициализация веб элементов
+        PageFactory.initElements(driver, this);
     }
 
     // Получение URL страницы
@@ -38,24 +47,17 @@ public class StartPage extends BasePage {
         logger.info("Открыта страница https://www.dns-shop.ru/");
     }
 
-    // Нажатие на кнопку "Да"
-    public void linkYesClick() {
-        Link linkYes = new Link(driver, By.xpath(linkYesXpath));
-        linkYes.click();
-        logger.info("Нажата кнопка \"Да\"");
+    // ***** Получение обернутых веб элементов *****
+    // Кнопка "Да" на всплывашке
+    public Linkk linkYes() {
+        return new Link(linkYes);
     }
-
-    // Наведение курсора мыши на ссылку "Смартфоны и гаджеты"
-    public void linkSmartsAndGadgetsMove() {
-        Link linkSmartsAndGadgets = new Link(driver, By.xpath(linkSmartsAndGadgetsXpath));
-        linkSmartsAndGadgets.focusOnLink();
-        logger.info("Курсор мыши наведен на ссылку \"Смартфоны\"");
+    // Ссылка "Смартфоны и гаджеты"
+    public Linkk linkSmartsAndGadget() {
+        return new Link(linkSmartsAndGadgets);
     }
-
-    // Нажатие на ссылку "Смартфоны"
-    public void linkSmartsClick() {
-        Link linkSmarts = new Link(driver, By.xpath(linkSmartsXpath));
-        linkSmarts.click();
-        logger.info("Нажата ссылка \"Смартфоны\"");
+    // Ссылка "Смартфоны"
+    public Linkk linkSmarts() {
+        return new Link(linkSmarts);
     }
 }

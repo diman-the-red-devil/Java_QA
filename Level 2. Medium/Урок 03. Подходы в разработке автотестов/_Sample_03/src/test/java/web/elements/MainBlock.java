@@ -1,7 +1,7 @@
 package web.elements;
 
-import web.helpers.JSExec;
-import web.helpers.WaitFor;
+import web.helpers.JSExecHelper;
+import web.helpers.WaitHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -14,7 +14,7 @@ public class MainBlock extends BaseElement {
 
     // Скрытие блока
     public void hide() {
-        WaitFor.visibilityOfElementLocated(by);
-        JSExec.displayNone(webElement);
+        WaitHelper.visibilityOfElementLocated(by);
+        JSExecHelper.displayNone(webElement);
     }
 }

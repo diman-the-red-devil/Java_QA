@@ -1,6 +1,6 @@
 package web.elements;
 
-import web.helpers.WaitFor;
+import web.helpers.WaitHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,8 +13,8 @@ public class Accordeon extends BaseElement {
 
     // Раскрытие гармошки
     public void show() {
-        WaitFor.visibilityOfElementLocated(by);
-        WaitFor.clickabilityOfElement(webElement);
+        WaitHelper.visibilityOfElementLocated(by);
+        WaitHelper.clickabilityOfElement(webElement);
         webElement.click();
     }
 }

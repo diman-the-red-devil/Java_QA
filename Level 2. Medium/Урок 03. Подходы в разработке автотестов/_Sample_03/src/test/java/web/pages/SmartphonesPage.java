@@ -1,7 +1,7 @@
 package web.pages;
 
 import web.elements.*;
-import web.helpers.WaitFor;
+import web.helpers.WaitHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -90,7 +90,7 @@ public class SmartphonesPage extends BasePage {
 
     // Нажатие на ссылку первого продукта в списке
     public void linkFirstProductClick(String product) {
-        WaitFor.firstProductMustBe(By.xpath(linkFirstProductXpath), product);
+        WaitHelper.firstProductMustBe(By.xpath(linkFirstProductXpath), product);
         Link linkProduct = new Link(driver, By.xpath(linkFirstProductXpath));
         linkProduct.openInNewWindow();
         logger.info("Нажата ссылка первого продукта в списке");

@@ -1,27 +1,23 @@
 package web.elements;
 
-import web.helpers.WaitFor;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 // Класс "Переключатель"
 public class RadioButton extends BaseElement{
     // Конструктор
-    public RadioButton(WebDriver driver, By by) {
-        super(driver, by);
+    public RadioButton(WebElement webElement) {
+        super(webElement);
     }
 
     // Установка переключателя
     public void setSelected(boolean value) {
         if (value != isSelected()) {
-            WaitFor.clickabilityOfElement(webElement);
             webElement.click();
         }
     }
 
     // Проверка, что переключатель установлен
     public boolean isSelected() {
-        WaitFor.visibilityOfElementLocated(by);
         return webElement.isSelected();
     }
 }

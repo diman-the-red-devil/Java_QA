@@ -1,28 +1,23 @@
 package web.elements;
 
-import web.helpers.WaitFor;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 
 // Класс "Ссылка"
 public class Link extends BaseElement {
     // Конструктор
-    public Link(WebDriver driver, By by) {
-        super(driver, by);
+    public Link(WebElement webElement) {
+        super(webElement);
     }
 
     // Нажатие на ссылку
     public void click() {
-        WaitFor.visibilityOfElementLocated(by);
-        WaitFor.clickabilityOfElement(webElement);
         webElement.click();
     }
 
     // Наведение курсора мыши на ссылку
     public void focusOnLink() {
-        WaitFor.visibilityOfElementLocated(by);
         Actions actions = new Actions(driver);
         actions.moveToElement(webElement).perform();
     }
@@ -42,7 +37,6 @@ public class Link extends BaseElement {
 
     // Получение текста ссылки
     public String getText() {
-        WaitFor.visibilityOfElementLocated(by);
         return webElement.getText();
     }
 }

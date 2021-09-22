@@ -1,7 +1,8 @@
 package web.pages;
 
-import web.helpers.JSExec;
-import web.helpers.WaitFor;
+import web.helpers.ActionHelper;
+import web.helpers.JSExecHelper;
+import web.helpers.WaitHelper;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
@@ -15,8 +16,10 @@ public class BasePage {
     public BasePage(WebDriver driver) {
         BasePage.driver = driver;
         // Инициализация ожидания - 10 секунд
-        WaitFor.initWait(driver, Duration.ofSeconds(10), Duration.ofMillis(100));
+        WaitHelper.init(Duration.ofSeconds(10), Duration.ofMillis(100));
         // Инициализация исполнителя JS скриптов
-        JSExec.initJS(driver);
+        JSExecHelper.init();
+
+        ActionHelper.init();
     }
 }
