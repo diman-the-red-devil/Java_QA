@@ -9,6 +9,7 @@ public class BaseElement {
 
     // Конструктор класса
     public BaseElement(WebElement webElement) {
+
         this.webElement = webElement;
     }
 

@@ -1,6 +1,7 @@
 package web.elements;
 
 import org.openqa.selenium.WebElement;
+import web.helpers.WaitHelper;
 
 // Класс "Текстовое поле ввода"
 public class TextBox extends BaseElement {
@@ -11,11 +12,13 @@ public class TextBox extends BaseElement {
 
     // Нажатие на текстовое поле ввода
     public void click() {
+        WaitHelper.clickabilityOfElement(webElement);
         webElement.click();
     }
 
     // Ввод значения в текстовое поле ввода
     public void setValue(String value) {
+        WaitHelper.clickabilityOfElement(webElement);
         webElement.sendKeys(value);
     }
 }

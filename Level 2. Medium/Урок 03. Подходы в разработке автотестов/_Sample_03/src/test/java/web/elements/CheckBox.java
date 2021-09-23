@@ -1,6 +1,7 @@
 package web.elements;
 
 import org.openqa.selenium.WebElement;
+import web.helpers.WaitHelper;
 
 // Класс "Флажок"
 public class CheckBox extends BaseElement {
@@ -11,7 +12,9 @@ public class CheckBox extends BaseElement {
 
     // Установка флажка
     public void setChecked(boolean value) {
+        WaitHelper.visibilityOfElement(webElement);
         if (value != isChecked()) {
+            WaitHelper.clickabilityOfElement(webElement);
             webElement.click();
         }
     }

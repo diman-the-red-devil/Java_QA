@@ -1,8 +1,7 @@
 package web.elements;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
-import org.openqa.selenium.interactions.Actions;
+import web.helpers.*;
 
 // Класс "Ссылка"
 public class Link extends BaseElement {
@@ -13,21 +12,26 @@ public class Link extends BaseElement {
 
     // Нажатие на ссылку
     public void click() {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        WaitHelper.clickabilityOfElement(webElement);
         webElement.click();
     }
 
     // Наведение курсора мыши на ссылку
     public void focusOnLink() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(webElement).perform();
+        ActionHelper.moveToElement(webElement);
     }
 
     // Открытие ссылки в новом окне
     public void openInNewWindow() {
         String URL = this.getURL();
-        driver.switchTo().newWindow(WindowType.WINDOW);
-        driver.manage().window().maximize();
-        driver.navigate().to(URL);
+        SwitchHelper.switchToNewWindow();
+        WindowHelper.maximizeWindow();
+        NavigationHelper.navigateTo(URL);
     }
 
     // Получение URL ссылки

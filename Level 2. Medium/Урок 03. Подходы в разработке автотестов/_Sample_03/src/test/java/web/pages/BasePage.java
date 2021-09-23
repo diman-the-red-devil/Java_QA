@@ -1,7 +1,7 @@
 package web.pages;
 
 import web.helpers.ActionHelper;
-import web.helpers.JSExecHelper;
+import web.helpers.JavaScriptHelper;
 import web.helpers.WaitHelper;
 import org.openqa.selenium.WebDriver;
 
@@ -18,8 +18,8 @@ public class BasePage {
         // Инициализация ожидания - 10 секунд
         WaitHelper.init(Duration.ofSeconds(10), Duration.ofMillis(100));
         // Инициализация исполнителя JS скриптов
-        JSExecHelper.init();
-
+        JavaScriptHelper.init();
+        // Инициализация экшена
         ActionHelper.init();
     }
 }

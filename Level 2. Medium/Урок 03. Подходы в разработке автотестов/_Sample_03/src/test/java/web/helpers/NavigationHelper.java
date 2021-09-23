@@ -2,26 +2,30 @@ package web.helpers;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import web.Context;
+import web.drivers.WebDriverFactory;
 
-//
+// Класс для навигации в браузере
 public class NavigationHelper {
     // Логгер
     private Logger logger = LogManager.getLogger(NavigationHelper.class);
 
+    // Открытие новой страницы
     public static void navigateTo(String URL) {
-        Context.getDriver().navigate().to(URL);
+        WebDriverFactory.getCurrentDriver().navigate().to(URL);
     }
 
+    // Переход на предыдущую страницу
     public static void back() {
-        Context.getDriver().navigate().back();
+        WebDriverFactory.getCurrentDriver().navigate().back();
     }
 
+    // Переход на следующую страницу
     public static void forward() {
-        Context.getDriver().navigate().forward();
+        WebDriverFactory.getCurrentDriver().navigate().forward();
     }
 
+    // Обновление страницы
     public static void refresh() {
-        Context.getDriver().navigate().refresh();
+        WebDriverFactory.getCurrentDriver().navigate().refresh();
     }
 }

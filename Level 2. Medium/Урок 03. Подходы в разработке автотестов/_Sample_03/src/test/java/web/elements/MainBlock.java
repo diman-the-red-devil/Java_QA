@@ -1,20 +1,17 @@
 package web.elements;
 
-import web.helpers.JSExecHelper;
-import web.helpers.WaitHelper;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import web.helpers.JavaScriptHelper;
 
 // Класс "Главный блок"
 public class MainBlock extends BaseElement {
     // Конструктор
-    public MainBlock(WebDriver driver, By by) {
-        super(driver, by);
+    public MainBlock(WebElement webElement) {
+        super(webElement);
     }
 
     // Скрытие блока
     public void hide() {
-        WaitHelper.visibilityOfElementLocated(by);
-        JSExecHelper.displayNone(webElement);
+        JavaScriptHelper.displayNone(webElement);
     }
 }

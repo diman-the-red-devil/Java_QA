@@ -1,6 +1,7 @@
 package web.elements;
 
 import org.openqa.selenium.WebElement;
+import web.helpers.WaitHelper;
 
 // Класс "Кнопка"
 public class Button extends BaseElement {
@@ -11,6 +12,7 @@ public class Button extends BaseElement {
 
     // Нажатие на кнопку
     public void click() {
+        WaitHelper.clickabilityOfElement(webElement);
         webElement.click();
     }
 }

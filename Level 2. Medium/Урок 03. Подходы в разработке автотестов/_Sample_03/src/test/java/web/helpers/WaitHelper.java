@@ -3,26 +3,25 @@ package web.helpers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import web.Context;
+import web.drivers.WebDriverFactory;
 
 import java.time.Duration;
 
-// Класс ожиданий событий на странице
+// Класс для ожиданий событий на странице
 public class WaitHelper {
     // Логгер
     private Logger logger = LogManager.getLogger(WaitHelper.class);
-    // Ожидание драйвера браузера
+    // Ожидание
     protected static WebDriverWait wait;
 
-    // Инициализация ожидания драйвера браузера
+    // Инициализация ожидания
     // Установка таймаута ожидания и интервала опроса
     public static void init(Duration timeOut, Duration sleep) {
-        wait = new WebDriverWait(Context.getDriver(), timeOut, sleep);
+        wait = new WebDriverWait(WebDriverFactory.getCurrentDriver(), timeOut, sleep);
     }
 
     // Ожидание наличия элемента по локатору

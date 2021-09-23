@@ -3,30 +3,30 @@ package web.helpers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import web.Context;
+import web.drivers.WebDriverFactory;
 
-public class JSExecHelper {
+// Класс для выполнения скриптов на JavaScript
+public class JavaScriptHelper {
     // Логгер
-    private Logger logger = LogManager.getLogger(JSExecHelper.class);
+    private Logger logger = LogManager.getLogger(JavaScriptHelper.class);
     // Исполнитель JS скриптов
-    protected static JavascriptExecutor js;
+    protected static JavascriptExecutor javascriptExecutor;
 
     // Инициализация исполнителя JS скриптов
     public static void init() {
-        js = (JavascriptExecutor) Context.getDriver();
+        javascriptExecutor = (JavascriptExecutor) WebDriverFactory.getCurrentDriver();
     }
 
     // Скролл страницы заданное расстояние в пикселях по X и по Y
     public static void scrollBy(int x, int y) {
         String script = "window.scrollBy(" + x + "," + y + ");";
-        js.executeScript(script);
+        javascriptExecutor.executeScript(script);
     }
 
     // Установка невидимости веб элемента
     public static void displayNone(WebElement element) {
         String script = "arguments[0].style.display='none';";
-        js.executeScript(script, element);
+        javascriptExecutor.executeScript(script, element);
     }
 }

@@ -4,9 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import web.Context;
+import web.drivers.WebDriverFactory;
 
-// Класс выполнения сложных действий
+// Класс для выполнения сложных действий
 public class ActionHelper {
     // Логгер
     private Logger logger = LogManager.getLogger(ActionHelper.class);
@@ -15,13 +15,11 @@ public class ActionHelper {
 
     // Инициализация экшена
     public static void init() {
-        actions = new Actions(Context.getDriver());
+        actions = new Actions(WebDriverFactory.getCurrentDriver());
     }
 
-    //
-    public void moveToElement(WebElement webElement) {
+    // Перемещение курсора мыши на элемент
+    public static void moveToElement(WebElement webElement) {
         actions.moveToElement(webElement).perform();
     }
-
-
 }

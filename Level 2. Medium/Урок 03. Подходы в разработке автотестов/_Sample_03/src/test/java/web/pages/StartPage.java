@@ -1,14 +1,13 @@
 package web.pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import web.elements.Link;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import web.elements.Linkk;
+import web.helpers.WaitHelper;
 
 // Стартовая страница сайта DNS
 public class StartPage extends BasePage {
@@ -49,15 +48,15 @@ public class StartPage extends BasePage {
 
     // ***** Получение обернутых веб элементов *****
     // Кнопка "Да" на всплывашке
-    public Linkk linkYes() {
+    public Link linkYes() {
         return new Link(linkYes);
     }
     // Ссылка "Смартфоны и гаджеты"
-    public Linkk linkSmartsAndGadget() {
+    public Link linkSmartsAndGadget() {
         return new Link(linkSmartsAndGadgets);
     }
     // Ссылка "Смартфоны"
-    public Linkk linkSmarts() {
+    public Link linkSmarts() {
         return new Link(linkSmarts);
     }
 }

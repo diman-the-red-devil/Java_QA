@@ -1,6 +1,7 @@
 package web.elements;
 
 import org.openqa.selenium.WebElement;
+import web.helpers.WaitHelper;
 
 // Класс "Переключатель"
 public class RadioButton extends BaseElement{
@@ -11,7 +12,9 @@ public class RadioButton extends BaseElement{
 
     // Установка переключателя
     public void setSelected(boolean value) {
+        WaitHelper.visibilityOfElement(webElement);
         if (value != isSelected()) {
+            WaitHelper.clickabilityOfElement(webElement);
             webElement.click();
         }
     }
