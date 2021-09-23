@@ -12,11 +12,7 @@ public class Link extends BaseElement {
 
     // Нажатие на ссылку
     public void click() {
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // Ожидание кликабельности ссылки
         WaitHelper.clickabilityOfElement(webElement);
         webElement.click();
     }
@@ -28,9 +24,13 @@ public class Link extends BaseElement {
 
     // Открытие ссылки в новом окне
     public void openInNewWindow() {
+        // Получение URL ссылки
         String URL = this.getURL();
+        // Создание нового окна и переключение на него
         SwitchHelper.switchToNewWindow();
+        // Максимизация размеров окна
         WindowHelper.maximizeWindow();
+        // Переход по ссылке в новом окне
         NavigationHelper.navigateTo(URL);
     }
 

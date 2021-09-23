@@ -14,6 +14,7 @@ public class Accordeon extends BaseElement {
 
     // Раскрытие гармошки
     public void show() {
+        // Ожидание кликабельности гармошки
         WaitHelper.clickabilityOfElement(webElement);
         webElement.click();
     }

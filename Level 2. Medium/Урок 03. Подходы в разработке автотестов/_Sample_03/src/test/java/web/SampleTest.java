@@ -1,11 +1,18 @@
-import io.cucumber.java.et.Ja;
+package web;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
+import web.BaseTest;
 import web.helpers.JavaScriptHelper;
-import web.helpers.WaitHelper;
+import web.pages.SmartphoneProductPage;
 import web.pages.SmartphonesPage;
 import web.pages.StartPage;
 
-public class SampleTest extends BaseTest2 {
+public class SampleTest extends BaseTest {
+    // Логгер
+    private Logger logger = LogManager.getLogger(SmartphoneProductPage.class);
+
     @Test
     // Проверка
     public void selectedProduct_Is_SamsungGalaxyNote20Ultra256GBWhite() {
@@ -29,5 +36,8 @@ public class SampleTest extends BaseTest2 {
         smartphonesPage.accordeonSort().show();
         smartphonesPage.radioButtonSort("Сначала дорогие").setSelected(true);
         smartphonesPage.linkFirstProduct().click();
+        SmartphoneProductPage smartphoneProductPage = new SmartphoneProductPage(driver);
+        smartphoneProductPage.linkCharacteristics().click();
+        logger.info(smartphoneProductPage.tableCharacteristics().getDataValue("Объем оперативной памяти"));
     }
 }

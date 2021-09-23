@@ -22,4 +22,9 @@ public class BasePage {
         // Инициализация экшена
         ActionHelper.init();
     }
+
+    // Получение заголовка текущей страницы
+    public String getPageTitle() {
+        return driver.getTitle();
+    }
 }

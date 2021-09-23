@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import web.elements.Link;
-import web.helpers.WaitHelper;
 
 // Стартовая страница сайта DNS
 public class StartPage extends BasePage {

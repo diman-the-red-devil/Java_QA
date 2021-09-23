@@ -1,3 +1,5 @@
+package web;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
@@ -8,11 +10,11 @@ import web.drivers.WebDriverFactory;
 
 
 // Базовый класс для всех классов с тестами
-public class BaseTest2 {
+public class BaseTest {
     // Драйвер браузера
     protected static WebDriver driver;
     // Логгер
-    private Logger logger = LogManager.getLogger(BaseTest2.class);
+    private Logger logger = LogManager.getLogger(BaseTest.class);
 
     // Перед каждым тестом
     @BeforeEach

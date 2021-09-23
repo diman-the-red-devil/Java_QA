@@ -12,9 +12,9 @@ public class RadioButton extends BaseElement{
 
     // Установка переключателя
     public void setSelected(boolean value) {
-        WaitHelper.visibilityOfElement(webElement);
+        // Ожидание кликабельности переключателя
+        WaitHelper.clickabilityOfElement(webElement);
         if (value != isSelected()) {
-            WaitHelper.clickabilityOfElement(webElement);
             webElement.click();
         }
     }

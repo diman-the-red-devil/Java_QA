@@ -1,15 +1,17 @@
 package web.pages;
 
-import io.cucumber.java.bs.A;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import web.elements.*;
-import web.helpers.WaitHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Sleeper;
+import web.elements.*;
+import web.helpers.WaitHelper;
+
+import java.time.Duration;
 
 // Страница "Смартфоны"
 public class SmartphonesPage extends BasePage {
@@ -64,11 +66,14 @@ public class SmartphonesPage extends BasePage {
     // Фильтр "Производитель"
     // Чекбокс "Производитель"
     public CheckBox checkBoxCompany(String company) {
-        WaitHelper.visibilityOfElement(divCompany);
-        String checkBoxCompanyXpath = "./label/span[contains(text(), \"" + company + "\")]";
-        WebElement checkBoxCompany = divCompany.findElement(By.xpath(checkBoxCompanyXpath));
-        return new CheckBox(checkBoxCompany);
+        return new CheckBox(findCheckBoxCompany(company));
     }
+    // Поиск чекбокса "Производитель"
+    private WebElement findCheckBoxCompany(String company) {
+        WaitHelper.visibilityOfElement(divCompany);
+        return divCompany.findElement(By.xpath("./label/span[contains(text(), \"" + company + "\")]"));
+    }
+
     // Фильтр "Объем оперативной памяти"
     // Аккордеон "Объем оперативной памяти"
     public Accordeon accordeonRAM() {
@@ -76,11 +81,14 @@ public class SmartphonesPage extends BasePage {
     }
     // Чекбокс "Объем оперативной памяти"
     public CheckBox checkBoxRAM(String ram) {
-        WaitHelper.visibilityOfElement(divRAM);
-        String checkBoxRAMXpath = "./label/span[contains(text(), \"" + ram + "\")]";
-        WebElement checkBoxRAM = divRAM.findElement(By.xpath(checkBoxRAMXpath));
-        return new CheckBox(checkBoxRAM);
+        return new CheckBox(findCheckBoxRAM(ram));
     }
+    // Поиск чекбокса "Объем оперативной памяти"
+    private WebElement findCheckBoxRAM(String ram) {
+        WaitHelper.visibilityOfElement(divRAM);
+        return divRAM.findElement(By.xpath("./label/span[contains(text(), \"" + ram + "\")]"));
+    }
+
     // Кнопка Применить
     public Button buttonApply() {
         return new Button(buttonApply);
@@ -92,13 +100,21 @@ public class SmartphonesPage extends BasePage {
     }
     // Переключатель "Сортировка"
     public RadioButton radioButtonSort(String sort) {
-        WaitHelper.visibilityOfElement(divSort);
-        String radioButtonSortXpath = "//span[contains(text(), \"" + sort + "\")]";
-        WebElement radioButtonSort = divSort.findElement(By.xpath(radioButtonSortXpath));
-        return new RadioButton(radioButtonSort);
+        return new RadioButton(findRadioButtonSort(sort));
     }
+    // Поиск переключателя "Сортировка"
+    private WebElement findRadioButtonSort(String sort) {
+        WaitHelper.visibilityOfElement(divSort);
+        return divSort.findElement(By.xpath("//span[contains(text(), \"" + sort + "\")]"));
+    }
+
     // 4. Ссылка на первый продукт в списке
     public Link linkFirstProduct() {
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofMillis(1000));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return new Link(linkFirstProduct);
     }
 }

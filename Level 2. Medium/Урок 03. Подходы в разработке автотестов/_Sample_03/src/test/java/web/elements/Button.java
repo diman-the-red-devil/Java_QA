@@ -12,6 +12,7 @@ public class Button extends BaseElement {
 
     // Нажатие на кнопку
     public void click() {
+        // Ожидание кликабельности кнопки
         WaitHelper.clickabilityOfElement(webElement);
         webElement.click();
     }

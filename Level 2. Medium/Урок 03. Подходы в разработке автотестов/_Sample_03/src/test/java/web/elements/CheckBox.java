@@ -12,9 +12,9 @@ public class CheckBox extends BaseElement {
 
     // Установка флажка
     public void setChecked(boolean value) {
-        WaitHelper.visibilityOfElement(webElement);
+        // Ожидание кликабельности флажка
+        WaitHelper.clickabilityOfElement(webElement);
         if (value != isChecked()) {
-            WaitHelper.clickabilityOfElement(webElement);
             webElement.click();
         }
     }
