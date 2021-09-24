@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: web.SampleTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 32.222 s <<< FAILURE! - in web.SampleTest
+selectedProduct_Is_SamsungGalaxyNote20Ultra256GBWhite  Time elapsed: 31.525 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //table' (tried for 10 second(s) with 100 milliseconds interval)
+	at web.SampleTest.selectedProduct_Is_SamsungGalaxyNote20Ultra256GBWhite(SampleTest.java:41)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//table"}
+  (Session info: chrome=93.0.4577.82)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-beta-4', revision: '29f46d02dd'
+System info: host: 'DKIM', ip: '10.0.92.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6e3127ec5c8b234df59b58c503ad6896, findElement {using=xpath, value=//table}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.82, chrome: {chromedriverVersion: 93.0.4577.63 (ff5c0da2ec0ad..., userDataDir: C:\Users\DKim\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:51884}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51884/devtoo..., se:cdpVersion: 93.0.4577.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6e3127ec5c8b234df59b58c503ad6896
+	at web.SampleTest.selectedProduct_Is_SamsungGalaxyNote20Ultra256GBWhite(SampleTest.java:41)
+
