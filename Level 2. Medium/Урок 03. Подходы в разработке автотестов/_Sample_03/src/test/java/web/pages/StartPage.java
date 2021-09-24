@@ -12,8 +12,6 @@ import web.elements.Link;
 public class StartPage extends BasePage {
     // Логгер
     private Logger logger = LogManager.getLogger(StartPage.class);
-    // URL страницы
-    private final String URL = "https://www.dns-shop.ru/";
 
     // ***** Веб элементы *****
     // Кнопка "Да" на всплывашке
@@ -32,17 +30,6 @@ public class StartPage extends BasePage {
         super(driver);
         // Инициализация веб элементов
         PageFactory.initElements(driver, this);
-    }
-
-    // Получение URL страницы
-    public String getURL() {
-        return this.URL;
-    }
-
-    // Открытие страницы
-    public void openPage() {
-        driver.get(this.URL);
-        logger.info("Открыта страница https://www.dns-shop.ru/");
     }
 
     // ***** Получение обернутых веб элементов *****
