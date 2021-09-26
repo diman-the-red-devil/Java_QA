@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: RunCucumberTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.024 s <<< FAILURE! - in RunCucumberTest
-initializationError  Time elapsed: 0.01 s  <<< ERROR!
-java.lang.IllegalArgumentException: path must exist: C:\Users\diman\Desktop\_Sample_03\src\test\resources\features\Smartphone1.feature
-
