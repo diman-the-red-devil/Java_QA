@@ -20,7 +20,6 @@
         <cucumber>6.11.0</cucumber>
         <!-- JUnit -->
         <junit-jupiter-engine>5.8.0</junit-jupiter-engine>
-        <junit-vintage-engine>5.8.0</junit-vintage-engine>
         <junit-jupiter-api>5.8.0</junit-jupiter-api>
         <junit-platform-commons>1.8.0</junit-platform-commons>
         <junit-platform-launcher>1.8.0</junit-platform-launcher>
@@ -69,29 +68,23 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <version>${junit-vintage-engine}</version>
-            <scope>test</scope>
-        </dependency>
-        <!--dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-jupiter-api}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-commons</artifactId>
-            <version>${junit-platform-commons}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <version>${junit-platform-launcher}</version>
-            <scope>test</scope>
-        </dependency-->
+           <groupId>org.junit.jupiter</groupId>
+           <artifactId>junit-jupiter-api</artifactId>
+           <version>${junit-jupiter-api}</version>
+           <scope>test</scope>
+       </dependency>
+       <dependency>
+           <groupId>org.junit.platform</groupId>
+           <artifactId>junit-platform-commons</artifactId>
+           <version>${junit-platform-commons}</version>
+           <scope>test</scope>
+       </dependency>
+       <dependency>
+           <groupId>org.junit.platform</groupId>
+           <artifactId>junit-platform-launcher</artifactId>
+           <version>${junit-platform-launcher}</version>
+           <scope>test</scope>
+       </dependency>
         <!-- Selenium WebDriver -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
