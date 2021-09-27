@@ -55,12 +55,12 @@
             <version>${cucumber}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!--dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
             <version>${cucumber}</version>
             <scope>test</scope>
-        </dependency>
+        </dependency-->
         <!-- JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>

@@ -5,7 +5,7 @@ import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.Тогда;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.Assertions;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import web.drivers.BrowserName;
 import web.drivers.WebDriverFactory;
@@ -42,7 +42,7 @@ public class SmartphoneSteps {
     public void assertTitle() {
         SmartphonesPage smartphonesPage = new SmartphonesPage(driver);
         // Проверка заголовка страницы
-        Assertions.assertTrue(smartphonesPage.getPageTitle().contains("Смартфоны"));
+        Assert.assertTrue(smartphonesPage.getPageTitle().contains("Смартфоны"));
         // Если драйвер еще существует
         if(driver != null) {
             // Закрываем его
