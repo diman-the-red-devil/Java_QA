@@ -1,9 +1,8 @@
-package web;
+package _debug;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
-import web.BaseTest;
 import web.helpers.JavaScriptHelper;
 import web.pages.SmartphoneProductPage;
 import web.pages.SmartphonesPage;

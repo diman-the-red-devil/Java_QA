@@ -21,9 +21,9 @@
         <!-- JUnit -->
         <junit-jupiter-engine>5.8.0</junit-jupiter-engine>
         <junit-vintage-engine>5.8.0</junit-vintage-engine>
-        <junit-jupiter-api>5.8.0</junit-jupiter-api>
+        <!--junit-jupiter-api>5.8.0</junit-jupiter-api>
         <junit-platform-commons>1.8.0</junit-platform-commons>
-        <junit-platform-launcher>1.8.0</junit-platform-launcher>
+        <junit-platform-launcher>1.8.0</junit-platform-launcher-->
         <!-- Selenium WebDriver -->
         <selenium-java>4.0.0-beta-4</selenium-java>
         <!-- WebDriver Manager -->
