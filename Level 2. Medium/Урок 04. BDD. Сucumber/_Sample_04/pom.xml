@@ -13,19 +13,24 @@
         <!-- Кодировка проекта - UTF-8 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!-- Версия Java - 15 -->
         <source>15</source>
         <target>15</target>
         <!-- Версии зависимостей: -->
+        <!-- Cucumber -->
+        <cucumber>6.11.0</cucumber>
         <!-- JUnit -->
-        <junit-jupiter-engine>5.1.0</junit-jupiter-engine>
+        <junit-jupiter-engine>5.8.0</junit-jupiter-engine>
+        <junit-vintage-engine>5.8.0</junit-vintage-engine>
+        <!--junit-jupiter-api>5.8.0</junit-jupiter-api>
+        <junit-platform-commons>1.8.0</junit-platform-commons>
+        <junit-platform-launcher>1.8.0</junit-platform-launcher-->
         <!-- Selenium WebDriver -->
         <selenium-java>4.0.0-beta-4</selenium-java>
         <!-- WebDriver Manager -->
-        <webdrivermanager>4.2.2</webdrivermanager>
+        <webdrivermanager>5.0.2</webdrivermanager>
         <!-- Log4J -->
-        <log4j-api>2.14.0</log4j-api>
-        <log4j-core>2.14.0</log4j-core>
+        <log4j-api>2.14.1</log4j-api>
+        <log4j-core>2.14.1</log4j-core>
         <!-- aShot -->
         <ashot>1.5.4</ashot>
         <!-- Версии плагинов: -->
@@ -37,6 +42,25 @@
 
     <!-- Зависимости -->
     <dependencies>
+        <!-- Cucumber -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumber}</version>
+            <scope>test</scope>
+        </dependency-->
         <!-- JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -44,6 +68,30 @@
             <version>${junit-jupiter-engine}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit-vintage-engine}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter-api}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>${junit-platform-commons}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit-platform-launcher}</version>
+            <scope>test</scope>
+        </dependency-->
         <!-- Selenium WebDriver -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -79,7 +127,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <!-- Сборка -->
     <build>
         <!-- Плагины -->
@@ -102,5 +149,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
