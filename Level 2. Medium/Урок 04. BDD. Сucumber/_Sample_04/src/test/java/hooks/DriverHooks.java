@@ -16,7 +16,7 @@ public class DriverHooks {
 
     // Действия совершаемые перед каждым сценарием
     @Before
-    public void beforeScenario() {
+    public void startDriverBeforeScenario() {
         // Получаем параметр запуска тестов через Maven -Dbrowser
         String browser = System
                 .getProperty("browser", "chrome")
@@ -28,7 +28,7 @@ public class DriverHooks {
 
     // Действия совершаемые после каждого сценария
     @After
-    public void afterScenario() {
+    public void stopDriverAfterScenario() {
         // Если драйвер еще существует
         if(driver != null) {
             // Закрываем его

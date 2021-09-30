@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
     // Список папок с feature файлами - фичи/сценарии
     features = {"src/test/resources/features"},
     // Спиcок пакетов с steps файлами - шаги
-    glue = {"steps"}
+    glue = {"steps", "hooks"}
 )
 public class RunCucumberTest {
 }
