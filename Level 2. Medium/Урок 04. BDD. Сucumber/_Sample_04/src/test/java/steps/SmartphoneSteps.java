@@ -1,21 +1,24 @@
 package steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.И;
 import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.Тогда;
+import models.testobjects.Smartphone;
+import models.valueobjects.Company;
+import models.valueobjects.Ram;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Sleeper;
 import web.drivers.WebDriverFactory;
 import web.helpers.JavaScriptHelper;
 import web.pages.SmartphoneProductPage;
 import web.pages.SmartphonesPage;
 import web.pages.StartPage;
 
-import java.time.Duration;
+import java.util.List;
+import java.util.Map;
 
 // Шаги
 public class SmartphoneSteps {
@@ -82,7 +85,7 @@ public class SmartphoneSteps {
 
     @И("Выполнен переход на страницу первого товара из списка")
     public void selectFirstSmartphone() {
-        JavaScriptHelper.scrollBy(0, -600);
+        JavaScriptHelper.scrollBy(0, -1200);
         smartphonesPage.linkFirstProduct().click();
         logger.info("Выполнен переход на страницу первого товара из списка");
     }
@@ -92,5 +95,54 @@ public class SmartphoneSteps {
         // Проверка заголовка страницы
         logger.info("Проверка заголовка страницы");
         Assertions.assertTrue(smartphoneProductPage.getPageTitle().contains(company), "В заголовке страницы не отображается текст " + company);
+    }
+
+    @И("Установлены фильтры из таблицы с одной колонкой")
+    public void setFiltersFromTable1(List<String> filters) {
+        Smartphone smartphone = new Smartphone(
+                new Ram(Integer.parseInt(filters.get(1).split(" ")[0])),
+                new Company(filters.get(0)));
+        JavaScriptHelper.scrollBy(0,400);
+        smartphonesPage.checkBoxCompany(smartphone.getCompany().getCompany()).setChecked(true);
+        JavaScriptHelper.scrollBy(0,400);
+        smartphonesPage.accordeonRAM().show();
+        smartphonesPage.checkBoxRAM(smartphone.getRam().getRam() + " Гб").setChecked(true);
+
+        logger.info("***** Установлены фильтры из таблицы с одной колонкой");
+    }
+
+    @И("Установлены фильтры из таблицы с двумя колонками")
+    public void setFiltersFromTable2(Map<String, String> filters) {
+        Smartphone smartphone = new Smartphone(
+                new Ram(Integer.parseInt(filters.get("Объем оперативной памяти").split(" ")[0])),
+                new Company(filters.get("Производитель")));
+        JavaScriptHelper.scrollBy(0,400);
+        smartphonesPage.checkBoxCompany(smartphone.getCompany().getCompany()).setChecked(true);
+        JavaScriptHelper.scrollBy(0,400);
+        smartphonesPage.accordeonRAM().show();
+        smartphonesPage.checkBoxRAM(smartphone.getRam().getRam() + " Гб").setChecked(true);
+
+        logger.info("***** Установлены фильтры из таблицы с двумя колонками");
+    }
+
+    @Дано("Установлена сортировка и фильтры из таблицы с тремя колонками")
+    public void setFiltersAndSortFromTable3(DataTable dataTable) {
+        List<Map<String, String>> table = dataTable.asMaps(String.class, String.class);
+        String sortBy = table.get(0).get("Сортировка");
+        String filterByCompany = table.get(0).get("Производитель");
+        String filterByRam = table.get(0).get("Объем оперативной памяти");
+
+        smartphonesPage.accordeonSort().show();
+        smartphonesPage.radioButtonSort(sortBy).setSelected(true);
+        Smartphone smartphone = new Smartphone(
+                new Ram(Integer.parseInt(filterByRam.split(" ")[0])),
+                new Company(filterByCompany));
+        JavaScriptHelper.scrollBy(0,400);
+        smartphonesPage.checkBoxCompany(smartphone.getCompany().getCompany()).setChecked(true);
+        JavaScriptHelper.scrollBy(0,400);
+        smartphonesPage.accordeonRAM().show();
+        smartphonesPage.checkBoxRAM(smartphone.getRam().getRam() + " Гб").setChecked(true);
+
+        logger.info("***** Установлена сортировка и фильтры из таблицы с тремя колонками");
     }
 }
