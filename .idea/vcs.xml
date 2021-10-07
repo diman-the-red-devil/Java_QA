@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Level 2. Medium/Урок 06. API. REST Assured/REST-Assured" vcs="Git" />
   </component>
 </project>
