@@ -1,0 +1,2413 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Предыстория",
+        "steps": [
+          {
+            "result": {
+              "duration": 3011989300,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 1373318200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 9,
+            "name": "Открыта Главная страница ДНС",
+            "match": {
+              "location": "steps.SmartphoneSteps.startDriverAndOpenStartPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 759899600,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 2895460000,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 475713000,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 10,
+            "name": "Выполнен переход на страницу Смартфоны",
+            "match": {
+              "location": "steps.SmartphoneSteps.openSmartphonesPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 533258100,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-12T11:49:00.767Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2919072300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.startDriverBeforeScenario()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "Просмотр страницы Смартфоны",
+        "description": "",
+        "id": "смартфоны;просмотр-страницы-смартфоны",
+        "after": [
+          {
+            "result": {
+              "duration": 780742700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.stopDriverAfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Сценарий",
+        "steps": [
+          {
+            "result": {
+              "duration": 7002700,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 515996500,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 13,
+            "name": "Проверить: В заголовке страницы отображается текст Смартфоны",
+            "match": {
+              "location": "steps.SmartphoneSteps.assertTitle()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 365697300,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Тогда "
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Предыстория",
+        "steps": [
+          {
+            "result": {
+              "duration": 3143385300,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 387995400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 9,
+            "name": "Открыта Главная страница ДНС",
+            "match": {
+              "location": "steps.SmartphoneSteps.startDriverAndOpenStartPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 578995500,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 2971990300,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 375997600,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 10,
+            "name": "Выполнен переход на страницу Смартфоны",
+            "match": {
+              "location": "steps.SmartphoneSteps.openSmartphonesPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 486510300,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-12T11:49:16.144Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1248028400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.startDriverBeforeScenario()"
+            }
+          }
+        ],
+        "line": 24,
+        "name": "Фильтрация и сортировка смартфонов на странице Смартфоны",
+        "description": "",
+        "id": "смартфоны;фильтрация-и-сортировка-смартфонов-на-странице-смартфоны;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 935737400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.stopDriverAfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Структура сценария",
+        "steps": [
+          {
+            "result": {
+              "duration": 314001500,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 508552900,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 16,
+            "name": "Установлена сортировка \"Сначала дорогие\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Сначала дорогие\"",
+                  "offset": 23
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setSortBy(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 506512600,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 260518800,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 624067500,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 17,
+            "name": "В фильтре \"Производитель\" выбрано значение \"Samsung\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Производитель\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"Samsung\"",
+                  "offset": 43
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setFilterBy(java.lang.String,java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 483994400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 554357700,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 446230700,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 18,
+            "name": "В фильтре \"Объем оперативной памяти\" выбрано значение \"8 Гб\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Объем оперативной памяти\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"8 Гб\"",
+                  "offset": 54
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setFilterBy(java.lang.String,java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 440998400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 197520600,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 357000000,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 19,
+            "name": "Применены выбранные фильтры",
+            "match": {
+              "location": "steps.SmartphoneSteps.applyFilters()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 442997800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Когда "
+          },
+          {
+            "result": {
+              "duration": 3387955800,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 891918700,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 20,
+            "name": "Выполнен переход на страницу первого товара из списка",
+            "match": {
+              "location": "steps.SmartphoneSteps.selectFirstSmartphone()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 587997200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 6001500,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 421067900,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 21,
+            "name": "Проверить: В заголовке страницы отображается текст \"Samsung\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Samsung\"",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.SmartphoneSteps.assertTitleSmartphoneProduct(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 420801800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Тогда "
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Предыстория",
+        "steps": [
+          {
+            "result": {
+              "duration": 3103107800,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 330121900,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 9,
+            "name": "Открыта Главная страница ДНС",
+            "match": {
+              "location": "steps.SmartphoneSteps.startDriverAndOpenStartPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 744167300,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 3049593400,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 414017500,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 10,
+            "name": "Выполнен переход на страницу Смартфоны",
+            "match": {
+              "location": "steps.SmartphoneSteps.openSmartphonesPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 491659200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-12T11:49:37.392Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1311292500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.startDriverBeforeScenario()"
+            }
+          }
+        ],
+        "line": 25,
+        "name": "Фильтрация и сортировка смартфонов на странице Смартфоны",
+        "description": "",
+        "id": "смартфоны;фильтрация-и-сортировка-смартфонов-на-странице-смартфоны;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 777027200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.stopDriverAfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Структура сценария",
+        "steps": [
+          {
+            "result": {
+              "duration": 297002100,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 505086900,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 16,
+            "name": "Установлена сортировка \"Сначала популярные\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Сначала популярные\"",
+                  "offset": 23
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setSortBy(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 462001800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 362955300,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 477006400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 17,
+            "name": "В фильтре \"Производитель\" выбрано значение \"Samsung\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Производитель\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"Samsung\"",
+                  "offset": 43
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setFilterBy(java.lang.String,java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 496515200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 399033700,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 444818800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 18,
+            "name": "В фильтре \"Объем оперативной памяти\" выбрано значение \"8 Гб\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Объем оперативной памяти\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"8 Гб\"",
+                  "offset": 54
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setFilterBy(java.lang.String,java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 486996200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 213029900,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 429190400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 19,
+            "name": "Применены выбранные фильтры",
+            "match": {
+              "location": "steps.SmartphoneSteps.applyFilters()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 538997400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Когда "
+          },
+          {
+            "result": {
+              "duration": 2853246900,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 797839200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 20,
+            "name": "Выполнен переход на страницу первого товара из списка",
+            "match": {
+              "location": "steps.SmartphoneSteps.selectFirstSmartphone()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 706999600,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 4999200,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 700146800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 21,
+            "name": "Проверить: В заголовке страницы отображается текст \"Samsung\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Samsung\"",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.SmartphoneSteps.assertTitleSmartphoneProduct(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 462999400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Тогда "
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Предыстория",
+        "steps": [
+          {
+            "result": {
+              "duration": 4444457500,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 395555400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 9,
+            "name": "Открыта Главная страница ДНС",
+            "match": {
+              "location": "steps.SmartphoneSteps.startDriverAndOpenStartPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 544412300,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 2993971400,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 460995000,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 10,
+            "name": "Выполнен переход на страницу Смартфоны",
+            "match": {
+              "location": "steps.SmartphoneSteps.openSmartphonesPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 464034500,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-12T11:49:58.282Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1344049600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.startDriverBeforeScenario()"
+            }
+          }
+        ],
+        "line": 26,
+        "name": "Фильтрация и сортировка смартфонов на странице Смартфоны",
+        "description": "",
+        "id": "смартфоны;фильтрация-и-сортировка-смартфонов-на-странице-смартфоны;;4",
+        "after": [
+          {
+            "result": {
+              "duration": 802308300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.stopDriverAfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Структура сценария",
+        "steps": [
+          {
+            "result": {
+              "duration": 293996800,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 480510900,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 16,
+            "name": "Установлена сортировка \"Сначала популярные\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Сначала популярные\"",
+                  "offset": 23
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setSortBy(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 672347800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 446002800,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 544009700,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 17,
+            "name": "В фильтре \"Производитель\" выбрано значение \"Apple\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Производитель\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"Apple\"",
+                  "offset": 43
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setFilterBy(java.lang.String,java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 507028700,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 402033700,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 397000800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 18,
+            "name": "В фильтре \"Объем оперативной памяти\" выбрано значение \"6 Гб\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Объем оперативной памяти\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"6 Гб\"",
+                  "offset": 54
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setFilterBy(java.lang.String,java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 563159600,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 231137100,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 410999300,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 19,
+            "name": "Применены выбранные фильтры",
+            "match": {
+              "location": "steps.SmartphoneSteps.applyFilters()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 629985200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Когда "
+          },
+          {
+            "result": {
+              "duration": 3419460800,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 590471600,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 20,
+            "name": "Выполнен переход на страницу первого товара из списка",
+            "match": {
+              "location": "steps.SmartphoneSteps.selectFirstSmartphone()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 821815800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 3994300,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 535519000,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 21,
+            "name": "Проверить: В заголовке страницы отображается текст \"Apple\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Apple\"",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.SmartphoneSteps.assertTitleSmartphoneProduct(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 513000400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Тогда "
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Предыстория",
+        "steps": [
+          {
+            "result": {
+              "duration": 3441657700,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 397997800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 9,
+            "name": "Открыта Главная страница ДНС",
+            "match": {
+              "location": "steps.SmartphoneSteps.startDriverAndOpenStartPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 1166611100,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 3401882300,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 487516100,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 10,
+            "name": "Выполнен переход на страницу Смартфоны",
+            "match": {
+              "location": "steps.SmartphoneSteps.openSmartphonesPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 595508700,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-12T11:50:21.215Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1332787500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.startDriverBeforeScenario()"
+            }
+          }
+        ],
+        "line": 27,
+        "name": "Фильтрация и сортировка смартфонов на странице Смартфоны",
+        "description": "",
+        "id": "смартфоны;фильтрация-и-сортировка-смартфонов-на-странице-смартфоны;;5",
+        "after": [
+          {
+            "result": {
+              "duration": 767683300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.stopDriverAfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Структура сценария",
+        "steps": [
+          {
+            "result": {
+              "duration": 364983500,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 496513200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 16,
+            "name": "Установлена сортировка \"По наименованию\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"По наименованию\"",
+                  "offset": 23
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setSortBy(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 847100900,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 419002100,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 493708500,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 17,
+            "name": "В фильтре \"Производитель\" выбрано значение \"Xiaomi\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Производитель\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"Xiaomi\"",
+                  "offset": 43
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setFilterBy(java.lang.String,java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 510259900,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 367034200,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 368182600,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 18,
+            "name": "В фильтре \"Объем оперативной памяти\" выбрано значение \"4 Гб\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Объем оперативной памяти\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"4 Гб\"",
+                  "offset": 54
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setFilterBy(java.lang.String,java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 474999300,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 177515500,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 353048200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 19,
+            "name": "Применены выбранные фильтры",
+            "match": {
+              "location": "steps.SmartphoneSteps.applyFilters()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 666104100,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Когда "
+          },
+          {
+            "result": {
+              "duration": 2991880200,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 3142547700,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 20,
+            "name": "Выполнен переход на страницу первого товара из списка",
+            "match": {
+              "location": "steps.SmartphoneSteps.selectFirstSmartphone()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 687997900,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 5000400,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 464509000,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 21,
+            "name": "Проверить: В заголовке страницы отображается текст \"Xiaomi\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Xiaomi\"",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.SmartphoneSteps.assertTitleSmartphoneProduct(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 602797800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Тогда "
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Предыстория",
+        "steps": [
+          {
+            "result": {
+              "duration": 3163702000,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 427529700,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 9,
+            "name": "Открыта Главная страница ДНС",
+            "match": {
+              "location": "steps.SmartphoneSteps.startDriverAndOpenStartPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 454997100,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 3600319200,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 359001300,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 10,
+            "name": "Выполнен переход на страницу Смартфоны",
+            "match": {
+              "location": "steps.SmartphoneSteps.openSmartphonesPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 564997800,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-12T11:50:46.259Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1175272000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.startDriverBeforeScenario()"
+            }
+          }
+        ],
+        "line": 30,
+        "name": "Таблица с одной колонкой",
+        "description": "",
+        "id": "смартфоны;таблица-с-одной-колонкой",
+        "after": [
+          {
+            "result": {
+              "duration": 701096800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.stopDriverAfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Сценарий",
+        "steps": [
+          {
+            "result": {
+              "duration": 440998000,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 390513600,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 31,
+            "name": "Установлена сортировка \"Сначала дорогие\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Сначала дорогие\"",
+                  "offset": 23
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setSortBy(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 752515400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 982316300,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 444998000,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 32,
+            "name": "Установлены фильтры из таблицы с одной колонкой",
+            "match": {
+              "location": "steps.SmartphoneSteps.setFiltersFromTable1(java.util.List\u003cjava.lang.String\u003e)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 509220400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Samsung"
+                ]
+              },
+              {
+                "cells": [
+                  "8 Гб"
+                ]
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 231981600,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 356020600,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 35,
+            "name": "Применены выбранные фильтры",
+            "match": {
+              "location": "steps.SmartphoneSteps.applyFilters()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 426002300,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Когда "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document\n  (Session info: chrome\u003d94.0.4606.81)\nFor documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference\nBuild info: version: \u00274.0.0-beta-4\u0027, revision: \u002729f46d02dd\u0027\nSystem info: host: \u0027DIMAN-THE-RED-D\u0027, ip: \u0027192.168.1.2\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002715\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [ccc95aa31d8c5fd8c53841f481ca3ff3, clickElement {id\u003d51e66a57-1d4d-4220-b841-56cc2a69d2d4}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.81, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\\Users\\diman\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:1125}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:1125/devtool..., se:cdpVersion: 94.0.4606.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nElement: [[ChromeDriver: chrome on WINDOWS (ccc95aa31d8c5fd8c53841f481ca3ff3)] -\u003e xpath: (//a[contains(@class, \"catalog-product__name\")])[1]]\nSession ID: ccc95aa31d8c5fd8c53841f481ca3ff3\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:162)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:137)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:612)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:235)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:73)\r\n\tat jdk.internal.reflect.GeneratedMethodAccessor35.invoke(Unknown Source)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:564)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)\r\n\tat com.sun.proxy.$Proxy38.click(Unknown Source)\r\n\tat web.elements.Link.click(Link.java:17)\r\n\tat steps.SmartphoneSteps.selectFirstSmartphone(SmartphoneSteps.java:89)\r\n\tat ✽.Выполнен переход на страницу первого товара из списка(classpath:features/Smartphone.feature:36)\r\n",
+              "duration": 2391331800,
+              "status": "failed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 387067100,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 36,
+            "name": "Выполнен переход на страницу первого товара из списка",
+            "match": {
+              "location": "steps.SmartphoneSteps.selectFirstSmartphone()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 434497400,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 37,
+            "name": "Проверить: В заголовке страницы отображается текст \"Samsung\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Samsung\"",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.SmartphoneSteps.assertTitleSmartphoneProduct(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Тогда "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@table1"
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Предыстория",
+        "steps": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status\nfrom disconnected: received Inspector.detached event\n  (Session info: chrome\u003d94.0.4606.81)\nBuild info: version: \u00274.0.0-beta-4\u0027, revision: \u002729f46d02dd\u0027\nSystem info: host: \u0027DIMAN-THE-RED-D\u0027, ip: \u0027192.168.1.2\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002715\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [b0a9176f74f6613b7d3a2feabd2e57ea, get {url\u003dhttps://www.dns-shop.ru/}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.81, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\\Users\\diman\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:13083}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:13083/devtoo..., se:cdpVersion: 94.0.4606.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: b0a9176f74f6613b7d3a2feabd2e57ea\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:162)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:137)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:612)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:326)\r\n\tat steps.SmartphoneSteps.startDriverAndOpenStartPage(SmartphoneSteps.java:38)\r\n\tat ✽.Открыта Главная страница ДНС(classpath:features/Smartphone.feature:9)\r\n",
+              "duration": 16219151800,
+              "status": "failed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 321994900,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 9,
+            "name": "Открыта Главная страница ДНС",
+            "match": {
+              "location": "steps.SmartphoneSteps.startDriverAndOpenStartPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "error_message": "org.openqa.selenium.WebDriverException: chrome not reachable\n  (Session info: chrome\u003d94.0.4606.81)\nBuild info: version: \u00274.0.0-beta-4\u0027, revision: \u002729f46d02dd\u0027\nSystem info: host: \u0027DIMAN-THE-RED-D\u0027, ip: \u0027192.168.1.2\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002715\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [b0a9176f74f6613b7d3a2feabd2e57ea, screenshot {}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.81, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\\Users\\diman\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:13083}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:13083/devtoo..., se:cdpVersion: 94.0.4606.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: b0a9176f74f6613b7d3a2feabd2e57ea\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:162)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:137)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:612)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:667)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:347)\r\n\tat ru.yandex.qatools.ashot.shooting.SimpleShootingStrategy.getScreenshot(SimpleShootingStrategy.java:31)\r\n\tat ru.yandex.qatools.ashot.AShot.takeScreenshot(AShot.java:145)\r\n\tat hooks.ScreenShotHooks.takeScreenShotAfterStep(ScreenShotHooks.java:43)\r\n",
+                  "duration": 12132831800,
+                  "status": "failed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 10,
+            "name": "Выполнен переход на страницу Смартфоны",
+            "match": {
+              "location": "steps.SmartphoneSteps.openSmartphonesPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-12T11:51:04.506Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1778378500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.startDriverBeforeScenario()"
+            }
+          }
+        ],
+        "line": 40,
+        "name": "Таблица с двумя колонками",
+        "description": "",
+        "id": "смартфоны;таблица-с-двумя-колонками",
+        "after": [
+          {
+            "result": {
+              "duration": 549277900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.stopDriverAfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Сценарий",
+        "steps": [
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 41,
+            "name": "Установлена сортировка \"Сначала дорогие\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Сначала дорогие\"",
+                  "offset": 23
+                }
+              ],
+              "location": "steps.SmartphoneSteps.setSortBy(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "duration": 1000300,
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 42,
+            "name": "Установлены фильтры из таблицы с двумя колонками",
+            "match": {
+              "location": "steps.SmartphoneSteps.setFiltersFromTable2(java.util.Map\u003cjava.lang.String, java.lang.String\u003e)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Производитель",
+                  "Samsung"
+                ]
+              },
+              {
+                "cells": [
+                  "Объем оперативной памяти",
+                  "8 Гб"
+                ]
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "duration": 1003000,
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 45,
+            "name": "Применены выбранные фильтры",
+            "match": {
+              "location": "steps.SmartphoneSteps.applyFilters()"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Когда "
+          },
+          {
+            "result": {
+              "duration": 1001600,
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 46,
+            "name": "Выполнен переход на страницу первого товара из списка",
+            "match": {
+              "location": "steps.SmartphoneSteps.selectFirstSmartphone()"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 47,
+            "name": "Проверить: В заголовке страницы отображается текст \"Samsung\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Samsung\"",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.SmartphoneSteps.assertTitleSmartphoneProduct(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Тогда "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@table2"
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Предыстория",
+        "steps": [
+          {
+            "result": {
+              "duration": 3673600700,
+              "status": "passed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 330998200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 9,
+            "name": "Открыта Главная страница ДНС",
+            "match": {
+              "location": "steps.SmartphoneSteps.startDriverAndOpenStartPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 634522200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.NoSuchWindowException: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome\u003d94.0.4606.81)\nBuild info: version: \u00274.0.0-beta-4\u0027, revision: \u002729f46d02dd\u0027\nSystem info: host: \u0027DIMAN-THE-RED-D\u0027, ip: \u0027192.168.1.2\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002715\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [e97a0aa8fb87b1487929aa062fe4c76d, findElement {using\u003dxpath, value\u003d//a[text()\u003d\"Смартфоны\"]}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.81, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\\Users\\diman\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:7298}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:7298/devtool..., se:cdpVersion: 94.0.4606.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: e97a0aa8fb87b1487929aa062fe4c76d\r\n\tat jdk.internal.reflect.GeneratedConstructorAccessor23.newInstance(Unknown Source)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:162)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:137)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:612)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver$Mechanism$2.findElement(RemoteWebDriver.java:1251)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:379)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:373)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)\r\n\tat com.sun.proxy.$Proxy38.toString(Unknown Source)\r\n\tat java.base/java.lang.String.valueOf(String.java:3367)\r\n\tat java.base/java.lang.StringBuilder.append(StringBuilder.java:167)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$23.toString(ExpectedConditions.java:673)\r\n\tat java.base/java.lang.String.valueOf(String.java:3367)\r\n\tat java.base/java.lang.StringBuilder.append(StringBuilder.java:167)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)\r\n\tat web.helpers.WaitHelper.clickabilityOfElement(WaitHelper.java:39)\r\n\tat web.elements.Link.click(Link.java:16)\r\n\tat steps.SmartphoneSteps.openSmartphonesPage(SmartphoneSteps.java:46)\r\n\tat ✽.Выполнен переход на страницу Смартфоны(classpath:features/Smartphone.feature:10)\r\n",
+              "duration": 10414772900,
+              "status": "failed"
+            },
+            "before": [
+              {
+                "result": {
+                  "duration": 418358200,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 10,
+            "name": "Выполнен переход на страницу Смартфоны",
+            "match": {
+              "location": "steps.SmartphoneSteps.openSmartphonesPage()"
+            },
+            "after": [
+              {
+                "result": {
+                  "error_message": "org.openqa.selenium.NoSuchWindowException: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome\u003d94.0.4606.81)\nBuild info: version: \u00274.0.0-beta-4\u0027, revision: \u002729f46d02dd\u0027\nSystem info: host: \u0027DIMAN-THE-RED-D\u0027, ip: \u0027192.168.1.2\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002715\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [e97a0aa8fb87b1487929aa062fe4c76d, screenshot {}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.81, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\\Users\\diman\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:7298}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:7298/devtool..., se:cdpVersion: 94.0.4606.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: e97a0aa8fb87b1487929aa062fe4c76d\r\n\tat jdk.internal.reflect.GeneratedConstructorAccessor23.newInstance(Unknown Source)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)\r\n\tat org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:162)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:137)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:612)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:667)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:347)\r\n\tat ru.yandex.qatools.ashot.shooting.SimpleShootingStrategy.getScreenshot(SimpleShootingStrategy.java:31)\r\n\tat ru.yandex.qatools.ashot.AShot.takeScreenshot(AShot.java:145)\r\n\tat hooks.ScreenShotHooks.takeScreenShotAfterStep(ScreenShotHooks.java:43)\r\n",
+                  "duration": 24001800,
+                  "status": "failed"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-10-12T11:51:35.595Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1291538300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.startDriverBeforeScenario()"
+            }
+          }
+        ],
+        "line": 50,
+        "name": "Таблица с тремя колонками",
+        "description": "",
+        "id": "смартфоны;таблица-с-тремя-колонками",
+        "after": [
+          {
+            "result": {
+              "duration": 571514300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.DriverHooks.stopDriverAfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Сценарий",
+        "steps": [
+          {
+            "result": {
+              "duration": 2000200,
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 51,
+            "name": "Установлена сортировка и фильтры из таблицы с тремя колонками",
+            "match": {
+              "location": "steps.SmartphoneSteps.setFiltersAndSortFromTable3(io.cucumber.datatable.DataTable)"
+            },
+            "after": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Сортировка",
+                  "Производитель",
+                  "Объем оперативной памяти"
+                ]
+              },
+              {
+                "cells": [
+                  "Сначала дорогие",
+                  "Samsung",
+                  "8 Гб"
+                ]
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 54,
+            "name": "Применены выбранные фильтры",
+            "match": {
+              "location": "steps.SmartphoneSteps.applyFilters()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 1000600,
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Когда "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 55,
+            "name": "Выполнен переход на страницу первого товара из списка",
+            "match": {
+              "location": "steps.SmartphoneSteps.selectFirstSmartphone()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 999600,
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "before": [
+              {
+                "result": {
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 56,
+            "name": "Проверить: В заголовке страницы отображается текст \"Samsung\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Samsung\"",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.SmartphoneSteps.assertTitleSmartphoneProduct(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 994100,
+                  "status": "skipped"
+                },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Тогда "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@table3"
+          }
+        ]
+      }
+    ],
+    "name": "Смартфоны",
+    "description": "  Я как посетитель сайта ДНС хочу просматривать раздел со смартфонами.\n  Это позволит мне выбрать понравившийся смартфон и просмотреть его характеристики.",
+    "id": "смартфоны",
+    "keyword": "Функция",
+    "uri": "classpath:features/Smartphone.feature",
+    "tags": []
+  }
+]

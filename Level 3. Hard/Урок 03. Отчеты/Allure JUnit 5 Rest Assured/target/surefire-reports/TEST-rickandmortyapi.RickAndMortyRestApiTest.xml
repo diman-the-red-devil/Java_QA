@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="rickandmortyapi.RickAndMortyRestApiTest" time="8.318" tests="6" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.specification.version" value="15"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\Users\diman\Desktop\Allure JUnit 5 Rest Assured\target\test-classes;C:\Users\diman\Desktop\Allure JUnit 5 Rest Assured\target\classes;C:\Users\diman\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\diman\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\diman\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\diman\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\diman\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\diman\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\diman\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\diman\.m2\repository\io\rest-assured\rest-assured\4.4.0\rest-assured-4.4.0.jar;C:\Users\diman\.m2\repository\org\codehaus\groovy\groovy\3.0.8\groovy-3.0.8.jar;C:\Users\diman\.m2\repository\org\codehaus\groovy\groovy-xml\3.0.8\groovy-xml-3.0.8.jar;C:\Users\diman\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\diman\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\diman\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\diman\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\diman\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\diman\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\diman\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\diman\.m2\repository\io\rest-assured\json-path\4.4.0\json-path-4.4.0.jar;C:\Users\diman\.m2\repository\org\codehaus\groovy\groovy-json\3.0.8\groovy-json-3.0.8.jar;C:\Users\diman\.m2\repository\io\rest-assured\rest-assured-common\4.4.0\rest-assured-common-4.4.0.jar;C:\Users\diman\.m2\repository\io\rest-assured\xml-path\4.4.0\xml-path-4.4.0.jar;C:\Users\diman\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\diman\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\diman\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\diman\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.3\jaxb-impl-2.3.3.jar;C:\Users\diman\.m2\repository\org\json\json\20210307\json-20210307.jar;C:\Users\diman\.m2\repository\io\qameta\allure\allure-junit5\2.15.0\allure-junit5-2.15.0.jar;C:\Users\diman\.m2\repository\io\qameta\allure\allure-junit-platform\2.15.0\allure-junit-platform-2.15.0.jar;C:\Users\diman\.m2\repository\io\qameta\allure\allure-java-commons\2.15.0\allure-java-commons-2.15.0.jar;C:\Users\diman\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\diman\.m2\repository\io\qameta\allure\allure-model\2.15.0\allure-model-2.15.0.jar;C:\Users\diman\.m2\repository\io\qameta\allure\allure-test-filter\2.15.0\allure-test-filter-2.15.0.jar;C:\Users\diman\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.0\junit-platform-launcher-1.8.0.jar;C:\Users\diman\.m2\repository\org\aspectj\aspectjweaver\1.9.7\aspectjweaver-1.9.7.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="15"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-15\bin"/>
+    <property name="sun.java.command" value="C:\Users\diman\AppData\Local\Temp\surefire14184693109133967145\surefirebooter6275560351066016865.jar C:\Users\diman\AppData\Local\Temp\surefire14184693109133967145 2021-10-12T14-42-15_380-jvmRun1 surefire17127936069608996649tmp surefire_08403384190542873576tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\diman\Desktop\Allure JUnit 5 Rest Assured\target\test-classes;C:\Users\diman\Desktop\Allure JUnit 5 Rest Assured\target\classes;C:\Users\diman\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\diman\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\diman\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\diman\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\diman\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\diman\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\diman\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\diman\.m2\repository\io\rest-assured\rest-assured\4.4.0\rest-assured-4.4.0.jar;C:\Users\diman\.m2\repository\org\codehaus\groovy\groovy\3.0.8\groovy-3.0.8.jar;C:\Users\diman\.m2\repository\org\codehaus\groovy\groovy-xml\3.0.8\groovy-xml-3.0.8.jar;C:\Users\diman\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\diman\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\diman\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\diman\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\diman\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\diman\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\diman\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\diman\.m2\repository\io\rest-assured\json-path\4.4.0\json-path-4.4.0.jar;C:\Users\diman\.m2\repository\org\codehaus\groovy\groovy-json\3.0.8\groovy-json-3.0.8.jar;C:\Users\diman\.m2\repository\io\rest-assured\rest-assured-common\4.4.0\rest-assured-common-4.4.0.jar;C:\Users\diman\.m2\repository\io\rest-assured\xml-path\4.4.0\xml-path-4.4.0.jar;C:\Users\diman\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\diman\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\diman\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\diman\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.3\jaxb-impl-2.3.3.jar;C:\Users\diman\.m2\repository\org\json\json\20210307\json-20210307.jar;C:\Users\diman\.m2\repository\io\qameta\allure\allure-junit5\2.15.0\allure-junit5-2.15.0.jar;C:\Users\diman\.m2\repository\io\qameta\allure\allure-junit-platform\2.15.0\allure-junit-platform-2.15.0.jar;C:\Users\diman\.m2\repository\io\qameta\allure\allure-java-commons\2.15.0\allure-java-commons-2.15.0.jar;C:\Users\diman\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\diman\.m2\repository\io\qameta\allure\allure-model\2.15.0\allure-model-2.15.0.jar;C:\Users\diman\.m2\repository\io\qameta\allure\allure-test-filter\2.15.0\allure-test-filter-2.15.0.jar;C:\Users\diman\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.0\junit-platform-launcher-1.8.0.jar;C:\Users\diman\.m2\repository\org\aspectj\aspectjweaver\1.9.7\aspectjweaver-1.9.7.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\diman"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-09-15"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-15"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\diman\Desktop\Allure JUnit 5 Rest Assured"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\diman\AppData\Local\Temp\surefire14184693109133967145\surefirebooter6275560351066016865.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="15+36-1562"/>
+    <property name="user.name" value="diman"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\diman\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\diman\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2021.2"/>
+    <property name="java.version" value="15"/>
+    <property name="user.dir" value="C:\Users\diman\Desktop\Allure JUnit 5 Rest Assured"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-15\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Users\diman\.cache\selenium\chromedriver\win32;C:\Users\diman\.cache\selenium\chromedriver\win32\94.0.4606.61;C:\Users\diman\.cache\selenium\chromedriver\win32\93.0.4577.63;C:\Users\diman\.cache\selenium\geckodriver\win64\0.30.0;C:\Users\diman\.cache\selenium\geckodriver\win64\0.29.0;C:\Users\diman\.cache\selenium\IEDriverServer\win64\3.150;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\diman\scoop\shims;C:\Ruby27-x64\bin;C:\Users\diman\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\RubyMine 2021.1\bin;;C:\Program Files\JetBrains\PyCharm 2021.1.1\bin;;C:\Program Files\JetBrains\WebStorm 2021.1\bin;;C:\Program Files\JetBrains\DataGrip 2021.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.3\bin;;C:\Users\diman\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="15+36-1562"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="59.0"/>
+  </properties>
+  <testcase name="getCharacterByNameAndCheckStatus{String, String}[1]" classname="rickandmortyapi.RickAndMortyRestApiTest" time="7.083"/>
+  <testcase name="getTemperatureByCityName{String}[1]" classname="openweatherapi.OpenWeatherApiTest" time="0.205"/>
+  <testcase name="getCharacterByNameAndCheckName{String, String}[2]" classname="rickandmortyapi.RickAndMortyRestApiTest" time="0.229"/>
+  <testcase name="getCharacterByNameAndCheckStatus{String, String}[2]" classname="rickandmortyapi.RickAndMortyRestApiTest" time="0.534"/>
+  <testcase name="getBerryByNameAndCheckName{String, String}[2]" classname="pokeapi.PokeApiTest" time="0.001">
+    <failure message="1 expectation failed.&#10;JSON path name doesn&apos;t match.&#10;Expected: is &quot;chesto110&quot;&#10;  Actual: chesto&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 
+1 expectation failed.
+JSON path name doesn't match.
+Expected: is "chesto110"
+  Actual: chesto
+
+	at pokeapi.PokeApiTest.getBerryByNameAndCheckName(PokeApiTest.java:29)
+</failure>
+    <system-out><![CDATA[Request URI:	https://api.openweathermap.org/data/2.5/weather?lat=1000&lon=1000&appid=f67ddf38159a94a1f1247b7c8c7cdf00
+Request URI:	https://rickandmortyapi.com/api/character/?name=Rick%20Sanchez
+Request URI:	https://api.openweathermap.org/data/2.5/weather?lat=48.708048&lon=44.513303&appid=f67ddf38159a94a1f1247b7c8c7cdf00
+]]></system-out>
+  </testcase>
+  <testcase name="getCharacterByNameAndCheckName{String, String}[1]" classname="rickandmortyapi.RickAndMortyRestApiTest" time="0.463"/>
+</testsuite>

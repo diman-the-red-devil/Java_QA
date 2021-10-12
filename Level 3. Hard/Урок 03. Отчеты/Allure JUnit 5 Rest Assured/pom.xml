@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>REST-Assured</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- параметры -->
+    <properties>
+        <!-- Кодировка проекта - UTF-8 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Версия Java - 15 -->
+        <source>15</source>
+        <target>15</target>
+        <!-- Версии зависимостей: -->
+        <!-- JUnit5 -->
+        <junit-jupiter-engine>5.8.1</junit-jupiter-engine>
+        <junit-jupiter-params>5.8.1</junit-jupiter-params>
+        <!--junit-jupiter-api>5.7.2</junit-jupiter-api>
+        <junit-platform-commons>1.7.2</junit-platform-commons>
+        <junit-platform-launcher>1.8.0-M1</junit-platform-launcher-->
+        <!-- REST Assured -->
+        <rest-assured>4.4.0</rest-assured>
+        <!-- JSON -->
+        <json>20210307</json>
+        <!-- Allure Junit5 -->
+        <allure-junit5>2.15.0</allure-junit5>
+        <!-- AspectJ -->
+        <aspectjweaver>1.9.7</aspectjweaver>
+        <!-- Версии плагинов: -->
+        <!-- Maven Surefire Plugin -->
+        <maven-surefire-plugin>2.22.2</maven-surefire-plugin>
+        <!-- Maven Compiler Plugin -->
+        <maven-compiler-plugin>3.8.1</maven-compiler-plugin>
+        <!-- Allure Maven -->
+        <allure-maven>2.10.0</allure-maven>
+    </properties>
+
+    <dependencies>
+        <!-- Junit5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter-engine}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-jupiter-params}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter-api}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>${junit-platform-commons}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit-platform-launcher}</version>
+            <scope>test</scope>
+        </dependency-->
+        <!-- REST Assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- JSON -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Allure Junit5 -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure-junit5}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- AspectJ -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectjweaver}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Сборка -->
+    <build>
+        <!-- Плагины -->
+        <plugins>
+            <!-- maven-surefire-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin}</version>
+                <configuration>
+                    <argLine>
+                        -Dfile.encoding=UTF-8
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver}/aspectjweaver-${aspectjweaver}.jar"
+                    </argLine>
+                </configuration>
+            </plugin>
+            <!-- maven-compiler-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin}</version>
+                <configuration>
+                    <source>${source}</source>
+                    <target>${target}</target>
+                </configuration>
+            </plugin>
+            <!-- allure-maven -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven}</version>
+                <configuration>
+                    <reportVersion>2.4.1</reportVersion>
+                    <resultsDirectory>allure-results</resultsDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

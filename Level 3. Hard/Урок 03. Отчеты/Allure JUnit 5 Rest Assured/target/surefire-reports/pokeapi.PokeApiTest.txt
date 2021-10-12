@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: pokeapi.PokeApiTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.112 s <<< FAILURE! - in pokeapi.PokeApiTest
+getBerryByContestTypes{String, String}[2]  Time elapsed: 0.011 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+JSON path berry_flavor.name doesn't match.
+Expected: dry11
+  Actual: dry
+
+	at pokeapi.PokeApiTest.getBerryByContestTypes(PokeApiTest.java:50)
+

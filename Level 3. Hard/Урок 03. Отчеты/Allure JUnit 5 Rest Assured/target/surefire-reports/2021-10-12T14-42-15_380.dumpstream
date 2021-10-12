@@ -1,0 +1,24 @@
+# Created at 2021-10-12T14:42:17.444
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+
+# Created at 2021-10-12T14:42:17.444
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+
+# Created at 2021-10-12T14:42:17.445
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+
+# Created at 2021-10-12T14:42:27.755
+WARNING: An illegal reflective access operation has occurred
+
+# Created at 2021-10-12T14:42:27.756
+WARNING: Illegal reflective access by org.codehaus.groovy.vmplugin.v9.Java9 (file:/C:/Users/diman/.m2/repository/org/codehaus/groovy/groovy/3.0.8/groovy-3.0.8.jar) to constructor java.lang.AssertionError(java.lang.String)
+
+# Created at 2021-10-12T14:42:27.757
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.vmplugin.v9.Java9
+
+# Created at 2021-10-12T14:42:27.757
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+
+# Created at 2021-10-12T14:42:27.758
+WARNING: All illegal access operations will be denied in a future release
+
