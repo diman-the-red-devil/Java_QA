@@ -1,4 +1,6 @@
-Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 04. Основы
+Java_QA / 03. Selenium WebDriver. Конфигурация
+
+***
 
 # Цель
 
@@ -17,30 +19,30 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 04. 
 
 # Содержание
 
-## Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1. Лекция.md)
+## Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
            
-[1. Драйвер браузера](1. Лекция.md#1-Драйвер-Браузера)
+[1. Драйвер браузера](1.%20Лекция.md#1-Драйвер-Браузера)
 
-[2. WebDriverManager](1. Лекция.md#2-Библиотека-WebDriverManager)
+[2. WebDriverManager](1.%20Лекция.md#2-Библиотека-WebDriverManager)
 
-[3. Команды Selenium WebDriver](1. Лекция.md#3-Команды-Selenium-Webdriver)
+[3. Команды Selenium WebDriver](1.%20Лекция.md#3-Команды-Selenium-Webdriver)
 
-[4. Инициализация WebDriver](1. Лекция.md#4-Инициализация-Webdriver)
+[4. Инициализация WebDriver](1.%20Лекция.md#4-Инициализация-Webdriver)
 
-[5. Паттерн WebDriverFactory](1. Лекция.md#5-Паттерн-WebDriverFactory)
+[5. Паттерн WebDriverFactory](1.%20Лекция.md#5-Паттерн-WebDriverFactory)
 
-## Практика [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2. Практика.md)
+## Практика [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Практика.md)
 
-[1. Открытие предыдущего проекта](2. Практика.md#1-Открытие-предыдущего-проекта)
+[1. Открытие предыдущего проекта](2.%20Практика.md#1-Открытие-предыдущего-проекта)
 
-[2. Реализация WebDriverFactory](2. Практика.md#2-Реализация-WebDriverFactory)
+[2. Реализация WebDriverFactory](2.%20Практика.md#2-Реализация-WebDriverFactory)
 
-[3. Параметризованный запуск тестов](2. Практика.md#3-Параметризованный-запуск-тестов)
+[3. Параметризованный запуск тестов](2.%20Практика.md#3-Параметризованный-запуск-тестов)
 
-[4. Методы WebDriver](2. Практика.md#4-Методы-WebDriver)
+[4. Методы WebDriver](2.%20Практика.md#4-Методы-WebDriver)
 
-[5. Запуск автотеста](2. Практика.md#5-Запуск-автотеста)
+[5. Запуск автотеста](2.%20Практика.md#5-Запуск-автотеста)
 
-## Задание [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](3. Задание.md)
+## Задание [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](3.%20Задание.md)
 
-## Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](4. Ссылки.md)
+## Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](4.%20Ссылки.md)

@@ -1,4 +1,6 @@
-Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 01. Введение
+Java_QA / 02. Selenium WebDriver. Начало
+
+***
 
 # Цель
 
@@ -13,7 +15,6 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 01. 
 9. Подключить необходимые библиотеки
 10. Написать первый автотест
 11. Настроить локальный запуск автотестов
-12. 
 
 ***
 
@@ -61,4 +62,6 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 01. 
 
 [7. Запуск первого автотеста](2.%20Практика.md#7-Запуск-первого-автотеста)
 
-## Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](3.%20Ссылки.md)
+## Задание [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](3.%20Задание.md)
+
+## Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](4.%20Ссылки.md)
