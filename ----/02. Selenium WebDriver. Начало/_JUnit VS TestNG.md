@@ -1,6 +1,6 @@
-Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 03. Проект
+Java_QA / 02. Selenium WebDriver. Начало
 
-[![Назад](https://img.shields.io/badge/-%D0%9D%D0%B0%D0%B7%D0%B0%D0%B4-brightgreen)](../_01.%20Selenium%20WebDriver/Урок%2003.%20Проект/1.%20Лекция.md)
+[![Назад](https://img.shields.io/badge/-%D0%9D%D0%B0%D0%B7%D0%B0%D0%B4-brightgreen)](1.%20Лекция.md)
 
 ***
 
