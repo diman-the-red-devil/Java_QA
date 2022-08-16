@@ -30,13 +30,22 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 ***
 
-# Содержание
+# Разделы
 
-## Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
+
+***
+
+# Лекция 
 
 [1. Что такое Selenium?](1.%20Лекция.md#1-Что-такое-Selenium?)
 
-## Практика [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Практика.md)
+***
+
+# Практика 
 
 [1. Java](2.%20Практика.md#1-Java)
 
@@ -62,6 +71,10 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 [7. Запуск первого автотеста](2.%20Практика.md#7-Запуск-первого-автотеста)
 
-## Задание [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](3.%20Задание.md)
+***
 
-## Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](4.%20Ссылки.md)
+# Задание 
+
+***
+
+# Ссылки 
