@@ -17,10 +17,17 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
 
 ***
 
-# Содержание
+# Разделы
 
-## Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
-           
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
+
+***
+
+# Лекция 
+
 [1. Драйвер браузера](1.%20Лекция.md#1-Драйвер-Браузера)
 
 [2. WebDriverManager](1.%20Лекция.md#2-Библиотека-WebDriverManager)
@@ -31,7 +38,9 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
 
 [5. Паттерн WebDriverFactory](1.%20Лекция.md#5-Паттерн-WebDriverFactory)
 
-## Практика [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Практика.md)
+***
+
+# Практика 
 
 [1. Открытие предыдущего проекта](2.%20Практика.md#1-Открытие-предыдущего-проекта)
 
@@ -43,6 +52,10 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
 
 [5. Запуск автотеста](2.%20Практика.md#5-Запуск-автотеста)
 
-## Задание [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](3.%20Задание.md)
+***
 
-## Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](4.%20Ссылки.md)
+# Задание 
+
+***
+
+# Ссылки 
