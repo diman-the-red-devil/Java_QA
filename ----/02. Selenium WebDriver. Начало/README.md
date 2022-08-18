@@ -41,7 +41,8 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Лекция 
 
-[1. Что такое Selenium?](1.%20Лекция.md#1-Что-такое-Selenium?)
+1. Selenium
+2. 
 
 ***
 
