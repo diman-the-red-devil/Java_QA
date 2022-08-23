@@ -4,9 +4,15 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 ***
 
-# Сравнение тестовых фреймворков JUnit5 и TestNG
+# Содержание
 
-## 1. Настройка тестов
+
+
+***
+
+# 1. Настройка тестов
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 **JUnit 5** предлагает инициализацию и очистку на двух уровнях:
 
@@ -117,7 +123,9 @@ public class Test {
 
 ***
 
-## 2. Игнорирование тестов
+# 2. Игнорирование тестов
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 **JUnit 5** использует для игнорирования тестов *@Disabled("message")* 
 
@@ -146,7 +154,9 @@ public class Test {
 
 ***
 
-## 3. Группировка тестов
+# 3. Группировка тестов
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 **JUnit 5** использует для группировки тестов *@RunWith* вместе *@SelectPackages* и *@SelectClasses*.
 
@@ -210,7 +220,9 @@ public class Test {
 
 ***
 
-## 4. Исключения в тестах
+# 4. Исключения в тестах
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 **JUnit 5** использует для проверки исключений *assertThrows*
 
@@ -237,7 +249,9 @@ public class Test {
 
 ***
 
-## 5. Тайм ауты в тестах
+# 5. Таймауты в тестах
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 **JUnit 5** использует для проверки с таймаутами *assertTimeout*
 
@@ -263,7 +277,9 @@ public class Test {
 
 ***
 
-## 6. Параметры в тестах
+# 6. Параметры в тестах
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 **JUnit 5** использует для параметризации тестов *@ParameterizedTest* и аргументы данных непосредственно из сконфигурированного источника
 
@@ -400,7 +416,9 @@ public class Test {
 
 ***
 
-## 7. Порядок выполнения тестов
+# 7. Порядок выполнения тестов
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 **JUnit 5** для установки порядка выполнения тестов использует *@TestMethodOrder(MethodOrderer."Orderer.class")*. 
 
@@ -475,6 +493,8 @@ public void givenInt__whenChangedToString__thenCorrect() {
 
 ***
 
-Методы assert* в JUnit и TestNG
+# 8. Методы assert* в JUnit и TestNG
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 ![Сравнение assert методов JUnit и TestNG](./_Files/7.%20JUnit5/_18.jpg "Сравнение assert методов JUnit и TestNG")

@@ -4,9 +4,14 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 ***
 
-# История развития
+# Содержание
 
-## 1. Selenium Core
+
+***
+
+# 1. Selenium Core
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 | Дата          | Событие                           |
 |--------------:|-----------------------------------|
@@ -45,7 +50,11 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 * *Mike Williams*, *Darrell Deboer* и *Darren Cotterill* продолжили разработку.
 
-## 2. Selenium Remote Control (Selenium RC)
+***
+
+# 2. Selenium Remote Control (Selenium RC)
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 | Дата             | Событие                               |
 |-----------------:|---------------------------------------|
@@ -67,7 +76,11 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 * Исходный код проекта **Selenium** был открыт.
 
-## 3. Selenium 1.0
+***
+
+# 3. Selenium 1.0
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 | Дата            | Событие            |
 |----------------:|--------------------|
@@ -97,7 +110,11 @@ Java_QA / 02. Selenium WebDriver. Начало
 > Представители фирмы Google впервые объявили об использовании **Selenium** на конференции **Google Test Automation Conference** (GTAC-2007),
 проходившей в Нью-Йорке 23-24 августа 2007 года.
 
-## 4. Selenium WebDriver
+***
+
+# 4. Selenium WebDriver
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 | Дата            | Событие                           |
 |----------------:|-----------------------------------|
@@ -136,7 +153,11 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 > **Selenium 3.0** как 2.0, но без Selenium RC.
 
-## 5. Selenium Grid
+***
+
+# 5. Selenium Grid
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 | Дата | Событие           |
 |-----:|-------------------|
@@ -154,7 +175,11 @@ Java_QA / 02. Selenium WebDriver. Начало
 для уменьшения времени их выполнения. Возможности **Selenium Grid** совпадали с возможностями аналогичного,
 но закрытого и внутреннего, продукта фирмы Google.
 
-## 6. Selenium IDE
+***
+
+# 6. Selenium IDE
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 | Дата          | Событие               |
 |--------------:|-----------------------|
@@ -166,7 +191,11 @@ Java_QA / 02. Selenium WebDriver. Начало
   и позволяющее записывать тесты, сохранять их и воспроизводить. Расширение не было ограничено правилом ограничения домена
   (same origin policy).
 
-## Selenium 4.0
+***
+
+# 7. Selenium 4.0
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 | Дата        | Событие              |
 |------------:|----------------------|
@@ -176,7 +205,11 @@ Java_QA / 02. Selenium WebDriver. Начало
 | январь 2020 | Selenium 4.0 Alpha 4 |
 | март   2020 | Selenium 4.0 Alpha 5 |
 
-## Стандарт W3C WebDriver
+***
+
+# 8. Стандарт W3C WebDriver
+
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 | Дата           | Событие                           |
 |---------------:|-----------------------------------|
