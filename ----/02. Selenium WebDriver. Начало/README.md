@@ -155,8 +155,29 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 ***
 
-# Задание 
+# Задание
 
 ***
 
-# Ссылки 
+# Ссылки
+
+* [Статьи](#статьи)
+  * [1. Selenium](#1-selenium)
+  * [2. Selenium 4.0](#2-selenium-40)
+  * [3. Архитектура Selenium WebDriver](#3-архитектура-selenium-webdriver)
+  * [4. Java](#4-java)
+  * [5. IntelliJ IDEA](#5-intellij-idea)
+  * [6. Maven](#6-maven)
+  * [7. Git](#7-git)
+  * [8. GitHub](#8-github)
+  * [9. JUnit5](#9-junit5)
+  * [10. Selenium WebDriver](#10-selenium-webdriver)
+  * [11. WebDriverManager](#11-webdrivermanager)
+  * [12. Log4j2](#12-log4j2)
+* [YouTube](#youtube)
+  * [1. Java](#1-java)
+  * [2. IntelliJ IDEA](#2-intellij-idea)
+  * [3. Maven](#3-maven)
+  * [4. Git](#4-git)
+  * [5. JUnit5](#5-junit5)
+  * [6. Selenium WebDriver Java](#6-selenium-webdriver-java)
