@@ -139,7 +139,7 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
         * [6.4.2. Полный код BrowserWindowsTest.java](#642-полный-код-browserwindowstestjava)
 * [7. Специфичные настройки браузера Google Chrome](#7-специфичные-настройки-браузера-google-chrome)
     * [7.1. Настройка сессии и добавление аргументов запуска](#71-настройка-сессии-и-добавление-аргументов-запуска)
-* [7.2. Полный код BrowserOptionsTest.java]()
+    * [7.2. Полный код BrowserOptionsTest.java]()
 
 ***
 
