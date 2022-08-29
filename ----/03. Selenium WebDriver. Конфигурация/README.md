@@ -145,7 +145,30 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
 
 # Задание 
 
+
+
 ***
 
 # Ссылки
 
+* [Статьи](#статьи)
+    * [1. Драйверы браузеров](#1-драйверы-браузеров)
+    * [2. WebDriverManager](#2-webdrivermanager)
+    * [3. Интерфейс WebDriver](#3-интерфейс-webdriver)
+    * [4. Реализации интерфейса WebDriver](#4-реализации-интерфейса-webdriver)
+    * [5. WebDriverFactory](#5-webdriverfactory)
+    * [6. Запуск автотестов с -D параметрами](#6-запуск-автотестов-с--d-параметрами)
+    * [7. Общие настройки](#7-общие-настройки)
+        * [7.1. Куки (Cookies)](#71-куки-cookies)
+        * [7.2. Логи (Logs)](#72-логи-logs)
+        * [7.3. Ожидания (Timeouts)](#73-ожидания-timeouts)
+        * [7.4. Окна (Windows)](#74-окна-windows)
+    * [8. Специфичные настройки](#8-специфичные-настройки)
+        * [8.1. Desired Capabilities](#81-desired-capabilities)
+        * [8.2. Options](#82-options)
+    * [9. Запуск с куками](#9-запуск-с-куками)
+* [YouTube](#youtube)
+    * [1. WebDriverManager](#1-webdrivermanager)
+    * [2. WebDriverFactory](#2-webdriverfactory)
+    * [3. Options](#3-options)
+    * [4. Cookie](#4-cookie)
