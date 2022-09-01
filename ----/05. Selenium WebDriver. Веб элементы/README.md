@@ -116,7 +116,6 @@ Java_QA / Level 1. Easy - Основы / 1.1. Selenium WebDriver / Урок 07. 
     * [4.17. Отпускание левой кнопки мыши в центре элемента](#417-отпускание-левой-кнопки-мыши-в-центре-элемента)
     * [4.18. Полный код WebElementsDifficultActionsTest.java](#418-полный-код-webelementsdifficultactionstestjava)
 
-
 ***
 
 # Задание
