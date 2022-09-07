@@ -17,42 +17,77 @@
 
 ### Причины
 
-Добавление куки, когда страница с заданным URL еще не открыта
-Добавление куки в другую страницу
-Добавление куки 
+* Добавление куки, когда страница с заданным URL еще не открыта
+* Добавление куки по URL, в котором есть опечатка
 
 ### Решение
 
+Проверка корректности URL адреса.
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (InvalidCookieDomainException e) {
+    System.out.println(e);
+}
+```
 
 ## NoSuchCookieException
 
-***NoSuchCookieException*** — исключение, которое вызывается, когда
+***NoSuchCookieException*** — исключение, которое вызывается, когда не найдено ни одного куки.
 
 [selenium/docs/api : NoSuchCookieException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/NoSuchCookieException.html)
 
 ### Причины
 
-This Exception occurs when no cookie matching with the given pathname found for all the associated cookies of the currently browsing document.
+* Поиск куки по некорректному имени
+* Поиск куки, которого не существует
+* Поиск куки не в том домене
 
 ### Решение
 
+Проверка корректности имени куки.
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (NoSuchCookieException e) {
+    System.out.println(e);
+}
+```
+
 ## UnableToSetCookieException
 
-***UnableToSetCookieException*** — исключение, которое вызывается, когда
+***UnableToSetCookieException*** — исключение, которое вызывается, когда **Selenium WebDriver** не может установить файл cookie.
 
 [selenium/docs/api : UnableToSetCookieException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/UnableToSetCookieException.html)
 
 ### Причины
 
-This occurs if a driver is unable to set a cookie.
+* Создание куки до перехода на сайт
 
 ### Решение
 
+Проверка перехода на сайт до создания куки.
+Ниже пример перехвата исключения.
 
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnableToSetCookieException e) {
+    System.out.println(e);
+}
+```
 
 ***
-
-
 
 # 2. Локаторы
 
@@ -64,79 +99,88 @@ This occurs if a driver is unable to set a cookie.
 
 ### Причины
 
-Сейчас это исключение возникает только при использовании **xpath** — когда в **xpath** выражении есть синтаксические ошибки
-или выражение не указывает на **WebElement** (например, *count(.//span)»*).
+* В **Xpath** выражении есть синтаксические ошибки
+* **Xpath** выражение не указывает на **WebElement** (напр. *count(.//span)*).
 
 ### Решение
 
-This subclass of NoSuchElementException class occurs when a selector is incorrect or syntactically invalid. This exception occurs commonly when XPATH locator is used.
-
-Consider the below example:
-
-clickXPathButtonAndWait("//button[@type=’button’][100]");
-
-This would throw an InvalidSelectorExeption because the XPATH syntax is incorrect.
-
-Avoiding and Handling: To avoid this, we should check the locator used because the locator is likely incorrect or the syntax is wrong. Using Firebug to find xpath can reduce this exception.
-
-Below code shows how to handle it using Try/Catch
+Проверка используемого **Xpath** выражения.
+Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
 try {
-clickXPathButtonAndWait("//button[@type='button']");
+    ...
 } catch (InvalidSelectorException e) {
+    System.out.println(e);
 }
-```
-
-InvalidSelectorException
-
-This Selenium exception is thrown if you are using an incorrect selector. An example of this would be using a compound class name, which is not allowed:
-
-
-*Пример*
-
-```java
-private IWebElement LoginButton => driver.FindElement(By.ClassName("login button"));
-```
-
-The solution for this is to make sure that the locator is correct. In the above scenario, you can replace the ClassName locator strategy with CssSelector:
-
-
-*Пример*
-
-```java
-private IWebElement LoginButton => driver.FindElement(By.CssSelector("login.button"));
 ```
 
 ## IllegalLocatorException
 
 ***IllegalLocatorException*** — исключение, которое вызывается, когда **By** не может обработать переданные ему аргументы.
 
-[selenium/docs/api : TimeoutException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/IllegalLocatorException.html)
+[selenium/docs/api : IllegalLocatorException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/IllegalLocatorException.html)
 
 ### Причины
 
-Наиболее распространенный случай возникновения — это использование составного имени класса в **By.className**.
+* Использование составного имени класса в **By.className** (напр. *q qs*).
 
 ### Решение
+
+Проверка аргументов передаваемых в **By**.
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (IllegalLocatorException e) {
+    System.out.println(e);
+}
+```
 
 ***
 
 # 3. Свойства веб элемента
- 
+
 ## UnexpectedTagNameException
 
-***UnexpectedTagNameException*** — исключение, которое вызывается, когда
+***UnexpectedTagNameException*** — исключение, которое вызывается, когда нельзя найти веб элемент ожидаемого типа.
 
 [selenium/docs/api : UnexpectedTagNameException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/support/ui/UnexpectedTagNameException.html)
 
 ### Причины
 
-Happens if a support class did not get a web element as expected.
+* 
+
+*Пример*
+
+```java
+@Test
+public void testCase7(){
+    webDriver.navigate().to(file);
+    Select select = new Select(webDriver.findElement(By.id("attr")));
+    select.selectByIndex(0);
+}
+```
 
 ### Решение
+
+Проверка типа веб элемента с которым будут выполнятся операции.
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
 
 ***
 
@@ -150,9 +194,14 @@ Happens if a support class did not get a web element as expected.
 
 ### Причины
 
+The exception occurs when WebDriver is unable to find and locate elements.
+Usually, this happens when tester writes incorrect element locator in the findElement(By, by) method.
+
+
 ### Решение
 
-Решение: добавить ожидание появления веб элемента на странице.
+Добавить ожидание появления веб элемента на странице.
+Ниже пример перехвата исключения.
 
 *Пример*
 
@@ -231,8 +280,7 @@ In this case, the exception occurs even if the element is not present.
 То есть, если элемент доступен в **DOM** на момент поиска,
 но спустя время, в момент его вызова, в **DOM** его больше нет.
 
-### Решение
-
+Ниже пример перехвата исключения.
 Исключение **StaleElementReferenceException** возникает в одном из следующих случаев, первый из которых наиболее распространенный:
 
 * элемент был полностью удален со страницы
@@ -263,7 +311,7 @@ In this case, the exception occurs even if the element is not present.
 Это крайне редкий случай, происходит он когда, например,
 поле **input** при нажатии или получении фокуса меняет значение type c **text** на **password**.
 
-Решение:
+### Решение
 
 поиск веб элемента перед выполнением с ним действия
 применение динамического xpath запроса
@@ -380,6 +428,18 @@ In this case, we see StaleElementReferenceException.
 
 ### Решение
 
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
+
 ElementClickInterceptedException
 This Selenium exception is usually thrown when the element was found on the page, 
 but the click action would be performed on a different element that is overlapped our element. 
@@ -392,6 +452,7 @@ So, if you have something like this in a Selenium test,
 and your test tries to click a blog title, you will get an ElementClickInterceptedException.
 
 One solution to this exception is to use the Action class for performing the click:
+Ниже пример перехвата исключения.
 
 *Пример*
 
@@ -414,6 +475,18 @@ you can use the JavaScript scroll executor as shown above for the NoSuchElementE
 
 ### Решение
 
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
+
 ## ElementNotVisibleException
 
 ***ElementNotVisibleException*** — исключение, которое вызывается, когда элемент присутствует в **DOM**,
@@ -427,7 +500,20 @@ you can use the JavaScript scroll executor as shown above for the NoSuchElementE
 
 ### Решение
 
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
+
 Решение: добавить ожидание видимости веб элемента на странице или сделать веб элемент видимым через выполнение JS скрипта.
+Ниже пример перехвата исключения.
 
 *Пример*
 
@@ -506,6 +592,18 @@ In this case, the exception occurs even if the page has not loaded completely.
 
 It occurs when command can’t be finished when the element is invalid.
 
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
+
 ***
 
 # 5. Сложные действия с веб элементами
@@ -522,6 +620,18 @@ This, most likely, means that a move operation was provided with invalid coordin
 
 ### Решение
 
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
+
 ## MoveTargetOutOfBoundsException
 
 ***MoveTargetOutOfBoundsException*** — исключение, которое вызывается, когда
@@ -531,6 +641,18 @@ This, most likely, means that a move operation was provided with invalid coordin
 ### Причины
 
 ### Решение
+
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
 
 It takes place if the target provided to the ActionChains move() methodology is not valid. For Example, out of the document.
 
@@ -543,6 +665,18 @@ It takes place if the target provided to the ActionChains move() methodology is 
 ### Причины
 
 ### Решение
+
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
 
 This exception comes under InvalidElementStateException class. ElementNotSelectableException indicates that the web element is present in the web page but cannot be selected.
 
@@ -637,9 +771,7 @@ System.out.println("WebDriver found that this element was not selectable.");
 
 ### Причины
 
-### Решение
-
-NoSuchWindowException comes under NotFoundException class. This is thrown when WebDriver tries to switch to an invalid window.
+This is thrown when WebDriver tries to switch to an invalid window.
 
 The below code can throw org.openqa.selenium.NoSuchWindowException if the window handle doesn’t exist or is not available to switch.
 
@@ -649,7 +781,20 @@ The below code can throw org.openqa.selenium.NoSuchWindowException if the window
 driver.switchTo().window(handle_1);
 ```
 
-Avoiding-And-Handling: We would use window handles to get the set of active windows and then perform actions on the same.
+### Решение
+
+We would use window handles to get the set of active windows and then perform actions on the same.
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
 
 In the example below, for each window handle, driver switch to is executed. Therefore chances of passing a wrong window parameter reduced.
 
@@ -697,10 +842,7 @@ driver.switchTo().window(handle_1);
 
 ### Причины
 
-### Решение
-
-When WebDriver is trying to switch to an invalid frame, NoSuchFrameException under NotFoundException class is thrown.
-
+if a frame "frame_11" doesn’t exist or is not available.
 The below code can throw org.openqa.selenium.NoSuchFrameException if a frame "frame_11" doesn’t exist or is not available.
 
 *Пример*
@@ -709,21 +851,24 @@ The below code can throw org.openqa.selenium.NoSuchFrameException if a frame "fr
 driver.switchTo().frame("frame_11");
 ```
 
-Exception Handling:
+### Решение
+
+Try to give a wait command.
+Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
 try {
-driver.switchTo().frame("frame_11");
-} catch (NoSuchFrameException e)
+    ...
+    driver.switchTo().frame("frame_11");
+} catch (NoSuchFrameException e) {
+    System.out.println(e);
+}
 ```
 
-In this case, the exception is thrown even if the frame is not loaded.
-
-Avoiding-And-Handling: Try to give a wait command.
-
-In the example below, WebDriver waits for 10 seconds for the frame to be available. If the frame is available and still there is an exception, then it is caught.
+In the example below, WebDriver waits for 10 seconds for the frame to be available. 
+If the frame is available and still there is an exception, then it is caught.
 
 *Пример*
 
@@ -766,9 +911,7 @@ driver.SwitchTo().Frame("frame-left");
 
 ### Причины
 
-### Решение
-
-NoAlertPresentException under NotFoundException is thrown when WebDriver tries to switch to an alert, which is not available.
+alert, which is not available.
 
 org.openqa.selenium.NoAlertPresentException will be thrown If below automation code calls accept() operation on Alert() class when an alert is not yet on the screen.
 
@@ -778,7 +921,19 @@ org.openqa.selenium.NoAlertPresentException will be thrown If below automation c
 driver.switchTo().alert().accept();
 ```
 
-Exception Handling:
+### Решение
+
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
 
 *Пример*
 
@@ -790,7 +945,9 @@ driver.switchTo().alert().accept();
 
 In this case, the exception is thrown even if the alert is not loaded completely.
 
-Avoiding-And-Handling: Always use explicit or fluent wait for a particular time in all cases where an alert is expected. If the alert is available and still there is an exception, then it is caught.
+Avoiding-And-Handling: 
+
+Always use explicit or fluent wait for a particular time in all cases where an alert is expected. If the alert is available and still there is an exception, then it is caught.
 
 *Пример*
 
@@ -810,7 +967,10 @@ System.out.println("WebDriver couldn’t locate the Alert");
 
 NoAlertPresentException
 
-The NoAlertPresentException is thrown when Selenium is trying to interact with an alert that is not loaded on the webpage. If the alert is indeed not loaded at all, then you may have found a bug in your AUT, or perhaps you are missing the steps that lead to the alert opening. Another reason can be that the alert is displayed slower than Selenium performs the actions. In this case, you can add an implicit wait to your code, so the action performed on the alert is delayed by a few seconds:
+The NoAlertPresentException is thrown when Selenium is trying to interact with an alert that is not loaded on the webpage. 
+If the alert is indeed not loaded at all, then you may have found a bug in your AUT, or perhaps you are missing the steps that lead to the alert opening. 
+Another reason can be that the alert is displayed slower than Selenium performs the actions. In this case, you can add an implicit wait to your code, 
+so the action performed on the alert is delayed by a few seconds:
 
 *Пример*
 
@@ -830,6 +990,18 @@ However, be mindful when using implicit waits, as the timespan you select will a
 
 ### Решение
 
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
+}
+```
+
 This exception is thrown when an alert is present on the page, preventing you from interacting with the elements. You can dismiss or accept the alert, as needed, and move on with the test steps:
 
 *Пример*
@@ -847,7 +1019,6 @@ driver.SwitchTo().Alert().Accept();
 
 ## TimeoutException
 
-***TimeoutException*** — исключение, которое возникает, когда команда не завершается в достаточный промежуток времени.
 ***TimeoutException*** - исключение, которое вызывается, когда выполнение какой-либо
 команды не завершилось в отведенный промежуток времени.
 
@@ -855,38 +1026,38 @@ driver.SwitchTo().Alert().Accept();
 
 ### Причины
 
+* Искомый веб элемент не был найден за определенное время
+* Страница не была загружена за определенное время
+
 ### Решение
 
-Решение: настроить время ожидания загрузки страницы или добавить явное ожидание через выполнение JS скрипта.
-
-*Пример*
-
-```java
-WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-wait.until(
-    webDriver -> ((JavascriptExecutor)webDriver)
-        .executeScript("return document.readyState")
-        .equals("complete"));
-driver.get("https://www.softwaretestinghelp.com");
-```
-
-TimeoutException
-This exception will be thrown when the page or element was not loaded after the specified wait time. To overcome this, you can increase the wait time, if you are using an implicit wait, or better yet, replace the implicit wait with an explicit wait.
-
-TimeoutException:
-This exception occurs when there is not enough time for a command to be completed i.e. the element searched wasn’t found at the specific time.
-
-For example:
+Настроить неявное ожидание или явное ожидание.
+Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
 driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-driver.get("https://www.example.com");
+try {
+    driver.get("https://www.softwaretestinghelp.com");
+} catch (TimeoutException e) {
+    System.out.println(e);
+}
 ```
 
-In the above program, an implicit wait includes 10 seconds. 
-If the page "www.example.com" doesn’t load in 10 seconds, then a TimeoutException will occur.
+*Пример*
+
+```java
+WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+wait.until(webDriver -> ((JavascriptExecutor) webDriver)
+        .executeScript("return document.readyState")
+        .equals("complete"));
+try {
+    driver.get("https://www.softwaretestinghelp.com");
+} catch (TimeoutException e) {
+    System.out.println(e);
+}
+```
 
 ***
 
@@ -894,27 +1065,55 @@ If the page "www.example.com" doesn’t load in 10 seconds, then a TimeoutExcept
 
 ## JavascriptException
 
-***JavascriptException*** — исключение, которое вызывается, когда
+***JavascriptException*** — исключение, которое вызывается, когда невозможно выполнить JS скрипт.
 
 [selenium/docs/api : JavascriptException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/JavascriptException.html)
 
 ### Причины
 
-This issue occurs while executing JavaScript given by the user.
+
 
 ### Решение
 
+Ниже пример перехвата исключения.
 
+*Пример*
+
+```java
+try {
+    ...
+} catch (JavascriptException e) {
+    System.out.println(e);
+}
+```
 
 ## ScreenshotException
 
-***ScreenshotException*** — исключение, которое вызывается, когда
+***ScreenshotException*** — исключение, которое вызывается, когда невозможно снять скриншот.
+
+Такой сценарий вероятен на веб-страницах/веб-приложениях, где конфиденциальная информация
+например имя пользователя, пароль, банковская информация и т. д. вводятся пользователем.
+В таких случаях снимок экрана не может быть сделан из-за .
+
+Здесь ограничение скриншота предотвращает захват или запись экрана.
 
 [selenium/docs/api : ScreenshotException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/remote/ScreenshotException.html)
 
 ### Причины
 
-It is not possible to capture a screen.
+* Наличие ограничений на создание снимков экрана в целях безопасности
 
 ### Решение
+
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    ...
+} catch (ScreenshotException e) {
+    System.out.println(e);
+}
+```
 
