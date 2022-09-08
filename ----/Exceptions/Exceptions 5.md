@@ -10,13 +10,25 @@
 
 ## InvalidCoordinatesException
 
-***InvalidCoordinatesException*** — исключение, которое вызывается, когда
-Indicates that the coordinates provided to an interactions operation are invalid.
-This, most likely, means that a move operation was provided with invalid coordinates or that an action that depends on mouse position (like click) was not preceded by a move operation.
+***InvalidCoordinatesException*** — исключение, которое вызывается, 
+когда неверные координаты предлагаются операции взаимодействия.
+
+Это исключение возникает, когда вы пишете команду для выполнения действия, 
+указав координаты, а WebDriver не может действовать в соответствии с заданными координатами.
+
+Это также означает, что действию, которое зависит от положения мыши (например, щелчку), 
+не предшествовала операция перемещения или операция перемещения была предоставлена с недопустимыми координатами.
+
+Указывает, что координаты, предоставленные операции взаимодействия, недействительны.
+Скорее всего, это означает, что операции перемещения были предоставлены недопустимые координаты или что действию, 
+которое зависит от положения мыши (например, клику), не предшествовала операция перемещения.
 
 [selenium/docs/api : InvalidCoordinatesException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/interactions/InvalidCoordinatesException.html)
 
 ### Причины
+
+*
+*
 
 ### Решение
 
@@ -35,11 +47,21 @@ try {
 ## MoveTargetOutOfBoundsException
 
 ***MoveTargetOutOfBoundsException*** — исключение, которое вызывается, когда
+Это исключение Selenium возникает, если цель, предоставляемая методу перемещения ActionChains(), 
+выходит за границы, то есть недействительна или находится за пределами документа/веб-страницы.
+
+Прежде чем вызывать метод перемещения класса ActionChains(), вы всегда должны проверять местоположение, 
+которое мы пытаемся переместить, и выполнять то же самое, только если местоположение присутствует на экране.
+
+Это исключение возникает, когда определенная цель не существует в заданном размере.
 
 [selenium/docs/api : MoveTargetOutOfBoundsException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/interactions/MoveTargetOutOfBoundsException.html)
 
 ### Причины
 
+*
+*
+
 ### Решение
 
 Ниже пример перехвата исключения.
@@ -53,18 +75,49 @@ try {
     System.out.println(e);
 }
 ```
-
-It takes place if the target provided to the ActionChains move() methodology is not valid. For Example, out of the document.
 
 ## ElementNotSelectableException
 
 ***ElementNotSelectableException*** — исключение, которое вызывается, когда
 
+Это исключение относится к классу InvalidElementStateException. ElementNotSelectableException указывает, что веб-элемент присутствует на веб-странице, но не может быть выбран.
+В этом случае выдается исключение, даже если элемент становится активным через некоторое время.
+
+Это исключение Selenium возникает, когда целевой элемент присутствует в DOM, но с ним нельзя взаимодействовать,
+поскольку этот элемент нельзя выбрать. Например, это исключение будет выброшено при взаимодействии с элементом скрипта.
+
 [selenium/docs/api : ElementNotSelectableException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/ElementNotSelectableException.html)
 
 ### Причины
+Атрибут веб-элемента отключен
+Например, приведенный ниже код может вызвать исключение ElementNotSelectableException, если идентификатор «swift» отключен.
+
+*Пример*
+
+```java
+Select dropdown = new Select(driver.findElement(By.id("swift")));
+```
 
 ### Решение
+необходимо использовать команду ожидания.
+мы можем добавить команду ожидания, чтобы дождаться, пока элемент станет доступным для клика. 
+Если все еще есть исключение, оно перехватывается.
+
+*Пример*
+
+```java
+try {
+WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+wait.Until(ExpectedConditions. elementToBeClickable(By.id("swift"));
+try {
+Select dropdown = new Select(driver.findElement(By.id("swift")));
+} catch (WebDriverException e) {
+System.out.println("Exceptional case");
+}
+} catch (TimeOutException e)
+System.out.println("WebDriver found that this element was not selectable.");
+}
+```
 
 Ниже пример перехвата исключения.
 
@@ -72,89 +125,6 @@ It takes place if the target provided to the ActionChains move() methodology is 
 
 ```java
 try {
-    ...
-} catch (UnexpectedTagNameException e) {
-    System.out.println(e);
-}
-```
-
-This exception comes under InvalidElementStateException class. ElementNotSelectableException indicates that the web element is present in the web page but cannot be selected.
-
-For example, the below code can throw a ElementNotSelectableException if the id "swift" is disabled.
-
-*Пример*
-
-```java
-Select dropdown = new Select(driver.findElement(By.id("swift")));
-```
-
-Exception Handling:
-
-*Пример*
-
-```java
-try {
 Select dropdown = new Select(driver.findElement(By.id("swift")));
 } catch (ElementNotSelectableException e)
-```
-
-In this case, exception is thrown even if the element becomes enabled after a while.
-
-Avoiding-And-Handling: We can add a wait command to wait until the element becomes clickable. If there is still an exception, it is caught.
-
-*Пример*
-
-```java
-try {
-WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-wait.Until(ExpectedConditions. elementToBeClickable(By.id("swift"));
-try {
-Select dropdown = new Select(driver.findElement(By.id("swift")));
-} catch (WebDriverException e) {
-System.out.println("Exceptional case");
-}
-} catch (TimeOutException e)
-System.out.println("WebDriver found that this element was not selectable.");
-}
-```
-
-This exception comes under InvalidElementStateException class.
-ElementNotSelectableException indicates that the web element is present in the web page but cannot be selected.
-
-For example, the below code can throw a ElementNotSelectableException if the id "swift" is disabled.
-
-*Пример*
-
-```java
-Select dropdown = new Select(driver.findElement(By.id("swift")));
-```
-
-Exception Handling:
-
-*Пример*
-
-```java
-try {
-Select dropdown = new Select(driver.findElement(By.id("swift")));
-} catch (ElementNotSelectableException e)
-```
-
-In this case, exception is thrown even if the element becomes enabled after a while.
-
-Avoiding-And-Handling: We can add a wait command to wait until the element becomes clickable. If there is still an exception, it is caught.
-
-*Пример*
-
-```java
-try {
-WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-wait.Until(ExpectedConditions. elementToBeClickable(By.id("swift"));
-try {
-Select dropdown = new Select(driver.findElement(By.id("swift")));
-} catch (WebDriverException e) {
-System.out.println("Exceptional case");
-}
-} catch (TimeOutException e)
-System.out.println("WebDriver found that this element was not selectable.");
-}
 ```

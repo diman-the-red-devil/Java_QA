@@ -10,16 +10,23 @@
 
 ## NoSuchWindowException
 
-***NoSuchWindowException*** — исключение, которое вызывается, когда
+***NoSuchWindowException*** — исключение, которое вызывается, когда WebDriver пытается переключиться на недопустимое окно.
+Это происходит, когда вы пытаетесь переключиться на новое окно (или вкладку), которое не может быть найдено.
+текущий список окон не обновляется. Предыдущее окно не существует, и вы не можете переключиться на него.
+Это исключение выдается, когда целевое окно, к которому осуществляется переключение, не существует. 
+Об этих сценариях можно позаботиться, используя window_handles, чтобы получить текущий набор активных окон. 
+Ручки окон можно использовать для выполнения соответствующих действий над ними.
 
 [selenium/docs/api : NoSuchWindowException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/NoSuchWindowException.html)
 
 ### Причины
 
-This is thrown when WebDriver tries to switch to an invalid window.
-
-The below code can throw org.openqa.selenium.NoSuchWindowException if the window handle doesn’t exist or is not available to switch.
-
+* Возможной основной причиной может быть неверный адрес окна.
+* Переключаемое окно не существует
+Это исключение возникает, когда WebDriver пытается переключиться на недопустимое окно. 
+Приведенный ниже код может вызвать исключение NoSuchWindowException, если дескриптор окна не существует или недоступен для переключения.
+* Дескриптор окна не существует или недоступен для переключения
+  в случае, если мы пытаемся переключиться на окно, но целевое окно отсутствует.
 *Пример*
 
 ```java
@@ -28,22 +35,13 @@ driver.switchTo().window(handle_1);
 
 ### Решение
 
-We would use window handles to get the set of active windows and then perform actions on the same.
-Ниже пример перехвата исключения.
-
+* Использовать дескрипторы окон, чтобы получить набор активных окон, а затем выполнять действия над ними.
+  Вы можете решить эту проблему, получив все дескрипторы окон, а затем переключившись на правильный.
+  Чтобы обработать это исключение, используйте методы веб-драйвера, называемые «driver.getWindowHandles()».
+* получить список дескрипторов окна с помощью driver.getWindowHandles() и переключиться на один из дескрипторов, присутствующих в данный конкретный момент времени.
 *Пример*
 
-```java
-try {
-    ...
-} catch (UnexpectedTagNameException e) {
-    System.out.println(e);
-}
-```
-
-In the example below, for each window handle, driver switch to is executed. Therefore chances of passing a wrong window parameter reduced.
-
-*Пример*
+В приведенном ниже примере для каждого дескриптора окна выполняется переключение драйвера на. Поэтому шансы передать неверный параметр окна уменьшаются.
 
 ```java
 for (String handle : driver.getWindowHandles()) {
@@ -55,40 +53,37 @@ System.out.println("An exceptional case");
 }
 ```
 
-NoSuchWindowException
-
-This one is very similar to the previous exception, applied to windows.
-This happens when you try to switch to a new window (or tab), which cannot be found.
-You can solve this by getting all the windows handles, then switching to the correct one:
+Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
-var windows = driver.WindowHandles;
-driver.SwitchTo().Window(windows[1]);
-```
-
-NoSuchWindowException
-
-This exception arises when WebDriver tries to switch to an invalid window. The code below can throw NoSuchWindowException if the window handle doesn’t exist or is not available to switch.
-The below code can throw NoSuchWindowException if the window handle doesn’t exist or is not available to switch.
-
-*Пример*
-
-```java
-driver.switchTo().window(handle_1);
+try {
+    ...
+} catch (NoSuchWindowException e) {
+    System.out.println(e);
+}
 ```
 
 ## NoSuchFrameException
 
-***NoSuchFrameException*** — исключение, которое вызывается, когда
+***NoSuchFrameException*** — исключение, которое вызывается, когда WebDriver пытается переключиться на недопустимый фрейм
+кадр, на который нужно переключиться, не существует.
 
 [selenium/docs/api : NoSuchFrameException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/NoSuchFrameException.html)
 
 ### Причины
 
-if a frame "frame_11" doesn’t exist or is not available.
-The below code can throw org.openqa.selenium.NoSuchFrameException if a frame "frame_11" doesn’t exist or is not available.
+Неверный адрес кадра
+Переключаемая рамка не существует
+
+Вы используете неверный идентификатор или имя фрейма. В этом случае убедитесь, что вы правильно определили кадр, на который хотите переключиться.
+Рамка еще не загружена. Чтобы решить эту проблему, вы можете использовать решение выше и добавить неявное ожидание.
+Фрейм вложен в другой фрейм. В этом случае вы должны сначала переключиться на родительский фрейм, а затем на фрейм, который вы хотите использовать.
+Вложенные фреймы в HTML
+
+если фрейм "frame_11" не существует или недоступен.
+Приведенный ниже код может вызвать исключение org.openqa.selenium.NoSuchFrameException, если фрейм «frame_11» не существует или недоступен.
 
 *Пример*
 
@@ -97,25 +92,15 @@ driver.switchTo().frame("frame_11");
 ```
 
 ### Решение
-
-Try to give a wait command.
-Ниже пример перехвата исключения.
-
-*Пример*
-
-```java
-try {
-    ...
-    driver.switchTo().frame("frame_11");
-} catch (NoSuchFrameException e) {
-    System.out.println(e);
-}
-```
-
-In the example below, WebDriver waits for 10 seconds for the frame to be available.
-If the frame is available and still there is an exception, then it is caught.
+проверку работоспособности относительно режима переключения на фрейм. 
+Проверьте правильность используемого индекса кадра. 
+Можно добавить дополнительное ожидание в несколько миллисекунд (мс), чтобы убедиться, что загрузка кадра завершена.
+Попробуйте дать команду ожидания.
 
 *Пример*
+
+В приведенном ниже примере WebDriver ожидает 10 секунд, пока кадр станет доступным.
+Если кадр доступен и все же есть исключение, то оно перехвачено.
 
 ```java
 try {
@@ -131,42 +116,16 @@ System.out.println("WebDriver couldn’t locate the frame");
 }
 ```
 
-NoSuchFrameException
 
-Similar to the NoSuchElementException, this Selenium exception is thrown when a frame is not found. Again, this can happen for multiple reasons:
-
-You are using an incorrect frame Id or name. In this case, make sure that you correctly identify the frame you want to switch to.
-The frame was not yet loaded. To solve this, you can use the solution above and add an implicit wait.
-The frame is nested inside a different frame. In this case, you must first switch to the parent frame, then to the frame you want to use.
-Nested Frames in HTML
-In this example, to interact with elements inside "frame-left", you would first need to switch to "frame-top":
 
 *Пример*
 
-```java
-driver.SwitchTo().Frame("frame-top");
-driver.SwitchTo().Frame("frame-left");
-```
-
-## NoAlertPresentException
-
-***NoAlertPresentException*** — исключение, которое вызывается, когда
-
-[selenium/docs/api : NoAlertPresentException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/NoAlertPresentException.html)
-
-### Причины
-
-alert, which is not available.
-
-org.openqa.selenium.NoAlertPresentException will be thrown If below automation code calls accept() operation on Alert() class when an alert is not yet on the screen.
-
-*Пример*
+В этом примере, чтобы взаимодействовать с элементами внутри «frame-left», вам сначала нужно переключиться на «frame-top»:
 
 ```java
-driver.switchTo().alert().accept();
+driver.switchTo().frame("frame-top");
+driver.switchTo().frame("frame-left");
 ```
-
-### Решение
 
 Ниже пример перехвата исключения.
 
@@ -175,24 +134,40 @@ driver.switchTo().alert().accept();
 ```java
 try {
     ...
-} catch (UnexpectedTagNameException e) {
+    driver.switchTo().frame("frame_11");
+} catch (NoSuchFrameException e) {
     System.out.println(e);
 }
 ```
 
+## NoAlertPresentException
+
+***NoAlertPresentException*** — исключение, которое вызывается, когда WebDriver пытается переключиться на оповещение, которое недоступно.
+
+[selenium/docs/api : NoAlertPresentException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/NoAlertPresentException.html)
+
+### Причины
+
+Если оповещение действительно вообще не загружено, возможно, вы нашли ошибку в своей AUT или, 
+возможно, вы пропустили шаги, ведущие к открытию оповещения.
+Другая причина может заключаться в том, что оповещение отображается медленнее, чем Selenium выполняет действия. 
+
 *Пример*
 
+NoAlertPresentException будет выброшено, 
+если приведенный ниже код автоматизации вызывает операцию accept() в классе Alert(), когда предупреждение еще не отображается на экране.
+
 ```java
-try {
 driver.switchTo().alert().accept();
-} catch (NoSuchAlertException e)
 ```
 
-In this case, the exception is thrown even if the alert is not loaded completely.
+### Решение
 
-Avoiding-And-Handling:
-
-Always use explicit or fluent wait for a particular time in all cases where an alert is expected. If the alert is available and still there is an exception, then it is caught.
+В этом случае вы можете добавить неявное ожидание в свой код,
+поэтому действие, выполняемое с предупреждением, задерживается на несколько секунд:
+Всегда используйте явное или плавное ожидание 
+в течение определенного времени во всех случаях, когда ожидается предупреждение. 
+Если оповещение доступно и все еще есть исключение, то оно перехватывается.
 
 *Пример*
 
@@ -210,30 +185,46 @@ System.out.println("WebDriver couldn’t locate the Alert");
 }
 ```
 
-NoAlertPresentException
 
-The NoAlertPresentException is thrown when Selenium is trying to interact with an alert that is not loaded on the webpage.
-If the alert is indeed not loaded at all, then you may have found a bug in your AUT, or perhaps you are missing the steps that lead to the alert opening.
-Another reason can be that the alert is displayed slower than Selenium performs the actions. In this case, you can add an implicit wait to your code,
-so the action performed on the alert is delayed by a few seconds:
+Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
-driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+try {
+driver.switchTo().alert().accept();
+} catch (NoSuchAlertException e)
 ```
-
-However, be mindful when using implicit waits, as the timespan you select will apply even if the element or alert you are waiting for has already been loaded on the page.
 
 ## UnhandledAlertException
 
-***UnhandledAlertException*** — исключение, которое вызывается, когда
+***UnhandledAlertException*** — исключение, которое вызывается, когда наличии неизвестного оповещения.
+
+Это исключение возникает, когда на странице присутствует предупреждение, не позволяющее вам взаимодействовать с элементами. 
+При необходимости вы можете отклонить или принять оповещение и перейти к этапам тестирования:
 
 [selenium/docs/api : UnhandledAlertException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/UnhandledAlertException.html)
 
 ### Причины
 
+на веб-странице появляется неожиданное предупреждение.
+
 ### Решение
+
+отклонить предупреждение с помощью тестового примера, если ожидается появление предупреждения.
+
+*Пример*
+
+В приведенном выше примере Test case явно отклоняет предупреждение. Это гарантирует, что остальная часть тестового примера пройдет так, как ожидалось.
+
+```java
+@Test
+public void testCase6(){
+        webDriver.navigate().to(file);
+        webDriver.switchTo().alert().dismiss();
+        String val = webDriver.findElement(By.id("attr")).getAttribute("custom");
+        }
+```
 
 Ниже пример перехвата исключения.
 
@@ -245,15 +236,4 @@ try {
 } catch (UnexpectedTagNameException e) {
     System.out.println(e);
 }
-```
-
-This exception is thrown when an alert is present on the page, preventing you from interacting with the elements. You can dismiss or accept the alert, as needed, and move on with the test steps:
-
-*Пример*
-
-```java
-// Dismiss the alert
-driver.SwitchTo().Alert().Dismiss();
-// Accept the alert
-driver.SwitchTo().Alert().Accept();
 ```

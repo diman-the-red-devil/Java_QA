@@ -73,57 +73,13 @@ try {
 
 ### Причины
 
-* Веб элемент был полностью удален со страницы
+* Страница с искомым элементом, была обновлена
 
-Наиболее частой причиной этого является то, что страница с искомым элементом, была обновлена,
-или пользователь перешел на другую страницу. Реже, но все также достаточно распространен случай,
-когда библиотека **JS** удалила элемент и заменила его элементом с таким же ID или атрибутами.
-В этом случае, несмотря на то, что замененные элементы могут выглядеть похожими на оригиналы, они отличаются.
+Веб элемент был полностью удален со страницы.
 
-**Selenium Driver** не имеет возможности определить, что замененный элемент на самом деле тот же, что и ожидался.
-Если есть уверенность, что элемент заменен идентичным и присутствует на странице,
-то нужно выполнить поиск элемента снова и получить актуальную ссылку на него.
+* Пользователь перешел на другую страницу
 
-* Веб элемент больше не подключен к **DOM** модели
-
-Общей техникой, используемой для имитации вкладок интерфейса в веб-приложениях,
-является подготовка нескольких элементов **div** для каждой вкладки,
-но прикреплен к **DOM** в один момент времени только один из них, остальные же сохранены в переменные.
-В этом случае вполне возможно, что ваш код может иметь ссылку на элемент,
-который больше не прикреплен к **DOM** (то есть его предком является **.documentElement**).
-
-**Selenium Driver** вызывает исключение **StaleElementReferenceException** в этом случае, несмотря на то,
-что элемент существует, потому, что ссылка на элемент все равно потеряна.
-Вам придется заменять ее, выполняя поиск элемента каждый раз, после того как он будет прикреплен к **DOM**.
-
-* Веб элемент меняет свой тип, но сохраняет тот же локатор поиска (JQuery и др.)
-
-Это крайне редкий случай, происходит он когда, например,
-поле **input** при нажатии или получении фокуса меняет значение type c **text** на **password**.
-
-### Решение
-
-поиск веб элемента перед выполнением с ним действия
-применение динамического xpath запроса
-
-*Пример*
-
-```java
-try {
-    driver.findElement(By.xpath("//*[contains(@id, 'firstname')]")).sendKeys("Aaron");
-} catch (StaleElementReferenceException e)
-```
-Ниже пример перехвата исключения.
-This exception says that a web element is no longer present in the web page.
-
-This error is not the same as ElementNotVisibleException.
-
-StaleElementReferenceException is thrown when an object for a particular web element was created in the program without any problem and however;
-this element is no longer present in the window. This can happen if there was a
-
-Navigation to another page
-DOM has refreshed
-A frame or window switch
+На данной странице уже нет найденного раннее веб элемента.
 
 *Пример*
 
@@ -133,77 +89,89 @@ driver.switchTo().window(Child_Window);
 element.sendKeys("Aaron");
 ```
 
-In the code above, object firstName was created and then the window was switched.
-Then, WebDriver tries to type ‘Aaron’ in the form field. In this case StaleElementReferenceException is thrown.
+* Библиотека **JS** удалила веб элемент и заменила его веб элементом с таким же ID или атрибутами
+      
+В этом случае, несмотря на то, что замененные веб элементы могут выглядеть похожими на оригиналы, они отличаются.
+**Selenium Driver** не имеет возможности определить, что замененный элемент на самом деле тот же, что и ожидался.
 
-Avoiding and Handling: Confirm that we are trying to do the action in the correct window. To avoid issues due to DOM refresh, we can use Dynamic Xpath
+* Веб элемент больше не подключен к **DOM** модели
 
-Let’s discuss another example.
+Общей техникой, используемой для имитации вкладок интерфейса в веб-приложениях,
+является подготовка нескольких элементов **div** для каждой вкладки,
+но прикреплен к **DOM** в один момент времени только один из них, остальные же сохранены в переменные.
+В этом случае вполне возможно, что ваш код может иметь ссылку на элемент,
+который больше не прикреплен к **DOM** (то есть его предком является **.documentElement**).
 
-Say ‘id’ of a username field is ‘username_1’ and the XPath will be //*[@id=’firstname_1?].
-When you open the page again the ‘id’ might change say to ‘’firstname _11’.
-In this case, the test will fail because the WebDriver could not find the element.
-In this case, StaleElementReferenceException will be thrown.
+* Веб элемент поменял свойства
 
-In this case, we can use a dynamic xpath like,
+Скажем, **id** поля имени пользователя — **firstname_1**, а **XPath** будет **//*[@id='firstname_1']**.
+Когда вы снова откроете страницу, **id** может измениться, скажем, на **firstname _11**.
+В этом случае тест завершится ошибкой, так как **WebDriver** не сможет найти элемент.
+В этом случае будет выброшено исключение **StaleElementReferenceException**.
+
+* Веб элемент меняет свой тип, но сохраняет тот же локатор поиска
+
+Это крайне редкий случай, происходит он когда, например,
+поле **input** при нажатии или получении фокуса меняет значение type c **text** на **password**.
+
+### Решение
+
+* Поиск веб элемента и получение актуальной ссылки на него перед выполнением действия
+* Проверка выполнения действия на странице с нужным веб элементом
+* Применение динамического **Xpath** запроса
 
 *Пример*
 
 ```java
 try {
-driver.findElement(By.xpath("//*[contains(@id,firstname’)]")).sendKeys("Aaron");
+    driver.findElement(By.xpath("//*[contains(@id, 'firstname')]")).sendKeys("Aaron");
 } catch (StaleElementReferenceException e)
 ```
 
-In the example above dynamic XPATH is used and if the exception is still found, it is caught.
-
-StaleElementReferenceException
-
-The StaleElementReferenceException means that a reference to an element is now "stale",
-i.e. the element is no longer available on the web page DOM.
-In other words, the element was initially found on the DOM, but the DOM has changed since then.
-The common causes for this are:
-
-The element was deleted from the DOM.
-The element is no longer attached to the DOM.
-One possible solution is to refresh the page and try to find the element again:
+Обновление страницы и снова попытаться найти элемент
 
 *Пример*
 
 ```java
-driver.Navigate().Refresh();
-driver.FindElement(By.Id("ElementId")).Click();
+driver.navigate().refersh();
+driver.findElement(By.xpath("xpath here")).click();
 ```
 
-Or you can wait for the element to load before you manipulate it. Again, you can do this using explicit waits:
+Или вы можете дождаться загрузки элемента, прежде чем манипулировать им.
+Опять же, вы можете сделать это, используя явное ожидание.
 
 *Пример*
 
 ```java
-WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-IWebElement elementToInteract = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("elementId")));
+wait.until(ExpectedConditions.presenceOfElementLocated(By.id("table")));
+wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf("table")));
 ```
-
-StaleElementReferenceException:
-
-A stale element means an old element or no longer available element.
-Suppose there is an element that is found on a webpage referenced as a WebElement in WebDriver.
-If the DOM changes then WebElement goes stale.
-If we try to interact with an element that is stale then the StaleElementReferenceException will occur.
-
-For example:
 
 *Пример*
 
 ```java
-WebElement firstName = driver.findElement(By.id("first_name"));
-driver.switchTo().window(Child_Window);
-element.sendKeys("finch");
+for(int i=0; i<=2;i++){
+try{
+driver.findElement(By.xpath("xpath here")).click();
+break;
+}
+catch(Exception e){
+Sysout(e.getMessage());
+}
+}
 ```
 
-In the code above, when we create the object first_name then the window switches.
-Then, WebDriver tries to type ‘finch’ in the form field.
-In this case, we see StaleElementReferenceException.
+Ниже пример перехвата исключения.
+
+*Пример*
+
+```java
+try {
+    driver.findElement(By.id("submit")).click();
+} catch (StaleElementReferenceException e) {
+    System.out.println(e);
+}
+```
 
 [selenium/docs/api : StaleElementReferenceException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/StaleElementReferenceException.html)
 
@@ -216,7 +184,14 @@ In this case, we see StaleElementReferenceException.
 
 ### Причины
 
+* Веб элемент скрыт другим веб элементом
+* Веб элемент 
+
 ### Решение
+
+* Прокрутка
+* Отображение веб элемента
+* Доп действия
 
 Ниже пример перехвата исключения.
 
@@ -230,19 +205,7 @@ try {
 }
 ```
 
-ElementClickInterceptedException
-This Selenium exception is usually thrown when the element was found on the page,
-but the click action would be performed on a different element that is overlapped our element.
-For example, if you go to the TestProject blog page and scroll down a bit,
-you will see a message prompting you to Sign Up for the TestProject test automation platform.
-You won’t be able to click any of the links on the page until you close it.
 
-Selenium Exception ElementClickInterceptedException
-So, if you have something like this in a Selenium test,
-and your test tries to click a blog title, you will get an ElementClickInterceptedException.
-
-One solution to this exception is to use the Action class for performing the click:
-Ниже пример перехвата исключения.
 
 *Пример*
 
@@ -251,8 +214,6 @@ Actions _action = new Actions(driver);
 _action.MoveToElement(elementToClick).Click();
 ```
 
-Or if the element is simply out of view and scrolling will reveal it,
-you can use the JavaScript scroll executor as shown above for the NoSuchElementException.
 
 ## ElementNotInteractableException
 
@@ -262,6 +223,8 @@ you can use the JavaScript scroll executor as shown above for the NoSuchElementE
 [selenium/docs/api : ElementNotInteractableException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/ElementNotInteractableException.html)
 
 ### Причины
+
+*
 
 ### Решение
 
@@ -280,30 +243,34 @@ try {
 ## ElementNotVisibleException
 
 ***ElementNotVisibleException*** — исключение, которое вызывается, когда элемент присутствует в **DOM**,
-но он невидим и поэтому взаимодействовать с ним невозможно.
-
-***ElementNotVisibleException*** - исключение, которое вызывается, если элемент был найдем в **DOM**, но он невидим на странице.
+но он невидим и поэтому взаимодействовать с ним невозможно (отправить ключи или выполнить другие действия над ним).
+***ElementNotVisibleException*** - исключение, которое вызывается, если элемент был найдем в **DOM**, 
+но он невидим на странице.
 
 [selenium/docs/api : ElementNotVisibleException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/ElementNotVisibleException.html)
 
 ### Причины
 
-### Решение
-
-Ниже пример перехвата исключения.
+* Веб элемент скрыт
+* Веб элемент невидим
 
 *Пример*
 
+id «submit» «скрыт» в HTML, будет выброшено исключение org.openqa.selenium.ElementNotVisibleException.
+
 ```java
-try {
-    ...
-} catch (UnexpectedTagNameException e) {
-    System.out.println(e);
-}
+driver.findElement(By.id("submit")).click();
 ```
 
-Решение: добавить ожидание видимости веб элемента на странице или сделать веб элемент видимым через выполнение JS скрипта.
-Ниже пример перехвата исключения.
+
+* Используемая вами стратегия локатора находит больше элементов с одним и тем же локатором, а первый не виден.
+
+### Решение
+
+* Добавить ожидание видимости веб элемента на странице 
+* Сделать веб элемент видимым через выполнение JS скрипта 
+* максимизация окна браузера
+* прокрутка до элемента
 
 *Пример*
 
@@ -321,66 +288,51 @@ try {
 }
 ```
 
-ElementNotVisibleException
-
-This one is a bit different than the NoSuchElementException,
-because it means that the element was found in the DOM, but it is not visible on the page.
-This also means that we cannot interact with the element,
-so we can’t click, send keys, or perform other actions on it. It can happen if:
-
-The element is hidden.
-The locator strategy you are using finds more elements with the same locator, and the first one is not visible.
-To fix this, first make sure that you are using a unique locator, and that you are identifying the correct element on the page.
-
-If your locator is good, then you can add a wait, that checks when the element is visible:
+Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
-WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-IWebElement LoginButton = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("login")));
-```
-
-ElementNotVisibleException:
-
-This exception occurs when the locators(id/xpath/css selector) we have provided
-in the selenium program code are trying to find the web element which is hidden from displaying on the webpage.
-
-For example:
-
-In the code below, if the type of button with id ‘submit’ is ‘hidden’ in HTML then an ElementNotVisibleException will be thrown.
-
-*Пример*
-
-```java
-driver.findElement(By.id("submit"));
-```
-
-Handling:
-
-*Пример*
-
-```java
-try{
-driver.findElement(By.id("submit"));
-}catch(ElementNotVisibleException e){
-System.out.println(e.getMessage());
+try {
+...
+} catch (UnexpectedTagNameException e) {
+    System.out.println(e);
 }
 ```
 
-In this case, the exception occurs even if the page has not loaded completely.
-
 ## InvalidElementStateException
 
-***InvalidElementStateException*** — исключение, которое вызывается, когда
+***InvalidElementStateException*** — исключение, которое вызывается, когда элемент не находится в интерактивном состоянии, 
+необходимом WebDriver для выполнения операции.
+
+Это исключение Selenium возникает, когда команда не может быть выполнена, поскольку элемент не находится в допустимом состоянии или элемент не может выполнять это действие. Это может быть вызвано попыткой выполнения такой операции, как очистка элемента, над веб-элементом, который нельзя редактировать или сбрасывать.
+
+Чтобы обработать такое исключение в автоматизации тестирования Selenium, рекомендуется дождаться включения этого элемента, прежде чем с ним будет выполнено желаемое действие.
 
 [selenium/docs/api : InvalidElementStateException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/InvalidElementStateException.html)
 
 ### Причины
 
+Причина — в случае, если состояние элемента не соответствует желаемому действию.
+Разрешение — убедитесь, что элемент доступен для выполнения требуемой операции, 
+ожидая желаемого ExpectedCondition в явном ожидании.
+
+*Пример*
+
+пример с использованием пользовательской html-страницы с отключенным текстовым полем.
+
+```java
+@Test
+public void googleTest3() throws MalformedURLException {
+
+       webDriver.navigate().to(file);
+    webDriver.findElement(By.cssSelector("input[value='hi'")).sendKeys("hi");
+}
+```
+
 ### Решение
 
-It occurs when command can’t be finished when the element is invalid.
+
 
 Ниже пример перехвата исключения.
 
