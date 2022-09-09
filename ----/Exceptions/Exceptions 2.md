@@ -7,7 +7,6 @@
 ***
 
 [DONE:]
-[TODO: Add Examples]
 
 # 2. Локаторы
 
@@ -20,50 +19,197 @@
 ### Причины
 
 * В **Xpath** выражении есть синтаксические ошибки
-* **Xpath** выражение не указывает на **WebElement** (напр. *count(.//span)*).
 
 *Пример*
 
-```java
-click("//button[@type='button'][100]");
+В примере ниже в **Xpath** выражении опечатка.
+
+Должно быть:
+
+```xpath
+(//*[@class="ui-link menu-desktop__root-title"])[5]
 ```
 
-### Решение
+А записано:
 
-Проверка используемого **Xpath** выражения.
-Ниже пример перехвата исключения.
-
-*Пример*
+```xpath
+(//*[@class="ui-link menu-desktop__root-title"])(5]
+```
 
 ```java
-try {
-    ...
-} catch (InvalidSelectorException e) {
-    System.out.println(e);
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.dns-shop.ru/");
+    WebElement element = driver.findElement(
+            By.xpath("(//*[@class=\"ui-link menu-desktop__root-title\"])(5]"));
+    element.click();
 }
 ```
 
-## IllegalLocatorException
+В результате вызывается исключение **InvalidSelectorException**
 
-***IllegalLocatorException*** — исключение, которое вызывается, когда **By** не может обработать переданные ему аргументы.
+```text
+org.openqa.selenium.InvalidSelectorException: invalid selector: 
+Unable to locate an element with the xpath expression 
+(//*[@class="ui-link menu-desktop__root-title"])(5] 
+because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string 
+'(//*[@class="ui-link menu-desktop__root-title"])(5]' 
+is not a valid XPath expression.
+```
 
-[selenium/docs/api : IllegalLocatorException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/IllegalLocatorException.html)
+* **Xpath** выражение не указывает на **WebElement**
 
-### Причины
+*Пример*
 
-* Использование составного имени класса в **By.className** (напр. *q qs*).
+В примере ниже в **Xpath** выражении записано выражение:
+
+```xpath
+count(.//span)
+```
+
+Данное **Xpath** выражение не возвращает веб элемент.
+
+```java
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.dns-shop.ru/");
+    WebElement element = driver.findElement(By.xpath("count(.//span)"));
+    element.click();
+}
+```
+
+В результате вызывается исключение **InvalidSelectorException**
+
+```text
+org.openqa.selenium.InvalidSelectorException: invalid selector: 
+Unable to locate an element with the xpath expression 
+count(.//span) 
+because of the following error:
+TypeError: Failed to execute 'evaluate' on 'Document': 
+The result is not a node set, and therefore cannot be converted to the desired type.
+```
+
+* Использование составного имени класса в **By.className**
+
+*Пример*
+
+В примере ниже в **By.className** записано два класса:
+
+```css
+ui-link menu-desktop__root-title
+```
+
+В **By.className** не допускается использование составного имени класса.
+
+```java
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.dns-shop.ru/");
+    WebElement element = driver.findElement(
+        By.className("ui-link menu-desktop__root-title"));
+    element.click();
+}
+```
+
+В результате вызывается исключение **InvalidSelectorException**
+
+```text
+org.openqa.selenium.InvalidSelectorException: Compound class names not permitted
+```
+
+* Использование некорректного **CSS** селектора в **By.cssSelector**
+
+*Пример*
+
+В примере ниже в **By.cssSelector** записано:
+
+```css
+a <|> ul
+```
+
+```java
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.dns-shop.ru/");
+    WebElement element = driver.findElement(
+        By.cssSelector("a <|> ul"));
+    element.click();
+}
+```
+
+В результате вызывается исключение **InvalidSelectorException**
+
+```text
+org.openqa.selenium.InvalidSelectorException: invalid selector: An invalid or illegal selector was specified
+```
 
 ### Решение
 
-Проверка аргументов передаваемых в **By**.
+* Проверка используемого **Xpath** выражения в консоли браузера
+
+*Пример*
+
+```java
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.dns-shop.ru/");
+    WebElement element = driver.findElement(
+            By.xpath("(//*[@class=\"ui-link menu-desktop__root-title\"])[5]"));
+    element.click();
+}
+```
+
+* Проверка параметра в **By.className**
+
+*Пример*
+
+```java
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.dns-shop.ru/");
+    WebElement element = driver.findElement(
+            By.className("ui-link"));
+    element.click();
+}
+```
+
+* Проверка используемого **CSS** селектора в консоли браузера
+
+*Пример*
+
+```java
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.dns-shop.ru/");
+    WebElement element = driver.findElement(
+            By.cssSelector("a.ui-link"));
+    element.click();
+}
+```
+
 Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
-try {
-    ...
-} catch (IllegalLocatorException e) {
-    System.out.println(e);
+    @Test
+public void test() {
+    try {
+        driver.manage().window().maximize();
+        driver.get("https://www.dns-shop.ru/");
+        WebElement element = driver.findElement(
+            By.xpath("(//*[@class=\"ui-link menu-desktop__root-title\"])(5]"));
+        element.click();
+    } catch (InvalidSelectorException e) {
+        logger.info("InvalidSelectorException: " + e.getRawMessage());
+    }
 }
 ```

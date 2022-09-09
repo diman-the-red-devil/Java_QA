@@ -8,6 +8,8 @@
 
 # 8. Разные
 
+[DONE:]
+
 ## JavascriptException
 
 ***JavascriptException*** — исключение, которое вызывается, когда невозможно выполнить JS скрипт.
@@ -16,19 +18,59 @@
 
 ### Причины
 
+* Наличие ошибки в JS скрипте
 
+*Пример*
+
+В примере ниже в скрипте опечатка - вместо **return document.title;** выполняется **return dcoument.title;**
+
+```java
+@Test
+public void test() {
+    driver.get("https://www.dns-shop.ru/");
+    JavascriptExecutor js =(JavascriptExecutor) driver;
+    String title = js.executeScript("return dcoument.title;").toString();
+    logger.info(title);
+}
+```
+
+В результате вызывается исключение **JavascriptException**
+
+```text
+org.openqa.selenium.JavascriptException: javascript error: dcoument is not defined
+```
 
 ### Решение
+
+* Проверка работы JS скрипта в консоле браузера
+
+*Пример*
+
+```java
+@Test
+public void test() {
+    driver.get("https://www.dns-shop.ru/");
+    JavascriptExecutor js =(JavascriptExecutor) driver;
+    String title = js.executeScript("return document.title;").toString();
+    logger.info(title);
+}
+```
 
 Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
-try {
-    ...
-} catch (JavascriptException e) {
-    System.out.println(e);
+@Test
+public void test() {
+    driver.get("https://www.dns-shop.ru/");
+    try {
+        JavascriptExecutor js =(JavascriptExecutor) driver;
+        String title = js.executeScript("return dcoument.title;").toString();
+        logger.info(title);
+    } catch (JavascriptException e) {
+        logger.info("JavascriptException: " + e.getRawMessage());
+    }
 }
 ```
 
@@ -36,28 +78,32 @@ try {
 
 ***ScreenshotException*** — исключение, которое вызывается, когда невозможно снять скриншот.
 
-Такой сценарий вероятен на веб-страницах/веб-приложениях, где конфиденциальная информация
-например имя пользователя, пароль, банковская информация и т. д. вводятся пользователем.
-В таких случаях снимок экрана не может быть сделан из-за .
-
-Здесь ограничение скриншота предотвращает захват или запись экрана.
-
 [selenium/docs/api : ScreenshotException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/remote/ScreenshotException.html)
 
 ### Причины
 
-* Наличие ограничений на создание снимков экрана в целях безопасности
+* Наличие ограничений на создание снимков экрана в целях безопасности (пароли, банковские данные)
 
 ### Решение
+
+* Проверка возможности на создание снимков экрана
 
 Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
-try {
-    ...
-} catch (ScreenshotException e) {
-    System.out.println(e);
+@Test
+public void test() {
+    driver.get("https://www.dns-shop.ru/");
+    try {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File file = ts.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file, new File("./screenshot.png"));
+    } catch (ScreenshotException e) {
+        logger.info("JavascriptException: " + e.getRawMessage());
+    } catch (IOException e) {
+        logger.info("IOException: " + e.getMessage());
+    }
 }
 ```

@@ -7,7 +7,6 @@
 ***
 
 [DONE:]
-[TODO: Add Examples]
 
 # 3. Свойства веб элемента
 
@@ -23,26 +22,59 @@
 
 *Пример*
 
+В примере ниже ожидается веб элемент **select**, но найденный веб элемент *a*.
+
 ```java
 @Test
-public void testCase7(){
-    webDriver.navigate().to(file);
-    Select select = new Select(webDriver.findElement(By.id("attr")));
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.dns-shop.ru/");
+    WebElement element = driver.findElement(
+        By.xpath("(//*[@class=\"ui-link menu-desktop__root-title\"])[5]"));
+    Select select = new Select(element);
     select.selectByIndex(0);
 }
 ```
 
+В результате вызывается исключение **UnexpectedTagNameException**
+
+```text
+org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been "select" but was "a"
+```
+
 ### Решение
 
-Проверка тега веб элемента с которым будут выполнятся операции.
+* Проверка тега веб элемента, с которым будут выполнятся операции
+
+*Пример*
+
+```java
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.dns-shop.ru/");
+    WebElement element = driver.findElement(
+        By.xpath("(//*[@class=\"ui-link menu-desktop__root-title\"])[5]"));
+    element.click();
+}
+```
+
 Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
-try {
-    ...
-} catch (UnexpectedTagNameException e) {
-    System.out.println(e);
+@Test
+public void test() {
+    try {
+        driver.manage().window().maximize();
+        driver.get("https://www.dns-shop.ru/");
+        WebElement element = driver.findElement(
+            By.xpath("(//*[@class=\"ui-link menu-desktop__root-title\"])[5]"));
+        Select select = new Select(element);
+        select.selectByIndex(0);
+    } catch (UnexpectedTagNameException e) {
+        logger.info("UnexpectedTagNameException: " + e.getRawMessage());
+    }
 }
 ```

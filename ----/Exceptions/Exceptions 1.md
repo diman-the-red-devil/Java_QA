@@ -8,8 +8,7 @@
 
 # 1. Куки
 
-[DONE:] 
-[TODO: Add Examples]
+[DONE:]
 
 ## InvalidCookieDomainException
 
@@ -20,49 +19,156 @@
 ### Причины
 
 * Добавление куки, когда страница с заданным URL еще не открыта
-* Добавление куки по URL, в котором есть опечатка
-
-### Решение
-
-* Проверка корректности URL адреса
-
-Ниже пример перехвата исключения.
 
 *Пример*
 
+В примере ниже куки **Cookie 1** добавляется до открытия страницы **https://www.dns-shop.ru/**
+
 ```java
-try {
-    ...
-} catch (InvalidCookieDomainException e) {
-    System.out.println(e);
+@Test
+public void test() {
+    driver.manage().addCookie(new Cookie("Cookie 1", "This Is Cookie 1"));
+    driver.get("https://www.dns-shop.ru/");
+    Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
+    logger.info(String.format("Domain: %s", cookie1.getDomain()));
+    logger.info(String.format("Expiry: %s",cookie1.getExpiry()));
+    logger.info(String.format("Name: %s",cookie1.getName()));
+    logger.info(String.format("Path: %s",cookie1.getPath()));
+    logger.info(String.format("Value: %s",cookie1.getValue()));
 }
 ```
 
-## NoSuchCookieException
+В результате вызывается исключение **InvalidCookieDomainException**
 
-***NoSuchCookieException*** — исключение, которое вызывается, когда не найдено ни одного куки.
+```text
+org.openqa.selenium.InvalidCookieDomainException: invalid cookie domain
+```
 
-[selenium/docs/api : NoSuchCookieException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/NoSuchCookieException.html)
+* Добавление куки в другой домен
 
-### Причины
+*Пример*
 
-* Поиск куки по некорректному имени
-* Поиск куки, которого не существует
-* Поиск куки не в том домене
+В примере ниже куки **Cookie 1** добавляется:
+* на странице **https://www.dns-shop.ru/** 
+* в домен **https://www.yandex.ru/**
+
+```java
+@Test
+public void test() {
+    driver.get("https://www.dns-shop.ru/");
+    driver.manage().addCookie(
+        new Cookie.Builder("Cookie 1", "This Is Cookie 1")
+            .domain( "https://www.yandex.ru/")
+            .build());
+    Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
+    logger.info(String.format("Domain: %s", cookie1.getDomain()));
+    logger.info(String.format("Expiry: %s",cookie1.getExpiry()));
+    logger.info(String.format("Name: %s",cookie1.getName()));
+    logger.info(String.format("Path: %s",cookie1.getPath()));
+    logger.info(String.format("Value: %s",cookie1.getValue()));
+}
+```
+
+В результате вызывается исключение **InvalidCookieDomainException**
+
+```text
+org.openqa.selenium.InvalidCookieDomainException: invalid cookie domain: Cookie 'domain' mismatch
+```
+
+* Добавление куки в домен, в котором есть опечатка
+
+*Пример*
+
+В примере ниже куки **Cookie 1** добавляется:
+* на странице **https://www.dns-shop.ru/**
+* в домен **https://www.dnsshop.ru/**
+
+```java
+@Test
+public void test() {
+    driver.get("https://www.dns-shop.ru/");
+    driver.manage().addCookie(
+        new Cookie.Builder("Cookie 1", "This Is Cookie 1")
+            .domain( "https://www.dnsshop.ru/")
+            .build());
+    Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
+    logger.info(String.format("Domain: %s", cookie1.getDomain()));
+    logger.info(String.format("Expiry: %s",cookie1.getExpiry()));
+    logger.info(String.format("Name: %s",cookie1.getName()));
+    logger.info(String.format("Path: %s",cookie1.getPath()));
+    logger.info(String.format("Value: %s",cookie1.getValue()));
+}
+```
+
+В результате вызывается исключение **InvalidCookieDomainException**
+
+```text
+org.openqa.selenium.InvalidCookieDomainException: invalid cookie domain: Cookie 'domain' mismatch
+```
 
 ### Решение
 
-* Проверка корректности имени куки
+* Проверка открытия нужной страницы перед добавлением куки
+
+*Пример*
+
+```java
+@Test
+public void test() {
+    driver.get("https://www.dns-shop.ru/");
+    driver.manage().addCookie(new Cookie("Cookie 1", "This Is Cookie 1"));
+    Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
+    logger.info(String.format("Domain: %s", cookie1.getDomain()));
+    logger.info(String.format("Expiry: %s",cookie1.getExpiry()));
+    logger.info(String.format("Name: %s",cookie1.getName()));
+    logger.info(String.format("Path: %s",cookie1.getPath()));
+    logger.info(String.format("Value: %s",cookie1.getValue()));
+}
+```
+
+* Проверка корректности домена, в который добавляется куки
+
+*Пример*
+
+```java
+@Test
+public void test() {
+    driver.get("https://www.dns-shop.ru/");
+    driver.manage().addCookie(
+        new Cookie.Builder("Cookie 1", "This Is Cookie 1")
+            .domain( "https://www.dns-shop.ru/")
+            .build());
+    Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
+    logger.info(String.format("Domain: %s", cookie1.getDomain()));
+    logger.info(String.format("Expiry: %s",cookie1.getExpiry()));
+    logger.info(String.format("Name: %s",cookie1.getName()));
+    logger.info(String.format("Path: %s",cookie1.getPath()));
+    logger.info(String.format("Value: %s",cookie1.getValue()));
+}
+```
 
 Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
-try {
-    ...
-} catch (NoSuchCookieException e) {
-    System.out.println(e);
+@Test
+public void test() {
+    try {
+        driver.get("https://www.dns-shop.ru/");
+        driver.manage().addCookie(
+            new Cookie.Builder("Cookie 1", "This Is Cookie 1")
+                .domain( "https://www.dnsshop.ru/")
+                .build());
+        Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
+        logger.info(String.format("Domain: %s", cookie1.getDomain()));
+        logger.info(String.format("Expiry: %s",cookie1.getExpiry()));
+        logger.info(String.format("Name: %s",cookie1.getName()));
+        logger.info(String.format("Path: %s",cookie1.getPath()));
+        logger.info(String.format("Value: %s",cookie1.getValue()));
+    } catch (InvalidCookieDomainException e) {
+        logger.info("InvalidCookieDomainException: " + e.getRawMessage());
+    }
 }
 ```
 
@@ -74,20 +180,79 @@ try {
 
 ### Причины
 
-* Создание куки до перехода на сайт
+* Установка некорректного пути до директории на сервере, для которой будут доступны куки
+
+*Пример*
+
+В примере ниже при создании куки **Cookie 1** указывается некорректный путь до директории на сервере, для которой будут доступны куки.
+
+```java
+@Test
+public void test() {
+    driver.get("https://www.dns-shop.ru/");
+    driver.manage().addCookie(
+        new Cookie.Builder("Cookie 1", "This Is Cookie 1")
+            .path(".//")
+            .build());
+    Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
+    logger.info(String.format("Domain: %s", cookie1.getDomain()));
+    logger.info(String.format("Expiry: %s",cookie1.getExpiry()));
+    logger.info(String.format("Name: %s",cookie1.getName()));
+    logger.info(String.format("Path: %s",cookie1.getPath()));
+    logger.info(String.format("Value: %s",cookie1.getValue()));
+}
+```
+
+В результате вызывается исключение **UnableToSetCookieException**
+
+```text
+org.openqa.selenium.UnableToSetCookieException: unable to set cookie
+```
 
 ### Решение
 
-* Проверка перехода на сайт до создания куки
+* Проверка кода создания куки
+
+*Пример*
+
+```java
+@Test
+public void test() {
+    driver.get("https://www.dns-shop.ru/");
+    driver.manage().addCookie(
+        new Cookie.Builder("Cookie 1", "This Is Cookie 1")
+            .path("/")
+            .build());
+    Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
+    logger.info(String.format("Domain: %s", cookie1.getDomain()));
+    logger.info(String.format("Expiry: %s",cookie1.getExpiry()));
+    logger.info(String.format("Name: %s",cookie1.getName()));
+    logger.info(String.format("Path: %s",cookie1.getPath()));
+    logger.info(String.format("Value: %s",cookie1.getValue()));
+}
+```
 
 Ниже пример перехвата исключения.
 
 *Пример*
 
 ```java
-try {
-    ...
-} catch (UnableToSetCookieException e) {
-    System.out.println(e);
+    @Test
+public void test() {
+    try {
+        driver.get("https://www.dns-shop.ru/");
+        driver.manage().addCookie(
+            new Cookie.Builder("Cookie 1", "This Is Cookie 1")
+                .path(".//")
+                .build());
+        Cookie cookie1 = driver.manage().getCookieNamed("Cookie 1");
+        logger.info(String.format("Domain: %s", cookie1.getDomain()));
+        logger.info(String.format("Expiry: %s", cookie1.getExpiry()));
+        logger.info(String.format("Name: %s", cookie1.getName()));
+        logger.info(String.format("Path: %s", cookie1.getPath()));
+        logger.info(String.format("Value: %s", cookie1.getValue()));
+    } catch (UnableToSetCookieException e) {
+        logger.info("UnableToSetCookieException: " + e.getRawMessage());
+    }
 }
 ```
