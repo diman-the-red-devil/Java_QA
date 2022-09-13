@@ -237,7 +237,7 @@ public void test() {
 *Пример*
 
 ```java
-    @Test
+@Test
 public void test() {
     try {
         driver.get("https://www.dns-shop.ru/");
