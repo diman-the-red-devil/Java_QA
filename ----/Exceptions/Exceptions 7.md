@@ -11,64 +11,115 @@
 ## TimeoutException
 
 ***TimeoutException*** - исключение, которое вызывается, когда выполнение какой-либо
-команды не завершилось в отведенный промежуток времени.
-
-Это исключение возникает, когда выполнение команды занимает больше времени, чем время ожидания. 
-Ожидания в основном используются в WebDriver, чтобы избежать исключения ElementNotVisibleException.
-
-Это исключение будет вызвано, если страница или элемент не были загружены после указанного времени ожидания. Чтобы преодолеть это, вы можете увеличить время ожидания, если вы используете неявное ожидание, или, что еще лучше, заменить неявное ожидание явным ожиданием.
+команды не завершилось в отведенный промежуток времени, так как выполнение команды занимает больше времени, чем время ожидания. 
 
 [selenium/docs/api : TimeoutException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/TimeoutException.html)
 
 ### Причины
 
-* Искомый веб элемент не был найден за определенное время
 * Страница не была загружена за определенное время
 
 *Пример*
 
-В приведенной выше программе добавлено неявное ожидание в 10 секунд. 
-Если страница www.softwaretestinghelp.com не загрузится в течение 10 секунд, 
-будет выброшено исключение TimeoutException.
+В примере ниже установлено ожидание загрузки страницы в 1 миллисекунду. 
+Страница не успевает загрузиться за этот промежуток времени.
 
 ```java
-driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-driver.get("https://www.softwaretestinghelp.com");
+@Test
+public void test() {
+    driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(1));
+    driver.manage().window().maximize();
+    driver.get("https://www.mvideo.ru/");
+}
 ```
+
+В результате вызывается исключение **TimeoutException**
+
+```text
+org.openqa.selenium.TimeoutException: 
+timeout: Timed out receiving message from renderer: 0.001
+```
+
+* Искомый веб элемент не был найден за определенное время
 
 *Пример*
 
-Вышеприведенный оператор ждет до 10 секунд, прежде чем выдать исключение 
-(TimeoutException — истекает через 10 секунд ожидания видимости элемента) или, если он находит элемент, он возвращается через 0–10 секунд.
+В примере ниже ожидается появление веб элемента.
+Веб элемент не успевает отобразиться в отведенный промежуток времени.
 
 ```java
-WebDriverWait wait = new WebDriverWait(driver, 10);
-wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("statedropdown")));
+@Test
+public void test2() {
+    driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(6000));
+    driver.manage().window().maximize();
+    driver.get("https://www.mvideo.ru/");
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1));
+    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[text()=\"ЭКСПРЕСС-ДОСТАВКА\"]")));
+    driver.findElement(By.xpath("//a[text()=\"ЭКСПРЕСС-ДОСТАВКА\"]"));
+}
+```
+
+В результате вызывается исключение **TimeoutException**
+
+```text
+org.openqa.selenium.TimeoutException: Expected condition failed: 
+waiting for presence of element located by: By.xpath: //a[text()="Смартфоны"] 
+(tried for 0 second(s) with 500 milliseconds interval)
+
 ```
 
 ### Решение
 
-Настроить неявное ожидание или явное ожидание.
-
-мы можем вручную проверить среднее время загрузки страницы и настроить ожидание
-
-Или мы можем добавить явное ожидание с помощью исполнителя JavaScript, пока страница не загрузится.
+* Неявное ожидание в течение промежутка времени, за которое страница успевает загрузится
 
 *Пример*
 
-В приведенном ниже примере используется исполняющая программа JavaScript. 
-После навигации по страницам мы вызываем JavaScript return document.readyState на 20 секунд, 
-пока не будет возвращено «complete».
+```java
+@Test
+public void test() {
+    driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(6000));
+    driver.manage().window().maximize();
+    driver.get("https://www.mvideo.ru/");
+}
+```
+
+* Явное ожидание наступления конкретного события, в течение промежутка времени, 
+за которое событие успевает наступить
+  
+*Пример*
 
 ```java
-WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
-wait.until(webDriver -> ((JavascriptExecutor) webDriver)
-        .executeScript("return document.readyState")
-        .equals("complete"));
-try {
-    driver.get("https://www.softwaretestinghelp.com");
-} catch (TimeoutException e) {
-    System.out.println(e);
+@Test
+public void test() {
+    driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(6000));
+    driver.manage().window().maximize();
+    driver.get("https://www.mvideo.ru/");
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(6000));
+    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[text()=\"ЭКСПРЕСС-ДОСТАВКА\"]")));
+    driver.findElement(By.xpath("//a[text()=\"ЭКСПРЕСС-ДОСТАВКА\"]"));
+}
+```
+
+* Явное ожидание с применением скрипта на **JS**
+
+*Пример*
+
+В приведенном ниже примере после открытия страницы вызывается на **JS**
+
+```js
+return document.readyState
+```
+
+пока не будет возвращено **complete**.
+
+```java
+@Test
+public void test() {
+    driver.get("https://www.mvideo.ru/");
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    wait.until(webDriver -> ((JavascriptExecutor) webDriver)
+            .executeScript("return document.readyState")
+            .equals("complete"));
 }
 ```
 
@@ -77,10 +128,14 @@ try {
 *Пример*
 
 ```java
-driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-try {
-driver.get("https://www.softwaretestinghelp.com");
-} catch (TimeoutException e) {
-System.out.println(e);
+    @Test
+public void test() {
+    try {
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(1));
+        driver.manage().window().maximize();
+        driver.get("https://www.mvideo.ru/");
+    } catch(TimeoutException e) {
+        logger.info("TimeoutException: " + e.getRawMessage());
+    }
 }
 ```

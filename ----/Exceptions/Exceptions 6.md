@@ -167,44 +167,61 @@ public void ttest() {
         driver.manage().window().maximize();
         driver.get("https://www.dns-shop.ru/");
         driver.switchTo().frame(29);
-    } catch (NoSuchWindowException e) {
-        logger.info("NoSuchWindowException: " + e.getRawMessage());
+    } catch (NoSuchFrameException e) {
+        logger.info("NoSuchFrameException: " + e.getRawMessage());
     }
 }
 ```
 
 ## NoAlertPresentException
 
-***NoAlertPresentException*** — исключение, которое вызывается, когда **Selenium WebDriver** пытается переключиться на оповещение, которое недоступно.
+***NoAlertPresentException*** — исключение, которое вызывается, когда **Selenium WebDriver** пытается переключиться на алерт, который недоступен.
 
 [selenium/docs/api : NoAlertPresentException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/NoAlertPresentException.html)
 
 ### Причины
 
-* Оповещение не отображается
+* Алерт не отображается
   
 *Пример*
 
 В примере ниже
 
 ```java
-
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.dns-shop.ru/");
+    driver.switchTo().alert().dismiss();
+}
 ```
 
 В результате вызывается исключение **NoAlertPresentException**
 
 ```text
-
+org.openqa.selenium.NoAlertPresentException: no such alert
 ```
 
 ### Решение
 
-* Ожидание появления оповещения
+* Проверка возможности появления алерта
+* Ожидание появления алерта
 
 *Пример*
 
 ```java
-
+@Test
+public void test() {
+    try {
+        driver.manage().window().maximize();
+        driver.get("https://www.dns-shop.ru/");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().dismiss();
+    } catch (TimeoutException e) {
+        logger.info("TimeoutException: " + e.getRawMessage());
+    }
+}
 ```
 
 Ниже пример перехвата исключения.
@@ -215,7 +232,9 @@ public void ttest() {
 @Test
 public void test() {
     try {
-
+        driver.manage().window().maximize();
+        driver.get("https://www.dns-shop.ru/");
+        driver.switchTo().alert().dismiss();
     } catch (NoAlertPresentException e) {
         logger.info("NoAlertPresentException: " + e.getRawMessage());
     }
@@ -224,36 +243,52 @@ public void test() {
 
 ## UnhandledAlertException
 
-***UnhandledAlertException*** — исключение, которое вызывается, когда отображается неожиданное оповещение.
+***UnhandledAlertException*** — исключение, которое вызывается, когда отображается алерт, который не обрабатывается.
 
 [selenium/docs/api : UnhandledAlertException](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/UnhandledAlertException.html)
 
 ### Причины
 
-* Появление неожиданного предупреждения
+* Появление алерта, который не обрабатывается
   
 *Пример*
 
-В примере ниже
+В примере ниже отображается алерт, который ни как не обрабатывается.
+Далее была попытка нажать на ссылку.
 
 ```java
-
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.mvideo.ru/");
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("alert(\"Hello World!\")");
+    driver.findElement(By.xpath("//a[text()=\"ЭКСПРЕСС-ДОСТАВКА\"]")).click();
+}
 ```
 
 В результате вызывается исключение **UnhandledAlertException**
 
 ```text
-
+org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Hello World!}
 ```
 
 ### Решение
 
-* Отклонение предупреждения
+* Обработка алерта
 
 *Пример*
 
 ```java
-
+@Test
+public void test() {
+    driver.manage().window().maximize();
+    driver.get("https://www.mvideo.ru/");
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("alert(\"Hello World!\")");
+    driver.switchTo().alert().dismiss();
+    driver.findElement(By.xpath("//a[text()=\"ЭКСПРЕСС-ДОСТАВКА\"]")).click();
+}
 ```
 
 Ниже пример перехвата исключения.
@@ -264,7 +299,11 @@ public void test() {
 @Test
 public void test() {
     try {
-
+        driver.manage().window().maximize();
+        driver.get("https://www.mvideo.ru/");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("alert(\"Hello World!\")");
+        driver.findElement(By.xpath("//a[text()=\"ЭКСПРЕСС-ДОСТАВКА\"]")).click();
     } catch (UnhandledAlertException e) {
         logger.info("UnhandledAlertException: " + e.getRawMessage());
     }
