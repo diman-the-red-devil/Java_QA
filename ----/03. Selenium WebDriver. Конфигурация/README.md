@@ -107,7 +107,13 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
         * [10.4.4. Удаление cookie по имени](#1044-удаление-cookie-по-имени)
         * [10.4.5. Получение cookie по имени](#1045-получение-cookie-по-имени)
         * [10.4.6. Получение всех cookie](#1046-получение-всех-cookie)
-
+    * [10.5. Исключения](#105-исключения)
+        * [10.5.1. InvalidCookieDomainException](#1051-invalidcookiedomainexception)
+            * [10.5.1.1. Причины](#10511-причины)
+            * [10.5.1.2. Решения](#10512-решения)
+        * [10.5.2. UnableToSetCookieException](#1052-unabletosetcookieexception)
+            * [10.5.2.1. Причины](#10521-причины)
+            * [10.5.2.2. Решения](#10522-решения)
 ***
 
 # Практика 
@@ -167,6 +173,7 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
         * [8.1. Desired Capabilities](#81-desired-capabilities)
         * [8.2. Options](#82-options)
     * [9. Запуск с куками](#9-запуск-с-куками)
+    * [10. Исключения](#10-исключения)
 * [YouTube](#youtube)
     * [1. WebDriverManager](#1-webdrivermanager)
     * [2. WebDriverFactory](#2-webdriverfactory)
