@@ -1,8 +1,9 @@
 Java_QA / 02. Selenium WebDriver. Начало
 
 [![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
-[![Задание](https://img.shields.io/badge/-Задание-99ffee)](2.%20Задание.md)
-[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](3.%20Ссылки.md)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
 
 ***
 
@@ -205,5 +206,6 @@ Java_QA / 02. Selenium WebDriver. Начало
 ***
 
 [![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
-[![Задание](https://img.shields.io/badge/-Задание-99ffee)](2.%20Задание.md)
-[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](3.%20Ссылки.md)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
