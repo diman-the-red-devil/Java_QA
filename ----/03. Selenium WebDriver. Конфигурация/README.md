@@ -1,8 +1,26 @@
 Java_QA / 03. Selenium WebDriver. Конфигурация
 
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
+
+***
+
+# Содержание
+
+* [Цель](#цель)
+* [Результаты](#результаты)
+* [Лекция](#лекция)
+* [Практика](#практика)
+* [Задание](#задание)
+* [Ссылки](#ссылки)
+
 ***
 
 # Цель
+
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 
 1. Настроить запуск под разные браузеры
 2. Освоить основные команды веб драйвера
@@ -11,22 +29,18 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
 
 # Результаты 
 
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
+
 1. Запуск тестов под разными браузерами
 2. Знание основных команд веб драйвера
 3. Паттерн WebDriverFactory
 
 ***
 
-# Разделы
-
-[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
-[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
-[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
-[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
-
-***
-
 # Лекция 
+
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
 
 * [1. Selenium WebDriver](#1-selenium-webdriver)
 * [2. Драйвер браузера](#2-драйвер-браузера)
@@ -118,6 +132,9 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
 
 # Практика 
 
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
+
 * [1. Открытие предыдущего проекта](#1-открытие-предыдущего-проекта)
 * [2. Реализация WebDriverFactory](#2-реализация-webdriverfactory)
     * [2.1. Получение драйвера по имени браузера](#21-получение-драйвера-по-имени-браузера)
@@ -151,11 +168,17 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
 
 # Задание 
 
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+
 
 
 ***
 
 # Ссылки
+
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
 
 * [Статьи](#статьи)
     * [1. Драйверы браузеров](#1-драйверы-браузеров)
@@ -179,3 +202,10 @@ Java_QA / 03. Selenium WebDriver. Конфигурация
     * [2. WebDriverFactory](#2-webdriverfactory)
     * [3. Options](#3-options)
     * [4. Cookie](#4-cookie)
+
+***
+
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
