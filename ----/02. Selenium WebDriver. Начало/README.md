@@ -20,6 +20,8 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Цель
 
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+
 1. Узнать что из себя представляет Selenium WebDriver
 2. Понять принцип работы Selenium WebDriver
 3. Установить необходимые компоненты: Java, IntelliJ IDEA, Maven, Git
@@ -36,6 +38,8 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Результаты 
 
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+
 1. Первое знакомство с Selenium WebDriver
 2. Принцип работы Selenium WebDriver
 3. Умение настраивать окружение
@@ -48,8 +52,8 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Лекция
 
-[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
 [![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
 
 * [1. Selenium](1.%20Лекция.md#1-selenium)
     * [1.1. Selenium RC](1.%20Лекция.md#11-selenium-rc)
@@ -128,8 +132,8 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Практика 
 
-[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
 [![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
 
 * [1. Java](#1-Java)
   * [1.1. Установка JDK (Java Development Kit)](#11-установка-jdk-java-development-kit)
@@ -170,8 +174,8 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Задание
 
-[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
 [![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
 
 
 
@@ -179,8 +183,8 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Ссылки
 
-[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
 [![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
 
 * [Статьи](#статьи)
   * [1. Selenium](#1-selenium)
