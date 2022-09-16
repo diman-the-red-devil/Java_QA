@@ -20,7 +20,7 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Цель
 
-[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 
 1. Узнать что из себя представляет Selenium WebDriver
 2. Понять принцип работы Selenium WebDriver
@@ -38,7 +38,7 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Результаты 
 
-[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 
 1. Первое знакомство с Selenium WebDriver
 2. Принцип работы Selenium WebDriver
@@ -52,7 +52,7 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Лекция
 
-[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 [![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
 
 * [1. Selenium](1.%20Лекция.md#1-selenium)
@@ -132,7 +132,7 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Практика 
 
-[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 [![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
 
 * [1. Java](#1-Java)
@@ -174,7 +174,7 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Задание
 
-[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 [![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
 
 
@@ -183,7 +183,7 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Ссылки
 
-[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 [![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
 
 * [Статьи](#статьи)
