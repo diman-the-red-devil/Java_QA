@@ -1,5 +1,20 @@
 Java_QA / 02. Selenium WebDriver. Начало
 
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](2.%20Задание.md)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](3.%20Ссылки.md)
+
+***
+
+# Содержание
+
+* [Цель](#цель)
+* [Результаты](#результаты)
+* [Лекция](#лекция)
+* [Практика](#практика)
+* [Задание](#задание)
+* [Ссылки](#ссылки)
+
 ***
 
 # Цель
@@ -30,16 +45,10 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 ***
 
-# Разделы
+# Лекция
 
 [![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
-[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
-[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
-[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
-
-***
-
-# Лекция
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 * [1. Selenium](1.%20Лекция.md#1-selenium)
     * [1.1. Selenium RC](1.%20Лекция.md#11-selenium-rc)
@@ -118,6 +127,9 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Практика 
 
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+
 * [1. Java](#1-Java)
   * [1.1. Установка JDK (Java Development Kit)](#11-установка-jdk-java-development-kit)
   * [1.2. Настройка переменных сред](#12-настройка-переменных-сред)
@@ -157,9 +169,17 @@ Java_QA / 02. Selenium WebDriver. Начало
 
 # Задание
 
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
+
+
+
 ***
 
 # Ссылки
+
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
+[![Содержание](https://img.shields.io/badge/-Содержание-66eeff)](#содержание)
 
 * [Статьи](#статьи)
   * [1. Selenium](#1-selenium)
@@ -181,3 +201,9 @@ Java_QA / 02. Selenium WebDriver. Начало
   * [4. Git](#4-git)
   * [5. JUnit5](#5-junit5)
   * [6. Selenium WebDriver Java](#6-selenium-webdriver-java)
+
+***
+
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](2.%20Задание.md)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](3.%20Ссылки.md)
