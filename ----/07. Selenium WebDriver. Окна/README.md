@@ -143,7 +143,21 @@ Java_QA / 07. Selenium WebDriver. Окна
 [![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 [![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
 
-
+* [Статьи](#статьи)
+    * [1. Объектная модель браузера (Browser Object Model, BOM)](#1-объектная-модель-браузера-browser-object-model-bom)
+    * [2. Окна и вкладки (Windows, Tabs)](#2-окна-и-вкладки-windows-tabs)
+    * [3. Модальные окна (Alert, Prompt, Confirm)](#3-модальные-окна-alert-prompt-confirm)
+    * [4. Всплывашки (Popup)](#4-всплывашки-popup)
+    * [5. Фрейм (Frames)](#5-фрейм-frames)
+    * [6. Активный элемент (Active Element)](#6-активный-элемент-active-element)
+    * [7. Навигация (Navigation)](#7-навигация-navigation)
+    * [8. Исключения](#8-исключения)
+* [YouTube](#youtube)
+    * [1. Объектная модель браузера (Browser Object Model, BOM)](#1-объектная-модель-браузера-browser-object-model-bom-1)
+    * [2. Окна и вкладки (Windows, Tabs)](#2-окна-и-вкладки-windows-tabs-1)
+    * [3. Модальные окна (Alert, Prompt, Confirm)](#3-модальные-окна-alert-prompt-confirm-1)
+    * [4. Фреймы (Frames)](#4-фреймы-frames)
+    * [5. Навигация (Navigation)](#5-навигация-navigation)
 
 ***
 
