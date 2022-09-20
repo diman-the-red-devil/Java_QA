@@ -71,7 +71,7 @@ Java_QA / 06. Selenium WebDriver. Ожидания
         * [4.3.1. TimeoutException](1.%20Лекция.md#431-timeoutexception)
             * [4.3.1.1. Причины](1.%20Лекция.md#4311-причины)
             * [4.3.1.2. Решение](1.%20Лекция.md#4312-решение)
-* [5. Явные ожидания (Explicit Waits)](1.%20Лекция.md#5-явные-ожидания-(Explicit-Waits))
+* [5. Явные ожидания (Explicit Waits)](1.%20Лекция.md#5-явные-ожидания-explicit-waits)
     * [5.1. Интерфейс Wait](1.%20Лекция.md#51-интерфейс-wait)
     * [5.2. Класс FluentWait](1.%20Лекция.md#52-класс-fluentwait)
     * [5.3. Класс WebDriverWait](1.%20Лекция.md#53-класс-webdriverwait)
