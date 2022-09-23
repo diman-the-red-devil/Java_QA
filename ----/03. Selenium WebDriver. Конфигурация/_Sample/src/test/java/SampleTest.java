@@ -12,7 +12,7 @@ public class SampleTest {
     protected static WebDriver driver;
     private Logger logger = LogManager.getLogger(SampleTest.class);
 
-    // Читаем передаваемый параметр browser (-Dbrowser)
+    // Чтение передаваемого параметра browser (-Dbrowser)
     String env = System.getProperty("browser", "chrome");
 
     /*
@@ -38,8 +38,8 @@ public class SampleTest {
 
     @Test
     public void openPage() {
-        driver.get("https://yandex.ru/");
-        logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
+        driver.get("https://www.dns-shop.ru/");
+        logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru/");
 
         // Вывод заголовка страницы
         String title = driver.getTitle();
@@ -50,17 +50,17 @@ public class SampleTest {
         logger.info("current URL - " + currentUrl.toString());
 
         // Ввод текста для поиска
-        String searchInputXpath = ".//input[@class='input__control input__input mini-suggest__input']";
+        String searchInputXpath = "(//*[@placeholder=\"Поиск по сайту\"])[1]";
         WebElement searchInput = driver.findElement(By.xpath(searchInputXpath));
-        String searchText = "Java";
+        String searchText = "Samsung";
         searchInput.sendKeys(searchText);
 
         // Нажатие кнопка "Найти"
-        String searchButtonXpath = ".//button[@class='button mini-suggest__button button_theme_websearch button_size_ws-head i-bem button_js_inited']";
+        String searchButtonXpath = "(//span[@class=\"ui-input-search__icon ui-input-search__icon_search ui-input-search__icon_presearch\"])[1]";
         WebElement searchButton = driver.findElement(By.xpath(searchButtonXpath));
         searchButton.click();
 
-        // Добавляем задержку sleep чтобы увидеть результат
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {

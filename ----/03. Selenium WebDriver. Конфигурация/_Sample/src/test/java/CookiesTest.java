@@ -12,7 +12,7 @@ public class CookiesTest {
     protected static WebDriver driver;
     private Logger logger = LogManager.getLogger(CookiesTest.class);
 
-    // Читаем передаваемый параметр browser (-Dbrowser)
+    // Чтение передаваемого параметра browser (-Dbrowser)
     String env = System.getProperty("browser", "chrome");
 
     @BeforeEach
@@ -24,12 +24,14 @@ public class CookiesTest {
 
     @Test
     public void cookiesTest() {
-        driver.get("https://yandex.ru/");
-        logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
+        driver.get("https://www.dns-shop.ru/");
+        logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru/");
 
-        // Создание куки Cookie 1 и вывод информации по нему
+        // Создание куки Cookie 1
         logger.info("Куки, которое добавили мы");
         driver.manage().addCookie(new Cookie("Cookie 1", "This Is Cookie 1"));
+
+        // Вывод информации по куки Cookie 1
         Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
         logger.info(String.format("Domain: %s", cookie1.getDomain()));
         logger.info(String.format("Expiry: %s",cookie1.getExpiry()));
@@ -39,7 +41,7 @@ public class CookiesTest {
         logger.info("--------------------------------------");
 
         // Вывод информации по кукам yandex.ru
-        logger.info("Куки, которое добавил Yandex");
+        logger.info("Куки, которое добавил DNS");
         Set<Cookie> cookies = driver.manage().getCookies();
         for(Cookie cookie : cookies) {
             logger.info(String.format("Domain: %s", cookie.getDomain()));
@@ -50,7 +52,7 @@ public class CookiesTest {
             logger.info("--------------------------------------");
         }
 
-        // Добавляем задержку sleep чтобы увидеть результат
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {

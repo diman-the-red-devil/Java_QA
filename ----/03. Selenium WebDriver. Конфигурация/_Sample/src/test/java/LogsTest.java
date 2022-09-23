@@ -13,7 +13,7 @@ public class LogsTest {
     protected static WebDriver driver;
     private Logger logger = LogManager.getLogger(LogsTest.class);
 
-    // Читаем передаваемый параметр browser (-Dbrowser)
+    // Чтение передаваемого параметра browser (-Dbrowser)
     String env = System.getProperty("browser", "chrome");
 
     @BeforeEach
@@ -25,8 +25,8 @@ public class LogsTest {
 
     @Test
     public void logsTest() {
-        driver.get("https://yandex.ru/");
-        logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
+        driver.get("https://www.dns-shop.ru/");
+        logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru/");
 
         // Вывод логов браузера
         logger.info("Логи браузера");
@@ -37,7 +37,7 @@ public class LogsTest {
         }
         logger.info("--------------------------------------");
 
-        // Добавляем задержку sleep чтобы увидеть результат
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
