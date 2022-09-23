@@ -6,6 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Sleeper;
+
+import java.time.Duration;
 
 public class SampleTest {
     protected static WebDriver driver;
@@ -20,8 +23,8 @@ public class SampleTest {
 
     @Test
     public void openPage() {
-        driver.get("https://yandex.ru/");
-        logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
+        driver.get("https://www.dns-shop.ru/");
+        logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru/");
     }
 
     @AfterEach
