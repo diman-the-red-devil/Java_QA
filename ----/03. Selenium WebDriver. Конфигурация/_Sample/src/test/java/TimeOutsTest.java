@@ -13,7 +13,7 @@ public class TimeOutsTest {
     protected static WebDriver driver;
     private Logger logger = LogManager.getLogger(TimeOutsTest.class);
 
-    // Читаем передаваемый параметр browser (-Dbrowser)
+    // Чтение передаваемого параметра browser (-Dbrowser)
     String env = System.getProperty("browser", "chrome");
 
     @BeforeEach
@@ -25,16 +25,18 @@ public class TimeOutsTest {
 
     @Test
     public void timeOutsTest1() {
+        // Ожидание загрузки страницы в 60 секунд
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-        driver.get("https://yandex.ru/");
-        logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
+        driver.get("https://www.dns-shop.ru/");
+        logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru/");
     }
 
     @Test
     public void timeOutsTest2() {
+        // Ожидание загрузки страницы в 1 миллисекунду
         driver.manage().timeouts().pageLoadTimeout(1, TimeUnit.MILLISECONDS);
-        driver.get("https://yandex.ru/");
-        logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
+        driver.get("https://www.dns-shop.ru/");
+        logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru/");
     }
 
     @AfterEach

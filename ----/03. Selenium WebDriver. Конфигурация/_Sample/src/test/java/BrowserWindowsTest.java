@@ -9,7 +9,7 @@ public class BrowserWindowsTest {
     protected static WebDriver driver;
     private Logger logger = LogManager.getLogger(BrowserWindowsTest.class);
 
-    // Читаем передаваемый параметр browser (-Dbrowser)
+    // Чтение передаваемого параметра browser (-Dbrowser)
     String env = System.getProperty("browser", "chrome");
 
     @BeforeEach
@@ -21,16 +21,17 @@ public class BrowserWindowsTest {
 
     @Test
     public void browserWindowsTest() {
-        // Отображение окна браузера в полноэкранном режиме
         driver.get("https://yandex.ru/");
-        driver.manage().window().fullscreen();
         logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
+
+        // Отображение окна браузера в полноэкранном режиме
+        driver.manage().window().fullscreen();
 
         // Отображение размеров окна браузера
         logger.info(String.format("Browser Window Height: %d", driver.manage().window().getSize().getHeight()));
         logger.info(String.format("Browser Window Width: %d", driver.manage().window().getSize().getWidth()));
 
-        // Добавляем задержку sleep чтобы увидеть результат
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
