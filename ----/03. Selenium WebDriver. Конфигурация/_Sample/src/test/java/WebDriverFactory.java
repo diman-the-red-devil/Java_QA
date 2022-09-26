@@ -47,7 +47,7 @@ public class WebDriverFactory {
              */
             // Ответ по умолчанию, если введено некорректное название браузера
             default:
-                throw new RuntimeException("Incorrect browser name");
+                throw new RuntimeException("Введено некорректное название браузера");
         }
     }
 }

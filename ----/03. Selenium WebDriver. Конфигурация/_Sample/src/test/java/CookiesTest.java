@@ -28,10 +28,10 @@ public class CookiesTest {
         logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru/");
 
         // Создание куки Cookie 1
-        logger.info("Куки, которое добавили мы");
         driver.manage().addCookie(new Cookie("Cookie 1", "This Is Cookie 1"));
 
         // Вывод информации по куки Cookie 1
+        logger.info("Куки, которое добавили мы");
         Cookie cookie1  = driver.manage().getCookieNamed("Cookie 1");
         logger.info(String.format("Domain: %s", cookie1.getDomain()));
         logger.info(String.format("Expiry: %s",cookie1.getExpiry()));

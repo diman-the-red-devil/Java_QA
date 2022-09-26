@@ -20,16 +20,50 @@ public class BrowserWindowsTest {
     }
 
     @Test
-    public void browserWindowsTest() {
-        driver.get("https://yandex.ru/");
-        logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
+    public void browserWindowsTest1() {
+        driver.get("https://www.dns-shop.ru/");
+        logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru/");
 
         // Отображение окна браузера в полноэкранном режиме
         driver.manage().window().fullscreen();
+        logger.info(String.format("Ширина окна: %d", driver.manage().window().getSize().getWidth()));
+        logger.info(String.format("Высота окна: %d", driver.manage().window().getSize().getHeight()));
 
-        // Отображение размеров окна браузера
-        logger.info(String.format("Browser Window Height: %d", driver.manage().window().getSize().getHeight()));
-        logger.info(String.format("Browser Window Width: %d", driver.manage().window().getSize().getWidth()));
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void browserWindowsTest2() {
+        driver.get("https://www.dns-shop.ru/");
+        logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru/");
+
+        // Отображение окна браузера в развернутом виде
+        driver.manage().window().maximize();
+        logger.info(String.format("Ширина окна: %d", driver.manage().window().getSize().getWidth()));
+        logger.info(String.format("Высота окна: %d", driver.manage().window().getSize().getHeight()));
+
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void browserWindowsTest3() {
+        driver.get("https://www.dns-shop.ru/");
+        logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru/");
+
+        // Отображение окна браузера в свернутом виде
+        driver.manage().window().minimize();
+        logger.info(String.format("Ширина окна: %d", driver.manage().window().getSize().getWidth()));
+        logger.info(String.format("Высота окна: %d", driver.manage().window().getSize().getHeight()));
 
         // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
