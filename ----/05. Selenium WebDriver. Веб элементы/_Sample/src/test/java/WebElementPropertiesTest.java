@@ -52,7 +52,7 @@ public class WebElementPropertiesTest {
         int width = size.getWidth();
         logger.info("Size: height = " + height + " width = " + width);
         Assertions.assertTrue(height == 21, "Значение height != 21!");
-        Assertions.assertTrue(width == 124, "Значение width != 124!");
+        Assertions.assertTrue(width == 128, "Значение width != 128!");
     }
 
     @Test
@@ -66,8 +66,8 @@ public class WebElementPropertiesTest {
         int x = location.getX();
         int y = location.getY();
         logger.info("Location: x = " + x + " y = " + y);
-        Assertions.assertTrue(x == 136, "Значение x != 136!");
-        Assertions.assertTrue(y == 275, "Значение y != 2751");
+        Assertions.assertTrue(x == 135, "Значение x != 135!");
+        Assertions.assertTrue(y == 275, "Значение y != 275!");
     }
 
     @Test
@@ -84,13 +84,13 @@ public class WebElementPropertiesTest {
         int width = size.getWidth();
         logger.info("Size: height = " + height + " width = " + width);
         Assertions.assertTrue(height == 21, "Значение height != 21!");
-        Assertions.assertTrue(width == 124, "Значение width != 124!");
+        Assertions.assertTrue(width == 128, "Значение width != 128!");
 
         Point location = rect.getPoint();
         int x = location.getX();
         int y = location.getY();
         logger.info("Location: x = " + x + " y = " + y);
-        Assertions.assertTrue(x == 136, "Значение x != 136!");
+        Assertions.assertTrue(x == 135, "Значение x != 135!");
         Assertions.assertTrue(y == 275, "Значение y != 275!");
     }
 

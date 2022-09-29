@@ -35,7 +35,7 @@ public class WebElementsDifficultActionsTest {
         String text = element.getText();
         logger.info("Text: " + text);
         Assertions.assertTrue(text.equals("Dont release me!!!"));
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -57,7 +57,7 @@ public class WebElementsDifficultActionsTest {
         String text = element.getText();
         logger.info("Text: " + text);
         Assertions.assertTrue(text.equals("Dont release me!!!"));
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -80,7 +80,7 @@ public class WebElementsDifficultActionsTest {
         String text = element.getText();
         logger.info("Text: " + text);
         Assertions.assertTrue(text.equals("Well done! keep holding that click now....."));
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -102,7 +102,7 @@ public class WebElementsDifficultActionsTest {
         String text = element.getText();
         logger.info("Text: " + text);
         Assertions.assertTrue(text.equals("Well done! keep holding that click now....."));
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -122,7 +122,7 @@ public class WebElementsDifficultActionsTest {
                 .moveToElement(element)
                 .contextClick()
                 .perform();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -141,7 +141,7 @@ public class WebElementsDifficultActionsTest {
         actions
                 .contextClick(element)
                 .perform();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -161,7 +161,7 @@ public class WebElementsDifficultActionsTest {
                 .moveToElement(element)
                 .doubleClick()
                 .perform();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -183,7 +183,7 @@ public class WebElementsDifficultActionsTest {
         String color = element.getCssValue("background-color");
         logger.info("Color: " + color);
         Assertions.assertTrue(color.equals("rgba(147, 203, 90, 1)"));
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -206,7 +206,7 @@ public class WebElementsDifficultActionsTest {
         String text = target.getText();
         logger.info("Text: " + text);
         Assertions.assertTrue(text.equals("Dropped!"));
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -229,7 +229,7 @@ public class WebElementsDifficultActionsTest {
         String text = target.getText();
         logger.info("Text: " + text);
         Assertions.assertTrue(text.equals("Dropped!"));
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -251,7 +251,7 @@ public class WebElementsDifficultActionsTest {
                 .sendKeys("kiwi")
                 .keyUp(Keys.SHIFT)
                 .perform();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -272,6 +272,7 @@ public class WebElementsDifficultActionsTest {
                 .sendKeys(element, "kiwi")
                 .keyUp(element, Keys.SHIFT)
                 .perform();
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -292,7 +293,7 @@ public class WebElementsDifficultActionsTest {
                 .moveByOffset(0, 30)
                 .click()
                 .perform();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -311,7 +312,7 @@ public class WebElementsDifficultActionsTest {
         actions
                 .moveToElement(element)
                 .perform();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -330,7 +331,7 @@ public class WebElementsDifficultActionsTest {
         actions
                 .moveToElement(element, 0, 10)
                 .perform();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -351,7 +352,7 @@ public class WebElementsDifficultActionsTest {
                 .pause(600)
                 .release()
                 .perform();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -373,7 +374,7 @@ public class WebElementsDifficultActionsTest {
                 .pause(600)
                 .release(element)
                 .perform();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {

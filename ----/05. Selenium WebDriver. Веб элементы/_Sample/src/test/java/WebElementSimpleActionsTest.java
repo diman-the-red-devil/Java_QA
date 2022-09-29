@@ -25,7 +25,7 @@ public class WebElementSimpleActionsTest {
         WebElement element = driver.findElement(By.name("Save"));
         // Нажатие на элемент
         element.click();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -41,7 +41,7 @@ public class WebElementSimpleActionsTest {
         WebElement element = driver.findElement(By.name("Initial"));
         // Ввод текста
         element.sendKeys("Initial");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -58,7 +58,7 @@ public class WebElementSimpleActionsTest {
         element.sendKeys("Initial");
         // Удаление текста
         element.clear();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
@@ -74,7 +74,7 @@ public class WebElementSimpleActionsTest {
         WebElement element = driver.findElement(By.name("Initial"));
         // Отправка данных формы
         element.submit();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
