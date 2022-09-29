@@ -19,7 +19,7 @@ public class RelativeLocatorsTypesTest {
     }
 
     @Test
-    public void searchAboveElementTest(){
+    public void searchAboveElementTest() {
         driver.get("https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
@@ -28,7 +28,7 @@ public class RelativeLocatorsTypesTest {
                         .with(By.xpath("//label[text()=\"Option 1\"]"))
                         .above(By.xpath("//label[text()=\"Option 2\"]")));
         logger.info("WebElement: " + element.getTagName());
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -37,7 +37,7 @@ public class RelativeLocatorsTypesTest {
     }
 
     @Test
-    public void searchBelowElementTest(){
+    public void searchBelowElementTest() {
         driver.get("https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
@@ -46,7 +46,7 @@ public class RelativeLocatorsTypesTest {
                 .with(By.xpath("//label[text()=\"Option 2\"]"))
                 .below(By.xpath("//label[text()=\"Option 1\"]")));
         logger.info("WebElement: " + element.getTagName());
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -55,7 +55,7 @@ public class RelativeLocatorsTypesTest {
     }
 
     @Test
-    public void searchToLeftOfElementTest(){
+    public void searchToLeftOfElementTest() {
         driver.get("https://webdriveruniversity.com/Data-Table/index.html");
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://webdriveruniversity.com/Data-Table/index.html");
@@ -64,7 +64,7 @@ public class RelativeLocatorsTypesTest {
                 .with(By.xpath("//button[text()=\"Button-1\"]"))
                 .toLeftOf(By.xpath("//button[text()=\"Button-3\"]")));
         logger.info("WebElement: " + element.getTagName());
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -73,7 +73,7 @@ public class RelativeLocatorsTypesTest {
     }
 
     @Test
-    public void searchToRightOfElementTest(){
+    public void searchToRightOfElementTest() {
         driver.get("https://webdriveruniversity.com/Data-Table/index.html");
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://webdriveruniversity.com/Data-Table/index.html");
@@ -82,7 +82,7 @@ public class RelativeLocatorsTypesTest {
                 .with(By.xpath("//button[text()=\"Button-3\"]"))
                 .toRightOf(By.xpath("//button[text()=\"Button-1\"]")));
         logger.info("WebElement: " + element.getTagName());
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -91,7 +91,7 @@ public class RelativeLocatorsTypesTest {
     }
 
     @Test
-    public void searchNearElementTest(){
+    public void searchNearElementTest() {
         driver.get("https://webdriveruniversity.com/Data-Table/index.html");
         logger.info("Открыта страница demosite.executeautomation.com - " +
                 "https://webdriveruniversity.com/Data-Table/index.html");
@@ -100,7 +100,7 @@ public class RelativeLocatorsTypesTest {
                 .with(By.xpath("//button[text()=\"Button-2\"]"))
                 .near(By.xpath("//button[text()=\"Button-1\"]")));
         logger.info("WebElement: " + element.getTagName());
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
