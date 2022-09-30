@@ -22,16 +22,18 @@ public class PageLoadStrategyTest {
         // Устанавливаем стратегию загрузки страницы - NORMAL
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         WebDriver driver = new EdgeDriver(options);
-
+        // Время. Начало
         long start = System.currentTimeMillis();
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница DNS - https://www.dns-shop.ru/");
         WebElement element = driver.findElement(By.xpath("//a[text()=\"Магазины\"]"));
         element.click();
+        // Время. Конец
         long finish = System.currentTimeMillis();
+        // Затраченное время
         long time = finish - start;
         logger.info("Затраченное время: " + (time / 1000) + " секунд");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -53,16 +55,18 @@ public class PageLoadStrategyTest {
         // Устанавливаем стратегию загрузки страницы - EAGER
         options.setPageLoadStrategy(PageLoadStrategy.EAGER);
         WebDriver driver = new EdgeDriver(options);
-
+        // Время. Начало
         long start = System.currentTimeMillis();
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница DNS - https://www.dns-shop.ru/");
         WebElement element = driver.findElement(By.xpath("//a[text()=\"Магазины\"]"));
         element.click();
+        // Время. Конец
         long finish = System.currentTimeMillis();
+        // Затраченное время
         long time = finish - start;
         logger.info("Затраченное время: " + (time / 1000) + " секунд");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -86,12 +90,15 @@ public class PageLoadStrategyTest {
         WebDriver driver = new EdgeDriver(options);
 
         try {
+            // Время. Начало
             long start = System.currentTimeMillis();
             driver.get("https://www.dns-shop.ru/");
             logger.info("Открыта страница DNS - https://www.dns-shop.ru/");
             WebElement element = driver.findElement(By.xpath("//a[text()=\"Магазины\"]"));
             element.click();
+            // Время. Конец
             long finish = System.currentTimeMillis();
+            // Затраченное время
             long time = finish - start;
             logger.info("Затраченное время: " + (time / 1000) + " секунд");
         } catch (Exception e) {

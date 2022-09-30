@@ -33,7 +33,7 @@ public class CustomExpectedConditionTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         wait.until(new AlertExpectedCondition());
         logger.info("Алерт отобразился!");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -66,7 +66,7 @@ public class CustomExpectedConditionTest {
             }
         });
         logger.info("Алерт отобразился!");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {

@@ -39,7 +39,7 @@ public class FluentWaitTest {
                 .ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.alertIsPresent());
         logger.info("Алерт отобразился!");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {

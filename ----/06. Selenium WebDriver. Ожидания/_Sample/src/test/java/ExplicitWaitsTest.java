@@ -38,7 +38,7 @@ public class ExplicitWaitsTest {
         WebElement divManualTesting = driver.findElement(divManualTestingXpath);
         wait.until(ExpectedConditions.attributeToBe(divManualTesting, "style", "max-height: 70px;"));
         logger.info("Гармошка раскрыта!");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -59,7 +59,7 @@ public class ExplicitWaitsTest {
         // Проставить чекбокс [Option 1]
         chbOption1.click();
         logger.info("Чекбокс проставлен!");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -80,7 +80,7 @@ public class ExplicitWaitsTest {
         List<WebElement> chbOption = driver.findElements(chbOptionXpath);
         int count = chbOption.size();
         logger.info("Чекбоксов имеющих текст [Option]: " + count);
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -106,7 +106,7 @@ public class ExplicitWaitsTest {
         for (WebElement element : divAutoComplete) {
             logger.info("Подсказка: " + element.getAttribute("value"));
         }
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -141,7 +141,7 @@ public class ExplicitWaitsTest {
         // Подождать отсутствие подсказки Cabbage
         wait.until(ExpectedConditions.stalenessOf(divCabbage));
         logger.info("Подсказка Cabbage отсутствует");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -168,7 +168,7 @@ public class ExplicitWaitsTest {
         WebElement optJava = driver.findElement(optJavaXpath);
         optJava.click();
         logger.info("Выбран вариант для выбора [Python]");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -186,7 +186,7 @@ public class ExplicitWaitsTest {
         By divSpanXpath = By.xpath("//div/span[1]");
         wait.until(ExpectedConditions.invisibilityOfElementLocated(divSpanXpath));
         logger.info("Не отображается элемент [Not Displayed]");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -208,7 +208,7 @@ public class ExplicitWaitsTest {
         wait.until(ExpectedConditions.textToBe(divPXpath, "LOADING COMPLETE."));
         // Вывести текст в блоке с @id="text-appear-box"
         logger.info("Текст в блоке @id=\"text-appear-box\": " + divP.getText());
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -226,7 +226,7 @@ public class ExplicitWaitsTest {
         wait.until(ExpectedConditions.titleContains("WebDriverUniversity.com"));
         // Вывести заголовок страницы
         logger.info("Заголовок страницы: " + driver.getTitle());
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -248,7 +248,7 @@ public class ExplicitWaitsTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         wait.until(ExpectedConditions.alertIsPresent());
         logger.info("Алерт отобразился!");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -267,7 +267,7 @@ public class ExplicitWaitsTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe));
         logger.info("Выполнено переключение на фрейм");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -284,7 +284,7 @@ public class ExplicitWaitsTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         wait.until(ExpectedConditions.numberOfWindowsToBe(1));
         logger.info("Открыто одно окно");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -302,7 +302,7 @@ public class ExplicitWaitsTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         wait.until(ExpectedConditions.javaScriptThrowsNoExceptions(jsScript));
         logger.info("Выполнение JS скрипта успешно");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -323,7 +323,7 @@ public class ExplicitWaitsTest {
                 ExpectedConditions.numberOfWindowsToBe(1),
                 ExpectedConditions.frameToBeAvailableAndSwitchToIt(iframe)));
         logger.info("Открыто одно окно и выполнено переключение на фрейм");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
