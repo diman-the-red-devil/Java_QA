@@ -29,9 +29,9 @@ public class WindowPropertiesTest {
         // Установка полноэкранного режима окна браузера
         driver.manage().window().fullscreen();
         logger.info("Окно переведено в полноэкранный режим");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
-            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(10));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -50,7 +50,7 @@ public class WindowPropertiesTest {
         // Размеры окна
         Dimension size = driver.manage().window().getSize();
         logger.info("Размеры окна: [" + size.getWidth() + ", " + size.getHeight() + "]");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -63,7 +63,7 @@ public class WindowPropertiesTest {
         // Открыть страницу https://devqa.io/
         driver.get("https://devqa.io/");
         logger.info("Открыта страница devqa.io - https://devqa.io/");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -86,7 +86,7 @@ public class WindowPropertiesTest {
         // Размеры окна
         Dimension newSize = new Dimension(1520, 680);
         driver.manage().window().setSize(newSize);
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -108,7 +108,7 @@ public class WindowPropertiesTest {
         // Открыть страницу https://devqa.io/
         driver.get("https://devqa.io/");
         logger.info("Открыта страница devqa.io - https://devqa.io/");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -127,7 +127,7 @@ public class WindowPropertiesTest {
         // Максимизация окна
         driver.manage().window().maximize();
         logger.info("Максимизация окна");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -146,7 +146,7 @@ public class WindowPropertiesTest {
         // Минимизация окна
         driver.manage().window().minimize();
         logger.info("Минимизация окна");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {

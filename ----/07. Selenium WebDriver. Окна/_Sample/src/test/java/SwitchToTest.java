@@ -32,7 +32,7 @@ public class SwitchToTest {
         // Ввести текста в поле для поиска
         inputSearch.sendKeys("Selenium");
         logger.info("Ввод текста в поле для поиска");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -51,7 +51,7 @@ public class SwitchToTest {
         WebElement btnSimpleAlert = driver
                 .findElement(By.xpath("//h2[text()=\"JavaScript Alert\"]/following-sibling::div/span"));
         btnSimpleAlert.click();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
         } catch (InterruptedException e) {
@@ -61,7 +61,7 @@ public class SwitchToTest {
         Alert alertSimpleAlert = driver.switchTo().alert();
         alertSimpleAlert.accept();
         logger.info("Переключение на модальное окно Simple Alert");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
         } catch (InterruptedException e) {
@@ -72,7 +72,7 @@ public class SwitchToTest {
         WebElement btnConfirmationAlert = driver
                 .findElement(By.xpath("//h2[text()=\"JavaScript Confirm Box\"]/following-sibling::div/span"));
         btnConfirmationAlert.click();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
         } catch (InterruptedException e) {
@@ -82,7 +82,7 @@ public class SwitchToTest {
         Alert alertConfirmationAlert = driver.switchTo().alert();
         alertConfirmationAlert.accept();
         logger.info("Переключение на модальное окно Confirmation Alert");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
         } catch (InterruptedException e) {
@@ -104,7 +104,7 @@ public class SwitchToTest {
                 .frame(frame)
                 .findElement(By.xpath("//button[@id=\"button-find-out-more\"]"));
         btnInFrame.click();
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
         } catch (InterruptedException e) {
@@ -133,7 +133,7 @@ public class SwitchToTest {
         // Переключиться на старое окно
         driver.switchTo().window(oldWindow);
         logger.info("Переключение на старое окно:\n" + driver.getWindowHandle());
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
         } catch (InterruptedException e) {

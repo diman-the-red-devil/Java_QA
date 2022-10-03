@@ -29,7 +29,7 @@ public class NavigationTest {
         WebElement link1 = driver.findElement(By.xpath("//a[contains(text(), \"How to Use the Linux find Command to Find Files\")]"));
         link1.click();
         logger.info("Нажата ссылка \"How to Use the Linux find Command to Find Files\"");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -40,7 +40,7 @@ public class NavigationTest {
         WebElement link2 = driver.findElement(By.xpath("//a[contains(text(), \"Development\")]"));
         link2.click();
         logger.info("Нажата ссылка \"Development\"");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -50,7 +50,7 @@ public class NavigationTest {
         // Перейти Назад на предыдущую страницу
         driver.navigate().back();
         logger.info("Выполнен переход Назад по Истории");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -67,7 +67,7 @@ public class NavigationTest {
         WebElement link1 = driver.findElement(By.xpath("//a[contains(text(), \"How to Use the Linux find Command to Find Files\")]"));
         link1.click();
         logger.info("Нажата ссылка \"How to Use the Linux find Command to Find Files\"");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -78,7 +78,7 @@ public class NavigationTest {
         WebElement link2 = driver.findElement(By.xpath("//a[contains(text(), \"Development\")]"));
         link2.click();
         logger.info("Нажата ссылка \"Development\"");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -88,7 +88,7 @@ public class NavigationTest {
         // Перейти Назад на предыдущую страницу
         driver.navigate().back();
         logger.info("Выполнен переход Назад по Истории");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -98,7 +98,7 @@ public class NavigationTest {
         // Перейти Вперед на следующую страницу
         driver.navigate().forward();
         logger.info("Выполнен переход Вперед по Истории");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -111,7 +111,7 @@ public class NavigationTest {
         // Открыть страницу https://devqa.io/
         driver.get("https://devqa.io/");
         logger.info("Открыта страница devqa.io - https://devqa.io/");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -121,7 +121,7 @@ public class NavigationTest {
         // Обновить страницу
         driver.navigate().refresh();
         logger.info("Выполнено обновление страницы");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -134,7 +134,7 @@ public class NavigationTest {
         // Открыть страницу https://devqa.io/
         driver.get("https://devqa.io/");
         logger.info("Открыта страница devqa.io - https://devqa.io/");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
@@ -144,7 +144,7 @@ public class NavigationTest {
         // Загрузить новую страницу
         driver.navigate().to("https://devqa.io/tag/qa/");
         logger.info("Выполнена загрузка новой страницы devqa.io - https://devqa.io/tag/qa/");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(3));
         } catch (InterruptedException e) {
