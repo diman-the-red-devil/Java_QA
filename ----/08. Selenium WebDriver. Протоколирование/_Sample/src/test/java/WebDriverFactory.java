@@ -35,9 +35,7 @@ public class WebDriverFactory {
             case "edge" :
                 WebDriverManager.edgedriver().setup();
                 logger.info("Драйвер для браузера Microsoft Edge");
-                EdgeOptions edgeOptions = new EdgeOptions();
-                edgeOptions.addArguments("--start-maximized");
-                return new EdgeDriver(edgeOptions);
+                return new EdgeDriver();
             case "explorer" :
                 WebDriverManager.iedriver().setup();
                 logger.info("Драйвер для браузера Microsoft Internet Explorer");

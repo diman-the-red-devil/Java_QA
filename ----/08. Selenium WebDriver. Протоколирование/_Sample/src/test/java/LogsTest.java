@@ -24,7 +24,7 @@ public class LogsTest {
 
     @BeforeEach
     public void setUp() {
-        driver = WebDriverFactory.getDriver("edge");
+        driver = WebDriverFactory.getDriver("chrome");
         logger.info("Драйвер стартовал!");
     }
 
@@ -41,11 +41,11 @@ public class LogsTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
@@ -66,11 +66,11 @@ public class LogsTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);

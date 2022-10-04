@@ -8,6 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.Sleeper;
+
+import java.time.Duration;
 
 
 public class ListenersTest {
@@ -22,33 +25,33 @@ public class ListenersTest {
 
     @Test
     public void listenerSelenium3Test() {
+        // Регистрация слушателя событий
         Selenium3Listener listener = new Selenium3Listener();
         EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver);
         eventFiringWebDriver.register(listener);
-
         // Открыть страницу https://www.dns-shop.ru/
         eventFiringWebDriver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = eventFiringWebDriver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
     }
 
     @Test
     public void listenerSelenium4Test() {
+        // Регистрация слушателя событий
         Selenium4Listener listener = new Selenium4Listener();
         WebDriver eventFiringWebDriver = new EventFiringDecorator(listener).decorate(driver);
-
         // Открыть страницу https://www.dns-shop.ru/
         eventFiringWebDriver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = eventFiringWebDriver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
     }
 
     @AfterEach

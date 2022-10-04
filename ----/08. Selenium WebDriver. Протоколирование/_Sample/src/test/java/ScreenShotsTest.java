@@ -4,6 +4,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Sleeper;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.comparison.ImageDiff;
@@ -17,6 +20,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 public class ScreenShotsTest {
     protected static WebDriver driver;
@@ -33,11 +37,17 @@ public class ScreenShotsTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
@@ -59,11 +69,17 @@ public class ScreenShotsTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
@@ -71,7 +87,7 @@ public class ScreenShotsTest {
         logger.info("Нажата ссылка \"Бытовая техника\"");
         // Сделать скриншот веб элемента
         try {
-            By divSubcategoryXPath = By.xpath("//div[@class=\"subcategory\"]");
+            By divSubcategoryXPath = By.xpath("//div[@class=\"subcategory__item-container \"]");
             WebElement divSubcategory = driver.findElement(divSubcategoryXPath);
             File file = divSubcategory.getScreenshotAs(OutputType.FILE);
             BufferedImage viewablePageImage = ImageIO.read(file);
@@ -87,11 +103,17 @@ public class ScreenShotsTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
@@ -99,7 +121,7 @@ public class ScreenShotsTest {
         logger.info("Нажата ссылка \"Бытовая техника\"");
         // Сделать скриншот веб элемента вырезанный из видимой области веб страницы
         try {
-            By divSubcategoryXPath = By.xpath("//div[@class=\"subcategory\"]");
+            By divSubcategoryXPath = By.xpath("//div[@class=\"subcategory__item-container \"]");
             WebElement divSubcategory = driver.findElement(divSubcategoryXPath);
             Point location = divSubcategory.getLocation();
             Dimension size = divSubcategory.getSize();
@@ -120,11 +142,17 @@ public class ScreenShotsTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
@@ -145,11 +173,17 @@ public class ScreenShotsTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
@@ -172,11 +206,17 @@ public class ScreenShotsTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
@@ -184,7 +224,7 @@ public class ScreenShotsTest {
         logger.info("Нажата ссылка \"Бытовая техника\"");
         // Сделать скриншот веб элемента
         try {
-            By divSubcategoryXPath = By.xpath("//div[@class=\"subcategory\"]");
+            By divSubcategoryXPath = By.xpath("//div[@class=\"subcategory__item-container \"]");
             WebElement divSubcategory = driver.findElement(divSubcategoryXPath);
             Screenshot screenshot = new AShot()
                     .coordsProvider(new WebDriverCoordsProvider())
@@ -201,11 +241,17 @@ public class ScreenShotsTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
@@ -232,11 +278,17 @@ public class ScreenShotsTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
@@ -244,7 +296,7 @@ public class ScreenShotsTest {
         logger.info("Нажата ссылка \"Бытовая техника\"");
         // Сделать скриншот с эффектом
         try {
-            By divSubcategoryXPath = By.xpath("//div[@class=\"subcategory\"]");
+            By divSubcategoryXPath = By.xpath("//div[@class=\"subcategory__item-container \"]");
             WebElement divSubcategory = driver.findElement(divSubcategoryXPath);
             Screenshot screenshot = new AShot()
                     .imageCropper(new IndentCropper()

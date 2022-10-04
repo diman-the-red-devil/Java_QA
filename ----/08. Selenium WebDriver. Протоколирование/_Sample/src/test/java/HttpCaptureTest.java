@@ -17,11 +17,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.Sleeper;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.Inet4Address;
 import java.net.UnknownHostException;
+import java.time.Duration;
 import java.util.List;
 
 
@@ -73,12 +75,17 @@ public class HttpCaptureTest {
         // Открыть страницу https://www.dns-shop.ru/
         driver.get("https://www.dns-shop.ru/");
         logger.info("Открыта страница dns-shop.ru - https://www.dns-shop.ru/");
-        // Нажать на ссылку "Да"
-        By linkYesXPath = By.xpath("//a[text()=\"Да\"]");
-        WebElement linkYes = driver.findElement(linkYesXPath);
-        linkYes.click();
-        logger.info("Нажата ссылка \"Да\"");
-
+        // Нажать на кнопку "Всё верно"
+        By btnYesXPath = By.xpath("(//span[text()=\"Всё верно\"])[1]");
+        WebElement btnYes = driver.findElement(btnYesXPath);
+        btnYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Чтение данных прокси
         Har har = proxy.getHar();
         File harFile = new File("dns-shop.har");
