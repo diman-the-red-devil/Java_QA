@@ -3,10 +3,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.opera.OperaDriver;
 
 public class WebDriverFactory {
     private static Logger logger = LogManager.getLogger(WebDriverFactory.class);
@@ -16,7 +16,9 @@ public class WebDriverFactory {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 logger.info("Драйвер для браузера Google Chrome");
-                return new ChromeDriver();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--start-maximized");
+                return new ChromeDriver(chromeOptions);
             case "firefox" :
                 WebDriverManager.firefoxdriver().setup();
                 logger.info("Драйвер для браузера Mozilla Firefox");
@@ -29,10 +31,6 @@ public class WebDriverFactory {
                 WebDriverManager.iedriver().setup();
                 logger.info("Драйвер для браузера Microsoft Internet Explorer");
                 return new InternetExplorerDriver();
-            case "opera" :
-                WebDriverManager.operadriver().setup();
-                logger.info("Драйвер для браузера Opera");
-                return new OperaDriver();
 
             default:
                 throw new RuntimeException("Incorrect browser name");

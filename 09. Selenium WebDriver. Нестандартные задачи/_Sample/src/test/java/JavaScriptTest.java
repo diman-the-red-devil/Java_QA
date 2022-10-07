@@ -33,7 +33,7 @@ public class JavaScriptTest {
         String script = "arguments[0].click();";
         js.executeScript(script, button1);
         logger.info("Нажата кнопка");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -56,7 +56,7 @@ public class JavaScriptTest {
             String text = js.executeScript(script, section).toString();
             logger.info("Текст: \n" + text);
         }
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -69,7 +69,7 @@ public class JavaScriptTest {
         // Открыть страницу webdriveruniversity.com
         driver.get("https://webdriveruniversity.com/Data-Table/index.html");
         logger.info("Открыта страница webdriveruniversity.com - " + "https://webdriveruniversity.com/Data-Table/index.html");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -81,7 +81,7 @@ public class JavaScriptTest {
         String script1 = "window.scrollBy(0,500);";
         js.executeScript(script1);
         logger.info("Проскроллено вниз на 500px");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -92,7 +92,7 @@ public class JavaScriptTest {
         String script2 = "window.scrollBy(500,1000);";
         js.executeScript(script2);
         logger.info("Проскроллено вниз на 500px");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -106,7 +106,7 @@ public class JavaScriptTest {
         driver.get("https://webdriveruniversity.com/Hidden-Elements/index.html");
         logger.info("Открыта страница webdriveruniversity.com - " + "https://webdriveruniversity.com/Hidden-Elements/index.html");
         logger.info("Кнопка прозрачная");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -124,7 +124,7 @@ public class JavaScriptTest {
         // Клик по элементу
         divOpacityZero.click();
         logger.info("Нажата кнопка");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -138,7 +138,7 @@ public class JavaScriptTest {
         driver.get("https://webdriveruniversity.com/Hidden-Elements/index.html");
         logger.info("Открыта страница webdriveruniversity.com - " + "https://webdriveruniversity.com/Hidden-Elements/index.html");
         logger.info("Кнопка невидимая");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -156,7 +156,7 @@ public class JavaScriptTest {
         // Клик по элементу
         divVisibilityHidden.click();
         logger.info("Нажата кнопка");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -170,7 +170,7 @@ public class JavaScriptTest {
         driver.get("https://webdriveruniversity.com/Hidden-Elements/index.html");
         logger.info("Открыта страница webdriveruniversity.com - " + "https://webdriveruniversity.com/Hidden-Elements/index.html");
         logger.info("Кнопка неотображаемая");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -188,7 +188,7 @@ public class JavaScriptTest {
         // Клик по элементу
         divDisplayNone.click();
         logger.info("Нажата кнопка");
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -207,7 +207,7 @@ public class JavaScriptTest {
         WebElement spanBtn = driver.findElement(By.xpath(spanBtnXpath));
         String colorBefore = spanBtn.getCssValue("background-color");
         logger.info("Цвет кнопки до - " + colorBefore);
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -222,7 +222,7 @@ public class JavaScriptTest {
         // Цвет кнопки после
         String colorAfter= spanBtn.getCssValue("background-color");
         logger.info("Цвет кнопки после - " + colorAfter);
-
+        // Добавление задержки Thread.sleep, чтобы увидеть результат
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {

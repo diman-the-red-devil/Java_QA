@@ -26,7 +26,7 @@ public class PdfTest {
 
     @BeforeEach
     public void setUp() {
-        driver = WebDriverFactory.getDriver("firefox");
+        driver = WebDriverFactory.getDriver("chrome");
         logger.info("Драйвер стартовал!");
     }
 
