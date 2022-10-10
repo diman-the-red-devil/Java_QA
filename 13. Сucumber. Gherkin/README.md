@@ -1,6 +1,26 @@
-Java_QA / Level 2. Medium - Продвинутые темы / Урок 04. BDD. Сucumber
+Java_QA / 13. Сucumber. Gherkin
+
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
+
+***
+
+# Содержание
+
+* [Цель](#цель)
+* [Результаты](#результаты)
+* [Лекция](#лекция)
+* [Практика](#практика)
+* [Задание](#задание)
+* [Ссылки](#ссылки)
+
+***
 
 # Цель
+
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 
 1. Изучить фреймворк Cucumber
 2. Научиться создавать и настраивать проект с Cucumber
@@ -19,16 +39,44 @@ Java_QA / Level 2. Medium - Продвинутые темы / Урок 04. BDD. 
 
 ***
 
-# Содержание
+# Лекция
 
-## Лекция [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](1.%20Лекция.md)
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
 
-[1. Cucumber](1.%20Лекция.md#1-cucumber)
+* []()
+* []()
 
-[2. Структура проекта Cucumber](1.%20Лекция.md#2-Структура-проекта-Cucumber)
+***
 
-## Практика [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](2.%20Практика.md)
+# Практика
 
-## Задание [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](3.%20Задание.md)
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
 
-## Ссылки [![Перейти](https://img.shields.io/badge/-%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8-blue)](4.%20Ссылки.md)
+* []()
+* []()
+
+***
+
+# Задание
+
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+
+* []()
+* []()
+
+***
+
+# Ссылки
+
+[![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
+
+***
+
+[![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
+[![Практика](https://img.shields.io/badge/-Практика-aaffaa)](2.%20Практика.md)
+[![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
+[![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
