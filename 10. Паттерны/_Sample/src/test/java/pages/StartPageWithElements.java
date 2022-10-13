@@ -1,30 +1,29 @@
 package pages;
 
-import helpers.WaitFor;
+import elements.Button;
+import elements.Link;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 // Стартовая страница сайта DNS
-public class StartPage extends BasePage {
+public class StartPageWithElements extends BasePage {
     // Логгер
     private Logger logger = LogManager.getLogger(StartPage.class);
     // URL страницы
     private final String URL = "https://www.dns-shop.ru/";
 
     // ***** Локаторы *****
-    // Кнопка "Да" на всплывашке
-    String linkYesXpath = "//a[contains(text(),\"Да\")]";
+    // Кнопка "Всё верно" на всплывашке
+    String buttonYesXpath = "(//span[text()=\"Всё верно\"]/parent::button)[1]";
     // Ссылка "Смартфоны и гаджеты"
     String linkSmartsAndGadgetsXpath = "(//a[contains(text(), \"Смартфоны и гаджеты\")])[1]";
     // Ссылка "Смартфоны"
     String linkSmartsXpath = "(//a[contains(text(), \"Смартфоны и гаджеты\")])[2]/following::div/a";
 
     // Конструктор класса
-    public StartPage(WebDriver driver) {
+    public StartPageWithElements(WebDriver driver) {
         // Вызов родительского конструктора
         super(driver);
     }
@@ -40,29 +39,23 @@ public class StartPage extends BasePage {
         logger.info("Открыта страница https://www.dns-shop.ru/");
     }
 
-    // Нажатие на кнопку "Да"
-    public void linkYesClick() {
-        WaitFor.presenceOfElementLocated(By.xpath(linkYesXpath));
-        WebElement linkYes = driver.findElement(By.xpath(linkYesXpath));
-        WaitFor.clickabilityOfElement(linkYes);
-        linkYes.click();
-        logger.info("Нажата кнопка \"Да\"");
+    // Нажатие на кнопку "Всё верно"
+    public void buttonYesClick() {
+        Button buttonYes = new Button(driver, By.xpath(buttonYesXpath));
+        buttonYes.click();
+        logger.info("Нажата кнопка \"Всё верно\"");
     }
 
     // Наведение курсора мыши на ссылку "Смартфоны и гаджеты"
     public void linkSmartsAndGadgetsMove() {
-        WaitFor.presenceOfElementLocated(By.xpath(linkSmartsAndGadgetsXpath));
-        WebElement linkSmartsAndGadgets = driver.findElement(By.xpath(linkSmartsAndGadgetsXpath));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(linkSmartsAndGadgets).perform();
+        Link linkSmartsAndGadgets = new Link(driver, By.xpath(linkSmartsAndGadgetsXpath));
+        linkSmartsAndGadgets.focusOnLink();
         logger.info("Курсор мыши наведен на ссылку \"Смартфоны\"");
     }
 
     // Нажатие на ссылку "Смартфоны"
     public void linkSmartsClick() {
-        WaitFor.visibilityOfElementLocated(By.xpath(linkSmartsXpath));
-        WebElement linkSmarts = driver.findElement(By.xpath(linkSmartsXpath));
-        WaitFor.clickabilityOfElement(linkSmarts);
+        Link linkSmarts = new Link(driver, By.xpath(linkSmartsXpath));
         linkSmarts.click();
         logger.info("Нажата ссылка \"Смартфоны\"");
     }

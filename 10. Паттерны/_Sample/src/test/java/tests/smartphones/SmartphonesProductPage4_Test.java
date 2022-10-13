@@ -9,7 +9,7 @@ import tests.BaseTest;
 public class SmartphonesProductPage4_Test extends BaseTest {
     @Test
     // Проверка
-    public void selectedProduct_Is_SamsungGalaxyNote20Ultra256GBWhite() {
+    public void filterBySamsung8Gb_sortByExpansiveFirst_Test() {
         // 1. Arrange
         String product = "Samsung"; // производитель
         String ram = "8 Гб"; // объем ОП
@@ -18,7 +18,7 @@ public class SmartphonesProductPage4_Test extends BaseTest {
         SmartphoneProductPage smartphoneProductPage = getProductPage(product, ram);
 
         // 3. Assert
-        String expected = "Купить 6.7\" Смартфон Samsung Galaxy Z Flip3 256 ГБ бежевый в интернет магазине DNS. Характеристики, цена Samsung Galaxy Z Flip3 | 4845670";
+        String expected = "Купить 6.6\" Смартфон Samsung Galaxy S22+ 256 ГБ розовый в интернет магазине DNS. Характеристики, цена Samsung Galaxy S22+ | 9916150";
         SmartphoneProductPageAssert smartphoneProductAssert = new SmartphoneProductPageAssert(smartphoneProductPage);
         smartphoneProductAssert.pageTitleEquals(expected);
     }
@@ -41,7 +41,7 @@ public class SmartphonesProductPage4_Test extends BaseTest {
         // Установка сортировки "Сначала дорогие"
         smartphonesPage.rbtnExpensiveClick();
         // Прокрутка страницы вниз
-        JSExec.scrollBy(0, 300);
+        JSExec.scrollBy(0, 600);
         // Установка фильтра "Производитель"
         smartphonesPage.chbxCompanyClick(product);
         // Прокрутка страницы вниз
@@ -57,10 +57,9 @@ public class SmartphonesProductPage4_Test extends BaseTest {
         // Нажатие на кнопку "Применить"
         smartphonesPage.btnApplyClick();
         // Прокрутка страницы вверх
-        JSExec.scrollBy(0, -500);
+        JSExec.scrollBy(0, -1500);
         // Нажатие на ссылку первого продукта в списке
-        smartphonesPage.linkFirstProductClick("Смартфон Samsung Galaxy Z Flip3 256 ГБ бежевый");
-        //smartphonesPage.linkFirstProductClick("Смартфон Samsung Galaxy S20 FE 128 ГБ белый");
+        smartphonesPage.linkFirstProductClick("Смартфон Samsung Galaxy S22+ 256 ГБ розовый");
         return new SmartphoneProductPage(driver);
     }
 }
