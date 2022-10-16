@@ -185,9 +185,17 @@ Java_QA / 10. Паттерны
 [![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
 
 * [Статьи](4.%20Ссылки.md#статьи)
-  * []()
+    * [1. Паттерны проектирования в автотестировании](4.%20Ссылки.md#1-паттерны-проектирования-в-автотестировании)
+    * [2. Паттерн Page Object Model](4.%20Ссылки.md#2-паттерн-page-object-model)
+    * [3. Паттерн Arrange Act Assert](4.%20Ссылки.md#3-паттерн-arrange-act-assert)
+    * [4. Паттерн Assert Object / Matchers](4.%20Ссылки.md#4-паттерн-assert-object--matchers)
+    * [5. Паттерн Page Element](4.%20Ссылки.md#5-паттерн-page-element)
 * [YouTube](4.%20Ссылки.md#youtube)
-  * []()
+    * [1. Паттерны](4.%20Ссылки.md#1-паттерны)
+    * [2. Паттерн Page Object Model](4.%20Ссылки.md#2-паттерн-page-object-model-1)
+    * [3. Паттерн Arrange Act Assert](4.%20Ссылки.md#3-паттерн-arrange-act-assert-1)
+    * [4. Паттерн Assert Object / Matchers](4.%20Ссылки.md#4-паттерн-assert-object--matchers-1)
+
 
 ***
 
