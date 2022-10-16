@@ -196,7 +196,6 @@ Java_QA / 10. Паттерны
     * [3. Паттерн Arrange Act Assert](4.%20Ссылки.md#3-паттерн-arrange-act-assert-1)
     * [4. Паттерн Assert Object / Matchers](4.%20Ссылки.md#4-паттерн-assert-object--matchers-1)
 
-
 ***
 
 [![Лекция](https://img.shields.io/badge/-Лекция-ee99ff)](1.%20Лекция.md)
