@@ -1,12 +1,10 @@
 package pages;
 
-import helpers.JSExec;
-import helpers.WaitFor;
+import helpers.*;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
-// Базовый класс для всех объектов веб страниц
 public class BasePage {
     // Драйвер браузера
     protected static WebDriver driver;
@@ -14,9 +12,24 @@ public class BasePage {
     // Конструктор базового класса
     public BasePage(WebDriver driver) {
         BasePage.driver = driver;
-        // Инициализация ожидания - 10 секунд
-        WaitFor.initWait(driver, Duration.ofSeconds(10), Duration.ofMillis(100));
-        // Инициализация исполнителя JS скриптов
-        JSExec.initJS(driver);
+        // Инициализация ожиданий событий на странице
+        WaitHelper.init(driver, Duration.ofSeconds(10), Duration.ofMillis(100));
+        // Инициализация выполнения скриптов на JavaScript
+        JavaScriptHelper.init(driver);
+        // Инициализация выполнения сложных действий
+        ActionHelper.init(driver);
+        // Инициализация навигации в браузере
+        NavigationHelper.init(driver);
+        // Инициализация управления окнами
+        WindowHelper.init(driver);
+        // Инициализация переключения на объекты
+        SwitchHelper.init(driver);
+    }
+
+    // Получение заголовка текущей страницы
+    public String getPageTitle() {
+        String title = driver.getTitle();
+        //ogger.info("Заголовок страницы: " + title);
+        return title;
     }
 }

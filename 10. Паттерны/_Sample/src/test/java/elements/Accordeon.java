@@ -1,20 +1,20 @@
 package elements;
 
-import helpers.WaitFor;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import helpers.WaitHelper;
+import org.openqa.selenium.WebElement;
 
 // Класс "Гармошка"
 public class Accordeon extends BaseElement {
+
     // Конструктор
-    public Accordeon(WebDriver driver, By by) {
-        super(driver, by);
+    public Accordeon(WebElement webElement) {
+        super(webElement);
     }
 
     // Раскрытие гармошки
     public void show() {
-        WaitFor.visibilityOfElementLocated(by);
-        WaitFor.clickabilityOfElement(webElement);
+        // Ожидание кликабельности гармошки
+        WaitHelper.clickabilityOfElement(webElement);
         webElement.click();
     }
 }

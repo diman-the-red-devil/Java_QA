@@ -1,20 +1,20 @@
 package elements;
 
-import helpers.WaitFor;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import helpers.WaitHelper;
+import org.openqa.selenium.WebElement;
 
 // Класс "Кнопка"
 public class Button extends BaseElement {
+
     // Конструктор
-    public Button(WebDriver driver, By by) {
-        super(driver, by);
+    public Button(WebElement webElement) {
+        super(webElement);
     }
 
     // Нажатие на кнопку
     public void click() {
-        WaitFor.visibilityOfElementLocated(by);
-        WaitFor.clickabilityOfElement(webElement);
+        // Ожидание кликабельности кнопки
+        WaitHelper.clickabilityOfElement(webElement);
         webElement.click();
     }
 }

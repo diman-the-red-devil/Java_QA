@@ -1,38 +1,38 @@
 package elements;
 
-import helpers.WaitFor;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WindowType;
-import org.openqa.selenium.interactions.Actions;
+import helpers.*;
+import org.openqa.selenium.WebElement;
 
 // Класс "Ссылка"
 public class Link extends BaseElement {
+
     // Конструктор
-    public Link(WebDriver driver, By by) {
-        super(driver, by);
+    public Link(WebElement webElement) {
+        super(webElement);
     }
 
     // Нажатие на ссылку
     public void click() {
-        WaitFor.visibilityOfElementLocated(by);
-        WaitFor.clickabilityOfElement(webElement);
+        // Ожидание кликабельности ссылки
+        WaitHelper.clickabilityOfElement(webElement);
         webElement.click();
     }
 
     // Наведение курсора мыши на ссылку
     public void focusOnLink() {
-        WaitFor.visibilityOfElementLocated(by);
-        Actions actions = new Actions(driver);
-        actions.moveToElement(webElement).perform();
+        ActionHelper.moveToElement(webElement);
     }
 
     // Открытие ссылки в новом окне
     public void openInNewWindow() {
+        // Получение URL ссылки
         String URL = this.getURL();
-        driver.switchTo().newWindow(WindowType.WINDOW);
-        driver.manage().window().maximize();
-        driver.navigate().to(URL);
+        // Создание нового окна и переключение на него
+        SwitchHelper.switchToNewWindow();
+        // Максимизация размеров окна
+        WindowHelper.maximizeWindow();
+        // Переход по ссылке в новом окне
+        NavigationHelper.navigateTo(URL);
     }
 
     // Получение URL ссылки
@@ -42,7 +42,6 @@ public class Link extends BaseElement {
 
     // Получение текста ссылки
     public String getText() {
-        WaitFor.visibilityOfElementLocated(by);
         return webElement.getText();
     }
 }

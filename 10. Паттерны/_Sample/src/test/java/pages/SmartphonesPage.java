@@ -1,22 +1,42 @@
 package pages;
 
-import helpers.JSExec;
-import helpers.WaitFor;
+import helpers.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.checkerframework.checker.nullness.qual.Nullable;
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Sleeper;
-import org.openqa.selenium.support.ui.Wait;
-
-import java.time.Duration;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 // Страница "Смартфоны"
 public class SmartphonesPage extends BasePage {
     // Логгер
     private Logger logger = LogManager.getLogger(SmartphonesPage.class);
+
+    // ***** Локаторы *****
+    // 1. Блоки
+    // Шапка
+    String blockHeaderXpath = "//header";
+    // 2. Фильтры и сортировка
+    // 2.1. Сортировка
+    // Аккордеон "Сортировка"
+    String accordeonSortXpath = "//span[contains(text(), \"Сортировка:\")]/following::a";
+    // Переключатель "Сортировка"
+    String radiobuttonSortXpath = "//span[contains(text(), \"type\")]";
+    // 2.2. Фильтр "Производитель"
+    // Аккордеон "Производитель"
+    String accordeonCompanyXpath = "//span[@class=\"ui-collapse__link-text\" and text()=\"Производитель\"]";
+    // Чекбокс "Производитель"
+    String checkboxCompanyXpath = "//span[contains(text(), \"company\")]";
+    // 2.3. Фильтр "Объем оперативной памяти"
+    // Аккордеон "Объем оперативной памяти"
+    String accordeonRAMXpath = "//span[@class=\"ui-collapse__link-text\" and text()=\"Объем оперативной памяти\"]";
+    // Чекбокс "Объем оперативной памяти"
+    String checkboxRAMXpath = "//span[contains(text(), \"ram\")]";
+    // Кнопка "Применить"
+    String buttonApplyXpath = "//button[contains(text(), \"Применить\")]";
+    // 3. Список смартфонов
+    // Ссылка на первый продукт в списке
+    String linkFirstProductXpath = "(//a[contains(@class, \"catalog-product__name\")])[1]";
 
     // Конструктор класса
     public SmartphonesPage(WebDriver driver) {
@@ -24,96 +44,85 @@ public class SmartphonesPage extends BasePage {
         super(driver);
     }
 
-    // ***** Локаторы *****
-    // Шапка
-    String headerXpath = "//header";
-    // Фильтры
-    // - Фильтр "Производитель"
-    String chbxCompanyXpath = "//span[contains(text(), \"company\")]";
-    // - Фильтр "Объем оперативной памяти"
-    String showRAMXpath = "//div[@class=\"ui-list-controls ui-collapse ui-collapse_list\"]//span[contains(text(), \"Объем оперативной памяти\")]";
-    String chbxRAMXpath = "//span[contains(text(), \"ram\")]";
-    // Кнопка Применить
-    String btnApplyXpath = "//button[contains(text(), \"Применить\")]";
-    // Сортировка
-    // - Выпадашка "Сортировка"
-    String showSortXpath = "//span[contains(text(), \"Сортировка:\")]/following::a";
-    // - Переключатель "Сначала дорогие"
-    String rbtnExpensiveXpath = "//span[contains(text(), \"Сначала дорогие\")]";
-    // Смартфоны
-    // - Ссылка на первый продукт в списке
-    String linkFirstProductXpath = "(//a[contains(@class, \"catalog-product__name\")])[1]";
-
+    // ***** Действия на странице *****
+    // 1. Блоки
     // Скрытие шапки
-    public void hideHeader() {
-        WebElement header = driver.findElement(By.xpath(headerXpath));
-        JSExec.displayNone(header);
+    public void blockHeaderHide() {
+        WebElement blockHeader = driver.findElement(By.xpath(blockHeaderXpath));
+        JavaScriptHelper.displayNone(blockHeader);
     }
-
-    // Нажатие на выпадашку "Сортировка"
-    public void showSortClick() {
-        WaitFor.visibilityOfElementLocated(By.xpath(showSortXpath));
-        WebElement showSort = driver.findElement(By.xpath(showSortXpath));
-        WaitFor.clickabilityOfElement(showSort);
-        showSort.click();
-        logger.info("Нажата выпадашка \"Сортировка\"");
+    // 2. Фильтры и сортировка
+    // 2.1. Сортировка
+    // Отображение сортировки
+    public void accordeonSortClick() {
+        WaitHelper.visibilityOfElementLocated(By.xpath(accordeonSortXpath));
+        WebElement accordeonSort = driver.findElement(By.xpath(accordeonSortXpath));
+        WaitHelper.clickabilityOfElement(accordeonSort);
+        accordeonSort.click();
+        logger.info("Отображена сортировка");
     }
-
-    // Установка сортировки "Сначала дорогие"
-    public void rbtnExpensiveClick() {
-        WaitFor.visibilityOfElementLocated(By.xpath(rbtnExpensiveXpath));
-        WebElement rbtnExpensive = driver.findElement(By.xpath(rbtnExpensiveXpath));
-        WaitFor.clickabilityOfElement(rbtnExpensive);
-        rbtnExpensive.click();
-        logger.info("Установлена сортировка - \"Сначала дорогие\"");
+    // Установка сортировки
+    public void radiobuttonSortClick(String type) {
+        radiobuttonSortXpath = radiobuttonSortXpath.replace("type", type);
+        WaitHelper.visibilityOfElementLocated(By.xpath(radiobuttonSortXpath));
+        WebElement radiobuttonSort = driver.findElement(By.xpath(radiobuttonSortXpath));
+        WaitHelper.clickabilityOfElement(radiobuttonSort);
+        radiobuttonSort.click();
+        logger.info("Установлена сортировка - \"" + type + "\"");
     }
-
+    // 2.2. Фильтр "Производитель"
+    // Отображение фильтра "Производитель"
+    public void accordeonCompanyClick() {
+        WaitHelper.visibilityOfElementLocated(By.xpath(accordeonCompanyXpath));
+        WebElement accordeonCompany = driver.findElement(By.xpath(accordeonCompanyXpath));
+        WaitHelper.clickabilityOfElement(accordeonCompany);
+        accordeonCompany.click();
+        logger.info("Отображен фильтр \"Производитель\"");
+    }
     // Установка фильтра "Производитель"
-    public void chbxProductClick(String company) {
-        chbxCompanyXpath = chbxCompanyXpath.replace("company", company);
-        WaitFor.visibilityOfElementLocated(By.xpath(chbxCompanyXpath));
-        WebElement chbxCompany = driver.findElement(By.xpath(chbxCompanyXpath));
-        WaitFor.clickabilityOfElement(chbxCompany);
-        chbxCompany.click();
+    public void checkboxCompanyClick(String company) {
+        checkboxCompanyXpath = checkboxCompanyXpath.replace("company", company);
+        WaitHelper.visibilityOfElementLocated(By.xpath(checkboxCompanyXpath));
+        WebElement checkboxCompany = driver.findElement(By.xpath(checkboxCompanyXpath));
+        WaitHelper.clickabilityOfElement(checkboxCompany);
+        checkboxCompany.click();
         logger.info("Установлен фильтр \"Производитель\" - " + company);
     }
-
-    // Нажатие на гармошку "Объем оперативной памяти"
-    public void showRAMClick() {
-        WaitFor.visibilityOfElementLocated(By.xpath(showRAMXpath));
-        WebElement showRAM = driver.findElement(By.xpath(showRAMXpath));
-        WaitFor.clickabilityOfElement(showRAM);
-        showRAM.click();
-        logger.info("Отображены значения фильтра \"Объем оперативной памяти\"");
+    // 2.3. Фильтр "Объем оперативной памяти"
+    // Отображение фильтра "Объем оперативной памяти"
+    public void accordeonRAMClick() {
+        WaitHelper.visibilityOfElementLocated(By.xpath(accordeonRAMXpath));
+        WebElement accordeonRAM = driver.findElement(By.xpath(accordeonRAMXpath));
+        WaitHelper.clickabilityOfElement(accordeonRAM);
+        accordeonRAM.click();
+        logger.info("Отображен фильтр \"Объем оперативной памяти\"");
     }
-
     // Установка фильтра "Объем оперативной памяти"
-    public void chbxRAMClick(String ram) {
-        chbxRAMXpath = chbxRAMXpath.replace("ram", ram);
-        WaitFor.visibilityOfElementLocated(By.xpath(chbxRAMXpath));
-        WebElement chbxRAM = driver.findElement(By.xpath(chbxRAMXpath));
-        WaitFor.clickabilityOfElement(chbxRAM);
-        chbxRAM.click();
+    public void checkboxRAMClick(String ram) {
+        checkboxRAMXpath = checkboxRAMXpath.replace("ram", ram);
+        WaitHelper.visibilityOfElementLocated(By.xpath(checkboxRAMXpath));
+        WebElement checkboxRAM = driver.findElement(By.xpath(checkboxRAMXpath));
+        WaitHelper.clickabilityOfElement(checkboxRAM);
+        checkboxRAM.click();
         logger.info("Установлен фильтр \"Объем оперативной памяти\" - " + ram);
     }
-
     // Нажатие на кнопку "Применить"
-    public void btnApplyClick() {
-        WaitFor.visibilityOfElementLocated(By.xpath(btnApplyXpath));
-        WebElement btnApply = driver.findElement(By.xpath(btnApplyXpath));
-        WaitFor.clickabilityOfElement(btnApply);
-        btnApply.click();
+    public void buttonApplyClick() {
+        WaitHelper.visibilityOfElementLocated(By.xpath(buttonApplyXpath));
+        WebElement buttonApply = driver.findElement(By.xpath(buttonApplyXpath));
+        WaitHelper.clickabilityOfElement(buttonApply);
+        buttonApply.click();
         logger.info("Нажата кнопка \"Применить\"");
     }
-
+    // 3. Список смартфонов
     // Нажатие на ссылку первого продукта в списке
     public void linkFirstProductClick(String product) {
-        WaitFor.firstProductMustBe(By.xpath(linkFirstProductXpath), product);
-        WebElement linkProduct = driver.findElement(By.xpath(linkFirstProductXpath));
-        String URL = linkProduct.getAttribute("href");
-        driver.switchTo().newWindow(WindowType.WINDOW);
-        driver.manage().window().maximize();
-        driver.navigate().to(URL);
+        WaitHelper.firstProductMustBe(By.xpath(linkFirstProductXpath), product);
+        WebElement linkFirstProduct = driver.findElement(By.xpath(linkFirstProductXpath));
+        String URL = linkFirstProduct.getAttribute("href");
+        SwitchHelper.switchToNewWindow();
+        WindowHelper.maximizeWindow();
+        NavigationHelper.navigateTo(URL);
         logger.info("Нажата ссылка первого продукта в списке");
     }
 }

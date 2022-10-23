@@ -12,7 +12,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
-// Базовый класс для всех классов с тестами
 public class BaseTest {
     // Драйвер браузера
     protected static WebDriver driver;

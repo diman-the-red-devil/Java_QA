@@ -14,11 +14,4 @@ public class SmartphoneProductPage extends BasePage {
         // Вызов родительского конструктора
         super(driver);
     }
-
-    // Получение заголовка текущей страницы
-    public String getPageTitle() {
-        String title = driver.getTitle();
-        logger.info("Заголовок страницы: " + title);
-        return title;
-    }
 }

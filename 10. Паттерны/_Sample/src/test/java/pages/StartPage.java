@@ -1,12 +1,12 @@
 package pages;
 
-import helpers.WaitFor;
+import helpers.ActionHelper;
+import helpers.WaitHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 // Стартовая страница сайта DNS
 public class StartPage extends BasePage {
@@ -40,29 +40,27 @@ public class StartPage extends BasePage {
         logger.info("Открыта страница https://www.dns-shop.ru/");
     }
 
-    // Нажатие на кнопку "Всё верно"
+    // ***** Действия на странице *****
+    // Нажатие на кнопку "Всё верно" на всплывашке
     public void buttonYesClick() {
-        WaitFor.presenceOfElementLocated(By.xpath(buttonYesXpath));
+        WaitHelper.presenceOfElementLocated(By.xpath(buttonYesXpath));
         WebElement linkYes = driver.findElement(By.xpath(buttonYesXpath));
-        WaitFor.clickabilityOfElement(linkYes);
+        WaitHelper.clickabilityOfElement(linkYes);
         linkYes.click();
         logger.info("Нажата кнопка \"Всё верно\"");
     }
-
     // Наведение курсора мыши на ссылку "Смартфоны и гаджеты"
     public void linkSmartsAndGadgetsMove() {
-        WaitFor.presenceOfElementLocated(By.xpath(linkSmartsAndGadgetsXpath));
+        WaitHelper.presenceOfElementLocated(By.xpath(linkSmartsAndGadgetsXpath));
         WebElement linkSmartsAndGadgets = driver.findElement(By.xpath(linkSmartsAndGadgetsXpath));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(linkSmartsAndGadgets).perform();
+        ActionHelper.moveToElement(linkSmartsAndGadgets);
         logger.info("Курсор мыши наведен на ссылку \"Смартфоны\"");
     }
-
     // Нажатие на ссылку "Смартфоны"
     public void linkSmartsClick() {
-        WaitFor.visibilityOfElementLocated(By.xpath(linkSmartsXpath));
+        WaitHelper.visibilityOfElementLocated(By.xpath(linkSmartsXpath));
         WebElement linkSmarts = driver.findElement(By.xpath(linkSmartsXpath));
-        WaitFor.clickabilityOfElement(linkSmarts);
+        WaitHelper.clickabilityOfElement(linkSmarts);
         linkSmarts.click();
         logger.info("Нажата ссылка \"Смартфоны\"");
     }
