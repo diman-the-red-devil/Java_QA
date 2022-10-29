@@ -2,22 +2,14 @@ package tests.smartphones;
 
 import helpers.JavaScriptHelper;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.ui.Sleeper;
-import pages.SmartphoneProductPagePFPE;
-import pages.SmartphonesPagePFPE;
-import pages.StartPagePFPE;
+import pages.SmartphoneProductPagePF;
+import pages.SmartphonesPagePF;
+import pages.StartPagePF;
 import tests.BaseTest;
-import tests.smartphones.matchers.SmartphoneProductPageMatcherPFPE;
+import tests.smartphones.matchers.SmartphoneProductPageMatcher;
 
-import java.time.Duration;
-
-// Паттерн
-// Page Object Model
-// PageFactory
-// Arrange Act Assert
-// Assert Objects
-// Page Elements
-public class Pattern5PETest extends BaseTest {
+// Паттерн Page Object Model + PageFactory + Arrange Act Assert + Assert Objects
+public class Pattern4AOTest extends BaseTest {
     @Test
     public void dnsTest() {
         // 1. Arrange
@@ -25,55 +17,55 @@ public class Pattern5PETest extends BaseTest {
         String ram = "8 Гб"; // объем ОП
 
         // 2. Act
-        SmartphoneProductPagePFPE smartphoneProductPage = getProductPage(product, ram);
+        SmartphoneProductPagePF smartphoneProductPage = getProductPage(product, ram);
 
         // 3. Assert
         // Проверка заголовка открытой страницы
         String expected = "Купить 6.8\" Смартфон Samsung Galaxy S22 Ultra 128 ГБ белый в интернет магазине DNS. Характеристики, цена Samsung Galaxy S22 Ultra | 4900422";
-        SmartphoneProductPageMatcherPFPE smartphoneProductPageMatcher = new SmartphoneProductPageMatcherPFPE(smartphoneProductPage);
+        SmartphoneProductPageMatcher smartphoneProductPageMatcher = new SmartphoneProductPageMatcher(smartphoneProductPage);
         smartphoneProductPageMatcher.pageTitleEquals(expected);
     }
 
     // Получение заголовка страницы с продуктом
-    public SmartphoneProductPagePFPE getProductPage(String product, String ram) {
+    public SmartphoneProductPagePF getProductPage(String product, String ram) {
         // ***** Стартовая страница сайта DNS *****
-        StartPagePFPE startPage = new StartPagePFPE(driver);
+        StartPagePF startPage = new StartPagePF(driver);
         // Открыть страницу https://www.dns-shop.ru/
         startPage.openPage();
         // Наведение курсора мыши на ссылку "Смартфоны и гаджеты"
-        startPage.linkSmartsAndGadgets().focusOnLink();
+        startPage.linkSmartsAndGadgetsMove();
         // Нажатие на ссылку "Смартфоны"
-        startPage.linkSmarts().click();
+        startPage.linkSmartsClick();
 
         // ***** Страница "Смартфоны" *****
-        SmartphonesPagePFPE smartphonesPage = new SmartphonesPagePFPE(driver);
+        SmartphonesPagePF smartphonesPage = new SmartphonesPagePF(driver);
         // Отображение сортировки
-        smartphonesPage.accordeonSort().show();
+        smartphonesPage.accordeonSortClick();
         // Установка сортировки "Сначала дорогие"
         String type = "Сначала дорогие";
-        smartphonesPage.radiobuttonSort(type).setSelected(true);
+        smartphonesPage.radiobuttonSortClick(type);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        smartphonesPage.checkboxCompany(product).setChecked(true);
+        smartphonesPage.checkboxCompanyClick(product);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"
-        smartphonesPage.accordeonRAM().show();
+        smartphonesPage.accordeonRAMClick();
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Установка фильтра "Объем оперативной памяти"
-        smartphonesPage.checkboxRAM(ram).setChecked(true);
+        smartphonesPage.checkboxRAMClick(ram);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Нажатие на кнопку "Применить"
-        smartphonesPage.buttonApply().click();
+        smartphonesPage.buttonApplyClick();
         // Прокрутка страницы вверх
         JavaScriptHelper.scrollBy(0, -2000);
         // Нажатие на ссылку первого продукта в списке
-        smartphonesPage.linkFirstProduct().openInNewWindow();
+        smartphonesPage.linkFirstProductClick("Смартфон Samsung Galaxy S22 Ultra 128 ГБ белый");
 
         // ***** Страница "Продукт. Смартфон" *****
-        return new SmartphoneProductPagePFPE(driver);
+        return new SmartphoneProductPagePF(driver);
     }
 }

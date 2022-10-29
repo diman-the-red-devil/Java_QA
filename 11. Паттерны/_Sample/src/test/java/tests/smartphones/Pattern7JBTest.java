@@ -1,6 +1,8 @@
 package tests.smartphones;
 
 import helpers.JavaScriptHelper;
+import models.SmartphoneJB;
+import models.SmartphoneJB;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.ui.Sleeper;
 import pages.SmartphoneProductPagePFPE;
@@ -17,15 +19,17 @@ import java.time.Duration;
 // Arrange Act Assert
 // Assert Objects
 // Page Elements
-public class Pattern5PETest extends BaseTest {
+// JavaBean
+public class Pattern7JBTest extends BaseTest {
     @Test
     public void dnsTest() {
         // 1. Arrange
-        String product = "Samsung"; // производитель
-        String ram = "8 Гб"; // объем ОП
+        SmartphoneJB smartphoneJB = new SmartphoneJB(8, "Samsung");
+        // String product = "Samsung"; // производитель
+        // String ram = "8 Гб"; // объем ОП
 
         // 2. Act
-        SmartphoneProductPagePFPE smartphoneProductPage = getProductPage(product, ram);
+        SmartphoneProductPagePFPE smartphoneProductPage = getProductPage(smartphoneJB);
 
         // 3. Assert
         // Проверка заголовка открытой страницы
@@ -35,7 +39,7 @@ public class Pattern5PETest extends BaseTest {
     }
 
     // Получение заголовка страницы с продуктом
-    public SmartphoneProductPagePFPE getProductPage(String product, String ram) {
+    public SmartphoneProductPagePFPE getProductPage(SmartphoneJB smartphoneJB) {
         // ***** Стартовая страница сайта DNS *****
         StartPagePFPE startPage = new StartPagePFPE(driver);
         // Открыть страницу https://www.dns-shop.ru/
@@ -55,7 +59,7 @@ public class Pattern5PETest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        smartphonesPage.checkboxCompany(product).setChecked(true);
+        smartphonesPage.checkboxCompany(smartphoneJB.getProduct()).setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"
@@ -63,7 +67,7 @@ public class Pattern5PETest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Установка фильтра "Объем оперативной памяти"
-        smartphonesPage.checkboxRAM(ram).setChecked(true);
+        smartphonesPage.checkboxRAM(smartphoneJB.getRam() + " Гб").setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Нажатие на кнопку "Применить"

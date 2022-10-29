@@ -1,6 +1,10 @@
 package tests.smartphones;
 
 import helpers.JavaScriptHelper;
+import models.SmartphoneJB;
+import models.SmartphoneVO;
+import models.valueobjects.Product;
+import models.valueobjects.Ram;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.ui.Sleeper;
 import pages.SmartphoneProductPagePFPE;
@@ -17,25 +21,37 @@ import java.time.Duration;
 // Arrange Act Assert
 // Assert Objects
 // Page Elements
-public class Pattern5PETest extends BaseTest {
+// JavaBean
+// Value Objects
+public class Pattern8VOTest extends BaseTest {
     @Test
     public void dnsTest() {
         // 1. Arrange
         String product = "Samsung"; // производитель
-        String ram = "8 Гб"; // объем ОП
+        int ram = 8; // объем ОП
+        SmartphoneVO smartphoneVO = new SmartphoneVO(
+                new Ram(ram),
+                new Product(product)
+        );
 
         // 2. Act
-        SmartphoneProductPagePFPE smartphoneProductPage = getProductPage(product, ram);
+        SmartphoneProductPagePFPE smartphoneProductPage = getProductPage(smartphoneVO);
 
         // 3. Assert
         // Проверка заголовка открытой страницы
         String expected = "Купить 6.8\" Смартфон Samsung Galaxy S22 Ultra 128 ГБ белый в интернет магазине DNS. Характеристики, цена Samsung Galaxy S22 Ultra | 4900422";
         SmartphoneProductPageMatcherPFPE smartphoneProductPageMatcher = new SmartphoneProductPageMatcherPFPE(smartphoneProductPage);
         smartphoneProductPageMatcher.pageTitleEquals(expected);
+
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(7));
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     // Получение заголовка страницы с продуктом
-    public SmartphoneProductPagePFPE getProductPage(String product, String ram) {
+    public SmartphoneProductPagePFPE getProductPage(SmartphoneVO smartphoneVO) {
         // ***** Стартовая страница сайта DNS *****
         StartPagePFPE startPage = new StartPagePFPE(driver);
         // Открыть страницу https://www.dns-shop.ru/
@@ -55,7 +71,7 @@ public class Pattern5PETest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        smartphonesPage.checkboxCompany(product).setChecked(true);
+        smartphonesPage.checkboxCompany(smartphoneVO.getProduct().getProduct()).setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"
@@ -63,7 +79,7 @@ public class Pattern5PETest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Установка фильтра "Объем оперативной памяти"
-        smartphonesPage.checkboxRAM(ram).setChecked(true);
+        smartphonesPage.checkboxRAM(smartphoneVO.getRam().getRam() + " Гб").setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Нажатие на кнопку "Применить"
