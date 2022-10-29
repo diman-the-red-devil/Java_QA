@@ -444,7 +444,6 @@ https://javarush.ru/groups/posts/589-patternih-i-singleton--dlja-vsekh-kto-vperv
 
 ***
 
-
 # 4. Паттерн Фасад (Facade)
 
 ***Фасад (Facade)*** — паттерн, который предоставляет простой интерфейс к сложной системе классов, библиотеке или фреймворку.
@@ -718,3 +717,6 @@ public void tearDown() {
 USER_POOL.releaseUser(user);
 }
 ```
+
+
+
