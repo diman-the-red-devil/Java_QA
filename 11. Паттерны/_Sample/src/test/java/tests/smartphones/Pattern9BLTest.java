@@ -1,7 +1,8 @@
 package tests.smartphones;
 
 import helpers.JavaScriptHelper;
-import models.SmartphoneJB;
+import models.SmartphoneBL;
+import models.SmartphoneBLBuilder;
 import models.SmartphoneVO;
 import models.valueobjects.Product;
 import models.valueobjects.Ram;
@@ -23,19 +24,26 @@ import java.time.Duration;
 // Page Elements
 // JavaBean
 // Value Objects
-public class Pattern8VOTest extends BaseTest {
+// Builder
+public class Pattern9BLTest extends BaseTest {
+
     @Test
     public void dnsTest() {
         // 1. Arrange
         String product = "Samsung"; // производитель
-        int ram = 8; // объем ОП
-        SmartphoneVO smartphoneVO = new SmartphoneVO(
-                new Ram(ram),
-                new Product(product)
-        );
+        String model = "";          // модель
+        int ram = 8;                // объем оперативной памяти
+        int rom = 256;              // объем внутренней памяти
+
+        SmartphoneBLBuilder builder = new SmartphoneBLBuilder(
+                new Ram(8),
+                new Product(product))
+                .setRom(256)
+                .setModel("S22");
+        SmartphoneBL smartphoneBL = builder.build(); // Создание объекта
 
         // 2. Act
-        SmartphoneProductPagePFPE smartphoneProductPage = getProductPage(smartphoneVO);
+        SmartphoneProductPagePFPE smartphoneProductPage = getProductPage(smartphoneBL);
 
         // 3. Assert
         // Проверка заголовка открытой страницы
@@ -45,7 +53,7 @@ public class Pattern8VOTest extends BaseTest {
     }
 
     // Получение заголовка страницы с продуктом
-    public SmartphoneProductPagePFPE getProductPage(SmartphoneVO smartphoneVO) {
+    public SmartphoneProductPagePFPE getProductPage(SmartphoneBL smartphoneBL) {
         // ***** Стартовая страница сайта DNS *****
         StartPagePFPE startPage = new StartPagePFPE(driver);
         // Открыть страницу https://www.dns-shop.ru/
@@ -65,7 +73,7 @@ public class Pattern8VOTest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        smartphonesPage.checkboxCompany(smartphoneVO.getProduct().getProduct()).setChecked(true);
+        smartphonesPage.checkboxCompany(smartphoneBL.getProduct().getProduct()).setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"
@@ -73,7 +81,7 @@ public class Pattern8VOTest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Установка фильтра "Объем оперативной памяти"
-        smartphonesPage.checkboxRAM(smartphoneVO.getRam().getRam() + " Гб").setChecked(true);
+        smartphonesPage.checkboxRAM(smartphoneBL.getRam().getRam() + " Гб").setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Нажатие на кнопку "Применить"
