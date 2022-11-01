@@ -25,7 +25,7 @@ public class Pattern7JBTest extends BaseTest {
     public void dnsTest() {
         // 1. Arrange
         SmartphoneJB smartphoneJB = new SmartphoneJB(8, "Samsung");
-        // String product = "Samsung"; // производитель
+        // String company = "Samsung"; // производитель
         // String ram = "8 Гб"; // объем ОП
 
         // 2. Act
@@ -59,7 +59,7 @@ public class Pattern7JBTest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        smartphonesPage.checkboxCompany(smartphoneJB.getProduct()).setChecked(true);
+        smartphonesPage.checkboxCompany(smartphoneJB.getCompany()).setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"

@@ -16,11 +16,11 @@ public class Pattern3AAATest extends BaseTest {
     @Test
     public void dnsTest() {
         // 1. Arrange
-        String product = "Samsung"; // производитель
+        String company = "Samsung"; // производитель
         String ram = "8 Гб"; // объем ОП
 
         // 2. Act
-        SmartphoneProductPagePF smartphoneProductPage = getProductPage(product, ram);
+        SmartphoneProductPagePF smartphoneProductPage = getProductPage(company, ram);
         String actual = smartphoneProductPage.getPageTitle();
 
         // 3. Assert
@@ -30,7 +30,7 @@ public class Pattern3AAATest extends BaseTest {
     }
 
     // Получение заголовка страницы с продуктом
-    public SmartphoneProductPagePF getProductPage(String product, String ram) {
+    public SmartphoneProductPagePF getProductPage(String company, String ram) {
         // ***** Стартовая страница сайта DNS *****
         StartPagePF startPage = new StartPagePF(driver);
         // Открыть страницу https://www.dns-shop.ru/
@@ -50,7 +50,7 @@ public class Pattern3AAATest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        smartphonesPage.checkboxCompanyClick(product);
+        smartphonesPage.checkboxCompanyClick(company);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"
@@ -66,7 +66,7 @@ public class Pattern3AAATest extends BaseTest {
         // Прокрутка страницы вверх
         JavaScriptHelper.scrollBy(0, -2000);
         // Нажатие на ссылку первого продукта в списке
-        smartphonesPage.linkFirstProductClick("Смартфон Samsung Galaxy S22 Ultra 128 ГБ белый");
+        smartphonesPage.linkFirstProductClick();
 
         // ***** Страница "Продукт. Смартфон" *****
         return new SmartphoneProductPagePF(driver);

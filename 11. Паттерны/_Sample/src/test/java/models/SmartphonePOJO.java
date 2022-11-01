@@ -5,11 +5,11 @@ public class SmartphonePOJO {
     // Оперативная память
     public int ram;
     // Производитель
-    public String product;
+    public String company;
 
     // Конструктор
-    public SmartphonePOJO(int ram, String product) {
+    public SmartphonePOJO(int ram, String company) {
         this.ram = ram;
-        this.product = product;
+        this.company = company;
     }
 }

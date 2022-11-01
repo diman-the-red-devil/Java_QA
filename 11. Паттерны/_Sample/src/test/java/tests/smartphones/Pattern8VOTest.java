@@ -1,19 +1,15 @@
 package tests.smartphones;
 
 import helpers.JavaScriptHelper;
-import models.SmartphoneJB;
 import models.SmartphoneVO;
-import models.valueobjects.Product;
+import models.valueobjects.Company;
 import models.valueobjects.Ram;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.ui.Sleeper;
 import pages.SmartphoneProductPagePFPE;
 import pages.SmartphonesPagePFPE;
 import pages.StartPagePFPE;
 import tests.BaseTest;
 import tests.smartphones.matchers.SmartphoneProductPageMatcherPFPE;
-
-import java.time.Duration;
 
 // Паттерн
 // Page Object Model
@@ -27,11 +23,11 @@ public class Pattern8VOTest extends BaseTest {
     @Test
     public void dnsTest() {
         // 1. Arrange
-        String product = "Samsung"; // производитель
+        String company = "Samsung"; // производитель
         int ram = 8; // объем ОП
         SmartphoneVO smartphoneVO = new SmartphoneVO(
                 new Ram(ram),
-                new Product(product)
+                new Company(company)
         );
 
         // 2. Act
@@ -65,7 +61,7 @@ public class Pattern8VOTest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        smartphonesPage.checkboxCompany(smartphoneVO.getProduct().getProduct()).setChecked(true);
+        smartphonesPage.checkboxCompany(smartphoneVO.getCompany().getCompany()).setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"

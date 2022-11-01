@@ -127,7 +127,7 @@ public class SmartphonesPagePF extends BasePage {
     }
     // 3. Список смартфонов
     // Нажатие на ссылку первого продукта в списке
-    public void linkFirstProductClick(String product) {
+    public void linkFirstProductClick() {
         String URL = linkFirstProduct.getAttribute("href");
         SwitchHelper.switchToNewWindow();
         WindowHelper.maximizeWindow();

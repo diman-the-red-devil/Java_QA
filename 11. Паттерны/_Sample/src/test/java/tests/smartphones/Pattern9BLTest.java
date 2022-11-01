@@ -3,18 +3,14 @@ package tests.smartphones;
 import helpers.JavaScriptHelper;
 import models.SmartphoneBL;
 import models.SmartphoneBLBuilder;
-import models.SmartphoneVO;
-import models.valueobjects.Product;
+import models.valueobjects.Company;
 import models.valueobjects.Ram;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.ui.Sleeper;
 import pages.SmartphoneProductPagePFPE;
 import pages.SmartphonesPagePFPE;
 import pages.StartPagePFPE;
 import tests.BaseTest;
 import tests.smartphones.matchers.SmartphoneProductPageMatcherPFPE;
-
-import java.time.Duration;
 
 // Паттерн
 // Page Object Model
@@ -30,16 +26,16 @@ public class Pattern9BLTest extends BaseTest {
     @Test
     public void dnsTest() {
         // 1. Arrange
-        String product = "Samsung"; // производитель
-        String model = "";          // модель
+        String сompany = "Samsung"; // производитель
+        String model = "S22";       // модель
         int ram = 8;                // объем оперативной памяти
         int rom = 256;              // объем внутренней памяти
 
         SmartphoneBLBuilder builder = new SmartphoneBLBuilder(
-                new Ram(8),
-                new Product(product))
-                .setRom(256)
-                .setModel("S22");
+                new Ram(ram),
+                new Company(сompany))
+                .setRom(rom)
+                .setModel(model);
         SmartphoneBL smartphoneBL = builder.build(); // Создание объекта
 
         // 2. Act
@@ -73,7 +69,7 @@ public class Pattern9BLTest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        smartphonesPage.checkboxCompany(smartphoneBL.getProduct().getProduct()).setChecked(true);
+        smartphonesPage.checkboxCompany(smartphoneBL.getCompany().getCompany()).setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"

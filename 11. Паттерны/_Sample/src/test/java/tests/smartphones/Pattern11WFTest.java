@@ -2,13 +2,12 @@ package tests.smartphones;
 
 import models.SmartphoneBL;
 import models.SmartphoneBLBuilder;
-import models.valueobjects.Product;
+import models.valueobjects.Company;
 import models.valueobjects.Ram;
 import org.junit.jupiter.api.Test;
 import steps.SmartphoneProductPageSteps;
 import steps.SmartphonesPageSteps;
 import steps.StartPageSteps;
-import tests.BaseTest;
 import tests.BaseTestWF;
 import tests.smartphones.matchers.SmartphoneProductPageMatcherFC;
 
@@ -28,16 +27,16 @@ public class Pattern11WFTest extends BaseTestWF {
     @Test
     public void dnsTest() {
         // 1. Arrange
-        String product = "Samsung"; // производитель
-        String model = "";          // модель
+        String company = "Samsung"; // производитель
+        String model = "S22";          // модель
         int ram = 8;                // объем оперативной памяти
         int rom = 256;              // объем внутренней памяти
 
         SmartphoneBLBuilder builder = new SmartphoneBLBuilder(
-                new Ram(8),
-                new Product(product))
-                .setRom(256)
-                .setModel("S22");
+                new Ram(ram),
+                new Company(company))
+                .setRom(rom)
+                .setModel(model);
         SmartphoneBL smartphoneBL = builder.build(); // Создание объекта
 
         // 2. Act
@@ -63,7 +62,7 @@ public class Pattern11WFTest extends BaseTestWF {
         String type = "Сначала дорогие";
         smartphonesPage.orderBy(type);
         // Установка фильтра "Производитель"
-        smartphonesPage.filterByCompany(smartphoneBL.getProduct().getProduct());
+        smartphonesPage.filterByCompany(smartphoneBL.getCompany().getCompany());
         // Установка фильтра "Объем оперативной памяти"
         smartphonesPage.filterByRAM(smartphoneBL.getRam().getRam());
         // Применение фильтров

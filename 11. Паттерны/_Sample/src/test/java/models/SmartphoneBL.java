@@ -1,6 +1,6 @@
 package models;
 
-import models.valueobjects.Product;
+import models.valueobjects.Company;
 import models.valueobjects.Ram;
 
 import java.io.Serializable;
@@ -12,7 +12,7 @@ public class SmartphoneBL implements Serializable {
     // Внутренняя память
     private int rom;
     // Производитель
-    private Product product;
+    private Company сompany;
     // Модель
     private String model;
 
@@ -22,9 +22,9 @@ public class SmartphoneBL implements Serializable {
     }
 
     // Конструктор
-    public SmartphoneBL(Ram ram, Product product) {
+    public SmartphoneBL(Ram ram, Company сompany) {
         this.ram = ram;
-        this.product = product;
+        this.сompany = сompany;
     }
 
     // Сеттеры и геттеры
@@ -46,11 +46,11 @@ public class SmartphoneBL implements Serializable {
     }
 
     // Производитель
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setCompany(Company сompany) {
+        this.сompany = сompany;
     }
-    public Product getProduct() {
-        return this.product;
+    public Company getCompany() {
+        return this.сompany;
     }
 
     // Модель

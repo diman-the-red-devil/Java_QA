@@ -7,7 +7,7 @@ public class SmartphoneJB implements Serializable {
     // Оперативная память
     private int ram;
     // Производитель
-    private String product;
+    private String company;
 
     // Конструктор по умолчанию
     public SmartphoneJB() {
@@ -15,9 +15,9 @@ public class SmartphoneJB implements Serializable {
     }
 
     // Конструктор
-    public SmartphoneJB(int ram, String product) {
+    public SmartphoneJB(int ram, String company) {
         this.ram = ram;
-        this.product = product;
+        this.company = company;
     }
 
     // Сеттеры и геттеры
@@ -32,11 +32,11 @@ public class SmartphoneJB implements Serializable {
     }
 
     // Производитель
-    public void setProduct(String product) {
-        this.product = product;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
-    public String getProduct() {
-        return this.product;
+    public String getCompany() {
+        return this.company;
     }
 }

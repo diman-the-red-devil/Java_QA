@@ -24,7 +24,7 @@ public class Pattern6POJOTest extends BaseTest {
     public void dnsTest() {
         // 1. Arrange
         SmartphonePOJO smartphonePOJO = new SmartphonePOJO(8, "Samsung");
-        // String product = "Samsung"; // производитель
+        // String company = "Samsung"; // производитель
         // String ram = "8 Гб"; // объем ОП
 
         // 2. Act
@@ -58,7 +58,7 @@ public class Pattern6POJOTest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        smartphonesPage.checkboxCompany(smartphonePOJO.product).setChecked(true);
+        smartphonesPage.checkboxCompany(smartphonePOJO.company).setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"

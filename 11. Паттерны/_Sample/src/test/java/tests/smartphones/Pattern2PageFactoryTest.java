@@ -31,8 +31,8 @@ public class Pattern2PageFactoryTest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        String product = "Samsung"; // производитель
-        smartphonesPage.checkboxCompanyClick(product);
+        String company = "Samsung"; // производитель
+        smartphonesPage.checkboxCompanyClick(company);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"
@@ -49,7 +49,7 @@ public class Pattern2PageFactoryTest extends BaseTest {
         // Прокрутка страницы вверх
         JavaScriptHelper.scrollBy(0, -2000);
         // Нажатие на ссылку первого продукта в списке
-        smartphonesPage.linkFirstProductClick("Смартфон Samsung Galaxy S22 Ultra 128 ГБ белый");
+        smartphonesPage.linkFirstProductClick();
 
         // ***** Страница "Продукт. Смартфон" *****
         SmartphoneProductPagePF smartphoneProductPage = new SmartphoneProductPagePF(driver);

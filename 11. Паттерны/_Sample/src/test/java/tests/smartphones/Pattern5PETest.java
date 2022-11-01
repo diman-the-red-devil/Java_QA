@@ -21,11 +21,11 @@ public class Pattern5PETest extends BaseTest {
     @Test
     public void dnsTest() {
         // 1. Arrange
-        String product = "Samsung"; // производитель
+        String company = "Samsung"; // производитель
         String ram = "8 Гб"; // объем ОП
 
         // 2. Act
-        SmartphoneProductPagePFPE smartphoneProductPage = getProductPage(product, ram);
+        SmartphoneProductPagePFPE smartphoneProductPage = getProductPage(company, ram);
 
         // 3. Assert
         // Проверка заголовка открытой страницы
@@ -35,7 +35,7 @@ public class Pattern5PETest extends BaseTest {
     }
 
     // Получение заголовка страницы с продуктом
-    public SmartphoneProductPagePFPE getProductPage(String product, String ram) {
+    public SmartphoneProductPagePFPE getProductPage(String company, String ram) {
         // ***** Стартовая страница сайта DNS *****
         StartPagePFPE startPage = new StartPagePFPE(driver);
         // Открыть страницу https://www.dns-shop.ru/
@@ -55,7 +55,7 @@ public class Pattern5PETest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        smartphonesPage.checkboxCompany(product).setChecked(true);
+        smartphonesPage.checkboxCompany(company).setChecked(true);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"
