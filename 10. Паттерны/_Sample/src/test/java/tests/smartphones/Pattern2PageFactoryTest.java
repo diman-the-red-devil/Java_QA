@@ -31,8 +31,8 @@ public class Pattern2PageFactoryTest extends BaseTest {
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 600);
         // Установка фильтра "Производитель"
-        String product = "Samsung"; // производитель
-        smartphonesPage.checkboxCompanyClick(product);
+        String company = "Samsung"; // производитель
+        smartphonesPage.checkboxCompanyClick(company);
         // Прокрутка страницы вниз
         JavaScriptHelper.scrollBy(0, 400);
         // Отображение фильтра "Объем оперативной памяти"
