@@ -3,7 +3,7 @@ package steps;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import web.pages.SmartphoneProductPagePFPE;
+import web.pages.SmartphoneProductPage;
 
 public class SmartphoneProductPageSteps {
     // Логгер
@@ -11,12 +11,12 @@ public class SmartphoneProductPageSteps {
 
     // Ссылка на объект класса SmartphoneProductPage
     // Страница "Продукт. Смартфон"
-    private SmartphoneProductPagePFPE smartphoneProductPage;
+    private SmartphoneProductPage smartphoneProductPage;
 
     // Конструктор
     public SmartphoneProductPageSteps(WebDriver driver) {
         // ***** Страница "Продукт. Смартфон" *****
-        smartphoneProductPage = new SmartphoneProductPagePFPE(driver);
+        smartphoneProductPage = new SmartphoneProductPage(driver);
         logger.info("Открыта страница [Продукт. Смартфон]");
     }
 

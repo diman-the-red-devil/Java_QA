@@ -1,128 +1,119 @@
 package web.pages;
 
-import web.helpers.*;
+import web.elements.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 // Страница "Смартфоны"
 public class SmartphonesPage extends BasePage {
     // Логгер
     private Logger logger = LogManager.getLogger(SmartphonesPage.class);
 
-    // ***** Локаторы *****
+    // ***** Веб элементы *****
     // 1. Блоки
     // Шапка
-    String blockHeaderXpath = "//header";
+    @FindBy(xpath = "//header")
+    private WebElement blockHeader;
     // 2. Фильтры и сортировка
     // 2.1. Сортировка
     // Аккордеон "Сортировка"
-    String accordeonSortXpath = "//span[contains(text(), \"Сортировка:\")]/following::a";
-    // Переключатель "Сортировка"
-    String radiobuttonSortXpath = "//span[contains(text(), \"type\")]";
+    @FindBy(xpath = "//span[contains(text(), \"Сортировка:\")]/following::a")
+    private WebElement accordeonSort;
+    // Переключатели "Сортировка"
+    @FindBy(xpath = "(//div[@class=\"top-filter__radio-list ui-radio top-filter__popover\"])[1]//span")
+    private List<WebElement> radiobuttonSort;
     // 2.2. Фильтр "Производитель"
     // Аккордеон "Производитель"
-    String accordeonCompanyXpath = "//span[@class=\"ui-collapse__link-text\" and text()=\"Производитель\"]";
-    // Чекбокс "Производитель"
-    String checkboxCompanyXpath = "//span[contains(text(), \"company\")]";
+    @FindBy(xpath = "//span[@class=\"ui-collapse__link-text\" and text()=\"Производитель\"]")
+    private WebElement accordeonCompany;
+    // Чекбоксы "Производитель"
+    @FindBy(xpath = "//span[@class=\"ui-collapse__link-text\" and text()=\"Производитель\"]/../../div//label/span[1]")
+    private List<WebElement> checkboxCompany;
     // 2.3. Фильтр "Объем оперативной памяти"
     // Аккордеон "Объем оперативной памяти"
-    String accordeonRAMXpath = "//span[@class=\"ui-collapse__link-text\" and text()=\"Объем оперативной памяти\"]";
-    // Чекбокс "Объем оперативной памяти"
-    String checkboxRAMXpath = "//span[contains(text(), \"ram\")]";
+    @FindBy(xpath = "//span[@class=\"ui-collapse__link-text\" and text()=\"Объем оперативной памяти\"]")
+    private WebElement accordeonRAM;
+    // Чекбоксы "Объем оперативной памяти"
+    @FindBy(xpath = "//span[@class=\"ui-collapse__link-text\" and text()=\"Объем оперативной памяти\"]/../../div//label/span[1]")
+    private List<WebElement> checkboxRAM;
     // Кнопка "Применить"
-    String buttonApplyXpath = "//button[contains(text(), \"Применить\")]";
+    @FindBy(xpath = "//button[contains(text(), \"Применить\")]")
+    private WebElement buttonApply;
     // 3. Список смартфонов
     // Ссылка на первый продукт в списке
-    String linkFirstProductXpath = "(//a[contains(@class, \"catalog-product__name\")])[1]";
+    @FindBy(xpath = "(//a[contains(@class, \"catalog-product__name\")])[1]")
+    private WebElement linkFirstProduct;
 
     // Конструктор класса
     public SmartphonesPage(WebDriver driver) {
         // Вызов родительского конструктора
         super(driver);
+        // Инициализация веб элементов
+        PageFactory.initElements(driver, this);
     }
 
-    // ***** Действия на странице *****
+    // ***** Получение обернутых веб элементов *****
     // 1. Блоки
-    // Скрытие шапки
-    public void blockHeaderHide() {
-        WebElement blockHeader = driver.findElement(By.xpath(blockHeaderXpath));
-        JavaScriptHelper.displayNone(blockHeader);
+    // Шапка
+    public Block blockHeader() {
+        return new Block(blockHeader);
     }
     // 2. Фильтры и сортировка
     // 2.1. Сортировка
-    // Отображение сортировки
-    public void accordeonSortClick() {
-        WaitHelper.visibilityOfElementLocated(By.xpath(accordeonSortXpath));
-        WebElement accordeonSort = driver.findElement(By.xpath(accordeonSortXpath));
-        WaitHelper.clickabilityOfElement(accordeonSort);
-        accordeonSort.click();
-        logger.info("Отображена сортировка");
+    // Аккордеон "Сортировка"
+    public Accordeon accordeonSort() {
+        return new Accordeon(accordeonSort);
     }
-    // Установка сортировки
-    public void radiobuttonSortClick(String type) {
-        radiobuttonSortXpath = radiobuttonSortXpath.replace("type", type);
-        WaitHelper.visibilityOfElementLocated(By.xpath(radiobuttonSortXpath));
-        WebElement radiobuttonSort = driver.findElement(By.xpath(radiobuttonSortXpath));
-        WaitHelper.clickabilityOfElement(radiobuttonSort);
-        radiobuttonSort.click();
-        logger.info("Установлена сортировка - \"" + type + "\"");
+    // Переключатели "Сортировка"
+    public RadioButton radiobuttonSort(String type) {
+        for (WebElement webElement : radiobuttonSort) {
+            if(webElement.getText().contains(type)) {
+                return new RadioButton(webElement);
+            }
+        }
+        return null;
     }
     // 2.2. Фильтр "Производитель"
-    // Отображение фильтра "Производитель"
-    public void accordeonCompanyClick() {
-        WaitHelper.visibilityOfElementLocated(By.xpath(accordeonCompanyXpath));
-        WebElement accordeonCompany = driver.findElement(By.xpath(accordeonCompanyXpath));
-        WaitHelper.clickabilityOfElement(accordeonCompany);
-        accordeonCompany.click();
-        logger.info("Отображен фильтр \"Производитель\"");
+    // Аккордеон "Производитель"
+    public Accordeon accordeonCompany() {
+        return new Accordeon(accordeonCompany);
     }
-    // Установка фильтра "Производитель"
-    public void checkboxCompanyClick(String company) {
-        checkboxCompanyXpath = checkboxCompanyXpath.replace("company", company);
-        WaitHelper.visibilityOfElementLocated(By.xpath(checkboxCompanyXpath));
-        WebElement checkboxCompany = driver.findElement(By.xpath(checkboxCompanyXpath));
-        WaitHelper.clickabilityOfElement(checkboxCompany);
-        checkboxCompany.click();
-        logger.info("Установлен фильтр \"Производитель\" - " + company);
+    // Чекбоксы "Производитель"
+    public CheckBox checkboxCompany(String company) {
+        for (WebElement webElement : checkboxCompany) {
+            if(webElement.getText().contains(company)) {
+                return new CheckBox(webElement);
+            }
+        }
+        return null;
     }
     // 2.3. Фильтр "Объем оперативной памяти"
-    // Отображение фильтра "Объем оперативной памяти"
-    public void accordeonRAMClick() {
-        WaitHelper.visibilityOfElementLocated(By.xpath(accordeonRAMXpath));
-        WebElement accordeonRAM = driver.findElement(By.xpath(accordeonRAMXpath));
-        WaitHelper.clickabilityOfElement(accordeonRAM);
-        accordeonRAM.click();
-        logger.info("Отображен фильтр \"Объем оперативной памяти\"");
+    // Аккордеон "Объем оперативной памяти"
+    public Accordeon accordeonRAM() {
+        return new Accordeon(accordeonRAM);
     }
-    // Установка фильтра "Объем оперативной памяти"
-    public void checkboxRAMClick(String ram) {
-        checkboxRAMXpath = checkboxRAMXpath.replace("ram", ram);
-        WaitHelper.visibilityOfElementLocated(By.xpath(checkboxRAMXpath));
-        WebElement checkboxRAM = driver.findElement(By.xpath(checkboxRAMXpath));
-        WaitHelper.clickabilityOfElement(checkboxRAM);
-        checkboxRAM.click();
-        logger.info("Установлен фильтр \"Объем оперативной памяти\" - " + ram);
+    // Чекбоксы "Объем оперативной памяти"
+    public CheckBox checkboxRAM(String ram) {
+        for (WebElement webElement : checkboxRAM) {
+            if(webElement.getText().contains(ram)) {
+                return new CheckBox(webElement);
+            }
+        }
+        return null;
     }
-    // Нажатие на кнопку "Применить"
-    public void buttonApplyClick() {
-        WaitHelper.visibilityOfElementLocated(By.xpath(buttonApplyXpath));
-        WebElement buttonApply = driver.findElement(By.xpath(buttonApplyXpath));
-        WaitHelper.clickabilityOfElement(buttonApply);
-        buttonApply.click();
-        logger.info("Нажата кнопка \"Применить\"");
+    // Кнопка "Применить"
+    public Button buttonApply() {
+        return new Button(buttonApply);
     }
     // 3. Список смартфонов
-    // Нажатие на ссылку первого продукта в списке
-    public void linkFirstProductClick(String product) {
-        WaitHelper.firstProductMustBe(By.xpath(linkFirstProductXpath), product);
-        WebElement linkFirstProduct = driver.findElement(By.xpath(linkFirstProductXpath));
-        String URL = linkFirstProduct.getAttribute("href");
-        SwitchHelper.switchToNewWindow();
-        WindowHelper.maximizeWindow();
-        NavigationHelper.navigateTo(URL);
-        logger.info("Нажата ссылка первого продукта в списке");
+    // Ссылка на первый продукт в списке
+    public Link linkFirstProduct() {
+        return new Link(linkFirstProduct);
     }
 }

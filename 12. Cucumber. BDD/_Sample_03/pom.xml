@@ -13,6 +13,7 @@
         <!-- Кодировка проекта - UTF-8 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
         <source>15</source>
         <target>15</target>
         <!-- Версии зависимостей: -->
@@ -127,6 +128,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <!-- Сборка -->
     <build>
         <!-- Плагины -->
@@ -149,4 +151,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

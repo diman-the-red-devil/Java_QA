@@ -1,12 +1,13 @@
 package web.pages;
 
-import web.helpers.ActionHelper;
-import web.helpers.WaitHelper;
+import web.elements.Button;
+import web.elements.Link;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 // Стартовая страница сайта DNS
 public class StartPage extends BasePage {
@@ -15,18 +16,23 @@ public class StartPage extends BasePage {
     // URL страницы
     private final String URL = "https://www.dns-shop.ru/";
 
-    // ***** Локаторы *****
+    // ***** Веб элементы *****
     // Кнопка "Всё верно" на всплывашке
-    String buttonYesXpath = "(//span[text()=\"Всё верно\"]/parent::button)[1]";
+    @FindBy(xpath = "(//span[text()=\"Всё верно\"]/parent::button)[1]")
+    private WebElement buttonYes;
     // Ссылка "Смартфоны и гаджеты"
-    String linkSmartsAndGadgetsXpath = "(//a[contains(text(), \"Смартфоны и гаджеты\")])[1]";
+    @FindBy(xpath = "(//a[contains(text(), \"Смартфоны и гаджеты\")])[1]")
+    private WebElement linkSmartsAndGadgets;
     // Ссылка "Смартфоны"
-    String linkSmartsXpath = "(//a[contains(text(), \"Смартфоны и гаджеты\")])[2]/following::div/a";
+    @FindBy(xpath = "(//a[contains(text(), \"Смартфоны и гаджеты\")])[2]/following::div/a")
+    private WebElement linkSmarts;
 
     // Конструктор класса
     public StartPage(WebDriver driver) {
         // Вызов родительского конструктора
         super(driver);
+        // Инициализация веб элементов
+        PageFactory.initElements(driver, this);
     }
 
     // Получение URL страницы
@@ -40,28 +46,17 @@ public class StartPage extends BasePage {
         logger.info("Открыта страница https://www.dns-shop.ru/");
     }
 
-    // ***** Действия на странице *****
-    // Нажатие на кнопку "Всё верно" на всплывашке
-    public void buttonYesClick() {
-        WaitHelper.presenceOfElementLocated(By.xpath(buttonYesXpath));
-        WebElement linkYes = driver.findElement(By.xpath(buttonYesXpath));
-        WaitHelper.clickabilityOfElement(linkYes);
-        linkYes.click();
-        logger.info("Нажата кнопка \"Всё верно\"");
+    // ***** Получение обернутых веб элементов *****
+    // Кнопка "Всё верно" на всплывашке
+    public Button buttonYes() {
+        return new Button(buttonYes);
     }
-    // Наведение курсора мыши на ссылку "Смартфоны и гаджеты"
-    public void linkSmartsAndGadgetsMove() {
-        WaitHelper.presenceOfElementLocated(By.xpath(linkSmartsAndGadgetsXpath));
-        WebElement linkSmartsAndGadgets = driver.findElement(By.xpath(linkSmartsAndGadgetsXpath));
-        ActionHelper.moveToElement(linkSmartsAndGadgets);
-        logger.info("Курсор мыши наведен на ссылку \"Смартфоны\"");
+    // Ссылка "Смартфоны и гаджеты"
+    public Link linkSmartsAndGadgets() {
+        return new Link(linkSmartsAndGadgets);
     }
-    // Нажатие на ссылку "Смартфоны"
-    public void linkSmartsClick() {
-        WaitHelper.visibilityOfElementLocated(By.xpath(linkSmartsXpath));
-        WebElement linkSmarts = driver.findElement(By.xpath(linkSmartsXpath));
-        WaitHelper.clickabilityOfElement(linkSmarts);
-        linkSmarts.click();
-        logger.info("Нажата ссылка \"Смартфоны\"");
+    // Ссылка "Смартфоны"
+    public Link linkSmarts() {
+        return new Link(linkSmarts);
     }
 }

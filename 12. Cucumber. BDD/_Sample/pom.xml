@@ -17,10 +17,16 @@
         <source>15</source>
         <target>15</target>
         <!-- Версии зависимостей: -->
+        <!-- Cucumber -->
+        <cucumber>7.8.1</cucumber>
         <!-- JUnit -->
         <junit-jupiter-engine>5.9.0</junit-jupiter-engine>
+        <junit-vintage-engine>5.9.0</junit-vintage-engine>
+        <!--junit-jupiter-api>5.9.0</junit-jupiter-api>
+        <junit-platform-commons>1.9.0</junit-platform-commons>
+        <junit-platform-launcher>1.9.0</junit-platform-launcher-->
         <!-- Selenium WebDriver -->
-        <selenium-java>4.5.0</selenium-java>
+        <selenium-java>4.5.3</selenium-java>
         <!-- WebDriver Manager -->
         <webdrivermanager>5.3.0</webdrivermanager>
         <!-- Log4J -->
@@ -37,6 +43,25 @@
 
     <!-- Зависимости -->
     <dependencies>
+        <!-- Cucumber -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumber}</version>
+            <scope>test</scope>
+        </dependency>
         <!-- JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -44,6 +69,30 @@
             <version>${junit-jupiter-engine}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit-vintage-engine}</version>
+            <scope>test</scope>
+        </dependency>
+        <!--dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter-api}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>${junit-platform-commons}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit-platform-launcher}</version>
+            <scope>test</scope>
+        </dependency-->
         <!-- Selenium WebDriver -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

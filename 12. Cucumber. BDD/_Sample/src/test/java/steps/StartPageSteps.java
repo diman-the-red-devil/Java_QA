@@ -3,7 +3,7 @@ package steps;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import web.pages.StartPagePFPE;
+import web.pages.StartPage;
 
 // Шаги на странице "Стартовая"
 public class StartPageSteps {
@@ -12,12 +12,12 @@ public class StartPageSteps {
 
     // Ссылка на объект класса StartPagePFPE
     // Стартовая страница сайта DNS
-    private StartPagePFPE startPage;
+    private StartPage startPage;
 
     // Конструктор
     public StartPageSteps(WebDriver driver) {
         // ***** Стартовая страница сайта DNS *****
-        startPage = new StartPagePFPE(driver);
+        startPage = new StartPage(driver);
         // Открыть сайт https://www.dns-shop.ru/
         startPage.openPage();
         logger.info("Открыта страница [Стартовая страница DNS]");
