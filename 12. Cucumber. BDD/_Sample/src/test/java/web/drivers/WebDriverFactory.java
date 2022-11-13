@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 public class WebDriverFactory {
     // Логгер
     private static Logger logger = LogManager.getLogger(WebDriverFactory.class);
+    // Драйвер
+    private static WebDriver driver;
 
     // Получение экземпляра драйвера по имени
     public static WebDriver getDriver(BrowserName name) {
@@ -14,18 +16,27 @@ public class WebDriverFactory {
             // Драйвер браузера Google Chrome
             case CHROME:
                 logger.info("Драйвер браузера Google Chrome");
-                return ChromeBrowser.getDriver();
+                driver = ChromeBrowser.getDriver();
+                break;
             // Драйвер браузера Mozilla Firefox
             case FIREFOX:
                 logger.info("Драйвер браузера Mozilla Firefox");
-                return FirefoxBrowser.getDriver();
+                driver = FirefoxBrowser.getDriver();
+                break;
             // Драйвер браузера Microsoft Edge
             case EDGE:
                 logger.info("Драйвер браузера Microsoft Edge");
-                return EdgeBrowser.getDriver();
+                driver = EdgeBrowser.getDriver();
+                break;
             // По умолчанию
             default:
                 throw new RuntimeException("Некорректное наименование браузера");
         }
+        return driver;
+    }
+
+    // Получение уже созданного экземпляра драйвера
+    public static WebDriver getCurrentDriver() {
+        return driver;
     }
 }

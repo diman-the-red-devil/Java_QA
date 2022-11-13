@@ -1,34 +1,37 @@
 package steps;
 
+import io.cucumber.java.ru.Дано;
+import io.cucumber.java.ru.Когда;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebDriver;
+import web.drivers.WebDriverFactory;
 import web.pages.StartPage;
 
-// Шаги на странице "Стартовая"
+// Шаги и проверки на странице "Стартовая"
 public class StartPageSteps {
     // Логгер
     private static Logger logger = LogManager.getLogger(StartPageSteps.class);
 
-    // Ссылка на объект класса StartPagePFPE
-    // Стартовая страница сайта DNS
+    // Ссылка на объект класса StartPage
+    // Страница "Стартовая страница сайта DNS"
     private StartPage startPage;
 
-    // Конструктор
-    public StartPageSteps(WebDriver driver) {
-        // ***** Стартовая страница сайта DNS *****
-        startPage = new StartPage(driver);
+    // Шаг: Открыта страница "Стартовая страница сайта DNS"
+    @Дано("Открыта страница \"Стартовая страница сайта DNS\"")
+    public void openStartPage() {
+        startPage = new StartPage(WebDriverFactory.getCurrentDriver());
         // Открыть сайт https://www.dns-shop.ru/
         startPage.openPage();
-        logger.info("Открыта страница [Стартовая страница DNS]");
+        logger.info("Страница [Стартовая страница DNS]: Открыта \"Стартовая страница сайта DNS\"");
     }
 
-    // Переход на страницу "Смартфоны"
+    // Шаг: Выполнен переход на страницу "Смартфоны"
+    @Когда("Выполнен переход на страницу \"Смартфоны\"")
     public void goToSmartphonesPage() {
         // Наведение курсора мыши на ссылку "Смартфоны и гаджеты"
         startPage.linkSmartsAndGadgets().focusOnLink();
         // Нажатие на ссылку "Смартфоны"
         startPage.linkSmarts().click();
-        logger.info("Страница [Стартовая страница DNS]: Переход на страницу \"Смартфоны\"");
+        logger.info("Страница [Стартовая страница DNS]: Выполнен переход на страницу \"Смартфоны\"");
     }
 }

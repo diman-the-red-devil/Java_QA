@@ -1,8 +1,12 @@
 package steps;
 
+import io.cucumber.java.ru.Дано;
+import io.cucumber.java.ru.Тогда;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
+import web.drivers.WebDriverFactory;
 import web.pages.SmartphoneProductPage;
 
 public class SmartphoneProductPageSteps {
@@ -13,16 +17,19 @@ public class SmartphoneProductPageSteps {
     // Страница "Продукт. Смартфон"
     private SmartphoneProductPage smartphoneProductPage;
 
-    // Конструктор
-    public SmartphoneProductPageSteps(WebDriver driver) {
-        // ***** Страница "Продукт. Смартфон" *****
-        smartphoneProductPage = new SmartphoneProductPage(driver);
-        logger.info("Открыта страница [Продукт. Смартфон]");
+    // Шаг: Открыта страница "Продукт. Смартфон"
+    @Дано("Открыта страница \"Продукт. Смартфон\"")
+    public void openSmartphoneProductPage() {
+        smartphoneProductPage = new SmartphoneProductPage(WebDriverFactory.getCurrentDriver());
+        logger.info("Страница [Продукт. Смартфон]: Открыта страница \"Продукт. Смартфон\"");
     }
 
-    // Получение заголовка текущей страницы
-    public String getPageTitle() {
-        logger.info("Страница [Продукт. Смартфон]: Получение заголовка текущей страницы");
-        return smartphoneProductPage.getPageTitle();
+    // Проверка: Заголовок страницы соответствует ожидаемому
+    @Тогда("Проверка: Заголовок страницы соответствует ожидаемому")
+    public void assertPageTitle() {
+        String expected = "Купить 6.8\" Смартфон Samsung Galaxy S22 Ultra 128 ГБ белый в интернет магазине DNS. Характеристики, цена Samsung Galaxy S22 Ultra | 4900422";
+        String actual = smartphoneProductPage.getPageTitle();
+        Assertions.assertEquals(expected, actual, "Страница [Продукт. Смартфон]: Ошибка! Заголовок страницы не соответствует ожидаемому!");
+        logger.info("Страница [Продукт. Смартфон]: Заголовок страницы соответствует ожидаемому");
     }
 }
