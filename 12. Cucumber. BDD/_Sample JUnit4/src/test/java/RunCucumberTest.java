@@ -3,10 +3,10 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 // @RunWith
-// Указание класса для запуска тестов
+// Класса для запуска тестов
 @RunWith(Cucumber.class)
 // @CucumberOptions
-// Указание опции для запуска сценариев
+// Опции для запуска сценариев
 @CucumberOptions(
     // Список папок с feature файлами - фичи/сценарии
     features = {"src/test/resources/features"},
