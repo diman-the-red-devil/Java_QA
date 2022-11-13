@@ -25,7 +25,6 @@ public class VideoRecordsTest {
     private Logger logger = LogManager.getLogger(VideoRecordsTest.class);
 
     private ScreenRecorder screenRecorder;              // Рекордер видео
-    private GraphicsConfiguration gc;                   // Конфигурация графики
     private final String RECORD_DIRECTORY = "temp\\";   // Путь до каталога с выходным файлом
 
     @BeforeEach
@@ -98,7 +97,7 @@ public class VideoRecordsTest {
             screenRecorder.stop(); // Стоп записи видео
             // Сохранение файла под заданным именем
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss");
-            File newFileName = new File(String.format("%s %s.avi", RECORD_DIRECTORY, dateFormat.format(new Date())));
+            File newFileName = new File(String.format("%s%s.avi", RECORD_DIRECTORY, dateFormat.format(new Date())));
             screenRecorder.getCreatedMovieFiles().get(0).renameTo(newFileName);
         } catch (Exception e) {
             System.out.println(e);

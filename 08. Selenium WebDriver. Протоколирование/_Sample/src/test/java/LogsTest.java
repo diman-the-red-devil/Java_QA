@@ -10,7 +10,9 @@ import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.Logs;
+import org.openqa.selenium.support.ui.Sleeper;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.util.Date;
 import java.util.List;
@@ -46,6 +48,12 @@ public class LogsTest {
         WebElement btnYes = driver.findElement(btnYesXPath);
         btnYes.click();
         logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
@@ -71,6 +79,12 @@ public class LogsTest {
         WebElement btnYes = driver.findElement(btnYesXPath);
         btnYes.click();
         logger.info("Нажата кнопка \"Всё верно\"");
+        // Ожидание обновления страницы
+        try {
+            Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(5));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Нажать на ссылку "Бытовая техника"
         By linkBTXPath = By.xpath("//div/a[text()=\"Бытовая техника\"]");
         WebElement linkBT = driver.findElement(linkBTXPath);
