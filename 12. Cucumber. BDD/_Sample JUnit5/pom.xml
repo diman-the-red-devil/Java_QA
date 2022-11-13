@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>_Sample</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Параметры -->
+    <properties>
+        <!-- Кодировка проекта - UTF-8 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Версия Java - 15 -->
+        <source>15</source>
+        <target>15</target>
+        <!-- Версии зависимостей: -->
+        <!-- Cucumber -->
+        <cucumber>7.8.1</cucumber>
+        <!-- JUnit -->
+        <junit>5.9.0</junit>
+        <junit-platform>1.9.0</junit-platform>
+        <!-- Selenium WebDriver -->
+        <selenium-java>4.6.0</selenium-java>
+        <!-- WebDriver Manager -->
+        <webdrivermanager>5.3.1</webdrivermanager>
+        <!-- Log4J -->
+        <log4j-api>2.19.0</log4j-api>
+        <log4j-core>2.19.0</log4j-core>
+        <!-- aShot -->
+        <ashot>1.5.4</ashot>
+        <!-- Версии плагинов: -->
+        <!-- maven-surefire-plugin -->
+        <maven-surefire-plugin>2.22.2</maven-surefire-plugin>
+        <!-- maven-compiler-plugin -->
+        <maven-compiler-plugin>3.8.1</maven-compiler-plugin>
+    </properties>
+
+    <!-- Зависимости -->
+    <dependencies>
+        <!-- Cucumber -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumber}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- JUnit -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit-platform}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Selenium WebDriver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- WebDriver Manager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Log4J -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j-api}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j-core}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- aShot -->
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>${ashot}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Сборка -->
+    <build>
+        <!-- Плагины -->
+        <plugins>
+            <!-- maven-surefire-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin}</version>
+                <!-- Конфигурация -->
+                <configuration>
+                    <properties>
+                        <configurationParameters>
+                            cucumber.junit-platform.naming-strategy=long
+                        </configurationParameters>
+                    </properties>
+                </configuration>
+            </plugin>
+            <!-- maven-compiler-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin}</version>
+                <configuration>
+                    <source>${source}</source>
+                    <target>${target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
