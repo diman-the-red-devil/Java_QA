@@ -2,6 +2,8 @@ package steps;
 
 import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.Когда;
+import io.cucumber.java.ru.Тогда;
+import org.junit.jupiter.api.Assertions;
 import web.drivers.WebDriverFactory;
 import web.helpers.JavaScriptHelper;
 import org.apache.logging.log4j.LogManager;
@@ -76,5 +78,13 @@ public class SmartphonesPageSteps {
         // Нажатие на ссылку первого продукта в списке
         smartphonesPage.linkFirstProduct().openInNewWindow();
         logger.info("Страница [Смартфоны]: Выполнен переход на страницу первого продукта в списке");
+    }
+
+    // Проверка: Заголовок страницы "Смартфоны" содержит текст "Смартфоны"
+    @Тогда("Проверка: Заголовок страницы \"Смартфоны\" содержит текст \"Смартфоны\"")
+    public void assertPageTitle() {
+        Assertions.assertTrue(smartphonesPage.getPageTitle().contains("Смартфоны"),
+                "Страница [Смартфоны]: Ошибка! Заголовок страницы \"Смартфоны\" не содержит текст \"Смартфоны\"!");
+        logger.info("Страница [Смартфоны]: Заголовок страницы \"Смартфоны\" содержит текст \"Смартфоны\"");
     }
 }
