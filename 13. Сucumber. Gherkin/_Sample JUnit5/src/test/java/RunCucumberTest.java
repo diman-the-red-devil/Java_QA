@@ -6,6 +6,7 @@ import org.junit.platform.suite.api.Suite;
 import static io.cucumber.core.options.Constants.GLUE_PROPERTY_NAME;
 import static io.cucumber.core.options.Constants.PLUGIN_PUBLISH_QUIET_PROPERTY_NAME;
 
+/*
 // @Suite
 // Набор тестов
 @Suite
@@ -19,5 +20,6 @@ import static io.cucumber.core.options.Constants.PLUGIN_PUBLISH_QUIET_PROPERTY_N
 // Опции для запуска сценариев
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "steps, hooks")
 @ConfigurationParameter(key = PLUGIN_PUBLISH_QUIET_PROPERTY_NAME, value = "true")
+ */
 public class RunCucumberTest {
 }

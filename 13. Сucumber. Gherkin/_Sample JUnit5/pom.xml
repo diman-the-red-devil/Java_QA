@@ -112,13 +112,13 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin}</version>
                 <!-- Конфигурация -->
-                <configuration>
+                <!--configuration>
                     <properties>
                         <configurationParameters>
                             cucumber.junit-platform.naming-strategy=long
                         </configurationParameters>
                     </properties>
-                </configuration>
+                </configuration-->
             </plugin>
             <!-- maven-compiler-plugin -->
             <plugin>
