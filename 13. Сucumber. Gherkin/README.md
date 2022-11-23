@@ -264,7 +264,19 @@ Java_QA / 13. Сucumber. Gherkin
 [![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 [![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
 
-
+* [Статьи](4.%20Ссылки.md#статьи)
+    * [1. Интерфейс командной строки Cucumber (Cucumber Command-Line Interface Runner (Cucumber CLI Runner))](4.%20Ссылки.md#1-интерфейс-командной-строки-cucumber-cucumber-command-line-interface-runner-cucumber-cli-runner)
+    * [2. Опции запуска (Cucumber Options)](4.%20Ссылки.md#2-опции-запуска-cucumber-options)
+    * [3. Формирование отчетов (Reports)](4.%20Ссылки.md#3-формирование-отчетов-reports)
+    * [4. Gherkin](4.%20Ссылки.md#4-gherkin)
+    * [5. Выражения (Expressions)](4.%20Ссылки.md#5-выражения-expressions)
+    * [6. Передача данных в шаги](4.%20Ссылки.md#6-передача-данных-в-шаги)
+* [YouTube](4.%20Ссылки.md#youtube)
+    * [1. Опции запуска (Cucumber Options)](4.%20Ссылки.md#1-опции-запуска-cucumber-options)
+    * [2. Формирование отчетов (Reports)](4.%20Ссылки.md#2-формирование-отчетов-reports)
+    * [3. Gherkin](4.%20Ссылки.md#3-gherkin)
+    * [4. Выражения (Expressions)](4.%20Ссылки.md#4-выражения-expressions)
+    * [5. Передача данных в шаги](4.%20Ссылки.md#5-передача-данных-в-шаги)
 
 ***
 
