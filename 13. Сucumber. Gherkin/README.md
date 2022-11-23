@@ -24,18 +24,14 @@ Java_QA / 13. Сucumber. Gherkin
 
 1. Изучить фреймворк Cucumber
 2. Научиться создавать и настраивать проект с Cucumber
-3. Освоить написание автотестов с Cucumber+JUnit+Selenium+POM
-4. Освоить написание автотестов с Cucumber+JUnit+REST Assured
-5. Научиться запускать автотесты c Cucumber
+3. 
 
 ***
 
 # Результаты
 
 1. Умение создавать и настраивать проект Cucumber
-2. Умение писать автотесты с Cucumber+JUnit+Selenium+POM
-3. Умение писать автотесты с Cucumber+JUnit+REST Assured
-4. Умение запускать автотесты с Cucumber
+2. Умение запускать автотесты с Cucumber
 
 ***
 
@@ -258,8 +254,8 @@ Java_QA / 13. Сucumber. Gherkin
 [![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 [![Задание](https://img.shields.io/badge/-Задание-99ffee)](3.%20Задание.md)
 
-* []()
-* []()
+* [1. Вопросы](#1-вопросы)
+* [2. Задачи](#2-задачи)
 
 ***
 
@@ -267,6 +263,8 @@ Java_QA / 13. Сucumber. Gherkin
 
 [![Содержание](https://img.shields.io/badge/-Содержание-1177ff)](#содержание)
 [![Ссылки](https://img.shields.io/badge/-Ссылки-ffee99)](4.%20Ссылки.md)
+
+
 
 ***
 
