@@ -1,0 +1,259 @@
+[
+  {
+    "line": 4,
+    "elements": [
+      {
+        "line": 13,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Предыстория",
+        "steps": [
+          {
+            "result": { "duration": 4115520200, "status": "passed" },
+            "before": [
+              {
+                "result": { "duration": 988402500, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 14,
+            "name": "Открыта страница \"Стартовая страница сайта DNS\"",
+            "match": { "location": "steps.StartPageSteps.openStartPage()" },
+            "after": [
+              {
+                "result": { "duration": 677589600, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Дано "
+          },
+          {
+            "result": { "duration": 2624848500, "status": "passed" },
+            "before": [
+              {
+                "result": { "duration": 569657000, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 15,
+            "name": "Выполнен переход на страницу \"Смартфоны\"",
+            "match": {
+              "location": "steps.StartPageSteps.goToSmartphonesPage()"
+            },
+            "after": [
+              {
+                "result": { "duration": 662600700, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Когда "
+          },
+          {
+            "result": { "duration": 8993500, "status": "passed" },
+            "before": [
+              {
+                "result": { "duration": 492704900, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 16,
+            "name": "Открыта страница \"Смартфоны\"",
+            "match": {
+              "location": "steps.SmartphonesPageSteps.openSmartphonesPage()"
+            },
+            "after": [
+              {
+                "result": { "duration": 467879000, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-11-23T11:09:09.206Z",
+        "before": [
+          {
+            "result": { "duration": 4891934800, "status": "passed" },
+            "match": {
+              "location": "hooks.DriverHooks.startDriverBeforeScenario()"
+            }
+          }
+        ],
+        "line": 69,
+        "name": "Таблица с тремя колонками",
+        "description": "",
+        "id": "смартфоны;таблица-с-тремя-колонками",
+        "after": [
+          {
+            "result": { "duration": 816481100, "status": "passed" },
+            "match": {
+              "location": "hooks.DriverHooks.stopDriverAfterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Сценарий",
+        "steps": [
+          {
+            "result": { "duration": 7767255900, "status": "passed" },
+            "before": [
+              {
+                "result": { "duration": 457722700, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 70,
+            "name": "Установлена сортировка и фильтры из таблицы с тремя колонками",
+            "match": {
+              "location": "steps.SmartphonesPageSteps.setFiltersAndSortFromTable3(io.cucumber.datatable.DataTable)"
+            },
+            "after": [
+              {
+                "result": { "duration": 965416700, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Сортировка",
+                  "Производитель",
+                  "Объем оперативной памяти"
+                ]
+              },
+              { "cells": ["Сначала дорогие", "Samsung", "8 Гб"] }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": { "duration": 2158192600, "status": "passed" },
+            "before": [
+              {
+                "result": { "duration": 509693900, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 73,
+            "name": "Применены фильтры",
+            "match": {
+              "location": "steps.SmartphonesPageSteps.applyFilters()"
+            },
+            "after": [
+              {
+                "result": { "duration": 856484500, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": { "duration": 8861935300, "status": "passed" },
+            "before": [
+              {
+                "result": { "duration": 769534100, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 74,
+            "name": "Выполнен переход на страницу первого продукта в списке",
+            "match": {
+              "location": "steps.SmartphonesPageSteps.goToFirstProduct()"
+            },
+            "after": [
+              {
+                "result": { "duration": 503411900, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": { "duration": 1999000, "status": "passed" },
+            "before": [
+              {
+                "result": { "duration": 666707700, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 75,
+            "name": "Открыта страница \"Продукт. Смартфон\"",
+            "match": {
+              "location": "steps.SmartphoneProductPageSteps.openSmartphoneProductPage()"
+            },
+            "after": [
+              {
+                "result": { "duration": 488406400, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "И "
+          },
+          {
+            "result": { "duration": 11993000, "status": "passed" },
+            "before": [
+              {
+                "result": { "duration": 556955000, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotBeforeStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "line": 76,
+            "name": "Проверка: Заголовок страницы \"Продукт. Смартфон\" содержит текст \"Samsung\"",
+            "match": {
+              "arguments": [{ "val": "\"Samsung\"", "offset": 64 }],
+              "location": "steps.SmartphoneProductPageSteps.assertPageTitle(java.lang.String)"
+            },
+            "after": [
+              {
+                "result": { "duration": 485100300, "status": "passed" },
+                "match": {
+                  "location": "hooks.ScreenShotHooks.takeScreenShotAfterStep(io.cucumber.java.Scenario)"
+                }
+              }
+            ],
+            "keyword": "Тогда "
+          }
+        ],
+        "tags": [{ "name": "@table3" }]
+      }
+    ],
+    "name": "Смартфоны",
+    "description": "  Я как посетитель сайта ДНС хочу иметь возможность\n  - видеть список смартфонов\n  - сортировать и фильтровать список смартфонов\n  - переходить на страницу продукта\n\n  Это позволит мне выбрать понравившийся смартфон и просмотреть его характеристики.",
+    "id": "смартфоны",
+    "keyword": "Функция",
+    "uri": "file:src/test/resources/features/smartphone.feature",
+    "tags": []
+  }
+]
