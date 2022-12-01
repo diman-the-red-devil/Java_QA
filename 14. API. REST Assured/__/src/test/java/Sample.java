@@ -1,5 +1,6 @@
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
@@ -9,33 +10,33 @@ import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+
 public class Sample {
 
     @Test
-    public void restTest1() {
+    public void test1() {
         RequestSpecification request = RestAssured.given();
-        request.baseUri("https://rickandmortyapi.com/api/");
+        request.baseUri("https://rickandmortyapi.com/api");
         request.basePath("/character");
-        request.accept(ContentType.JSON);
         request.queryParam("name","Rick Sanchez");
 
-        Response response = request.request("GET");
-        long timeIn  = response.timeIn(TimeUnit.MILLISECONDS);
-        System.out.println("timeIn: " + timeIn);
+        Response response = request.get();
+        response.prettyPrint();
     }
 
     @Test
-    public void restTest2() {
-        RequestSpecification rqstSpec = new RequestSpecBuilder()
-                .setBaseUri()
-                .setBasePath();
-        rqstSpec.accept(ContentType.JSON);
-        rqstSpec.queryParam("name","Rick Sanchez")
-                .log().method()
-                .log().params();
+    public void test2() {
+        RequestSpecification request = RestAssured.given();
+        request.baseUri("https://rickandmortyapi.com/api");
+        request.basePath("/character");
+        request.formParams("name", "Rick Sanchez");
+        request.log().uri();
+        request.log().params();
 
-        ResponseSpecification rspsSpec = rqstSpec.response();
-        rspsSpec.statusCode(200);
-        rspsSpec.request().request("GET","/character");
+        Response response = request.get();
+        response.prettyPrint();
     }
+
 }
