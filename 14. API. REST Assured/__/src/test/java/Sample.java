@@ -31,9 +31,7 @@ public class Sample {
         RequestSpecification request = RestAssured.given();
         request.baseUri("https://rickandmortyapi.com/api");
         request.basePath("/character");
-        request.formParams("name", "Rick Sanchez");
-        request.log().uri();
-        request.log().params();
+        request.queryParam("name","Rick Sanchez");
 
         Response response = request.get();
         response.prettyPrint();
