@@ -5,73 +5,43 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>REST-Assured</artifactId>
+    <artifactId>_Sample</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <!-- параметры -->
+    <!-- Параметры -->
     <properties>
-        <!-- кодировка файлов проекта -->
+        <!-- Кодировка проекта - UTF-8 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <!-- версии зависимостей: -->
-        <!-- junit -->
-
-        <junit-jupiter-engine>5.7.2</junit-jupiter-engine>
-        <junit-jupiter-params>5.7.2</junit-jupiter-params>
-        <!--junit-jupiter-api>5.7.2</junit-jupiter-api>
-        <junit-platform-commons>1.7.2</junit-platform-commons>
-        <junit-platform-launcher>1.8.0-M1</junit-platform-launcher-->
-        <!-- rest-assured -->
-        <rest-assured>4.4.0</rest-assured>
-        <!-- json -->
-        <json>20210307</json>
-
-        <!-- версии плагинов: -->
-        <!-- maven-surefire-plugin -->
-        <maven-surefire-plugin>2.22.2</maven-surefire-plugin>
-        <aspectj>1.9.7</aspectj>
-        <!-- maven-compiler-plugin -->
-        <maven-compiler-plugin>3.8.1</maven-compiler-plugin>
+        <!-- Версия Java - 15 -->
         <source>15</source>
         <target>15</target>
+
+        <!-- Версии зависимостей: -->
+        <!-- JUnit -->
+        <junit>5.9.0</junit>
+        <!-- REST Assured -->
+        <rest-assured>5.3.0</rest-assured>
+        <!-- JSON -->
+        <json>20220924</json>
+
+        <!-- Версии плагинов: -->
+        <!-- maven-surefire-plugin -->
+        <maven-surefire-plugin>2.22.2</maven-surefire-plugin>
+        <!-- maven-compiler-plugin -->
+        <maven-compiler-plugin>3.8.1</maven-compiler-plugin>
     </properties>
 
     <dependencies>
-        <!-- junit -->
-
+        <!-- JUnit -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-jupiter-engine}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit-jupiter-params}</version>
-            <scope>test</scope>
-        </dependency>
-        <!--dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-jupiter-api}</version>
+            <version>${junit}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-commons</artifactId>
-            <version>${junit-platform-commons}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <version>${junit-platform-launcher}</version>
-            <scope>test</scope>
-        </dependency-->
 
-        <!-- rest assured -->
+        <!-- REST Assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -79,7 +49,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- json -->
+        <!-- JSON -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -87,9 +57,9 @@
         </dependency>
     </dependencies>
 
-    <!-- сборка -->
+    <!-- Сборка -->
     <build>
-        <!-- плагины -->
+        <!-- Плагины -->
         <plugins>
             <!-- maven-surefire-plugin -->
             <plugin>
