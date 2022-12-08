@@ -89,7 +89,10 @@ public class RestAssuredBasicTests {
     @Test
     public void httpPOSTTest() {
         // Тело запроса
-        String jsonString = "{\"username\" : \"admin\",\"password\" : \"password123\"}";
+        String jsonString = "{\r\n" +
+            "   \"username\" : \"admin\",\r\n" +
+            "   \"password\" : \"password123\"\r\n" +
+            "}";
         // RestAssured.requestSpecification - статическое поле, хранящее спецификацию запроса
         // RequestSpecBuilder - класс билдер, для создания спецификации запроса
         RestAssured.requestSpecification = new RequestSpecBuilder()
@@ -110,15 +113,15 @@ public class RestAssuredBasicTests {
     public void httpPUTTest() {
         // Тело запроса
         String jsonString = "{\r\n" +
-            "    \"firstname\" : \"John\",\r\n" +
-            "    \"lastname\" : \"Johnes\",\r\n" +
-            "    \"totalprice\" : 99999,\r\n" +
-            "    \"depositpaid\" : true,\r\n" +
-            "    \"bookingdates\" : {\r\n" +
-            "        \"checkin\" : \"2022-01-01\",\r\n" +
-            "        \"checkout\" : \"2024-01-01\"\r\n" +
-            "    },\r\n" +
-            "    \"additionalneeds\" : \"Breakfast\"\r\n" +
+            "   \"firstname\" : \"John\",\r\n" +
+            "   \"lastname\" : \"Johnes\",\r\n" +
+            "   \"totalprice\" : 99999,\r\n" +
+            "   \"depositpaid\" : true,\r\n" +
+            "   \"bookingdates\" : {\r\n" +
+            "       \"checkin\" : \"2022-01-01\",\r\n" +
+            "       \"checkout\" : \"2024-01-01\"\r\n" +
+            "   },\r\n" +
+            "   \"additionalneeds\" : \"Breakfast\"\r\n" +
             "}";
         // RestAssured.requestSpecification - статическое поле, хранящее спецификацию запроса
         // RequestSpecBuilder - класс билдер, для создания спецификации запроса
@@ -143,7 +146,8 @@ public class RestAssuredBasicTests {
         // Тело запроса
         String jsonString = "{\r\n" +
             "    \"firstname\" : \"Jack\",\r\n" +
-            "    \"lastname\" : \"Jackson\"}";
+            "    \"lastname\" : \"Jackson\"\r\n" +
+            "}";
         // RestAssured.requestSpecification - статическое поле, хранящее спецификацию запроса
         // RequestSpecBuilder - класс билдер, для создания спецификации запроса
         // В addCookie нужно вставить токен из предыдущего запроса
