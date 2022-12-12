@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>_Sample</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Параметры -->
+    <properties>
+        <!-- Кодировка проекта - UTF-8 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Версия Java - 15 -->
+        <source>15</source>
+        <target>15</target>
+
+        <!-- Версии зависимостей: -->
+        <!-- JUnit -->
+        <junit>5.9.0</junit>
+        <junit-platform>1.9.0</junit-platform>
+        <!-- REST Assured -->
+        <rest-assured>5.3.0</rest-assured>
+        <!-- JSON -->
+        <json>20220924</json>
+
+        <!-- Версии плагинов: -->
+        <!-- maven-surefire-plugin -->
+        <maven-surefire-plugin>2.22.2</maven-surefire-plugin>
+        <!-- maven-compiler-plugin -->
+        <maven-compiler-plugin>3.8.1</maven-compiler-plugin>
+    </properties>
+
+    <dependencies>
+        <!-- JUnit -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+            <version>${junit-platform}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit-platform}</version>
+        </dependency>
+
+        <!-- REST Assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JSON -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Сборка -->
+    <build>
+        <!-- Плагины -->
+        <plugins>
+            <!-- maven-surefire-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin}</version>
+            </plugin>
+
+            <!-- maven-compiler-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin}</version>
+                <configuration>
+                    <source>${source}</source>
+                    <target>${target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
