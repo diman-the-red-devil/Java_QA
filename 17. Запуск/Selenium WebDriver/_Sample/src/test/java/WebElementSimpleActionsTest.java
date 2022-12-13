@@ -7,6 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
+
+@Execution(CONCURRENT)
 public class WebElementSimpleActionsTest {
     protected WebDriver driver;
     private Logger logger = LogManager.getLogger(WebElementSimpleActionsTest.class);

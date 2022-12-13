@@ -6,6 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 
+import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
+
+@Execution(CONCURRENT)
 public class WebElementPropertiesTest {
     protected WebDriver driver;
     private Logger logger = LogManager.getLogger(WebElementPropertiesTest.class);
